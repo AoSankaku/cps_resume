@@ -23,4 +23,5 @@
 <br>
 ## 連絡先
 Twitter:@Ao_Sankaku<br>
+※バグ報告は「βテスター用のTwitterグループのDM」でおねがいします。<br>
 
