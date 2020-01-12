@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <title>#コンパス履歴書</title>
+</head>
+
+<body>
+
+
+
+<!--ここからスクリプト-->
+
+
+<!--いまのところつかわないとこ(背景模様生成のアプデで追加)
+
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+
+-->
+
+<script>
+var img = [];
+img[0] = new Image();
+img[0].src = "img/attacker.png"
+img[1] = new Image();
+img[1].src = "img/gunner.png"
+img[2] = new Image();
+img[2].src = "img/sprinter.png"
+img[3] = new Image();
+img[3].src = "img/tank.png"
+</script>
+<script src="js/gen.js"></script>
+<script src="js/jscookie.js"></script>
+<script src="js/svcookie.js"></script>
+<script src="js/twitterImport.js"></script>
+
+
+
+<!--スクリプトここまで-->
+
+
+
+<div align="center">
+<h1>#コンパス履歴書作成<br>開発版(β1.0.0)</h1>
+<p>コンパス履歴書をWebだけで作成できます<br>※スマホ・タブレットからの操作を推奨します<br>※IEとEdgeは非対応です<br><br>
+</p>
+</div>
+
+<!--ここで履歴書の必要事項を入力
+<div class="sys" align="center">
+<p>Twitterからプロフィール画像とHNをインポートする</p>
+<input type="button" value="TwitterIDを指定してインポート" class="import"><br>
+<p>過去の履歴書をインポートする</p>
+<input type="button" value="アップロードしてインポート" class="import"><br>
+</div><br><br>
+-->
+
+<div class="form">
+<h2>【情報記入欄】</h2>
+<form id="info">
+<dl>
+<dt>よみがな</dt>
+<dd><input type="text" id="read"></dd>
+<dt>HN</dt>
+<dd><input type="text" id="name"></dd>
+<dt>最高デッキレベル</dt>
+<dd>
+	<select id="dl">
+	<option value="10">10</option>
+	<option value="20">20</option>
+	<option value="30">30</option>
+	<option value="40">40</option>
+	<option value="50">50</option>
+	<option value="60">60</option>
+	<option value="70">70</option>
+	<option value="80" selected>80</option>
+	<option value="90">90</option>
+	<option value="100">100</option>
+	<option value="110">110</option>
+	<option value="120">120</option>
+	<option value="130">130</option>
+	<option value="140">140</option>
+	<option value="150">150</option>
+	<option value="160">160</option>
+	<option value="170">170</option>
+	<option value="180">180</option>
+	<option value="190">190</option>
+	<option value="200">200</option>
+	<option value="210">210</option>
+	<option value="220">220</option>
+	<option value="230">230</option>
+	<option value="240">240</option>
+	</select >
+</dd>
+<dt>最高ランク</dt>
+<dd>
+	<select id="rank">
+	<optgroup label="F〜Aランク">
+	<option value="F">Fランク</option>
+	<option value="E">Eランク</option>
+	<option value="D">Dランク</option>
+	<option value="C">Cランク</option>
+	<option value="B">Bランク</option>
+	<option value="A">Aランク</option>
+	</optgroup>
+	<optgroup label="S1〜S9ランク">
+	<option value="S1">S1ランク</option>
+	<option value="S2">S2ランク</option>
+	<option value="S3">S3ランク</option>
+	<option value="S4">S4ランク</option>
+	<option value="S5">S5ランク</option>
+	<option value="S6">S6ランク</option>
+	<option value="S7">S7ランク</option>
+	<option value="S8">S8ランク</option>
+	<option value="S9">S9ランク</option>
+	</optgroup>
+	</select >
+</dd>
+<dt>銅アイコン所持数</dt>
+<dd><input type="number" id="bronze" min="0" max="999" value="0"></dd>
+<dt>銀アイコン所持数</dt>
+<dd><input type="number" id="silver" min="0" max="999" value="0"></dd>
+<dt>金アイコン所持数</dt>
+<dd><input type="number" id="gold" min="0" max="999" value="0"></dd>
+<dt>大会優勝アイコン</dt>
+<dd><input type="number" id="tournament" min="0" max="999" value="0"></dd>
+<dt>バトアリ使用キャラ</dt>
+<dd>
+	<select id="heroB" multiple>
+	<optgroup label="アタッカー">
+	<option value="noho">双挽 乃保</option>
+	<option value="omi">桜華 忠臣</option>
+	<option value="maru">マルコス'55</option>
+	<option value="soru">ソル=バッドガイ</option>
+	<option value="ryu">リュウ</option>
+	<option value="maria">マリア=S=レオンブルク</option>
+	<option value="adam">アダム=ユーリエフ</option>
+	<option value="rem">レム</option>
+	<option value="kai">カイ=キスク</option>
+	<option value="poro">ヴィーナス ポロロッチョ</option>
+	<option value="rivai">リヴァイ</option>
+	<option value="deru">デビルミント鬼龍 デルミン</option>
+	<option value="alter">セイバーオルタ</option>
+	</optgroup>
+	<optgroup label="ガンナー">
+	<option value="ririka">リリカ</option>
+	<option value="ruchi">ルチアーノ</option>
+	<option value="matoi">深川 まとい</option>
+	<option value="dizzy">ディズィー</option>
+	<option value="thir">13 サーティーン</option>
+	<option value="emi">エミリア</option>
+	<option value="megu">メグメグ</option>
+	<option value="rin">鏡音 リン</option>
+	<option value="isu">イスタカ</option>
+	<option value="sone">ソーン=ユーリエフ</option>
+	<option value="neko">猫宮 ひなた</option>
+	<option value="okarin">岡部 倫太郎</option>
+	<option value="giru">ギルガメッシュ</option>
+	</optgroup>
+	<optgroup label="スプリンター">
+	<option value="atari">十文字 アタリ</option>
+	<option value="void">Voidoll</option>
+	<option value="tesla">ニコラ テスラ</option>
+	<option value="miku">初音 ミク</option>
+	<option value="koku">コクリコット ブランシュ</option>
+	<option value="chun">春麗</option>
+	<option value="yuusha">かけだし勇者</option>
+	<option value="zakurei">ザック & レイチェル</option>
+	<option value="kirara">輝龍院 きらら</option>
+	<option value="aqua">アクア</option>
+	<option value="layer">零夜</option>
+	</optgroup>
+	<optgroup label="タンク">
+	<option value="jus">ジャスティス ハンコック</option>
+	<option value="jan">ジャンヌ ダルク</option>
+	<option value="gust">グスタフ ハイドリヒ</option>
+	<option value="vio">ヴィオレッタ ノワール</option>
+	<option value="ren">鏡音 レン</option>
+	<option value="mono">モノクマ</option>
+	<option value="min">めぐみん</option>
+	<option value="thomas">トマス</option>
+	</optgroup>
+	</select >
+</dd>
+<dt>フリバト&練習キャラ</dt>
+<dd>
+	<select id="heroF" multiple>
+	<optgroup label="アタッカー">
+	<option value="noho">双挽 乃保</option>
+	<option value="omi">桜華 忠臣</option>
+	<option value="maru">マルコス'55</option>
+	<option value="soru">ソル=バッドガイ</option>
+	<option value="ryu">リュウ</option>
+	<option value="maria">マリア=S=レオンブルク</option>
+	<option value="adam">アダム=ユーリエフ</option>
+	<option value="rem">レム</option>
+	<option value="kai">カイ=キスク</option>
+	<option value="poro">ヴィーナス ポロロッチョ</option>
+	<option value="rivai">リヴァイ</option>
+	<option value="deru">デビルミント鬼龍 デルミン</option>
+	<option value="alter">セイバーオルタ</option>
+	</optgroup>
+	<optgroup label="ガンナー">
+	<option value="ririka">リリカ</option>
+	<option value="ruchi">ルチアーノ</option>
+	<option value="matoi">深川 まとい</option>
+	<option value="dizzy">ディズィー</option>
+	<option value="thir">13 サーティーン</option>
+	<option value="emi">エミリア</option>
+	<option value="megu">メグメグ</option>
+	<option value="rin">鏡音 リン</option>
+	<option value="isu">イスタカ</option>
+	<option value="sone">ソーン=ユーリエフ</option>
+	<option value="neko">猫宮 ひなた</option>
+	<option value="okarin">岡部 倫太郎</option>
+	<option value="giru">ギルガメッシュ</option>
+	</optgroup>
+	<optgroup label="スプリンター">
+	<option value="atari">十文字 アタリ</option>
+	<option value="void">Voidoll</option>
+	<option value="tesla">ニコラ テスラ</option>
+	<option value="miku">初音 ミク</option>
+	<option value="koku">コクリコット ブランシュ</option>
+	<option value="chun">春麗</option>
+	<option value="yuusha">かけだし勇者</option>
+	<option value="zakurei">ザック & レイチェル</option>
+	<option value="kirara">輝龍院 きらら</option>
+	<option value="aqua">アクア</option>
+	<option value="layer">零夜</option>
+	</optgroup>
+	<optgroup label="タンク">
+	<option value="jus">ジャスティス ハンコック</option>
+	<option value="jan">ジャンヌ ダルク</option>
+	<option value="gust">グスタフ ハイドリヒ</option>
+	<option value="vio">ヴィオレッタ ノワール</option>
+	<option value="ren">鏡音 レン</option>
+	<option value="mono">モノクマ</option>
+	<option value="min">めぐみん</option>
+	<option value="thomas">トマス</option>
+	</optgroup>
+	</select >
+</dd>
+<dt>Twitter ID</dt>
+<dd><input type="text" id="tw" value="@"></dd>
+<dt>Discord ID</dt>
+<dd><input type="text" id="dc" placeholder="Example#7777"></dd>
+<dt>Skype ID</dt>
+<dd><input type="text" id="sp" placeholder=""></dd>
+<dt>フレンドコード</dt>
+<dd><input type="number" id="fc" placeholder="1234567890"></dd>
+</dl>
+</form>
+</div>
+
+<!--
+<div class="form">
+<form id="hero">
+<p>
+<input type="checkbox" id="hero" value="1">あいうえおかきちゅうおうぞろえ
+</p>
+</form>
+</div>
+-->
+<br><br>
+
+<div class="form">
+<h2>【デザイン変更】</h2>
+<form id="design">
+<dl>
+<dt>プロフィール画像</dt>
+<dd><input type="file" accept="image/png,image/jpeg,image/gif" id="profilePic"></dd>
+<dt>履歴書背景テーマ</dt>
+<dd>
+	<select id="bgtheme">
+	<option value="custom">自分でアップロード</option>
+	<option value="nonotone">単色</option>
+	<option value="bg1">模様1</option>
+	<option value="bg2">模様2</option>
+	<option value="bg3">模様3</option>
+	<option value="bg4">模様4</option>
+	<option value="bg5">模様5</option>
+	</select>
+</dd>
+<dt>履歴書背景画像</dt>
+<dd><input type="file" accept="image/png,image/jpeg,image/gif" id="bg"></dd>
+<dt>履歴書背景色</dt>
+<dd><input type="color" id="bgcolor"></dd>
+<dt>文字色</dt>
+<dd><input type="color" id="fontcolor"></dd>
+<dt>フォント</dt>
+<dd>
+	<select id="font">
+	<option value="mei">メイリオ</option>
+	<option value="com">新コミック体</option>
+	<option value="pix">PixelMplus</option>
+	</select >
+</dd>
+</dl>
+</form>
+</div><br><br>
+
+<div class="form" align="center">
+<h2 align="left">  【出力】</h2>
+<button type="button" onclick="preview();">コンパス履歴書を生成する！</button>
+<button type="button" onclick="convertToImg();">履歴書を画像に変換</button>
+<button onclick="saveToCookie()">入力した内容をCookieに保存</button>
+</div>
+
+
+<br>
+<div align="center" class="preview">
+
+
+<!--ここからプレビュー-->
+
+<div align="center">
+<h2 class="pv">【プレビュー】</h2>
+<p id="preview"></p>
+<canvas id="result" width="900" height="1300"></canvas>
+<img id="newImg">
+<br>
+<p>画像を長押しor右クリックで<br>ダウンロードできます</p>
+
+<script>
+	var can = document.getElementById('result');
+	var ctx = can.getContext('2d');
+</script>
+
+<!--ボタン押してダウンロードさせる処理に挫折しました
+	次のアプデで実装するので許して
+
+<button type="button" id="dlImg" onckick="dlImg()">ダウンロードする</button>
+</div>
+-->
+
+<!--プレビューここまで-->
+
+
+
+</div>
+<br>
+
+
+</body>
+</html>
