@@ -621,6 +621,7 @@ if ( errorMsg != "" ){
 alert("【入力エラー】\n" + errorMsg);
 
 
+
 //web上なら正常に動作するので画像変換ここに復活
 can.hidden = true;
 var base64 = can.toDataURL('image/jpeg');
