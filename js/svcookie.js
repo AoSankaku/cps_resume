@@ -8,9 +8,9 @@ var month = date.getMonth() + 1;
 if ( month < 10 ){
 month = "0" + month;
 }
-var date = date.getDate();
-if ( date < 10 ){
-date = "0" + date;
+var today = date.getDate();
+if ( today < 10 ){
+today = "0" + today;
 }
 var hours = date.getHours();
 if ( hours < 10 ){
@@ -20,7 +20,7 @@ var minutes = date.getMinutes();
 if ( minutes < 10 ){
 minutes = "0" + minutes;
 }
-var savedAt = year + "年" + month + "月"+ date +　"日 " + hours + "時" + minutes + "分" ;
+var savedAt = year + "年" + month + "月"+ today +　"日 " + hours + "時" + minutes + "分" ;
 //フォームの内容を取得する
 var read = document.forms.info.read.value;
 var name = document.forms.info.name.value;
