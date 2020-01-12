@@ -17,12 +17,12 @@ var month = date.getMonth() + 1;
 if ( month < 10 ){
 month = "0" + month;
 }
-var date = date.getDate();
-if ( date < 10 ){
-date = "0" + date;
+var today = date.getDate();
+if ( today < 10 ){
+today = "0" + today;
 }
 
-var createdAt = year + "年" + month + "月"+ date +"日 作成";
+var createdAt = year + "年" + month + "月"+ today +"日 作成";
 
 
 //フォームの内容を取得する
