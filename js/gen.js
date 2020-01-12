@@ -647,12 +647,13 @@ document.getElementById("dlImg").download = fileName;
 //■キャンバスを隠して画像に変換する処理(何故か消える)
 //旧処理
 
+/*
 function convertToImg(){
 can.hidden = true;
 var base64 = can.toDataURL('image/jpeg');
 document.getElementById("newImg").src = base64;
 }
-
+*/
 
 
 
