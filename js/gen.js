@@ -68,9 +68,11 @@ var fc = document.forms.info.fc.value;
 var errorMsg = "";
 
 //複数選択テスト
+/*
 var heroB = "";
 var idx = new Array();
 var sel = document.forms["info"].elements["heroB"].options;
+*/
 
 //■履歴書枠組み、項目の描画■
 //注意:変数canとctxの宣言はHTMLに記述
