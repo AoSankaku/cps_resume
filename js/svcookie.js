@@ -30,15 +30,6 @@ var heroB = document.getElementById("heroB");
 var heroF = document.getElementById("heroF");
 var heroBe = heroB.options;
 var heroFe = heroF.options;
-//使用ヒーロー用
-var atkUseB = "";
-var gunUseB = "";
-var sprUseB = "";
-var tanUseB = "";
-var atkUseF = "";
-var gunUseF = "";
-var sprUseF = "";
-var tanUseF = "";
 //小数点対策済
 var bronze = parseInt(document.forms.info.bronze.value);
 var silver = parseInt(document.forms.info.silver.value);
