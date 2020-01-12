@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
-     <link rel="stylesheet" type="text/css" href="style.css">
-     <title>#コンパス履歴書</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="コンパス履歴書を作成するWebツールです。スマホ、タブレットからでも簡単に操作することができます。">
+	<meta name="format-detection" content="email=no,telephone=no,address=no">
+	<meta property="og:url" content="AoSankaku.github.io" />
+	<meta property="og:title" content="#コンパス履歴書ジェネレーター" />
+	<meta property="og:type" content="website">
+	<!--未設定
+	<meta property="og:image" content="画像のURL" />
+	<meta name="twitter:card" content="カード種類" />
+	-->
+	<meta name="twitter:site" content="@Ao_Sankaku" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>#コンパス履歴書ジェネレーター コンパス履歴書をWebで作成</title>
 </head>
 
 <body>
@@ -14,9 +24,7 @@
 
 
 <!--いまのところつかわないとこ(背景模様生成のアプデで追加)
-
 <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-
 -->
 
 <script>
@@ -42,7 +50,7 @@ img[3].src = "img/tank.png"
 
 
 <div align="center">
-<h1>#コンパス履歴書作成<br>開発版(β1.0.0)</h1>
+<h1>#コンパス履歴書作成<br>開発版(α1.1.0)</h1>
 <p>コンパス履歴書をWebだけで作成できます<br>※スマホ・タブレットからの操作を推奨します<br>※IEとEdgeは非対応です<br><br>
 </p>
 </div>
@@ -303,7 +311,9 @@ img[3].src = "img/tank.png"
 <div class="form" align="center">
 <h2 align="left">  【出力】</h2>
 <button type="button" onclick="preview();">コンパス履歴書を生成する！</button>
+<!--正常にできるので非表示
 <button type="button" onclick="convertToImg();">履歴書を画像に変換</button>
+-->
 <button onclick="saveToCookie()">入力した内容をCookieに保存</button>
 </div>
 
