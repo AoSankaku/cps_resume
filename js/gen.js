@@ -621,8 +621,10 @@ if ( errorMsg != "" ){
 alert("【入力エラー】\n" + errorMsg);
 
 
-//もともとここに画像変換があった
-
+//web上なら正常に動作するので画像変換ここに復活
+can.hidden = true;
+var base64 = can.toDataURL('image/jpeg');
+document.getElementById("newImg").src = base64;
 
 
 }
