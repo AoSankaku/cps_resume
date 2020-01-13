@@ -102,13 +102,16 @@ if ( load == true ){
 	document.getElementById( "fc" ).value = fc;
 	//選択肢もロード
 	var dlEle = document.getElementById(dl);
-	dlEle.selected = true;
+	var dlEles = dlEle.options;
+	dlEles[dl].selected = true;
+	/*
 	var rankEle = document.getElementById(rank);
 	rankEle.selected = true;
 	var heroBEle = document.getElementById(heroB);
 	heroBEle.selected = true;
 	var heroFEle = document.getElementById(heroF);
 	heroFEle.selected = true;
+	*/
 
 //最後にアラート
 alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
