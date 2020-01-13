@@ -43,6 +43,7 @@ var fc = document.forms.info.fc.value;
 	
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
+Cookies.set( 'savedAt' , savedAt );
 
 
 
@@ -54,6 +55,7 @@ alert("記入内容をCookieに保存しました！");
 window.onload = function loadFromCookie(){
 
 var test = Cookies.get( 'read' );
+var savedAt = Cookies.get( 'savedAt' )
 var load = confirm("前回Cookieに保存した内容を読み込みますか？\n（保存した日時：" + savedAt + "）" );
 if ( load == true ){
 if ( test !== undefined || test !== "" ){
