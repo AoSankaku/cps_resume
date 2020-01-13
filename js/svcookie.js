@@ -101,9 +101,12 @@ if ( load == true ){
 	document.getElementById( "sp" ).value = sp;
 	document.getElementById( "fc" ).value = fc;
 	//選択肢もロード
+	/*
 	var dlEle = document.getElementById("dl");
 	var dlEles = dlEle.options;
 	dlEles[dl].selected = true;
+	*/
+	document.getElementById("dl").value = dl;
 	/*
 	var rankEle = document.getElementById(rank);
 	rankEle.selected = true;
