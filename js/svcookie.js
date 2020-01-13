@@ -43,23 +43,71 @@ var fc = document.forms.info.fc.value;
 	
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
+Cookies.set( 'name' , name );
+Cookies.set( 'dl' , dl );
+Cookies.set( 'rank' , rank );
+Cookies.set( 'heroB' , heroB );
+Cookies.set( 'heroF' , heroF );
+Cookies.set( 'bronze' , bronze );
+Cookies.set( 'silver' , silver );
+Cookies.set( 'gold' , gold );
+Cookies.set( 'tournament' , tournament );
+Cookies.set( 'tw' , tw );
+Cookies.set( 'dc' , dc );
+Cookies.set( 'sp' , sp );
+Cookies.set( 'fc' , fc );
 Cookies.set( 'savedAt' , savedAt );
 
-
-
+//最後にアラート
 alert("記入内容をCookieに保存しました！");
 }
 
 
-
+//読み込み時にキャッシュがあればフォームの内容を変更
 window.onload = function loadFromCookie(){
 
-var test = Cookies.get( 'read' );
-var savedAt = Cookies.get( 'savedAt' )
-var load = confirm("前回Cookieに保存した内容を読み込みますか？\n（保存した日時：" + savedAt + "）" );
+//キャッシュの内容をロード
+var read = Cookies.get( 'read' );
+var name = Cookies.get( 'name' );
+var dl = Cookies.get( 'dl' );
+var rank = Cookies.get( 'rank' );
+var heroB = Cookies.get( 'heroB' );
+var heroF = Cookies.get( 'heroF' );
+var bronze = Cookies.get( 'bronze' );
+var silver = Cookies.get( 'silver' );
+var gold = Cookies.get( 'gold' );
+var tournament = Cookies.get( 'tournament' );
+var tw = Cookies.get( 'tw' );
+var dc = Cookies.get( 'dc' );
+var sp = Cookies.get( 'sp' );
+var fc = Cookies.get( 'fc' );
+var savedAt = Cookies.get( 'savedAt' );
+
+//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
+var load = confirm( "前回Cookieに保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
 if ( load == true ){
-if ( test !== undefined || test !== "" ){
-alert("前回の入力内容を読み込みました。" + test);
+if ( savedAt !== undefined || savedAt !== "" ){
+//ここからキャッシュロード
+	//文字列のみ
+	document.getElementById( "read" ).value = read;
+	document.getElementById( "name" ).value = name;
+	document.getElementById( "bronze" ).value = bronze;
+	document.getElementById( "silver" ).value = silver;
+	document.getElementById( "gold" ).value = gold;
+	document.getElementById( "tournament" ).value = tournament;
+	document.getElementById( "tw" ).value = tw;
+	document.getElementById( "dc" ).value = dc;
+	document.getElementById( "sp" ).value = sp;
+	document.getElementById( "fc" ).value = fc;
+//最後にアラート
+alert("前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" + read );
+}
+} elseif ( load == false ) {
+//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
+var del = confirm("このサイトのCookieを削除しますか？/n（この操作は取り消せません）");
+if ( del == true ){
+Cookies.remove();
+alert( "このサイトのキャッシュを消去しました。" );
 }
 }
 
