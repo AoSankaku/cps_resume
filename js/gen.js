@@ -95,7 +95,7 @@ ctx.fillStyle = "#000000";
 ctx.font = "28px 'monospace'";
 ctx.fillText("よみ", 40 , 110 );
 ctx.font = "55px 'monospace'";
-ctx.fillText(" HN ", 3 , 205 );
+ctx.fillText(" HN ", 8 , 205 );
 //横線四本
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,123,870,1);
