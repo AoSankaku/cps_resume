@@ -102,9 +102,9 @@ if ( load == true ){
 	document.getElementById( "fc" ).value = fc;
 	//選択肢もロード
 	document.getElementById("dl").value = dl;
-	document.getElementById("rank").value = dl;
-	document.getElementById("heroB").value = dl;
-	document.getElementById("heroF").value = dl;
+	document.getElementById("rank").value = rank;
+	document.getElementById("heroB").value = heroB;
+	document.getElementById("heroF").value = heroF;
 	/*
 	var rankEle = document.getElementById(rank);
 	rankEle.selected = true;
