@@ -28,8 +28,6 @@ var dl = document.forms.info.dl.value;
 var rank = document.forms.info.rank.value;
 var heroB = document.getElementById("heroB");
 var heroF = document.getElementById("heroF");
-var heroBe = heroB.options;
-var heroFe = heroF.options;
 //小数点対策済
 var bronze = parseInt(document.forms.info.bronze.value);
 var silver = parseInt(document.forms.info.silver.value);
@@ -82,6 +80,9 @@ var dc = Cookies.get( 'dc' );
 var sp = Cookies.get( 'sp' );
 var fc = Cookies.get( 'fc' );
 var savedAt = Cookies.get( 'savedAt' );
+//選択肢用に一応ロード
+var heroBe = heroB.options;
+var heroFe = heroF.options;
 
 //キャッシュの日付が空文字列またはundefinedならキャッシュをロード
 if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
@@ -99,6 +100,16 @@ if ( load == true ){
 	document.getElementById( "dc" ).value = dc;
 	document.getElementById( "sp" ).value = sp;
 	document.getElementById( "fc" ).value = fc;
+	//選択肢もロード
+	var dlEle = document.getElementById(dl);
+	dlEle.selected = true;
+	var rankEle = document.getElementById(rank);
+	rankEle.selected = true;
+	var heroBEle = document.getElementById(heroB);
+	heroBEle.selected = true;
+	var heroFEle = document.getElementById(heroF);
+	heroFEle.selected = true;
+
 //最後にアラート
 alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
 } else if ( load == false ){
