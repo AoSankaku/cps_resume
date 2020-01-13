@@ -39,9 +39,9 @@ img[2].src = "img/sprinter.png"
 img[3] = new Image();
 img[3].src = "img/tank.png"
 </script>
+//svcookie.jsは後で読まないとエラーが出るので後回し
 <script src="js/gen.js"></script>
 <script src="js/jscookie.js"></script>
-<script src="js/svcookie.js"></script>
 <script src="js/twitterImport.js"></script>
 
 
@@ -333,10 +333,16 @@ img[3].src = "img/tank.png"
 <br>
 <p>画像を長押しor右クリックで<br>ダウンロードできます</p>
 
+//以下スクリプト
+//svcookie.jsはここに格納
+
 <script>
 	var can = document.getElementById('result');
 	var ctx = can.getContext('2d');
 </script>
+<script src="js/svcookie.js"></script>
+
+//スクリプトここまで
 
 <!--ボタン押してダウンロードさせる処理に挫折しました
 	次のアプデで実装するので許して
