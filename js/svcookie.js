@@ -101,7 +101,7 @@ if ( load == true ){
 	document.getElementById( "sp" ).value = sp;
 	document.getElementById( "fc" ).value = fc;
 	//選択肢もロード
-	var dlEle = document.getElementById(dl);
+	var dlEle = document.getElementById("dl");
 	var dlEles = dlEle.options;
 	dlEles[dl].selected = true;
 	/*
