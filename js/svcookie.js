@@ -105,7 +105,7 @@ alert( "前回の入力内容を読み込みました。\n変更があるなら�
 //falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
 var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
 if ( del == true ){
-Cookies.remove();
+Cookies.remove( 'savedAt' );
 alert( "このサイトのキャッシュを消去しました。" );
 }
 }
