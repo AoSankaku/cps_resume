@@ -84,9 +84,9 @@ var fc = Cookies.get( 'fc' );
 var savedAt = Cookies.get( 'savedAt' );
 
 //キャッシュの日付が空文字列またはundefinedならキャッシュをロード
+if ( savedAt !== undefined || savedAt !== "" ){
 var load = confirm( "前回Cookieに保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
 if ( load == true ){
-if ( savedAt !== undefined || savedAt !== "" ){
 //ここからキャッシュロード
 	//文字列のみ
 	document.getElementById( "read" ).value = read;
