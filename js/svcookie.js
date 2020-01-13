@@ -101,7 +101,7 @@ if ( load == true ){
 	document.getElementById( "fc" ).value = fc;
 //最後にアラート
 alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
-} elseif ( load == false ) {
+} elseif ( load == false ){
 //falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
 var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
 if ( del == true ){
