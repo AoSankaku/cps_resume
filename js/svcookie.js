@@ -39,9 +39,11 @@ var dc = document.forms.info.dc.value;
 var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
 //選択肢の内容もあらかじめロード
+/*
 var heroBe = heroB.options;
 var heroFe = heroF.options;
-	
+*/
+
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
 Cookies.set( 'name' , name );
@@ -76,8 +78,10 @@ var dl = Cookies.get( 'dl' );
 var rank = Cookies.get( 'rank' );
 var heroB = Cookies.get( 'heroB' );
 var heroF = Cookies.get( 'heroF' );
+/*
 var heroBe = Cookies.get( 'heroBe' );
 var heroFe = Cookies.get( 'heroFe' );
+*/
 var bronze = Cookies.get( 'bronze' );
 var silver = Cookies.get( 'silver' );
 var gold = Cookies.get( 'gold' );
@@ -108,8 +112,8 @@ if ( load == true ){
 	document.getElementById("dl").value = dl;
 	document.getElementById("rank").value = rank;
 	//試験的実装
-	document.getElementById("heroB").value = heroBe;
-	document.getElementById("heroF").value = heroFe;
+	document.getElementById("heroB").options[heroB.selectedIndex].selected = true;
+	document.getElementById("heroF").options[heroF.selectedIndex].selected = true;
 	
 
 	
