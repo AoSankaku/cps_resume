@@ -107,13 +107,14 @@ if ( load == true ){
 	//選択肢もロード
 	document.getElementById("dl").value = dl;
 	document.getElementById("rank").value = rank;
-	/*
-	document.getElementById("heroB").value = heroB;
-	document.getElementById("heroF").value = heroF;
-	*/
+	//試験的実装
+	document.getElementById("heroB").value = heroBe;
+	document.getElementById("heroF").value = heroFe;
+	
 
 	
 	//ヒーロー選択の中身を判定して選択
+	/*
 	for ( var i = 0 , l = heroBe.length ; l > i ; i++ ){
 	if ( heroBe[i].selected ){
 	document.getElementById("heroB").options[i].selected = true;
@@ -124,11 +125,10 @@ if ( load == true ){
 	document.getElementById("heroF").options[i].selected = true;
 	}
 	}
+	*/
 	
 	
 	/*
-	var rankEle = document.getElementById(rank);
-	rankEle.selected = true;
 	var heroBEle = document.getElementById(heroB);
 	heroBEle.selected = true;
 	var heroFEle = document.getElementById(heroF);
