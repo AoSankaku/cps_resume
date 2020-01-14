@@ -116,12 +116,12 @@ if ( load == true ){
 	//ヒーロー選択の中身を判定して選択
 	for ( var i = 0 , l = heroBe.length ; l > i ; i++ ){
 	if ( heroBe[i].selected ){
-	heroBe.options[i].selected = true;
+	document.getElementById("heroB").options[i].selected = true;
 	}
 	}
 	for ( var i = 0 , l = heroFe.length ; l > i ; i++ ){
 	if ( heroFe[i].selected ){
-	heroFe.options[i].selected = true;
+	document.getElementById("heroF").options[i].selected = true;
 	}
 	}
 	
