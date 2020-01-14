@@ -51,8 +51,10 @@ Cookies.set( 'dl' , dl );
 Cookies.set( 'rank' , rank );
 Cookies.set( 'heroB' , heroB );
 Cookies.set( 'heroF' , heroF );
+/*
 Cookies.set( 'heroBe' , heroBe );
 Cookies.set( 'heroFe' , heroFe );
+*/
 Cookies.set( 'bronze' , bronze );
 Cookies.set( 'silver' , silver );
 Cookies.set( 'gold' , gold );
