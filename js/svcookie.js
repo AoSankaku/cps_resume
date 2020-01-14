@@ -80,9 +80,6 @@ var dc = Cookies.get( 'dc' );
 var sp = Cookies.get( 'sp' );
 var fc = Cookies.get( 'fc' );
 var savedAt = Cookies.get( 'savedAt' );
-//選択肢用に一応ロード
-var heroBe = heroB.options;
-var heroFe = heroF.options;
 
 //キャッシュの日付が空文字列またはundefinedならキャッシュをロード
 if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
@@ -103,8 +100,27 @@ if ( load == true ){
 	//選択肢もロード
 	document.getElementById("dl").value = dl;
 	document.getElementById("rank").value = rank;
+	/*
 	document.getElementById("heroB").value = heroB;
 	document.getElementById("heroF").value = heroF;
+	*/
+	//選択肢の内容もロード
+	var heroBe = heroB.options;
+	var heroFe = heroF.options;
+	
+	//ヒーロー選択の中身を判定して選択
+	for ( var i = 0 , l = heroBe.length ; l > i ; i++ ){
+	if ( heroBe[i].selected ){
+	document.getElementById('heroB').options[i].selected = true;
+	}
+	}
+	for ( var i = 0 , l = heroFe.length ; l > i ; i++ ){
+	if ( heroFe[i].selected ){
+	document.getElementById('heroF').options[i].selected = true;
+	}
+	}
+	
+	
 	/*
 	var rankEle = document.getElementById(rank);
 	rankEle.selected = true;
