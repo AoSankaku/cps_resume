@@ -41,20 +41,33 @@ var heroB = document.getElementById("heroB");
 var heroF = document.getElementById("heroF");
 var heroBe = heroB.options;
 var heroFe = heroF.options;
-console.log( heroB );
-console.log( heroF );
+var heroBSel = new Array( heroBe.length );
+var heroFSel = new array( heroFe.length );
 console.log( heroBe );
 console.log( heroFe );
+console.log( heroBSel );
+console.log( heroFSel );
+console.log( heroBSel.length );
+console.log( heroFSel.length );
+//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録
+for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
+	if ( heroBe[i].selected == true ){
+	heroBSel[i] = true;
+	}
+}
+for ( let i = 0 , l = heroFe.length ; l > i ; i++ ){
+	if ( heroFe[i].selected == true ){
+	heroFSel[i] = true;
+	}
+}
 
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
 Cookies.set( 'name' , name );
 Cookies.set( 'dl' , dl );
 Cookies.set( 'rank' , rank );
-Cookies.set( 'heroB' , heroB );
-Cookies.set( 'heroF' , heroF );
-Cookies.set( 'heroBe' , heroBe );
-Cookies.set( 'heroFe' , heroFe );
+Cookies.set( 'heroBSel' , heroBSel );
+Cookies.set( 'heroFSel' , heroFSel );
 Cookies.set( 'bronze' , bronze );
 Cookies.set( 'silver' , silver );
 Cookies.set( 'gold' , gold );
@@ -78,10 +91,8 @@ var read = Cookies.get( 'read' );
 var name = Cookies.get( 'name' );
 var dl = Cookies.get( 'dl' );
 var rank = Cookies.get( 'rank' );
-var heroB = Cookies.get( 'heroB' );
-var heroF = Cookies.get( 'heroF' );
-var heroBe = Cookies.get( 'heroBe' );
-var heroFe = Cookies.get( 'heroFe' );
+var heroBSel = Cookies.get( 'heroBSel' );
+var heroFSel = Cookies.get( 'heroFSel' );
 var bronze = Cookies.get( 'bronze' );
 var silver = Cookies.get( 'silver' );
 var gold = Cookies.get( 'gold' );
@@ -114,39 +125,19 @@ if ( load == true ){
 	
 	
 	//ヒーロー選択試験的実装
-	for ( var i = 0, l = heroBe.length ; l > i ; i++ ) {
-	if ( heroBe[i].selected ) {
-	heroB[i].selected = true ;
+	for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
+	if ( heroBSel[i] == true ) {
+	document.getElementById( "heroB" ).options[i].selected = true ;
 	console.log( "selectedB" + i );
-	} else { console.log( "skipped" + i ); }
+	} else { console.log( "skippedB" + i ); }
 	}
-	for ( var i = 0, l = heroFe.length ; l > i ; i++ ) {
-	if ( heroFe[i].selected ) {
-	heroF[i].selected = true ;
+	for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
+	if ( heroFSel[i] == true ) {
+	document.getElementById( "heroF" ).options[i].selected = true ;
 	console.log( "selectedF" + i );
-	} else { console.log( "skipped" + i ); }
+	} else { console.log( "skippedF" + i ); }
 	}
-	
-	console.log( heroB );
-	console.log( heroF );
-	console.log( heroBe );
-	console.log( heroFe );
-	
 
-	
-	//ヒーロー選択の中身を判定して選択
-	/*
-	for ( var i = 0 , l = heroBe.length ; l > i ; i++ ){
-	if ( heroBe[i].selected ){
-	document.getElementById("heroB").options[i].selected = true;
-	}
-	}
-	for ( var i = 0 , l = heroFe.length ; l > i ; i++ ){
-	if ( heroFe[i].selected ){
-	document.getElementById("heroF").options[i].selected = true;
-	}
-	}
-	*/
 
 
 //最後にアラート
