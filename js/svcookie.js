@@ -112,9 +112,11 @@ if ( load == true ){
 	if ( heroBe[i].selected ) {
 	document.getElementById( heroB ).options[i].selected = true ;
 	}
+	}
 	for ( var i = 0, l = heroFe.length ; l > i ; i++ ) {
 	if ( heroFe[i].selected ) {
 	document.getElementById( heroF ).options[i].selected = true ;
+	}
 	}
 	
 
