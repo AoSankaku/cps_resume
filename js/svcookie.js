@@ -125,6 +125,10 @@ if ( load == true ){
 	
 	
 	//ヒーロー選択試験的実装
+	console.log( heroBSel );
+	console.log( heroFSel );
+	console.log( heroBSel.length );
+	console.log( heroFSel.length );
 	for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
 	if ( heroBSel[i] == true ) {
 	document.getElementById( "heroB" ).options[i].selected = true ;
