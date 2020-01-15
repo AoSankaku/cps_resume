@@ -107,16 +107,20 @@ if ( load == true ){
 	//選択肢もロード
 	document.getElementById("dl").value = dl;
 	document.getElementById("rank").value = rank;
-	//試験的実装
+	
+	
+	//ヒーロー選択試験的実装
 	for ( var i = 0, l = heroBe.length ; l > i ; i++ ) {
 	if ( heroBe[i].selected ) {
 	heroB[i].selected = true ;
-	}
+	console.log( "selectedB" + i );
+	} else { console.log( "skipped" + i ); }
 	}
 	for ( var i = 0, l = heroFe.length ; l > i ; i++ ) {
 	if ( heroFe[i].selected ) {
 	heroF[i].selected = true ;
-	}
+	console.log( "selectedF" + i );
+	} else { console.log( "skipped" + i ); }
 	}
 	
 
@@ -134,14 +138,7 @@ if ( load == true ){
 	}
 	}
 	*/
-	
-	
-	/*
-	var heroBEle = document.getElementById(heroB);
-	heroBEle.selected = true;
-	var heroFEle = document.getElementById(heroF);
-	heroFEle.selected = true;
-	*/
+
 
 //最後にアラート
 alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
