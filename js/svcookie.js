@@ -41,6 +41,10 @@ var heroB = document.getElementById("heroB");
 var heroF = document.getElementById("heroF");
 var heroBe = heroB.options;
 var heroFe = heroF.options;
+console.log( heroB );
+console.log( heroF );
+console.log( heroBe );
+console.log( heroFe );
 
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
@@ -122,6 +126,11 @@ if ( load == true ){
 	console.log( "selectedF" + i );
 	} else { console.log( "skipped" + i ); }
 	}
+	
+	console.log( heroB );
+	console.log( heroF );
+	console.log( heroBe );
+	console.log( heroFe );
 	
 
 	
