@@ -26,8 +26,6 @@ var read = document.forms.info.read.value;
 var name = document.forms.info.name.value;
 var dl = document.forms.info.dl.value;
 var rank = document.forms.info.rank.value;
-var heroB = document.getElementById("heroB");
-var heroF = document.getElementById("heroF");
 //小数点対策済
 var bronze = parseInt(document.forms.info.bronze.value);
 var silver = parseInt(document.forms.info.silver.value);
@@ -39,10 +37,10 @@ var dc = document.forms.info.dc.value;
 var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
 //選択肢の内容もあらかじめロード
-/*
+var heroB = document.getElementById("heroB");
+var heroF = document.getElementById("heroF");
 var heroBe = heroB.options;
 var heroFe = heroF.options;
-*/
 
 //■Cookieに書き込み
 Cookies.set( 'read' , read );
@@ -51,10 +49,8 @@ Cookies.set( 'dl' , dl );
 Cookies.set( 'rank' , rank );
 Cookies.set( 'heroB' , heroB );
 Cookies.set( 'heroF' , heroF );
-/*
 Cookies.set( 'heroBe' , heroBe );
 Cookies.set( 'heroFe' , heroFe );
-*/
 Cookies.set( 'bronze' , bronze );
 Cookies.set( 'silver' , silver );
 Cookies.set( 'gold' , gold );
@@ -80,10 +76,8 @@ var dl = Cookies.get( 'dl' );
 var rank = Cookies.get( 'rank' );
 var heroB = Cookies.get( 'heroB' );
 var heroF = Cookies.get( 'heroF' );
-/*
 var heroBe = Cookies.get( 'heroBe' );
 var heroFe = Cookies.get( 'heroFe' );
-*/
 var bronze = Cookies.get( 'bronze' );
 var silver = Cookies.get( 'silver' );
 var gold = Cookies.get( 'gold' );
@@ -114,8 +108,14 @@ if ( load == true ){
 	document.getElementById("dl").value = dl;
 	document.getElementById("rank").value = rank;
 	//試験的実装
-	document.getElementById("heroB").options[heroB.selectedIndex].selected = true;
-	document.getElementById("heroF").options[heroF.selectedIndex].selected = true;
+	for ( var i = 0, l = heroBe.length ; l > i ; i++ ) {
+	if ( heroBe[i].selected ) {
+	document.getElementById( heroB ).options[i].selected = true ;
+	}
+	for ( var i = 0, l = heroFe.length ; l > i ; i++ ) {
+	if ( heroFe[i].selected ) {
+	document.getElementById( heroF ).options[i].selected = true ;
+	}
 	
 
 	
