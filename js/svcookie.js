@@ -110,12 +110,12 @@ if ( load == true ){
 	//試験的実装
 	for ( var i = 0, l = heroBe.length ; l > i ; i++ ) {
 	if ( heroBe[i].selected ) {
-	document.getElementById( heroB ).options[i].selected = true ;
+	heroB[i].selected = true ;
 	}
 	}
 	for ( var i = 0, l = heroFe.length ; l > i ; i++ ) {
 	if ( heroFe[i].selected ) {
-	document.getElementById( heroF ).options[i].selected = true ;
+	heroF[i].selected = true ;
 	}
 	}
 	
