@@ -1,7 +1,7 @@
 function preview(){
 
 //バージョン
-var version = "v1.1.0α";
+var version = "v1.0.0β";
 
 //デバッグ用
 var debugCan = 0 ;
