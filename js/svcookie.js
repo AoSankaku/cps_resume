@@ -127,16 +127,26 @@ if ( load == true ){
 	//ヒーロー選択試験的実装
 	console.log( heroBSel );
 	console.log( heroFSel );
+	//配列が文字列に置き換わっているのでこれを配列に変換しなおす
+	heroBSel = heroBSel.slice( 1 );
+	heroBSel = heroBSel.slice( 0 , -1 );
+	heroBSel = heroBSel.split( ',' );
+	heroFSel = heroFSel.slice( 1 );
+	heroFSel = heroFSel.slice( 0 , -1 );
+	heroFSel = heroFSel.split( ',' );
+	console.log( heroBSel );
+	console.log( heroFSel );
+	
 	console.log( heroBSel.length );
 	console.log( heroFSel.length );
 	for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
-	if ( heroBSel[i] == true ) {
+	if ( heroBSel[i] == "true" ) {
 	document.getElementById( "heroB" ).options[i].selected = true ;
 	console.log( "selectedB" + i );
 	} else { console.log( "skippedB" + i ); }
 	}
 	for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
-	if ( heroFSel[i] == true ) {
+	if ( heroFSel[i] == "true" ) {
 	document.getElementById( "heroF" ).options[i].selected = true ;
 	console.log( "selectedF" + i );
 	} else { console.log( "skippedF" + i ); }
