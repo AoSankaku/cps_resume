@@ -145,18 +145,32 @@ ctx.fillRect(455,230,2,200);
 ctx.font = "30px 'monospace'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 470 );
 //ロールアイコンは条件でうすくなるので描画は下で
+//同時に画像アイコンも読み込む
 var atkImg = new Image();
 var gunImg = new Image();
 var sprImg = new Image();
 var tanImg = new Image();
+var twImg = new Image();
+var dcImg = new Image();
+var spImg = new Image();
+var cpImg = new Image();
 atkImg.src = img[0].src;
 gunImg.src = img[1].src;
 sprImg.src = img[2].src;
-tanImg.src = img[3].src
-//連絡先
+tanImg.src = img[3].src;
+twImg.src = img[4].src;
+dcImg.src = img[5].src;
+spImg.src = img[6].src;
+cpImg.src = img[7].src;
+//連絡先とアイコン
 ctx.fillStyle = "#000000";
 ctx.font = "30px 'monospace'";
 ctx.fillText("連絡先など", 30 , 930 );
+ctx.drawImage( twImg , 30 , 990 , 40 , 40 );
+ctx.drawImage( dcImg , 30 , 1050 , 40 , 40 );
+ctx.drawImage( spImg , 30 , 1110 , 40 , 40 );
+ctx.drawImage( cpImg , 30 , 1170 , 40 , 40 );
+/*旧処理
 ctx.fillStyle = "#00bfff";
 ctx.font = "40px 'monospace'";
 ctx.fillText("Twitter", 30 , 990 );
@@ -166,6 +180,7 @@ ctx.fillStyle = "#87cefa";
 ctx.fillText("Skype", 30 , 1110 );
 ctx.fillStyle = "#ffa500";
 ctx.fillText("フレンドコード", 30 , 1170 );
+*/
 
 ctx.fillStyle = "#000000";
 //一番下に注意書きなど
