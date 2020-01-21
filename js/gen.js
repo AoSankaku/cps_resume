@@ -621,7 +621,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "32px 'monospace'";
 //連絡先描画
 if ( tw != "@" ){
-ctx.fillText( tw , 90 , 960 );
+ctx.fillText( tw , 90 , 980 );
 }
 ctx.fillText( dc , 90 , 1040 );
 ctx.fillText( sp , 90 , 1100 );
