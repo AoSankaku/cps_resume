@@ -621,11 +621,11 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "32px 'monospace'";
 //連絡先描画
 if ( tw != "@" ){
-ctx.fillText( tw , 90 , 990 );
+ctx.fillText( tw , 90 , 985 );
 }
-ctx.fillText( dc , 90 , 1060 );
-ctx.fillText( sp , 90 , 1130 );
-ctx.fillText( fc , 90 , 1200 );
+ctx.fillText( dc , 90 , 1050 );
+ctx.fillText( sp , 90 , 1115 );
+ctx.fillText( fc , 90 , 1180 );
 
 //日付
 ctx.font = "25px 'monospace'";
