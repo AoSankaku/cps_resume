@@ -621,7 +621,7 @@ ctx.fillText( createdAt , 610 , 1210 );
 //入力に何かしら不備があった場合アラート
 if ( errorMsg != "" ){
 alert("【入力エラー】\n" + errorMsg);
-
+}
 
 
 //web上なら正常に動作するので画像変換ここに復活
