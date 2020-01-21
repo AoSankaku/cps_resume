@@ -623,9 +623,9 @@ ctx.font = "32px 'monospace'";
 if ( tw != "@" ){
 ctx.fillText( tw , 90 , 990 );
 }
-ctx.fillText( dc , 90 , 1050 );
-ctx.fillText( sp , 90 , 1110 );
-ctx.fillText( fc , 90 , 1170 );
+ctx.fillText( dc , 90 , 1060 );
+ctx.fillText( sp , 90 , 1130 );
+ctx.fillText( fc , 90 , 1200 );
 
 //日付
 ctx.font = "25px 'monospace'";
