@@ -645,8 +645,6 @@ document.getElementById("dlImg").href = window.URL.createObjectURL(blob);
 document.getElementById("dlImg").download = fileName;
 */
 
-}
-
 //■キャンバスを隠して画像に変換する処理(何故か消える)
 //旧処理
 
