@@ -618,14 +618,14 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 
 
 
-ctx.font = "35px 'monospace'";
+ctx.font = "32px 'monospace'";
 //連絡先描画
 if ( tw != "@" ){
-ctx.fillText( tw , 100 , 1000 );
+ctx.fillText( tw , 100 , 970 );
 }
-ctx.fillText( dc , 100 , 1060 );
-ctx.fillText( sp , 100 , 1120 );
-ctx.fillText( fc , 100 , 1180 );
+ctx.fillText( dc , 100 , 1030 );
+ctx.fillText( sp , 100 , 1090 );
+ctx.fillText( fc , 100 , 1150 );
 
 //日付
 ctx.font = "25px 'monospace'";
