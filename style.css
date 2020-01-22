@@ -1,17 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap&subset=japanese');
+
 body{
-/*一次処理
-	width:100%;
-	min-width:900px;
-	max-width:1500px;
-*/
 	background-image:url("img/bg1.png");
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
+/*
 @font-face {
 font-family: 'Chela One';
 src: url(http://themes.googleusercontent.com/static/fonts/chelaone/v1/DHUBEAsCcSRMyWTJ6sisfj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
+*/
 
 h1{
 	color:#ff9900;
