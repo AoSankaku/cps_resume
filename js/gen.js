@@ -80,10 +80,10 @@ var sel = document.forms["info"].elements["heroB"].options;
 //背景描画
 ctx.fillStyle = "#ffffff";
 ctx.fillRect(0,0,900,1300);
-//表題(フォントはmonospace)
+//表題(フォントはWebフォントのM PLUS 1pを試用)
 ctx.lineWidth = 7;
 ctx.fillStyle = "#ffa500";
-ctx.font = "40px 'monospace'";
+ctx.font = "40px 'M PLUS 1p'";
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 50 );
 //外枠描画
 ctx.strokeStyle = "#000000";
