@@ -80,10 +80,11 @@ var sel = document.forms["info"].elements["heroB"].options;
 //背景描画
 ctx.fillStyle = "#ffffff";
 ctx.fillRect(0,0,900,1300);
-//表題(フォントはWebフォントのM PLUS 1pを試用)
+//表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
+//基本的にはNoto Sans JPを使用する
 ctx.lineWidth = 7;
 ctx.fillStyle = "#ffa500";
-ctx.font = "40px 'M PLUS 1p'";
+ctx.font = "40px 'Noto Sans JP'";
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 50 );
 //外枠描画
 ctx.strokeStyle = "#000000";
@@ -92,9 +93,9 @@ ctx.strokeRect(15,60,870,1170);
 ctx.lineWidth = 3;
 ctx.fillStyle = "#000000";
 //左側のHN、よみを描く
-ctx.font = "28px 'monospace'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("よみ", 40 , 110 );
-ctx.font = "55px 'monospace'";
+ctx.font = "55px 'Noto Sans JP'";
 ctx.fillText(" HN ", 8 , 205 );
 //横線四本
 ctx.fillStyle = "rgb(0,0,0)";
@@ -106,11 +107,11 @@ ctx.fillRect(15,430,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,890,870,3);
 //デキレ、ランク、アイコン所持数
-ctx.font = "30px 'monospace'";
+ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("最高デッキレベル", 30 , 270 );
-ctx.font = "30px 'monospace'";
+ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("最高ランク", 295 , 270 );
-ctx.font = "30px 'monospace'";
+ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
@@ -142,7 +143,7 @@ ctx.fillRect(280,230,2,200);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(455,230,2,200);
 //使用ヒーロー
-ctx.font = "30px 'monospace'";
+ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 470 );
 //ロールアイコンは条件でうすくなるので描画は下で
 //同時に画像アイコンも読み込む
@@ -164,28 +165,16 @@ spImg.src = img[6].src;
 cpImg.src = img[7].src;
 //連絡先とアイコン
 ctx.fillStyle = "#000000";
-ctx.font = "30px 'monospace'";
+ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("連絡先など", 30 , 930 );
 ctx.drawImage( twImg , 30 , 950 , 50 , 50 );
 ctx.drawImage( dcImg , 30 , 1010 , 50 , 50 );
 ctx.drawImage( spImg , 30 , 1070 , 50 , 50 );
 ctx.drawImage( cpImg , 30 , 1130 , 50 , 50 );
-/*旧処理
-ctx.fillStyle = "#00bfff";
-ctx.font = "40px 'monospace'";
-ctx.fillText("Twitter", 30 , 990 );
-ctx.fillStyle = "#6a5acd";
-ctx.fillText("Discord", 30 , 1050 );
-ctx.fillStyle = "#87cefa";
-ctx.fillText("Skype", 30 , 1110 );
-ctx.fillStyle = "#ffa500";
-ctx.fillText("フレンドコード", 30 , 1170 );
-*/
-
 ctx.fillStyle = "#000000";
 //一番下に注意書きなど
 ctx.globalAlpha = 0.5 ;
-ctx.font = "20px 'monospace'";
+ctx.font = "20px 'Noto Sans JP'";
 ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター」で作成されました。　　製作者:@Ao_Sankaku", 10 , 1260 );
 ctx.fillText("コンパス履歴書ジェネレーター:https://www.リンクがここに来る.github.io", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
