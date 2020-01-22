@@ -4,6 +4,7 @@
 
 body{
 	background-image:url("img/bg1.png");
+	-webkit-text-size-adjust: 100%;
 }
 
 /*
