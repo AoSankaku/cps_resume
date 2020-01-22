@@ -96,7 +96,7 @@ ctx.fillStyle = "#000000";
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("よみ", 40 , 110 );
 ctx.font = "55px 'Noto Sans JP'";
-ctx.fillText(" HN ", 8 , 205 );
+ctx.fillText(" HN ", 10 , 205 );
 //横線四本
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,123,870,1);
@@ -223,7 +223,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐
-ctx.font = "110px 'monospace'";
+ctx.font = "110px 'Source Code Pro'";
 ctx.textAlign = "center";
 if (dl >= 210){
 ctx.strokeStyle = "#ffbbbb";
@@ -242,7 +242,7 @@ ctx.lineWidth = 8;
 ctx.fillText(dl, 147 , 405 );
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 105px 'monospace'";
+ctx.font = "bold 105px 'Source Code Pro'";
 //ランクによってグラデーションを変化
 var grad = ctx.createLinearGradient(0,350,0,400);
 switch (rank) {
@@ -639,35 +639,3 @@ document.getElementById("newImg").src = base64;
 
 
 
-
-
-//ダウンロード(動作しない)
-/*
-var fileName = "cps_resume.png";
-var blob = Base64toBlob(base64);
-document.getElementById("dlImg").href = window.URL.createObjectURL(blob);
-document.getElementById("dlImg").download = fileName;
-*/
-
-//■キャンバスを隠して画像に変換する処理(何故か消える)
-//旧処理
-
-/*
-function convertToImg(){
-can.hidden = true;
-var base64 = can.toDataURL('image/jpeg');
-document.getElementById("newImg").src = base64;
-}
-*/
-
-
-
-
-
-//ボタンでダウンロードする処理(未実装)
-/*
-function dlImg(){
-var png = can.toDataURL();
-document.getElementById("newImg").src = png;
-}
-*/
