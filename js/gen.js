@@ -223,7 +223,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐
-ctx.font = "110px 'Source Code Pro'";
+ctx.font = "110px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
 ctx.strokeStyle = "#ffbbbb";
@@ -242,7 +242,7 @@ ctx.lineWidth = 8;
 ctx.fillText(dl, 147 , 405 );
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 105px 'Source Code Pro'";
+ctx.font = "bold 105px 'Heebo'";
 //ランクによってグラデーションを変化
 var grad = ctx.createLinearGradient(0,350,0,400);
 switch (rank) {
