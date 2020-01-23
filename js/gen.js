@@ -2,6 +2,14 @@ function preview(){
 
 //バージョン
 var version = "v1.0.0β";
+	
+//メンテ中なら警告表示
+var doingMaintainance = true;
+var maintainanceStart = "1月23日 17:00";
+var maintainanceEnd = "未定";
+if ( doingMaintainance == true ){
+document.getElementById('maintainance') = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd "）<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。</h3>";
+}
 
 //デバッグ用
 var debugCan = 0 ;
@@ -63,6 +71,16 @@ var dc = document.forms.info.dc.value;
 var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
 
+//以下デザイン用
+var profilePic = document.getElementById('profilePic');
+var profilePicSrc;
+var bgTheme;
+var bgImgSrc;
+var bgColor;
+var textColor;
+var selectedFont;
+
+var reader = new FileReader();
 
 //フォームに不備があったときのエラーメッセージ用
 var errorMsg = "";
