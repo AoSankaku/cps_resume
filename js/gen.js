@@ -1,5 +1,5 @@
 //メンテナンス表示
-window.onload = function maintainance(){
+window.addEventListener('load', function maintainance(){
 
 //メンテ中なら警告表示+タイトルを赤に
 var doingMaintainance = true;
@@ -11,8 +11,8 @@ if ( doingMaintainance == true ){
 	document.getElementById('maintainance').innerHTML = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd + "）<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。</h3>";
 	titleColor.style.color = "#ff0000";
 	}
-
 }
+)
 
 	
 //描画処理本体
