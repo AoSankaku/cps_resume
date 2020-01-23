@@ -90,7 +90,7 @@ if(navigator.cookieEnabled){
 	
 } else {
 
-	aleat("【エラー】\nCookieを有効にして下さい。")
+	alert("【エラー】\nCookieを有効にして下さい。")
 }
 }
 
@@ -183,5 +183,7 @@ if(navigator.cookieEnabled){
 					}
 			}
 		}
+	} else {
+		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。。');
 	}
 }	
