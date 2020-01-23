@@ -34,19 +34,18 @@ p{
 }
 
 .box29{
-	margin: 2em 2em;
+	margin: 2em 2em 0;
 	background: #dcefff;
 }
 
 .box29 .box-title {
-	font-size: 1.2em;
+	font-size: 4vw;
 	background: #5fb3f5;
 	padding: 40px;
 	text-align: center;
 	color: #FFF;
 	font-weight: bold;
 	letter-spacing: 0.05em;
-	font-size:3.1vw;
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
