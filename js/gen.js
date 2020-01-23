@@ -2,13 +2,15 @@ function preview(){
 
 //バージョン
 var version = "v1.0.0β";
-	
-//メンテ中なら警告表示
+
+//メンテ中なら警告表示+タイトルを赤に
 var doingMaintainance = true;
+var titleColor = document.getElementById('titleColor');
 var maintainanceStart = "1月23日 17:00";
 var maintainanceEnd = "未定";
 if ( doingMaintainance == true ){
 document.getElementById('maintainance') = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd "）<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。</h3>";
+titleColor.style.color = #ff0000;
 }
 
 //デバッグ用
