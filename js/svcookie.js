@@ -148,16 +148,16 @@ if ( load == true ){
 	*/
 	
 	for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
-	if ( heroBSel[i] == "true" ) {
-	document.getElementById( "heroB" ).options[i].selected = true ;
-	//console.log( "selectedB" + i );
-	} else { console.log( "skippedB" + i ); }
+		if ( heroBSel[i] == "true" ) {
+		document.getElementById( "heroB" ).options[i].selected = true ;
+		//console.log( "selectedB" + i );
+		}
 	}
 	for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
-	if ( heroFSel[i] == "true" ) {
-	document.getElementById( "heroF" ).options[i].selected = true ;
-	//console.log( "selectedF" + i );
-	} else { console.log( "skippedF" + i ); }
+		if ( heroFSel[i] == "true" ) {
+		document.getElementById( "heroF" ).options[i].selected = true ;
+		//console.log( "selectedF" + i );
+		}
 	}
 
 
