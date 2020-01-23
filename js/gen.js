@@ -3,14 +3,23 @@ window.addEventListener('load', function maintainance(){
 
 //メンテ中なら警告表示+タイトルを赤に
 var doingMaintainance = true;
+
 var titleColor = document.getElementById('titleColor');
 var maintainanceStart = "1月23日 17:00";
 var maintainanceEnd = "未定";
+var updateContents = "";
 if ( doingMaintainance == true ){
 	console.log('メンテナンス中');
-	document.getElementById('maintainance').innerHTML = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd + "）<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。</h3>";
+	document.getElementById('maintainance').innerHTML = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd + "）<br>" + updateContents + "<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。<br></h3>";
 	titleColor.style.color = "#ff0000";
 	}
+	
+//スクリプトが有効ならフォームを表示する
+var form1 = document.getElementById('form1');
+var form2 = document.getElementById('form2');
+form1.hidden = false;
+form2.hidden = false;
+
 }
 )
 
