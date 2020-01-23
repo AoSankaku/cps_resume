@@ -34,8 +34,9 @@ p{
 }
 
 .box29{
-	margin: 2em 2em 0.5em;
+	margin: 2em 35px 1em;
 	background: #dcefff;
+	max-width:1000px;
 }
 
 .box29 .box-title {
@@ -47,6 +48,7 @@ p{
 	font-weight: bold;
 	letter-spacing: 0.05em;
 	font-family: 'Noto Sans JP', sans-serif;
+	max-width:1000px;
 }
 
 .box29 p {
@@ -54,6 +56,7 @@ p{
 	margin: 0;
 	font-size:2.8vw;
 	font-family: 'M PLUS 1p', sans-serif;
+	max-width:1000px;
 }
 
 div.sys{
