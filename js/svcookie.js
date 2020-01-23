@@ -43,12 +43,16 @@ var heroBe = heroB.options;
 var heroFe = heroF.options;
 var heroBSel = new Array( heroBe.length );
 var heroFSel = new Array( heroBe.length );
+
+/*
 console.log( heroBe );
 console.log( heroFe );
 console.log( heroBSel );
 console.log( heroFSel );
 console.log( heroBSel.length );
 console.log( heroFSel.length );
+*/
+
 //配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録
 for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 	if ( heroBe[i].selected == true ){
@@ -125,8 +129,10 @@ if ( load == true ){
 	
 	
 	//ヒーロー選択試験的実装
+	/*
 	console.log( heroBSel );
 	console.log( heroFSel );
+	*/
 	//配列が文字列に置き換わっているのでこれを配列に変換しなおす
 	heroBSel = heroBSel.slice( 1 );
 	heroBSel = heroBSel.slice( 0 , -1 );
@@ -134,21 +140,23 @@ if ( load == true ){
 	heroFSel = heroFSel.slice( 1 );
 	heroFSel = heroFSel.slice( 0 , -1 );
 	heroFSel = heroFSel.split( ',' );
+	/*
 	console.log( heroBSel );
 	console.log( heroFSel );
-	
 	console.log( heroBSel.length );
 	console.log( heroFSel.length );
+	*/
+	
 	for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
 	if ( heroBSel[i] == "true" ) {
 	document.getElementById( "heroB" ).options[i].selected = true ;
-	console.log( "selectedB" + i );
+	//console.log( "selectedB" + i );
 	} else { console.log( "skippedB" + i ); }
 	}
 	for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
 	if ( heroFSel[i] == "true" ) {
 	document.getElementById( "heroF" ).options[i].selected = true ;
-	console.log( "selectedF" + i );
+	//console.log( "selectedF" + i );
 	} else { console.log( "skippedF" + i ); }
 	}
 
