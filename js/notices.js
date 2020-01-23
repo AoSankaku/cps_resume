@@ -13,13 +13,13 @@ var updateContents 	= "【アップデート内容】<br>"
 			+ "・プロフィール画像のアップロード<br>";
 if ( doingMaintainance == true ){
 	console.log('メンテナンス中');
-	var maintainanceNotice 	= '<div class="box-title">メンテナンス中</div><p>現在メンテナンス中です<br>（'
+	var maintainanceNotice 	= '<div class="box-title">メンテナンス中</div><p>現在メンテナンス中です（'
 				+ maintainanceStart
 				+ "～"
 				+ maintainanceEnd
-				+ "）<br>"
+				+ "）<br><br>"
 				+ updateContents
-				+ "<br>メンテナンス中に履歴書を作成すると予期せぬ挙動が発生する可能性があります。時間を置いてからアクセスしてください。</p>";
+				+ "<br>メンテナンス中に履歴書を作成すると予期せぬ挙動が発生する可能性があります。時間を置いてから再度アクセスしてください。</p>";
 	document.getElementById('maintainance').innerHTML = maintainanceNotice;
 	titleColor.style.color = "#ff0000";
 	}
