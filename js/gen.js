@@ -1,7 +1,5 @@
-function preview(){
-
-//バージョン
-var version = "v1.0.0β";
+//メンテナンス表示
+window.onload = function maintainance(){
 
 //メンテ中なら警告表示+タイトルを赤に
 var doingMaintainance = true;
@@ -13,6 +11,14 @@ document.getElementById('maintainance') = "<h3>現在メンテナンス中です
 titleColor.style.color = "#ff0000";
 alert('現在メンテナンス中です。\n時間を置いてからアクセスしてください。\n【時間帯】\n' + maintainanceStart + '～' + maintainanceEnd);
 }
+
+}
+	
+//描画本体
+function preview(){
+
+//バージョン
+var version = "v1.0.0β";
 
 //デバッグ用
 var debugCan = 0 ;
