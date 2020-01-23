@@ -8,13 +8,6 @@ body{
 	-webkit-text-size-adjust: 100%;
 }
 
-/*
-@font-face {
-font-family: 'Chela One';
-src: url(http://themes.googleusercontent.com/static/fonts/chelaone/v1/DHUBEAsCcSRMyWTJ6sisfj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-*/
-
 h1{
 	color:#ff9900;
 	font-size:6vw;
@@ -41,23 +34,26 @@ p{
 }
 
 .box29{
-	margin: 2em 0;
+	margin: 2em 2em;
 	background: #dcefff;
 }
 
 .box29 .box-title {
 	font-size: 1.2em;
 	background: #5fb3f5;
-	padding: 4px;
+	padding: 40px;
 	text-align: center;
 	color: #FFF;
 	font-weight: bold;
 	letter-spacing: 0.05em;
+	font-size:3.1vw;
+	font-family: 'Noto Sans JP', sans-serif;
 }
 
 .box29 p {
 	padding: 15px 20px;
 	margin: 0;
+	font-family: 'M PLUS 1p', sans-serif;
 }
 
 div.sys{
