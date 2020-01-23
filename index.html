@@ -65,7 +65,7 @@ img[7].src = "img/compass.png";
 <h1 id="titleColor">#コンパス履歴書作成<br>開発版(v1.0.0β)</h1>
 <p>コンパス履歴書をWebだけで作成できます<br>※スマホ・タブレットからの操作を推奨します<br>※IEとEdgeは非対応です<br></p>
 </div>
-<div align="center" id="maintainance"><br></div>
+<div class="maintainance" id="maintainance"><br></div>
 
 <!--ここで履歴書の必要事項を入力
 <div class="sys" align="center">
@@ -76,10 +76,13 @@ img[7].src = "img/compass.png";
 
 <!--スクリプトが読めない時用-->
 <noscript>
-<h2>JavaScriptを有効にして下さい。<br>画像の出力ができません。</h2>
+	<div align="center" class="noscript">
+	<h2>JavaScriptを有効にして下さい。<br>画像の出力、入力内容の保存ができません。</h2>
+	</div>
 </noscript>
 
-<div class="form">
+<!--スクリプトが無効なら入力画面を隠す-->
+<div class="form" id="form1" hidden>
 <h2>【情報記入欄】</h2>
 <form id="info">
 <dl>
@@ -278,7 +281,7 @@ img[7].src = "img/compass.png";
 
 <br><br>
 
-<div class="form">
+<div class="form" id="form2" hidden>
 <h2>【デザイン変更】</h2>
 <form id="design">
 <dl>
