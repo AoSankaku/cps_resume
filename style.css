@@ -34,12 +34,12 @@ p{
 }
 
 .box29{
-	margin: 2em 2em 0;
+	margin: 2em 2em 0.5em;
 	background: #dcefff;
 }
 
 .box29 .box-title {
-	font-size: 4vw;
+	font-size: 4.5vw;
 	background: #5fb3f5;
 	padding: 40px;
 	text-align: center;
