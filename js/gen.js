@@ -11,6 +11,7 @@ var maintainanceEnd = "未定";
 if ( doingMaintainance == true ){
 document.getElementById('maintainance') = "<h3>現在メンテナンス中です<br>（" + maintainanceStart + "～" + maintainanceEnd + "）<br>メンテナンス中に履歴書を作成すると<br>予期せぬ挙動が発生する可能性があります。<br>時間を置いてからアクセスしてください。</h3>";
 titleColor.style.color = "#ff0000";
+alert('現在メンテナンス中です。\n時間を置いてからアクセスしてください。\n【時間帯】\n' + maintainanceStart + '～' + maintainanceEnd);
 }
 
 //デバッグ用
