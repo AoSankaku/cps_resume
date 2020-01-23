@@ -9,7 +9,10 @@ var maintainanceStart = "1月23日 17:00";
 var maintainanceEnd = "未定";
 var updateContents 	= "【アップデート内容】<br>"
 			+ "・JavaScript、Cookieの許可状態に応じたメッセージの表示<br>"
-			+ "・メンテナンス中のメッセージの表示<br>"
+			+ "・メンテナンス中のメッセージ、メンテナンス予告のメッセージの表示<br>"
+			+ "・銅、銀、金、大会アイコン個数の数字フォントの実装<br>"
+			+ "・フォントが確実にプレビューに描画されるように修正<br>"
+			+ "・ローディング画面の実装<br>"
 			+ "・プロフィール画像のアップロード<br>";
 if ( doingMaintainance == true ){
 	console.log('メンテナンス中');
