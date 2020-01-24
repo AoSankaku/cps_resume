@@ -1,3 +1,11 @@
+//プロフィール画像のアップロード用
+function loadProfilePic(){
+var profilePic = document.getElementById('profilePic');
+var profilePicSrc;
+
+}
+
+
 //描画処理本体
 function preview(){
 
@@ -12,15 +20,15 @@ var date = new Date();
 var year = date.getFullYear();
 //このツールの公開は2020年なのでそれより時刻が前ならエラーを吐く
 if ( year < 2020 ){
-errorMsg += "お使いの端末の時間設定が不正です。\n";
+	errorMsg += "お使いの端末の時間設定が不正です。\n";
 }
 var month = date.getMonth() + 1;
 if ( month < 10 ){
-month = "0" + month;
+	month = "0" + month;
 }
 var today = date.getDate();
 if ( today < 10 ){
-today = "0" + today;
+	today = "0" + today;
 }
 
 var createdAt = year + "年" + month + "月"+ today +"日 作成";
@@ -65,25 +73,15 @@ var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
 
 //以下デザイン用
-var profilePic = document.getElementById('profilePic');
-var profilePicSrc;
+var profilePic = new Image();
 var bgTheme;
 var bgImgSrc;
 var bgColor;
 var textColor;
 var selectedFont;
 
-var reader = new FileReader();
-
 //フォームに不備があったときのエラーメッセージ用
 var errorMsg = "";
-
-//複数選択テスト
-/*
-var heroB = "";
-var idx = new Array();
-var sel = document.forms["info"].elements["heroB"].options;
-*/
 
 //■履歴書枠組み、項目の描画■
 //注意:変数canとctxの宣言はHTMLに記述
@@ -195,13 +193,11 @@ ctx.globalAlpha = 1.0 ;
 
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を指定
-/*
-var profilePic = new Image();
-img.src = document.forms.design.profilePic.value;
-image.onload = function(){
-	ctx.drawImage(img,740,60,135,135);
-	}
-*/
+//ローカルのプロフィール画像を読み込む
+profilePic = loadProfilePic();
+ctx.drawImage( profilePic , 0 , 0 );
+
+
 
 //■指定色
 //ctx.fillStyle = "#000000";
@@ -210,25 +206,25 @@ ctx.lineWidth = 4;
 ctx.font = "40px 'monospace'";
 var readWidth = ctx.measureText(read).width;
 if ( readWidth >= 620 ){
-errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
+	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
 }
 if ( read == "" ){
-errorMsg += "よみがなが入力されていません。\n";
+	errorMsg += "よみがなが入力されていません。\n";
 }
 ctx.fillText(read, 130 , 110 );
 //名前を描画したときの幅を判定してある程度自動調整
 if ( name == "" ){
-errorMsg += "HNが入力されていません。\n";
+	errorMsg += "HNが入力されていません。\n";
 }
 ctx.lineWidth = 6;
 ctx.font = "bold 72px 'monospace'";
 var nameWidth = ctx.measureText(name).width;
 if ( nameWidth >= 620 ){
-ctx.font = "bold 50px 'monospace'";
-nameWidth = ctx.measureText(name).width;
-if ( nameWidth >= 620 ){
-errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
-}
+	ctx.font = "bold 50px 'monospace'";
+	nameWidth = ctx.measureText(name).width;
+	if ( nameWidth >= 620 ){
+		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
+	}
 }
 ctx.fillText(name, 130 , 205 );
 
@@ -237,15 +233,15 @@ ctx.fillText(name, 130 , 205 );
 ctx.font = "110px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
-ctx.strokeStyle = "#ffbbbb";
+	ctx.strokeStyle = "#ffbbbb";
 } else if (dl >= 170){
-ctx.strokeStyle = "#ffcccc";
+	ctx.strokeStyle = "#ffcccc";
 } else if (dl >= 130){
-ctx.strokeStyle = "#ffdddd";
+	ctx.strokeStyle = "#ffdddd";
 } else if (dl >= 90){
-ctx.strokeStyle = "#eedddd";
+	ctx.strokeStyle = "#eedddd";
 } else {
-ctx.strokeStyle = "#dddddd";
+	ctx.strokeStyle = "#dddddd";
 }
 ctx.lineWidth = 9;
 ctx.strokeText(dl, 147 , 405 );
@@ -253,7 +249,7 @@ ctx.lineWidth = 8;
 ctx.fillText(dl, 147 , 405 );
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 105px 'Heebo'";
+ctx.font = "bold 110px 'Heebo'";
 //ランクによってグラデーションを変化
 var grad = ctx.createLinearGradient(0,350,0,400);
 switch (rank) {
@@ -298,69 +294,69 @@ ctx.strokeText(rank, 365 , 405 );
 //先にエラーチェック
 //エラーチェック(99超えてないか)
 if ( bronze > 99 ){
-errorMsg += "銅アイコンの個数の値が不正です。\n";
+	errorMsg += "銅アイコンの個数の値が不正です。\n";
 }
 if ( silver > 99 ){
-errorMsg += "銀アイコンの個数の値が不正です。\n";
+	errorMsg += "銀アイコンの個数の値が不正です。\n";
 }
 if ( gold > 99 ){
-errorMsg += "金アイコンの個数の値が不正です。\n";
+	errorMsg += "金アイコンの個数の値が不正です。\n";
 }
 if ( tournament > 99 ){
-errorMsg += "大会優勝アイコンの個数の値が不正です。\n";
+	errorMsg += "大会優勝アイコンの個数の値が不正です。\n";
 }
 //エラーチェック(0未満でないか)
 if ( bronze < 0 ){
-errorMsg += "銅アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "銅アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( silver < 0 ){
-errorMsg += "銀アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "銀アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( gold < 0 ){
-errorMsg += "金アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "金アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( tournament < 0 ){
-errorMsg += "大会優勝アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "大会優勝アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 //金銀銅アイコンの数を描画
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 if ( bronze < 1 ){
-ctx.fillStyle = "#999999";
-ctx.font = "58px 'monospace'";
-ctx.fillText("-", 516 , 380 );
+	ctx.fillStyle = "#999999";
+	ctx.font = "58px 'Noto Sans JP'";
+	ctx.fillText("-", 516 , 380 );
 } else {
-ctx.fillStyle = "#000000";
-ctx.font = "bold 58px 'monospace'";
-ctx.fillText( bronze , 516 , 385 );
+	ctx.fillStyle = "#000000";
+	ctx.font = "bold 58px 'Noto Sans JP'";
+	ctx.fillText( bronze , 516 , 385 );
 }
 if ( silver < 1 ){
-ctx.fillStyle = "#999999";
-ctx.font = "58px 'monospace'";
-ctx.fillText("-", 618 , 380 );
+	ctx.fillStyle = "#999999";
+	ctx.font = "58px 'Noto Sans JP'";
+	ctx.fillText("-", 618 , 380 );
 } else {
-ctx.fillStyle = "#000000";
-ctx.font = "bold 58px 'monospace'";
-ctx.fillText( silver , 618 , 385 );
+	ctx.fillStyle = "#000000";
+	ctx.font = "bold 58px 'Noto Sans JP'";
+	ctx.fillText( silver , 618 , 385 );
 }
 if ( gold < 1 ){
-ctx.fillStyle = "#999999";
-ctx.font = "58px 'monospace'";
-ctx.fillText("-", 720 , 380 );
+	ctx.fillStyle = "#999999";
+	ctx.font = "58px 'Noto Sans JP'";
+	ctx.fillText("-", 720 , 380 );
 } else {
-ctx.fillStyle = "#000000";
-ctx.font = "bold 58px 'monospace'";
-ctx.fillText( gold , 720 , 385 );
+	ctx.fillStyle = "#000000";
+	ctx.font = "bold 58px 'Noto Sans JP'";
+	ctx.fillText( gold , 720 , 385 );
 }
 if ( tournament < 1 ){
-ctx.fillStyle = "#999999";
-ctx.font = "58px 'monospace'";
-ctx.fillText("-", 822 , 380 );
+	ctx.fillStyle = "#999999";
+	ctx.font = "58px 'Noto Sans JP'";
+	ctx.fillText("-", 822 , 380 );
 } else {
-ctx.fillStyle = "#000000";
-ctx.font = "bold 58px 'monospace'";
-ctx.fillText( tournament , 822 , 385 );
+	ctx.fillStyle = "#000000";
+	ctx.font = "bold 58px 'Noto Sans JP'";
+	ctx.fillText( tournament , 822 , 385 );
 }
 //中央揃えを左揃えに、文字色を黒にリセット
 ctx.fillStyle = "#000000";
@@ -496,26 +492,26 @@ ctx.font = "34px 'monospace'";
 ctx.globalAlpha = 1.0 ;
 ctx.fillText( atkUseB , 120 , 520 );
 if ( atkUseF != "" ){
-ctx.globalAlpha = 0.7 ;
-ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120 , 555 );
+	ctx.globalAlpha = 0.7 ;
+	ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120 , 555 );
 }
 ctx.globalAlpha = 1.0 ;
 ctx.fillText( gunUseB , 120 , 620 );
 if ( gunUseF != "" ){
-ctx.globalAlpha = 0.7 ;
-ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120 , 655 );
+	ctx.globalAlpha = 0.7 ;
+	ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120 , 655 );
 }
 ctx.globalAlpha = 1.0 ;
 ctx.fillText( sprUseB , 120 , 720 );
 if ( sprUseF != "" ){
-ctx.globalAlpha = 0.7 ;
-ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120 , 755 );
+	ctx.globalAlpha = 0.7 ;
+	ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120 , 755 );
 }
 ctx.globalAlpha = 1.0 ;
 ctx.fillText( tanUseB , 120 , 820 );
 if ( tanUseF != "" ){
-ctx.globalAlpha = 0.7 ;
-ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 855 );
+	ctx.globalAlpha = 0.7 ;
+	ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 855 );
 }
 //各ロールごとにロールアイコンの薄さを調整
 //バトアリにいる→1.0
@@ -523,42 +519,41 @@ ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 855 );
 //バトアリフリバ両方いない→0.2
 ctx.globalAlpha = 1.0 ;
 if ( atkUseB == "" ){
-ctx.globalAlpha = 0.5 ;
-if ( atkUseF == "" ) {
-ctx.globalAlpha = 0.1 ;
-}
+	ctx.globalAlpha = 0.5 ;
+	if ( atkUseF == "" ) {
+		ctx.globalAlpha = 0.1 ;
+	}
 }
 ctx.drawImage( atkImg , 30 , 490 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( gunUseB == "" ){
-ctx.globalAlpha = 0.5 ;
-if ( gunUseF == "" ) {
-ctx.globalAlpha = 0.1 ;
-}
+	ctx.globalAlpha = 0.5 ;
+	if ( gunUseF == "" ) {
+		ctx.globalAlpha = 0.1 ;
+	}
 }
 ctx.drawImage( gunImg , 30 , 590 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( sprUseB == "" ){
-ctx.globalAlpha = 0.5 ;
-if ( sprUseF == "" ) {
-ctx.globalAlpha = 0.1 ;
-}
+	ctx.globalAlpha = 0.5 ;
+	if ( sprUseF == "" ) {
+		ctx.globalAlpha = 0.1 ;
+	}
 }
 ctx.drawImage( sprImg , 30 , 690 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( tanUseB == "" ){
-ctx.globalAlpha = 0.5 ;
-if ( tanUseF == "" ) {
-ctx.globalAlpha = 0.1 ;
-}
+	ctx.globalAlpha = 0.5 ;
+	if ( tanUseF == "" ) {
+		ctx.globalAlpha = 0.1 ;
+	}
 }
 ctx.drawImage( tanImg , 30 , 790 , 80 , 80 );
 //最後に透明度リセット
 ctx.globalAlpha = 1.0 ;
 //使用ヒーローが0体の場合アラート
-if ( atkUseB + atkUseF + gunUseB + gunUseF
-  + sprUseB + sprUseF + tanUseB + tanUseF == "" ){
-errorMsg += "使用ヒーローが一体も選択されていません。\n";
+if ( atkUseB + atkUseF + gunUseB + gunUseF + sprUseB + sprUseF + tanUseB + tanUseF == "" ){
+	errorMsg += "使用ヒーローが一体も選択されていません。\n";
 }
 //連絡先エラーチェック
 //Twitter…16文字を超えたらエラー
@@ -646,6 +641,8 @@ document.getElementById("newImg").src = base64;
 
 
 }
+
+
 
 
 
