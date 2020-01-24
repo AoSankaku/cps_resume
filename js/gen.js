@@ -647,7 +647,7 @@ ctx.fillText( sp , 90 , 1104 );
 ctx.fillText( fc , 90 , 1164 );
 
 //日付
-ctx.font = "25px 'monospace'";
+ctx.font = "25px 'Noto Sans JP'";
 ctx.fillText( createdAt , 610 , 1210 );
 
 
