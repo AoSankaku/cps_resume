@@ -1,5 +1,7 @@
 //プロフィール画像のアップロード
-function loadImg()
+function loadImg(){
+let a = 0;
+}
 
 
 
