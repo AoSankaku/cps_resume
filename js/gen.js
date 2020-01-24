@@ -1,9 +1,31 @@
 //プロフィール画像のアップロード用
-function loadProfilePic(){
-var profilePic = document.getElementById('profilePic');
-var profilePicSrc;
 
-}
+
+
+
+
+
+//画像をプリロード
+var img = [];
+img[0] = new Image();
+img[0].src = "img/attacker.png";
+img[1] = new Image();
+img[1].src = "img/gunner.png";
+img[2] = new Image();
+img[2].src = "img/sprinter.png";
+img[3] = new Image();
+img[3].src = "img/tank.png";
+img[4] = new Image();
+img[4].src = "img/twitter.png";
+img[5] = new Image();
+img[5].src = "img/discord.png";
+img[6] = new Image();
+img[6].src = "img/skype.png";
+img[7] = new Image();
+img[7].src = "img/compass.png";
+
+
+
 
 
 //描画処理本体
@@ -194,9 +216,11 @@ ctx.globalAlpha = 1.0 ;
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を指定
 //ローカルのプロフィール画像を読み込む
+
+/*
 profilePic = loadProfilePic();
 ctx.drawImage( profilePic , 0 , 0 );
-
+*/
 
 
 //■指定色
