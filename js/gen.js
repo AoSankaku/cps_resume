@@ -24,6 +24,10 @@ img[6].src = "img/skype.png";
 img[7] = new Image();
 img[7].src = "img/compass.png";
 
+//キャンバス用に変数宣言
+var can = document.getElementById('result');
+var ctx = can.getContext('2d');
+
 
 
 
