@@ -651,45 +651,49 @@ ctx.font = "24px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
 var contactY = 950;
-const plus1 = 35;
-const plus2 = 15;
+const plus1 = 33;
+const plus2 = 17;
+const cmFontSize = 24 + 2;
 
 //連絡先アイコン描画
 if ( tw != "@" ){
 	ctx.drawImage( twImg , 30 , contactY , 40 , 40 );
 	contactY += plus1;
-	ctx.fillText( tw , 90 , contactY );
+	ctx.fillText( tw , 87 , contactY );
 	contactY += plus2;
 }
 if ( dc != "" ){
 	ctx.drawImage( dcImg , 30 , contactY , 40 , 40 );
 	contactY += plus1;
-	ctx.fillText( dc , 90 , contactY );
+	ctx.fillText( dc , 87 , contactY );
 	contactY += plus2;
 }
 if ( sp != "" ){
 	ctx.drawImage( spImg , 30 , contactY , 40 , 40 );
 	contactY += plus1;
-	ctx.fillText( sp , 90 , contactY );
+	ctx.fillText( sp , 87 , contactY );
 	contactY += plus2;
 }
 if ( fc != "" ){
 	ctx.drawImage( cpImg , 30 , contactY , 40 , 40 );
 	contactY += plus1;
-	ctx.fillText( fc , 90 , contactY );
+	ctx.fillText( fc , 87 , contactY );
 	contactY += plus2;
 }
+//コメントは複数行にわたる場合があるのでfor文で処理
 if ( cm != "" ){
 	ctx.drawImage( fkImg , 30 , contactY , 40 , 40 );
 	contactY += plus1;
-	ctx.fillText( cm , 90 , contactY );
-	contactY += plus2;
+	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
+		line = lines[i];
+		ctx.fillText( cm , 87 , contactY );
+		contactY += cmFontSize;
+	}
 }
-
 
 //日付
 ctx.font = "20px 'Noto Sans JP'";
-ctx.fillText( createdAt , 630 , 1215 );
+ctx.fillText( createdAt , 645 , 1216 );
 
 
 
