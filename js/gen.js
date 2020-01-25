@@ -124,8 +124,8 @@ ctx.fillRect(0,0,900,1300);
 //基本的にはNoto Sans JPを使用する
 ctx.lineWidth = 7;
 ctx.fillStyle = "#ffa500";
-ctx.font = "40px 'Noto Sans JP'";
-ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 50 );
+ctx.font = "36px 'Noto Sans JP'";
+ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 48 );
 //外枠描画
 ctx.strokeStyle = "#000000";
 ctx.strokeRect(15,60,870,1170);
