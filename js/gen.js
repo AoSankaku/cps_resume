@@ -650,7 +650,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "24px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
-var contactY = 945;
+var contactY = 940;
 const plus1 = 30;
 const plus2 = 20;
 const cmFontSize = 24 + 2;
