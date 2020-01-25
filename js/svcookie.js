@@ -34,11 +34,12 @@ if(navigator.cookieEnabled){
 	var silver = parseInt(document.forms.info.silver.value);
 	var gold = parseInt(document.forms.info.gold.value);
 	var tournament = parseInt(document.forms.info.tournament.value);
-	//連絡先
+	//連絡先とコメント
 	var tw = document.forms.info.tw.value;
 	var dc = document.forms.info.dc.value;
 	var sp = document.forms.info.sp.value;
 	var fc = document.forms.info.fc.value;
+	var cm = document.getElementById('comment').value;
 	//選択肢の内容もあらかじめロード
 	var heroB = document.getElementById("heroB");
 	var heroF = document.getElementById("heroF");
@@ -83,6 +84,7 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'dc' , dc );
 	Cookies.set( 'sp' , sp );
 	Cookies.set( 'fc' , fc );
+	Cookies.set( 'cm' , cm );
 	Cookies.set( 'savedAt' , savedAt );
 
 	//最後にアラート
@@ -115,6 +117,7 @@ if(navigator.cookieEnabled){
 	var dc = Cookies.get( 'dc' );
 	var sp = Cookies.get( 'sp' );
 	var fc = Cookies.get( 'fc' );
+	var cm = Cookies.get( 'cm' );
 	var savedAt = Cookies.get( 'savedAt' );
 
 	//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
@@ -133,6 +136,7 @@ if(navigator.cookieEnabled){
 			document.getElementById( "dc" ).value = dc;
 			document.getElementById( "sp" ).value = sp;
 			document.getElementById( "fc" ).value = fc;
+			document.getElementById( "cm" ).value = cm;
 			//選択肢もロード
 			document.getElementById("dl").value = dl;
 			document.getElementById("rank").value = rank;
