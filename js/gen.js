@@ -693,7 +693,7 @@ if ( cm != "" ){
 
 //日付
 ctx.font = "20px 'Noto Sans JP'";
-ctx.fillText( createdAt , 645 , 1216 );
+ctx.fillText( createdAt , 650 , 1216 );
 
 
 
