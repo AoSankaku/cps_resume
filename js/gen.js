@@ -25,6 +25,8 @@ img[6] = new Image();
 img[6].src = "img/skype.png";
 img[7] = new Image();
 img[7].src = "img/compass.png";
+img[8] = new Image();
+img[8].src = "img/fukidashi.png";
 
 //キャンバス用に変数宣言
 var can = document.getElementById('result');
@@ -94,11 +96,12 @@ var bronze = parseInt(document.forms.info.bronze.value);
 var silver = parseInt(document.forms.info.silver.value);
 var gold = parseInt(document.forms.info.gold.value);
 var tournament = parseInt(document.forms.info.tournament.value);
-//連絡先
+//連絡先と一言
 var tw = document.forms.info.tw.value;
 var dc = document.forms.info.dc.value;
 var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
+var cm = document.getElementById('comment').value;
 
 //以下デザイン用
 var profilePic = new Image();
@@ -192,6 +195,7 @@ var twImg = new Image();
 var dcImg = new Image();
 var spImg = new Image();
 var cpImg = new Image();
+var fkImg = new Image();
 atkImg.src = img[0].src;
 gunImg.src = img[1].src;
 sprImg.src = img[2].src;
@@ -200,14 +204,14 @@ twImg.src = img[4].src;
 dcImg.src = img[5].src;
 spImg.src = img[6].src;
 cpImg.src = img[7].src;
+fkImg.src = img[8].src;
+
 //連絡先とアイコン
 ctx.fillStyle = "#000000";
 ctx.font = "30px 'Noto Sans JP'";
 ctx.fillText("連絡先など", 30 , 930 );
-ctx.drawImage( twImg , 30 , 950 , 50 , 50 );
-ctx.drawImage( dcImg , 30 , 1010 , 50 , 50 );
-ctx.drawImage( spImg , 30 , 1070 , 50 , 50 );
-ctx.drawImage( cpImg , 30 , 1130 , 50 , 50 );
+//連絡先アイコンは内容に応じて省略をするため後から描画
+
 ctx.fillStyle = "#000000";
 //一番下に注意書きなど
 ctx.globalAlpha = 0.5 ;
@@ -643,18 +647,49 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 
 
 
-ctx.font = "28px 'monospace'";
+ctx.font = "24px 'monospace'";
 //連絡先描画
+//入力がない項目は省略するので関数を組み上に詰める
+var contactY = 950;
+const plus1 = 35;
+const plus2 = 15;
+
+//連絡先アイコン描画
 if ( tw != "@" ){
-ctx.fillText( tw , 90 , 984 );
+	ctx.drawImage( twImg , 30 , contactY , 40 , 40 );
+	contactY += plus1;
+	ctx.fillText( tw , 90 , contactY );
+	contactY += plus2;
 }
-ctx.fillText( dc , 90 , 1044 );
-ctx.fillText( sp , 90 , 1104 );
-ctx.fillText( fc , 90 , 1164 );
+if ( dc != "" ){
+	ctx.drawImage( dcImg , 30 , contactY , 40 , 40 );
+	contactY += plus1;
+	ctx.fillText( dc , 90 , contactY );
+	contactY += plus2;
+}
+if ( sp != "" ){
+	ctx.drawImage( spImg , 30 , contactY , 40 , 40 );
+	contactY += plus1;
+	ctx.fillText( sp , 90 , contactY );
+	contactY += plus2;
+}
+if ( fc != "" ){
+	ctx.drawImage( cpImg , 30 , contactY , 40 , 40 );
+	contactY += plus1;
+	ctx.fillText( fc , 90 , contactY );
+	contactY += plus2;
+}
+if ( cm != "" ){
+	ctx.drawImage( fkImg , 30 , contactY , 40 , 40 );
+	contactY += plus1;
+	ctx.fillText( cm , 90 , contactY );
+	contactY += plus2;
+}
+
 
 //日付
-ctx.font = "25px 'Noto Sans JP'";
-ctx.fillText( createdAt , 610 , 1210 );
+ctx.font = "20px 'Noto Sans JP'";
+ctx.fillText( createdAt , 630 , 1215 );
 
 
 
