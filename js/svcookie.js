@@ -136,7 +136,7 @@ if(navigator.cookieEnabled){
 			document.getElementById( "dc" ).value = dc;
 			document.getElementById( "sp" ).value = sp;
 			document.getElementById( "fc" ).value = fc;
-			document.getElementById( "cm" ).value = cm;
+			document.getElementById( "comment" ).value = cm;
 			//選択肢もロード
 			document.getElementById("dl").value = dl;
 			document.getElementById("rank").value = rank;
