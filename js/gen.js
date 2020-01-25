@@ -686,7 +686,7 @@ if ( cm != "" ){
 	contactY += plus1;
 	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
 		line = lines[i];
-		ctx.fillText( cm , 87 , contactY );
+		ctx.fillText( line , 87 , contactY );
 		contactY += cmFontSize;
 	}
 }
