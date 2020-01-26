@@ -74,7 +74,8 @@ if ( doingMaintainance != "none" ){
 				+ str[3]
 				+ "</p>";
 	console.log(str[4]);
-	document.getElementById(str[4]).innerHTML = maintainanceNotice;
+	var msgBox = document.getElementById(str[4]);
+	msgBox.innerHTML = maintainanceNotice;
 	titleColor.style.color = "#ff0000";
 }
 
