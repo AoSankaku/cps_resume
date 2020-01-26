@@ -73,6 +73,7 @@ if ( doingMaintainance != "none" ){
 				+ "<br>メンテナンス中に履歴書を作成すると予期せぬ挙動が発生する可能性があります。"
 				+ str[3]
 				+ "</p>";
+	console.log(str[4]);
 	document.getElementById(str[4]).innerHTML = maintainanceNotice;
 	titleColor.style.color = "#ff0000";
 }
