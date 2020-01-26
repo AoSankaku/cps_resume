@@ -96,15 +96,12 @@ if(navigator.cookieEnabled){
 }
 }
 
+
+
+
+
 //読み込み時にキャッシュがあればフォームの内容を変更
-window.onload = function loadFromCookie(){
-
-//ローディング画面のを先にする
-let spinner = document.getElementById('my-spinner');
-// .box に .loaded を追加してローディング表示を消す
-spinner.classList.add('loaded');
-
-	
+window.addEventListener('load', function loadFromCookie(){
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
 
@@ -196,4 +193,5 @@ if(navigator.cookieEnabled){
 	} else {
 		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 	}
-}	
+}
+});
