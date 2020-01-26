@@ -4,7 +4,11 @@ window.addEventListener('load', function maintainance(){
 
 
 //===============ここを変更する===============
-var doingMaintainance = "doing";
+//何もなし…"none"		=>何も表示しない
+//メンテ予定…"planned"	=>青色で表示（デフォルト）
+//メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
+
+var doingMaintainance = "planned";
 
 var maintainanceStart = "1月23日 17:00";
 var maintainanceEnd = "未定";
