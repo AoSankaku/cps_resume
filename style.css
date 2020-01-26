@@ -8,6 +8,75 @@ body{
 	-webkit-text-size-adjust: 100%;
 }
 
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  width: 120px;
+  height: 120px;
+}
+ 
+/* Loading テキスト */
+.spinner span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+
+.box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  -webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+          transition: all 1.2s ease;
+  color: #fff; /* ローディングアニメーションカラー */
+  background-color: #333; /* 背景カラー */
+}
+
+// Spinner 2
+&.type2{
+	border-radius:50%;
+	border-width:4px;
+	border-style:solid;
+	border-color:#fff transparent;
+	animation:spinner1_1 2.2s infinite linear forwards;
+    
+	&::before{
+		content:'';
+		position:absolute;
+		top:4px;
+		left:4px;
+		right:4px;
+		bottom:4px;
+		border-radius:50%;
+		border-width:4px;
+		border-style:solid;
+		border-color:#fff transparent;
+		animation:spinner1_2 .8s infinite linear forwards reverse;
+	}
+
+	span{
+		animation:spinner_loading_text 2.2s infinite linear forwards reverse;
+	}
+}
+
+/* ローディング表示を消すための定義 */
+.box.loaded{
+	opacity:0;
+	visibility:hidden;
+	pointer-events:none;
+}
+
 h1{
 	color:#ff9900;
 	font-size:6vw;
