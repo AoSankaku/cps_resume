@@ -42,12 +42,14 @@ switch ( doingMaintainance ){
 		str[1] = "メンテナンス予告";
 		str[2] = "以下の日程でメンテナンスを予定しています。";
 		str[3] = "メンテナンス中のアクセスはお控えください。";
+		str[4] = "maintainanceWarning";
 		break;
 
 	case "doing":
 		str[1] = "メンテナンス中";
 		str[2] = "現在メンテナンス中です。";
 		str[3] = "時間を置いてから再度アクセスしてください。";
+		str[4] = "maintainanceError";
 		break;
 }
 
@@ -71,7 +73,7 @@ if ( doingMaintainance != "none" ){
 				+ "<br>メンテナンス中に履歴書を作成すると予期せぬ挙動が発生する可能性があります。"
 				+ str[3]
 				+ "</p>";
-	document.getElementById('maintainance').innerHTML = maintainanceNotice;
+	document.getElementById(str[4]).innerHTML = maintainanceNotice;
 	titleColor.style.color = "#ff0000";
 }
 
