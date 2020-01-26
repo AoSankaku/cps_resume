@@ -182,16 +182,15 @@ window.addEventListener('load', function loadFromCookie(){
 				//最後にアラート
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
 				} else if ( load == false ){
-						//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
-						var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
-						if ( del == true ){
-							Cookies.remove( 'savedAt' );
-							alert( "このサイトのキャッシュを消去しました。" );
-						}
+					//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
+					var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
+					if ( del == true ){
+						Cookies.remove( 'savedAt' );
+						alert( "このサイトのキャッシュを消去しました。" );
 				}
 			}
-		} else {
-			alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 		}
+	} else {
+		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 	}
-);}
+});
