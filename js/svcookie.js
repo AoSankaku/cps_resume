@@ -98,6 +98,12 @@ if(navigator.cookieEnabled){
 
 //読み込み時にキャッシュがあればフォームの内容を変更
 window.onload = function loadFromCookie(){
+
+//ローディング画面のを先にする
+let spinner = document.getElementById('my-spinner');
+// .box に .loaded を追加してローディング表示を消す
+spinner.classList.add('loaded');
+
 	
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
