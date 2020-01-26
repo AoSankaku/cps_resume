@@ -2,8 +2,8 @@
 window.onload = function loading(){
 
 	//ローディング画面のを先にする
-	let spinner = document.getElementById('my-spinner');
+	let formLoader = document.getElementById('formLoader');
 	// .box に .loaded を追加してローディング表示を消す
-	spinner.classList.add('loaded');
+	formLoader.classList.add('formLoader-complete');
 
 }
