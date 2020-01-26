@@ -103,95 +103,95 @@ if(navigator.cookieEnabled){
 //読み込み時にキャッシュがあればフォームの内容を変更
 window.addEventListener('load', function loadFromCookie(){
 //そもそもcookieが有効かどうかを判定する
-if(navigator.cookieEnabled){
+	if(navigator.cookieEnabled){
 
-	//キャッシュの内容をロード
-	var read = Cookies.get( 'read' );
-	var name = Cookies.get( 'name' );
-	var dl = Cookies.get( 'dl' );
-	var rank = Cookies.get( 'rank' );
-	var heroBSel = Cookies.get( 'heroBSel' );
-	var heroFSel = Cookies.get( 'heroFSel' );
-	var bronze = Cookies.get( 'bronze' );
-	var silver = Cookies.get( 'silver' );
-	var gold = Cookies.get( 'gold' );
-	var tournament = Cookies.get( 'tournament' );
-	var tw = Cookies.get( 'tw' );
-	var dc = Cookies.get( 'dc' );
-	var sp = Cookies.get( 'sp' );
-	var fc = Cookies.get( 'fc' );
-	var cm = Cookies.get( 'cm' );
-	var savedAt = Cookies.get( 'savedAt' );
+		//キャッシュの内容をロード
+		var read = Cookies.get( 'read' );
+		var name = Cookies.get( 'name' );
+		var dl = Cookies.get( 'dl' );
+		var rank = Cookies.get( 'rank' );
+		var heroBSel = Cookies.get( 'heroBSel' );
+		var heroFSel = Cookies.get( 'heroFSel' );
+		var bronze = Cookies.get( 'bronze' );
+		var silver = Cookies.get( 'silver' );
+		var gold = Cookies.get( 'gold' );
+		var tournament = Cookies.get( 'tournament' );
+		var tw = Cookies.get( 'tw' );
+		var dc = Cookies.get( 'dc' );
+		var sp = Cookies.get( 'sp' );
+		var fc = Cookies.get( 'fc' );
+		var cm = Cookies.get( 'cm' );
+		var savedAt = Cookies.get( 'savedAt' );
 
-	//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
-	if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
-		var load = confirm( "前回Cookieに保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
-		if ( load == true ){
-			//ここからキャッシュロード
-			//文字列のみ
-			document.getElementById( "read" ).value = read;
-			document.getElementById( "name" ).value = name;
-			document.getElementById( "bronze" ).value = bronze;
-			document.getElementById( "silver" ).value = silver;
-			document.getElementById( "gold" ).value = gold;
-			document.getElementById( "tournament" ).value = tournament;
-			document.getElementById( "tw" ).value = tw;
-			document.getElementById( "dc" ).value = dc;
-			document.getElementById( "sp" ).value = sp;
-			document.getElementById( "fc" ).value = fc;
-			document.getElementById( "comment" ).value = cm;
-			//選択肢もロード
-			document.getElementById("dl").value = dl;
-			document.getElementById("rank").value = rank;
+		//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
+		if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
+			var load = confirm( "前回Cookieに保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
+			if ( load == true ){
+				//ここからキャッシュロード
+				//文字列のみ
+				document.getElementById( "read" ).value = read;
+				document.getElementById( "name" ).value = name;
+				document.getElementById( "bronze" ).value = bronze;
+				document.getElementById( "silver" ).value = silver;
+				document.getElementById( "gold" ).value = gold;
+				document.getElementById( "tournament" ).value = tournament;
+				document.getElementById( "tw" ).value = tw;
+				document.getElementById( "dc" ).value = dc;
+				document.getElementById( "sp" ).value = sp;
+				document.getElementById( "fc" ).value = fc;
+				document.getElementById( "comment" ).value = cm;
+				//選択肢もロード
+				document.getElementById("dl").value = dl;
+				document.getElementById("rank").value = rank;
 	
 	
-			//ヒーロー選択試験的実装
-			/*
-			console.log( heroBSel );
-			console.log( heroFSel );
-			*/
-			//配列が文字列に置き換わっているのでこれを配列に変換しなおす
-			heroBSel = heroBSel.slice( 1 );
-			heroBSel = heroBSel.slice( 0 , -1 );
-			heroBSel = heroBSel.split( ',' );
-			heroFSel = heroFSel.slice( 1 );
-			heroFSel = heroFSel.slice( 0 , -1 );
-			heroFSel = heroFSel.split( ',' );
-			/*
-			console.log( heroBSel );
-			console.log( heroFSel );
-			console.log( heroBSel.length );
-			console.log( heroFSel.length );
-			*/
+				//ヒーロー選択試験的実装
+				/*
+				console.log( heroBSel );
+				console.log( heroFSel );
+				*/
+				//配列が文字列に置き換わっているのでこれを配列に変換しなおす
+				heroBSel = heroBSel.slice( 1 );
+				heroBSel = heroBSel.slice( 0 , -1 );
+				heroBSel = heroBSel.split( ',' );
+				heroFSel = heroFSel.slice( 1 );
+				heroFSel = heroFSel.slice( 0 , -1 );
+				heroFSel = heroFSel.split( ',' );
+				/*
+				console.log( heroBSel );
+				console.log( heroFSel );
+				console.log( heroBSel.length );
+				console.log( heroFSel.length );
+				*/
 	
-			for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
-				if ( heroBSel[i] == "true" ) {
-				document.getElementById( "heroB" ).options[i].selected = true ;
-				//console.log( "selectedB" + i );
-				}
-			}
-			for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
-				if ( heroFSel[i] == "true" ) {
-					document.getElementById( "heroF" ).options[i].selected = true ;
-					//console.log( "selectedF" + i );
-				}
-			}
-
-
-
-			//最後にアラート
-			alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
-			} else if ( load == false ){
-					//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
-					var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
-					if ( del == true ){
-						Cookies.remove( 'savedAt' );
-						alert( "このサイトのキャッシュを消去しました。" );
+				for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
+					if ( heroBSel[i] == "true" ) {
+					document.getElementById( "heroB" ).options[i].selected = true ;
+					//console.log( "selectedB" + i );
 					}
+				}
+				for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
+					if ( heroFSel[i] == "true" ) {
+						document.getElementById( "heroF" ).options[i].selected = true ;
+						//console.log( "selectedF" + i );
+					}
+				}
+
+
+
+				//最後にアラート
+				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
+				} else if ( load == false ){
+						//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
+						var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
+						if ( del == true ){
+							Cookies.remove( 'savedAt' );
+							alert( "このサイトのキャッシュを消去しました。" );
+						}
+				}
 			}
+		} else {
+			alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 		}
-	} else {
-		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 	}
-}
-});
+);}
