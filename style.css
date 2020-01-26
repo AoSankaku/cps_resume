@@ -9,20 +9,16 @@ body{
 }
 
 .box{
-	position:relative;
-	top:10px;
-	width:33.33vw;
-	height:33.33vw;
-	max-width:200px;
-	max-height:200px;
-	min-width:180px;
-	min-height:180px;
-	display:inline-block;
-	border:1px solid rgba(#fff,.24);
-	*{
-	letter-spacing:normal;
-	white-space:normal;
-	}
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	-webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+		transition: all 1.2s ease;
+	color: #fff; /* ローディングアニメーションカラー */
+	background-color: #333; /* 背景カラー */
 }
 
 .spinner{
