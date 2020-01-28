@@ -40,7 +40,7 @@ var ctx = can.getContext('2d');
 function preview(){
 
 //バージョン
-var version = "v1.0.0β";
+var version = "v1.0.0 Beta";
 
 //デバッグ用
 var debugCan = 0 ;
