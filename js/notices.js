@@ -39,14 +39,14 @@ switch ( doingMaintainance ){
 	case "none":	break;	
 
 	case "planned":	
-		str[1] = "<i class="fas fa-info-circle"></i> メンテナンス予告";
+		str[1] = '<i class="fas fa-info-circle"></i> メンテナンス予告';
 		str[2] = "以下の日程でメンテナンスを予定しています。";
 		str[3] = "メンテナンス中のアクセスはお控えください。";
 		str[4] = "maintainanceWarning";
 		break;
 
 	case "doing":
-		str[1] = "<i class="fas fa-exclamation-triangle"></i> メンテナンス中";
+		str[1] = '<i class="fas fa-exclamation-triangle"></i> メンテナンス中';
 		str[2] = "現在メンテナンス中です。";
 		str[3] = "時間を置いてから再度アクセスしてください。";
 		str[4] = "maintainanceError";
