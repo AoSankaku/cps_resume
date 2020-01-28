@@ -650,7 +650,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "24px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
-var contactY = 935;
+var contactY = 945;
 const plus1 = 30;
 const plus2 = 18;
 const cmFontSize = 24 + 2;
@@ -693,7 +693,7 @@ if ( cm != "" ){
 
 //日付
 ctx.font = "20px 'Noto Sans JP'";
-ctx.fillText( createdAt , 650 , 1216 );
+ctx.fillText( createdAt , 680 , 1216 );
 
 
 
