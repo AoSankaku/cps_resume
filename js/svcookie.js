@@ -143,12 +143,16 @@ function onChangeForms(){
 		
 		for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 			if ( heroBe[i].selected == true ){
-				heroBSel[i] = true;
+				heroBSel[i] = "true";
+			} else {
+				heroBSel[i] = "null";
 			}
 		}
 		for ( let i = 0 , l = heroFe.length ; l > i ; i++ ){
 			if ( heroFe[i].selected == true ){
-				heroFSel[i] = true;
+				heroFSel[i] = "true";
+			} else {
+				heroFSel[i] = "null";
 			}
 		}
 		
