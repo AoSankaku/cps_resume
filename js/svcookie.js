@@ -169,6 +169,7 @@ function onChangeForms(){
 		
 		for ( let i = 0, l = comp.length ; l > i ; i++ ){
 			if ( !comp[i] ){
+				console.log( i + "=false" );		
 				result = false;
 				break;
 			}
