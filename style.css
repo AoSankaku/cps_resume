@@ -33,6 +33,10 @@ p{
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
+span{
+	font-size:3.2vw;
+}
+
 .twitter-hashtag-button{
 	height: 3vw;
 }
