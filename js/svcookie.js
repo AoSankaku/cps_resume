@@ -116,7 +116,7 @@ function onChangeForms(){
 	
 	if( navigator.cookieEnabled && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
 		//フォームの内容を比較する
-		var comp[];
+		var comp = [];
 		comp[0] = Boolean( read == document.forms.info.read.value );
 		comp[1] = Boolean( name == document.forms.info.name.value );
 		comp[2] = Boolean( dl == document.forms.info.dl.value );
