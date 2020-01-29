@@ -152,8 +152,8 @@ function onChangeForms(){
 			}
 		}
 		
-		var heroBStr = heroBSel.join;
-		var heroFStr = heroFSel.join;
+		var heroBStr = heroBSel.join(',');
+		var heroFStr = heroFSel.join(',');
 		console.log( heroBStr );
 		console.log( heroFStr );
 		var heroBStrC = Cookies.get( 'heroBSel' );
