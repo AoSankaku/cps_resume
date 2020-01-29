@@ -48,15 +48,6 @@ if(navigator.cookieEnabled){
 	var heroBSel = new Array( heroBe.length );
 	var heroFSel = new Array( heroBe.length );
 
-	/*
-	console.log( heroBe );
-	console.log( heroFe );
-	console.log( heroBSel );
-	console.log( heroFSel );
-	console.log( heroBSel.length );
-	console.log( heroFSel.length );
-	*/
-
 	//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録
 	for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 		if ( heroBe[i].selected == true ){
@@ -96,6 +87,100 @@ if(navigator.cookieEnabled){
 
 	alert("【エラー】\n保存するにはCookieを有効にして下さい。")
 }
+}
+
+
+
+
+
+function onChangeForms(){
+	
+	//とりあえずキャッシュの内容をロード
+	var read = Cookies.get( 'read' );
+	var name = Cookies.get( 'name' );
+	var dl = Cookies.get( 'dl' );
+	var rank = Cookies.get( 'rank' );
+	var bronze = Cookies.get( 'bronze' );
+	var silver = Cookies.get( 'silver' );
+	var gold = Cookies.get( 'gold' );
+	var tournament = Cookies.get( 'tournament' );
+	var tw = Cookies.get( 'tw' );
+	var dc = Cookies.get( 'dc' );
+	var sp = Cookies.get( 'sp' );
+	var fc = Cookies.get( 'fc' );
+	var cm = Cookies.get( 'cm' );
+	var savedAt = Cookies.get( 'savedAt' );
+	
+	//本当に中身が変わったのか比較する（ A => B => A の場合は「変更なし」判定する）
+	//Cookieが無効orCookie消滅済なら何もしない
+	
+	if( navigator.cookieEnabled && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
+		//フォームの内容を比較する
+		var comp[];
+		comp[0] = Boolean( read == document.forms.info.read.value );
+		comp[1] = Boolean( name == document.forms.info.name.value );
+		comp[2] = Boolean( dl == document.forms.info.dl.value );
+		comp[3] = Boolean( rank == document.forms.info.rank.value );
+		
+		comp[4] = Boolean( bronze == parseInt(document.forms.info.bronze.value) );
+		comp[5] = Boolean( silver == parseInt(document.forms.info.silver.value) );
+		comp[6] = Boolean( gold == parseInt(document.forms.info.gold.value) );
+		comp[7] = Boolean( tournament == parseInt(document.forms.info.tournament.value) );
+		
+		comp[8] = Boolean( tw == document.forms.info.tw.value );
+		comp[9] = Boolean( dc == document.forms.info.dc.value );
+		comp[10] = Boolean( sp == document.forms.info.sp.value );
+		comp[11] = Boolean( fc == document.forms.info.fc.value );
+		comp[12] = Boolean( cm == document.getElementById('comment').value );
+
+		//heroBSelとheroFSelは文字列として記録されているので「現在の選択状況」を文字列に変換して比較
+		var heroB = document.getElementById("heroB");
+		var heroF = document.getElementById("heroF");
+		var heroBe = heroB.options;
+		var heroFe = heroF.options;
+		var heroBSel = new Array( heroBe.length );
+		var heroFSel = new Array( heroBe.length );
+		
+		for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
+			if ( heroBe[i].selected == true ){
+				heroBSel[i] = true;
+			}
+		}
+		for ( let i = 0 , l = heroFe.length ; l > i ; i++ ){
+			if ( heroFe[i].selected == true ){
+				heroFSel[i] = true;
+			}
+		}
+		
+		var heroBStr = heroBSel.join;
+		var heroFStr = heroFSel.join;
+		var heroBStrC = Cookies.get( 'heroBSel' );
+		var heroFStrC = Cookies.get( 'heroFSel' );
+		heroBStrC = heroBStrC.slice( 1 );
+		heroBStrC = heroBStrC.slice( 0 , -1 );
+		heroFStrC = heroFStrC.slice( 1 );
+		heroFStrC = heroFStrC.slice( 0 , -1 );
+		
+		comp[13] = Boolean( heroBSel == heroBStrC );
+		comp[14] = Boolean( heroFSel == heroBStrC );
+		
+		//比較判定
+		var result = true;
+		
+		for ( let i = 0, l = comp.length ; l > i ; i++ ){
+			if ( !comp[i] ){
+				result = false;
+				break;
+			}
+		}
+		
+		//結果反映
+		if ( result ){
+			document.getElementById("saveAlert").innerHTML = '<span style="color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
+		} else {
+			document.getElementById("saveAlert").innerHTML = '<span style="color:red;"><i class="fas fa-exclamation-triangle"></i> Cookieにデータがあります<br>（この状態で保存すると上書きされます）</span>';
+		}
+	}
 }
 
 
