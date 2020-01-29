@@ -170,7 +170,7 @@ function onChangeForms(){
 		console.log( heroFStrC );
 		
 		comp[13] = Boolean( heroBSel == heroBStrC );
-		comp[14] = Boolean( heroFSel == heroBStrC );
+		comp[14] = Boolean( heroFSel == heroFStrC );
 		
 		//比較判定
 		var result = true;
