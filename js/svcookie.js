@@ -1,4 +1,4 @@
-//記入した内容をCookieに記録する
+//記入した内容をCookieに記録する                                                                                                                                                                                                                  
 function saveToCookie(){
 
 //そもそもcookieが有効かどうかを判定する
@@ -89,10 +89,12 @@ if(navigator.cookieEnabled){
 
 	//最後にアラート
 	alert("記入内容をCookieに保存しました！");
+	//htmlを書き換え（保存しましたにする）
+	document.getElementById("saveAlert").innerHTML = '<span style="color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
 	
 } else {
 
-	alert("【エラー】\nCookieを有効にして下さい。")
+	alert("【エラー】\n保存するにはCookieを有効にして下さい。")
 }
 }
 
@@ -181,16 +183,21 @@ window.addEventListener('load', function loadFromCookie(){
 
 				//最後にアラート
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
+				document.getElementById("saveAlert").innerHTML = '<span style="color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
 				} else if ( load == false ){
 					//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
 					var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
 					if ( del == true ){
 						Cookies.remove( 'savedAt' );
 						alert( "このサイトのキャッシュを消去しました。" );
+						document.getElementById("saveAlert").innerHTML = '<span style="color:red;"><i class="fas fa-times"></i> 保存されていません</span>';
+					}
 				}
+			} else {
+				document.getElementById("saveAlert").innerHTML = '<span style="color:red;"><i class="fas fa-exclamation-triangle"></i> Cookieにデータがあります<br>（この状態で保存すると上書きされます）</span>';
 			}
-		}
 	} else {
 		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
+		document.getElementById("saveAlert").innerHTML = '<span style="color:red;"><i class="fas fa-times"></i> Cookieが無効です</span>';
 	}
 });
