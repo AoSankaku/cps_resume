@@ -154,12 +154,16 @@ function onChangeForms(){
 		
 		var heroBStr = heroBSel.join;
 		var heroFStr = heroFSel.join;
+		console.log( heroBStr );
+		console.log( heroFStr );
 		var heroBStrC = Cookies.get( 'heroBSel' );
 		var heroFStrC = Cookies.get( 'heroFSel' );
 		heroBStrC = heroBStrC.slice( 1 );
 		heroBStrC = heroBStrC.slice( 0 , -1 );
 		heroFStrC = heroFStrC.slice( 1 );
 		heroFStrC = heroFStrC.slice( 0 , -1 );
+		console.log( heroBStrC );
+		console.log( heroFStrC );
 		
 		comp[13] = Boolean( heroBSel == heroBStrC );
 		comp[14] = Boolean( heroFSel == heroBStrC );
@@ -169,7 +173,7 @@ function onChangeForms(){
 		
 		for ( let i = 0, l = comp.length ; l > i ; i++ ){
 			if ( !comp[i] ){
-				console.log( i + "=false" );		
+				console.log( i + "=false" );
 				result = false;
 				break;
 			}
