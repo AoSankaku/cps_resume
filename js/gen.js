@@ -44,7 +44,10 @@ document.querySelector('input[type="file"]').onchange = function loadImg(){
 function drawImage(url) {
 	img[9].src = url;
 	img[9].onload = () => {
+		ctx.beginPath();
+		//一瞬描いてすぐ消す
 		ctx.drawImage(img[9], 620, 100);
+		ctx.clearRect( 0, 0, can.width, can.height )	
 	}
 }
 
@@ -133,6 +136,9 @@ var errorMsg = "";
 //■履歴書枠組み、項目の描画■
 //注意:変数canとctxの宣言はHTMLに記述
 
+
+//リセット
+ctx.beginPath();
 //背景描画
 ctx.fillStyle = "#ffffff";
 ctx.fillRect(0,0,900,1300);
@@ -240,14 +246,8 @@ ctx.globalAlpha = 1.0 ;
 
 
 //■最終処理■内容をフォームの内容で埋める
-//プロフィール画像を指定
-//ローカルのプロフィール画像を読み込む
-
-/*
-profilePic = loadProfilePic();
-ctx.drawImage( profilePic , 0 , 0 );
-*/
-
+//プロフィール画像を指描画
+ctx.drawImage( img[9], 635, 60, 170, 170);
 
 //■指定色
 //ctx.fillStyle = "#000000";
