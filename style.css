@@ -37,10 +37,6 @@ span{
 	font-size:3.2vw;
 }
 
-.twitter-hashtag-button{
-	height: 3vw;
-}
-
 .errorbox{
 	margin: 2em auto 2em;
 	background: #ff9999;
@@ -116,12 +112,14 @@ form dl dt{
 
 form dl dd{
 	padding:18px 12px;
+	font-family: 'M PLUS 1p', sans-serif;
 }
 
 input{
 	width:460px;
 	height:40px;
 	font-size:32px;
+	font-family: 'M PLUS 1p', sans-serif;
 }
 
 textarea{
