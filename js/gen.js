@@ -1,12 +1,3 @@
-//プロフィール画像のアップロード
-function loadImg(){
-let a = 0;
-}
-
-
-
-
-
 //画像をプリロード
 var img = [];
 img[0] = new Image();
@@ -29,8 +20,32 @@ img[8] = new Image();
 img[8].src = "img/fukidashi.png";
 
 //キャンバス用に変数宣言
-var can = document.getElementById('result');
-var ctx = can.getContext('2d');
+const can = document.getElementById('result');
+const ctx = can.getContext('2d');
+
+
+
+
+
+//プロフィール画像のアップロード
+document.querySelector('input[type="file"]').onchange = function loadImg(){
+	let profileImg = this.files[0];
+	let reader = new FileReader();
+	reader.readAsDataURL(profileImg);
+	reader.onload = function() {
+		drawImage(reader.result);
+	}
+}
+
+
+
+function drawImage(url) {
+	let profileImage = new Image();
+	profileImage.src = url;
+	profileImage.onload = () => {
+		ctx.drawImage(profileImage, 620, 100);
+	}
+}
 
 
 
