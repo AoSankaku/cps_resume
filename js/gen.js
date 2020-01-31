@@ -255,7 +255,7 @@ ctx.drawImage( img[9], 714, 63, 167, 167);
 ctx.lineWidth = 4;
 ctx.font = "40px 'monospace'";
 var readWidth = ctx.measureText(read).width;
-if ( readWidth >= 575 ){
+if ( readWidth >= 584 ){
 	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
 }
 if ( read == "" ){
@@ -272,7 +272,7 @@ var nameWidth = ctx.measureText(name).width;
 if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px 'monospace'";
 	nameWidth = ctx.measureText(name).width;
-	if ( nameWidth >= 575 ){
+	if ( nameWidth >= 584 ){
 		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
 	}
 }
