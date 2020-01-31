@@ -247,7 +247,7 @@ ctx.globalAlpha = 1.0 ;
 
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を指描画
-ctx.drawImage( img[9], 715, 63, 167, 167);
+ctx.drawImage( img[9], 714, 63, 167, 167);
 
 //■指定色
 //ctx.fillStyle = "#000000";
@@ -255,7 +255,7 @@ ctx.drawImage( img[9], 715, 63, 167, 167);
 ctx.lineWidth = 4;
 ctx.font = "40px 'monospace'";
 var readWidth = ctx.measureText(read).width;
-if ( readWidth >= 620 ){
+if ( readWidth >= 575 ){
 	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
 }
 if ( read == "" ){
@@ -269,10 +269,10 @@ if ( name == "" ){
 ctx.lineWidth = 6;
 ctx.font = "bold 72px 'monospace'";
 var nameWidth = ctx.measureText(name).width;
-if ( nameWidth >= 620 ){
+if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px 'monospace'";
 	nameWidth = ctx.measureText(name).width;
-	if ( nameWidth >= 620 ){
+	if ( nameWidth >= 575 ){
 		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
 	}
 }
