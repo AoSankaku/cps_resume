@@ -18,6 +18,8 @@ img[7] = new Image();
 img[7].src = "img/compass.png";
 img[8] = new Image();
 img[8].src = "img/fukidashi.png";
+//プロ画用
+img[9] = new Image();
 
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
@@ -40,10 +42,9 @@ document.querySelector('input[type="file"]').onchange = function loadImg(){
 
 
 function drawImage(url) {
-	let profileImage = new Image();
-	profileImage.src = url;
-	profileImage.onload = () => {
-		ctx.drawImage(profileImage, 620, 100);
+	img[9].src = url;
+	img[9].onload = () => {
+		ctx.drawImage(img[9], 620, 100);
 	}
 }
 
