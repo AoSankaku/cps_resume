@@ -247,7 +247,7 @@ ctx.globalAlpha = 1.0 ;
 
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を指描画
-ctx.drawImage( img[9], 705, 60, 170, 170);
+ctx.drawImage( img[9], 720, 60, 168, 168);
 
 //■指定色
 //ctx.fillStyle = "#000000";
