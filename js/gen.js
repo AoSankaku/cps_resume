@@ -698,42 +698,43 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 
 
 
-ctx.font = "24px 'monospace'";
+ctx.font = "26px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
 var contactY = 918;
 const plus1 = 28;
-const plus2 = 17;
-const cmFontSize = 24 + 2;
+const plus2 = 19;
+const cmFontSize = 26 + 2;
+const contactIconSize = 42;
 
 //連絡先アイコン描画
 if ( tw != "@" ){
-	ctx.drawImage( twImg , 30 , contactY , 40 , 40 );
+	ctx.drawImage( twImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	ctx.fillText( tw , 87 , contactY );
 	contactY += plus2;
 }
 if ( dc != "" ){
-	ctx.drawImage( dcImg , 30 , contactY , 40 , 40 );
+	ctx.drawImage( dcImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	ctx.fillText( dc , 87 , contactY );
 	contactY += plus2;
 }
 if ( sp != "" ){
-	ctx.drawImage( spImg , 30 , contactY , 40 , 40 );
+	ctx.drawImage( spImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	ctx.fillText( sp , 87 , contactY );
 	contactY += plus2;
 }
 if ( fc != "" ){
-	ctx.drawImage( cpImg , 30 , contactY , 40 , 40 );
+	ctx.drawImage( cpImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	ctx.fillText( fc , 87 , contactY );
 	contactY += plus2;
 }
 //コメントは複数行にわたる場合があるのでfor文で処理
 if ( cm != "" ){
-	ctx.drawImage( fkImg , 30 , contactY , 40 , 40 );
+	ctx.drawImage( fkImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
 		line = lines[i];
