@@ -399,45 +399,47 @@ if ( tournament < 0 ){
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
+var iconY = 370;
 if ( bronze < 1 ){
-	ctx.fillStyle = "#999999";
-	ctx.font = "58px 'Noto Sans JP'";
-	ctx.fillText("-", 516 , 380 );
+	ctx.globalAlpha = 0.4;
+	ctx.font = "57px 'Noto Sans JP'";
+	ctx.fillText("-", 516 , iconY );
 } else {
-	ctx.fillStyle = fontColor;
-	ctx.font = "bold 58px 'Noto Sans JP'";
-	ctx.fillText( bronze , 516 , 385 );
+	ctx.globalAlpha = 1.0;
+	ctx.font = "bold 57px 'Noto Sans JP'";
+	ctx.fillText( bronze , 516 , iconY );
 }
 if ( silver < 1 ){
-	ctx.fillStyle = "#999999";
-	ctx.font = "58px 'Noto Sans JP'";
-	ctx.fillText("-", 618 , 380 );
+	ctx.globalAlpha = 0.4;
+	ctx.font = "57px 'Noto Sans JP'";
+	ctx.fillText("-", 618 , iconY );
 } else {
-	ctx.fillStyle = fontColor;
-	ctx.font = "bold 58px 'Noto Sans JP'";
-	ctx.fillText( silver , 618 , 385 );
+	ctx.globalAlpha = 1.0;
+	ctx.font = "bold 57px 'Noto Sans JP'";
+	ctx.fillText( silver , 618 , iconY );
 }
 if ( gold < 1 ){
-	ctx.fillStyle = "#999999";
-	ctx.font = "58px 'Noto Sans JP'";
-	ctx.fillText("-", 720 , 380 );
+	ctx.globalAlpha = 0.4;
+	ctx.font = "57px 'Noto Sans JP'";
+	ctx.fillText("-", 720 , iconY );
 } else {
-	ctx.fillStyle = fontColor;
-	ctx.font = "bold 58px 'Noto Sans JP'";
-	ctx.fillText( gold , 720 , 385 );
+	ctx.globalAlpha = 1.0;
+	ctx.font = "bold 57px 'Noto Sans JP'";
+	ctx.fillText( gold , 720 , iconY );
 }
 if ( tournament < 1 ){
-	ctx.fillStyle = "#999999";
-	ctx.font = "58px 'Noto Sans JP'";
-	ctx.fillText("-", 822 , 380 );
+	ctx.globalAlpha = 0.4;
+	ctx.font = "57px 'Noto Sans JP'";
+	ctx.fillText("-", 822 , iconY );
 } else {
-	ctx.fillStyle = fontColor;
-	ctx.font = "bold 58px 'Noto Sans JP'";
-	ctx.fillText( tournament , 822 , 385 );
+	ctx.globalAlpha = 1.0;
+	ctx.font = "bold 57px 'Noto Sans JP'";
+	ctx.fillText( tournament , 822 , iconY );
 }
 //中央揃えを左揃えに、色をユーザー指定にリセット
 ctx.textAlign = "left";
 ctx.fillStyle = fontColor;
+ctx.globalAlpha = 1.0;
 //先に使用ヒーローを取得して描画
 //バトアリ検索
 for ( var temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
