@@ -169,7 +169,7 @@ ctx.fillRect(15,123,870,1);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,230,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(15,410,870,3);
+ctx.fillRect(15,400,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,890,870,3);
 
@@ -183,7 +183,7 @@ ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 
 var boxX = 450;
 var boxXAdd = 110;
-var boxY = 310;
+var boxY = 300;
 
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
@@ -218,9 +218,9 @@ ctx.strokeRect( boxX, boxY, 82, 82);
 
 //縦線二本
 ctx.fillStyle = "#000000";
-ctx.fillRect(268,230,2,180);
+ctx.fillRect(268,230,2,170);
 ctx.fillStyle = "#000000";
-ctx.fillRect(430,230,2,180);
+ctx.fillRect(430,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
