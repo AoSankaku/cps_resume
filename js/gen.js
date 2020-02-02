@@ -124,6 +124,7 @@ var cm = document.getElementById('comment').value;
 
 //以下デザイン用
 var profilePic = new Image();
+var profilePicSize = document.forms.design.profilePicSize.value;
 var bgTheme;
 var bgImgSrc;
 var bgColor;
@@ -247,7 +248,14 @@ ctx.globalAlpha = 1.0 ;
 
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を指描画
-ctx.drawImage( img[9], 714, 63, 167, 167);
+var profilePicScale;
+switch (profilePicSize) {
+	case "10x" : profilePicScale = 167; break;
+	case "08x" : profilePicScale = 133; break;
+	case "06x" : profilePicScale = 100; break;
+}
+
+ctx.drawImage( img[9], 714, 63, profilePicScale, profilePicScale);
 
 //■指定色
 //ctx.fillStyle = "#000000";
