@@ -170,11 +170,11 @@ ctx.fillRect(15,430,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,890,870,3);
 //デキレ、ランク、アイコン所持数
-ctx.font = "30px 'Noto Sans JP'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("最高デッキレベル", 30 , 270 );
-ctx.font = "30px 'Noto Sans JP'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("最高ランク", 295 , 270 );
-ctx.font = "30px 'Noto Sans JP'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
@@ -206,7 +206,7 @@ ctx.fillRect(280,230,2,200);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(455,230,2,200);
 //使用ヒーロー
-ctx.font = "30px 'Noto Sans JP'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 470 );
 //ロールアイコンは条件でうすくなるので描画は下で
 //同時に画像アイコンも読み込む
@@ -231,7 +231,7 @@ fkImg.src = img[8].src;
 
 //連絡先とアイコン
 ctx.fillStyle = "#000000";
-ctx.font = "30px 'Noto Sans JP'";
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("連絡先など", 30 , 930 );
 //連絡先アイコンは内容に応じて省略をするため後から描画
 
@@ -251,8 +251,9 @@ ctx.globalAlpha = 1.0 ;
 var profilePicScale;
 switch (profilePicSize) {
 	case "10x" : profilePicScale = 167; break;
+	case "09x" : profilePicScale = 150; break;
 	case "08x" : profilePicScale = 133; break;
-	case "06x" : profilePicScale = 100; break;
+	case "07x" : profilePicScale = 117; break;
 }
 
 ctx.drawImage( img[9], 714, 63, profilePicScale, profilePicScale);
