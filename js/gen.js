@@ -206,10 +206,11 @@ ctx.strokeStyle = "#ffffff";
 ctx.strokeRect(781,320,82,82);
 
 //縦線二本
-ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(270,230,2,200);
-ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(455,230,2,200);
+ctx.fillStyle = "#000000";
+ctx.fillRect(270,230,2,180);
+ctx.fillStyle = "#000000";
+ctx.fillRect(455,230,2,180);
+
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 470 );
