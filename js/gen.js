@@ -18,6 +18,8 @@ img[7] = new Image();
 img[7].src = "img/compass.png";
 img[8] = new Image();
 img[8].src = "img/fukidashi.png";
+img[10] = new Image();
+img[10].src = "img/cps_guild.png";
 //プロ画用
 img[9] = new Image();
 
@@ -115,11 +117,12 @@ var bronze = parseInt(document.forms.info.bronze.value);
 var silver = parseInt(document.forms.info.silver.value);
 var gold = parseInt(document.forms.info.gold.value);
 var tournament = parseInt(document.forms.info.tournament.value);
-//連絡先と一言
+//連絡先とギルドと一言
 var tw = document.forms.info.tw.value;
 var dc = document.forms.info.dc.value;
 var sp = document.forms.info.sp.value;
 var fc = document.forms.info.fc.value;
+var guild = document.forms.info.guild.value;
 var cm = document.getElementById('comment').value;
 
 //以下デザイン用
@@ -236,6 +239,8 @@ var dcImg = new Image();
 var spImg = new Image();
 var cpImg = new Image();
 var fkImg = new Image();
+var guImg = new Image();
+
 atkImg.src = img[0].src;
 gunImg.src = img[1].src;
 sprImg.src = img[2].src;
@@ -245,6 +250,7 @@ dcImg.src = img[5].src;
 spImg.src = img[6].src;
 cpImg.src = img[7].src;
 fkImg.src = img[8].src;
+guImg.src = img[10].src;
 
 //連絡先とアイコン
 ctx.fillStyle = "#000000";
@@ -730,6 +736,12 @@ if ( fc != "" ){
 	ctx.drawImage( cpImg , 30 , contactY , contactIconSize , contactIconSize );
 	contactY += plus1;
 	ctx.fillText( fc , 87 , contactY );
+	contactY += plus2;
+}
+if ( guild != "" ){
+	ctx.drawImage( guImg , 30 , contactY , contactIconSize , contactIconSize );
+	contactY += plus1;
+	ctx.fillText( guild , 87 , contactY );
 	contactY += plus2;
 }
 //コメントは複数行にわたる場合があるのでfor文で処理
