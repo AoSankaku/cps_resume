@@ -264,6 +264,13 @@
 <dl>
 <dt>プロフィール画像</dt>
 <dd><input type="file" accept="image/png,image/jpeg,image/gif" id="profilePic" onChange="onChangeForms();"></dd>
+<dt>プロフィール画像サイズ</dt>
+<dd>
+	<select id="profilePicSize" onchange="onChangeForms();">
+	<option value="10x" selected>等倍</option>
+	<option value="08x">0.8倍</option>
+	<option value="05x">0.6倍</option>
+</dd>
 <dt>履歴書背景テーマ</dt>
 <dd>
 	<select id="bgtheme" disabled="disabled" onChange="onChangeForms();">
