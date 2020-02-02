@@ -277,6 +277,7 @@ switch (profilePicSize) {
 	case "09x" : profilePicScale = 150; break;
 	case "08x" : profilePicScale = 133; break;
 	case "07x" : profilePicScale = 117; break;
+	case "none": profilePicScale = 0; break;
 }
 
 ctx.drawImage( img[9], 714, 63, profilePicScale, profilePicScale);
