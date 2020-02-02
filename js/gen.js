@@ -362,11 +362,11 @@ grad.addColorStop(1,'#ee82ee');
 break;
 }
 ctx.fillStyle = grad;
-ctx.fillText(rank, 355 , 380 );
+ctx.fillText( rank, 350, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = "#000000";
-ctx.strokeText(rank, 355 , 380 );
+ctx.strokeText( rank, 350, 380 );
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
