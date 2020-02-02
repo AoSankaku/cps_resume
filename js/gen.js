@@ -171,7 +171,7 @@ ctx.fillRect(15,230,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,400,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(15,890,870,3);
+ctx.fillRect(15,860,870,3);
 
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
@@ -249,7 +249,7 @@ fkImg.src = img[8].src;
 //連絡先とアイコン
 ctx.fillStyle = "#000000";
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("連絡先など", 30 , 930 );
+ctx.fillText("連絡先など", 30 , 900 );
 //連絡先アイコンは内容に応じて省略をするため後から描画
 
 ctx.fillStyle = "#000000";
@@ -575,28 +575,28 @@ errorMsg += "「バトアリ使用キャラ」と「フリバト&練習キャラ
 //キャラ描画
 ctx.font = "34px 'monospace'";
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( atkUseB , 120 , 520 );
+ctx.fillText( atkUseB , 120 , 490 );
 if ( atkUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120 , 555 );
+	ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120 , 525 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( gunUseB , 120 , 620 );
+ctx.fillText( gunUseB , 120 , 590 );
 if ( gunUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120 , 655 );
+	ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120 , 625 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( sprUseB , 120 , 720 );
+ctx.fillText( sprUseB , 120 , 690 );
 if ( sprUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120 , 755 );
+	ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120 , 725 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( tanUseB , 120 , 820 );
+ctx.fillText( tanUseB , 120 , 790 );
 if ( tanUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 855 );
+	ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 825 );
 }
 //各ロールごとにロールアイコンの薄さを調整
 //バトアリにいる→1.0
@@ -609,7 +609,7 @@ if ( atkUseB == "" ){
 		ctx.globalAlpha = 0.1 ;
 	}
 }
-ctx.drawImage( atkImg , 30 , 490 , 80 , 80 );
+ctx.drawImage( atkImg , 30 , 460 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( gunUseB == "" ){
 	ctx.globalAlpha = 0.5 ;
@@ -617,7 +617,7 @@ if ( gunUseB == "" ){
 		ctx.globalAlpha = 0.1 ;
 	}
 }
-ctx.drawImage( gunImg , 30 , 590 , 80 , 80 );
+ctx.drawImage( gunImg , 30 , 560 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( sprUseB == "" ){
 	ctx.globalAlpha = 0.5 ;
@@ -625,7 +625,7 @@ if ( sprUseB == "" ){
 		ctx.globalAlpha = 0.1 ;
 	}
 }
-ctx.drawImage( sprImg , 30 , 690 , 80 , 80 );
+ctx.drawImage( sprImg , 30 , 660 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 if ( tanUseB == "" ){
 	ctx.globalAlpha = 0.5 ;
@@ -633,7 +633,7 @@ if ( tanUseB == "" ){
 		ctx.globalAlpha = 0.1 ;
 	}
 }
-ctx.drawImage( tanImg , 30 , 790 , 80 , 80 );
+ctx.drawImage( tanImg , 30 , 760 , 80 , 80 );
 //最後に透明度リセット
 ctx.globalAlpha = 1.0 ;
 //使用ヒーローが0体の場合アラート
@@ -701,7 +701,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "24px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
-var contactY = 948;
+var contactY = 918;
 const plus1 = 28;
 const plus2 = 17;
 const cmFontSize = 24 + 2;
