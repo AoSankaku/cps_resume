@@ -177,7 +177,7 @@ ctx.fillRect(15,890,870,3);
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("最高デッキレベル", 30 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("最高ランク", 285 , 270 );
+ctx.fillText("最高ランク", 283 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 
@@ -218,7 +218,7 @@ ctx.strokeRect( boxX, boxY, 82, 82);
 
 //縦線二本
 ctx.fillStyle = "#000000";
-ctx.fillRect(270,230,2,180);
+ctx.fillRect(268,230,2,180);
 ctx.fillStyle = "#000000";
 ctx.fillRect(430,230,2,180);
 
@@ -323,6 +323,7 @@ ctx.lineWidth = 9;
 ctx.strokeText(dl, 147 , 380 );
 ctx.lineWidth = 8;
 ctx.fillText(dl, 147 , 380 );
+
 //ランクを描画
 ctx.lineWidth = 9;
 ctx.font = "bold 95px 'Heebo'";
@@ -361,11 +362,11 @@ grad.addColorStop(1,'#ee82ee');
 break;
 }
 ctx.fillStyle = grad;
-ctx.fillText(rank, 365 , 380 );
+ctx.fillText(rank, 355 , 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = "#000000";
-ctx.strokeText(rank, 365 , 380 );
+ctx.strokeText(rank, 355 , 380 );
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
