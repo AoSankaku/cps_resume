@@ -702,8 +702,8 @@ ctx.font = "26px 'monospace'";
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
 var contactY = 918;
-const plus1 = 28;
-const plus2 = 19;
+const plus1 = 30;
+const plus2 = 20;
 const cmFontSize = 26 + 2;
 const contactIconSize = 42;
 
