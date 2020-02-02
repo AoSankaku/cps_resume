@@ -177,39 +177,50 @@ ctx.fillRect(15,890,870,3);
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("最高デッキレベル", 30 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("最高ランク", 295 , 270 );
+ctx.fillText("最高ランク", 285 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
+
+var boxX = 475;
+var boxXAdd = 102;
+var boxY = 310;
+
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
-ctx.strokeRect(475,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect(475,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
+
+boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#c0c0c0";
-ctx.strokeRect(577,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect(577,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
+
+boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ffd700";
-ctx.strokeRect(679,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect(679,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
+
+boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#553592";
-ctx.strokeRect(781,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect(781,320,82,82);
+ctx.strokeRect( boxX, boxY, 82, 82);
 
 //縦線二本
 ctx.fillStyle = "#000000";
 ctx.fillRect(270,230,2,180);
 ctx.fillStyle = "#000000";
-ctx.fillRect(455,230,2,180);
+ctx.fillRect(430,230,2,180);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
@@ -295,7 +306,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐
-ctx.font = "90px 'Heebo'";
+ctx.font = "95px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
 	ctx.strokeStyle = "#ffbbbb";
@@ -314,7 +325,7 @@ ctx.lineWidth = 8;
 ctx.fillText(dl, 147 , 380 );
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 90px 'Heebo'";
+ctx.font = "bold 95px 'Heebo'";
 //ランクによってグラデーションを変化
 var grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
