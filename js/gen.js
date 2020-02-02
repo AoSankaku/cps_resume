@@ -125,11 +125,10 @@ var cm = document.getElementById('comment').value;
 //以下デザイン用
 var profilePic = new Image();
 var profilePicSize = document.forms.design.profilePicSize.value;
-var bgTheme;
-var bgImgSrc;
+var bgTheme = new Image();
 var bgColor = document.forms.design.bgColor.value;
 var fontColor = document.forms.design.fontColor.value;
-var selectedFont;
+var selectedFont = document.forms.design.font.value;
 
 //フォームに不備があったときのエラーメッセージ用
 var errorMsg = "";
@@ -140,6 +139,7 @@ var errorMsg = "";
 
 //リセット
 ctx.beginPath();
+
 //背景描画
 ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
@@ -149,9 +149,11 @@ ctx.lineWidth = 7;
 ctx.fillStyle = "#ffa500";
 ctx.font = "36px 'Noto Sans JP'";
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 48 );
+
 //外枠描画
 ctx.strokeStyle = "#000000";
 ctx.strokeRect(15,60,870,1170);
+
 //名前とよみがなを描画
 ctx.lineWidth = 3;
 ctx.fillStyle = "#000000";
@@ -160,15 +162,17 @@ ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("よみ", 40 , 110 );
 ctx.font = "55px 'Noto Sans JP'";
 ctx.fillText(" HN ", 15 , 205 );
+
 //横線四本
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,123,870,1);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,230,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(15,430,870,3);
+ctx.fillRect(15,410,870,3);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,890,870,3);
+
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("最高デッキレベル", 30 , 270 );
@@ -200,9 +204,10 @@ ctx.strokeRect(781,320,82,82);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect(781,320,82,82);
+
 //縦線二本
 ctx.fillStyle = "rgb(0,0,0)";
-ctx.fillRect(280,230,2,200);
+ctx.fillRect(270,230,2,200);
 ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(455,230,2,200);
 //使用ヒーロー
