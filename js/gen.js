@@ -224,7 +224,7 @@ ctx.fillRect(430,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 450 );
+ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 440 );
 //ロールアイコンは条件でうすくなるので描画は下で
 //同時に画像アイコンも読み込む
 var atkImg = new Image();
