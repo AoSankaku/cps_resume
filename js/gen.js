@@ -224,7 +224,7 @@ ctx.fillRect(430,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 470 );
+ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 450 );
 //ロールアイコンは条件でうすくなるので描画は下で
 //同時に画像アイコンも読み込む
 var atkImg = new Image();
@@ -400,42 +400,47 @@ if ( tournament < 0 ){
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
-var iconY = 370;
+var iconX = 492;
+var iconXAdd = 110;
+var iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "57px 'Noto Sans JP'";
-	ctx.fillText("-", 516 , iconY );
+	ctx.font = "56px 'Noto Sans JP'";
+	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 57px 'Noto Sans JP'";
-	ctx.fillText( bronze , 516 , iconY );
+	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.fillText( bronze , iconX , iconY );
 }
+iconX += iconXAdd;
 if ( silver < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "57px 'Noto Sans JP'";
-	ctx.fillText("-", 618 , iconY );
+	ctx.font = "56px 'Noto Sans JP'";
+	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 57px 'Noto Sans JP'";
-	ctx.fillText( silver , 618 , iconY );
+	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.fillText( silver , iconX , iconY );
 }
+iconX += iconXAdd;
 if ( gold < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "57px 'Noto Sans JP'";
-	ctx.fillText("-", 720 , iconY );
+	ctx.font = "56px 'Noto Sans JP'";
+	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 57px 'Noto Sans JP'";
-	ctx.fillText( gold , 720 , iconY );
+	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.fillText( gold , iconX , iconY );
 }
+iconX += iconXAdd;
 if ( tournament < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "57px 'Noto Sans JP'";
-	ctx.fillText("-", 822 , iconY );
+	ctx.font = "56px 'Noto Sans JP'";
+	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 57px 'Noto Sans JP'";
-	ctx.fillText( tournament , 822 , iconY );
+	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.fillText( tournament , iconX , iconY );
 }
 //中央揃えを左揃えに、色をユーザー指定にリセット
 ctx.textAlign = "left";
