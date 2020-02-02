@@ -181,7 +181,7 @@ ctx.fillText("最高ランク", 283 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 
-var boxX = 465;
+var boxX = 450;
 var boxXAdd = 110;
 var boxY = 310;
 
