@@ -385,7 +385,7 @@ if ( bronze < 1 ){
 	ctx.font = "58px 'Noto Sans JP'";
 	ctx.fillText("-", 516 , 380 );
 } else {
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = fontColor;
 	ctx.font = "bold 58px 'Noto Sans JP'";
 	ctx.fillText( bronze , 516 , 385 );
 }
@@ -394,7 +394,7 @@ if ( silver < 1 ){
 	ctx.font = "58px 'Noto Sans JP'";
 	ctx.fillText("-", 618 , 380 );
 } else {
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = fontColor;
 	ctx.font = "bold 58px 'Noto Sans JP'";
 	ctx.fillText( silver , 618 , 385 );
 }
@@ -403,7 +403,7 @@ if ( gold < 1 ){
 	ctx.font = "58px 'Noto Sans JP'";
 	ctx.fillText("-", 720 , 380 );
 } else {
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = fontColor;
 	ctx.font = "bold 58px 'Noto Sans JP'";
 	ctx.fillText( gold , 720 , 385 );
 }
@@ -412,12 +412,13 @@ if ( tournament < 1 ){
 	ctx.font = "58px 'Noto Sans JP'";
 	ctx.fillText("-", 822 , 380 );
 } else {
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = fontColor;
 	ctx.font = "bold 58px 'Noto Sans JP'";
 	ctx.fillText( tournament , 822 , 385 );
 }
-//中央揃えを左揃えにリセット
+//中央揃えを左揃えに、色をユーザー指定にリセット
 ctx.textAlign = "left";
+ctx.fillStyle = fontColor;
 //先に使用ヒーローを取得して描画
 //バトアリ検索
 for ( var temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
