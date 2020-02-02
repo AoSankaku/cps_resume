@@ -295,7 +295,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐
-ctx.font = "100px 'Heebo'";
+ctx.font = "90px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
 	ctx.strokeStyle = "#ffbbbb";
@@ -309,14 +309,14 @@ if (dl >= 210){
 	ctx.strokeStyle = "#dddddd";
 }
 ctx.lineWidth = 9;
-ctx.strokeText(dl, 147 , 390 );
+ctx.strokeText(dl, 147 , 380 );
 ctx.lineWidth = 8;
-ctx.fillText(dl, 147 , 390 );
+ctx.fillText(dl, 147 , 380 );
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 100px 'Heebo'";
+ctx.font = "bold 90px 'Heebo'";
 //ランクによってグラデーションを変化
-var grad = ctx.createLinearGradient(0,340,0,390);
+var grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
 case "F":
 case "E":
@@ -350,11 +350,11 @@ grad.addColorStop(1,'#ee82ee');
 break;
 }
 ctx.fillStyle = grad;
-ctx.fillText(rank, 365 , 390 );
+ctx.fillText(rank, 365 , 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = "#000000";
-ctx.strokeText(rank, 365 , 390 );
+ctx.strokeText(rank, 365 , 380 );
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
