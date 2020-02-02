@@ -302,14 +302,14 @@ if (dl >= 210){
 	ctx.strokeStyle = "#dddddd";
 }
 ctx.lineWidth = 9;
-ctx.strokeText(dl, 147 , 405 );
+ctx.strokeText(dl, 147 , 390 );
 ctx.lineWidth = 8;
-ctx.fillText(dl, 147 , 405 );
+ctx.fillText(dl, 147 , 390 );
 //ランクを描画
 ctx.lineWidth = 9;
 ctx.font = "bold 100px 'Heebo'";
 //ランクによってグラデーションを変化
-var grad = ctx.createLinearGradient(0,350,0,400);
+var grad = ctx.createLinearGradient(0,340,0,390);
 switch (rank) {
 case "F":
 case "E":
@@ -343,11 +343,12 @@ grad.addColorStop(1,'#ee82ee');
 break;
 }
 ctx.fillStyle = grad;
-ctx.fillText(rank, 365 , 405 );
+ctx.fillText(rank, 365 , 390 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = "#000000";
-ctx.strokeText(rank, 365 , 405 );
+ctx.strokeText(rank, 365 , 390 );
+
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
 //エラーチェック(99超えてないか)
