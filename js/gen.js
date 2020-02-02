@@ -127,8 +127,8 @@ var profilePic = new Image();
 var profilePicSize = document.forms.design.profilePicSize.value;
 var bgTheme;
 var bgImgSrc;
-var bgColor;
-var textColor;
+var bgColor = document.forms.design.bgColor.value;
+var fontColor = document.forms.design.fontColor.value;
 var selectedFont;
 
 //フォームに不備があったときのエラーメッセージ用
@@ -141,7 +141,7 @@ var errorMsg = "";
 //リセット
 ctx.beginPath();
 //背景描画
-ctx.fillStyle = "#ffffff";
+ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
@@ -258,7 +258,7 @@ switch (profilePicSize) {
 ctx.drawImage( img[9], 714, 63, profilePicScale, profilePicScale);
 
 //■指定色
-//ctx.fillStyle = "#000000";
+ctx.fillStyle = fontColor;
 
 ctx.lineWidth = 4;
 ctx.font = "40px 'monospace'";
@@ -378,7 +378,7 @@ if ( tournament < 0 ){
 }
 //金銀銅アイコンの数を描画
 //ただし各項目0の場合ハイフンを表示
-ctx.fillStyle = "#000000";
+ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
 if ( bronze < 1 ){
 	ctx.fillStyle = "#999999";
@@ -416,8 +416,7 @@ if ( tournament < 1 ){
 	ctx.font = "bold 58px 'Noto Sans JP'";
 	ctx.fillText( tournament , 822 , 385 );
 }
-//中央揃えを左揃えに、文字色を黒にリセット
-ctx.fillStyle = "#000000";
+//中央揃えを左揃えにリセット
 ctx.textAlign = "left";
 //先に使用ヒーローを取得して描画
 //バトアリ検索
