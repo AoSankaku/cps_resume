@@ -155,6 +155,7 @@ ctx.fillStyle = "#ffa500";
 ctx.font = "36px 'Noto Sans JP'";
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 48 );
 ctx.strokeStyle = defaultColor;
+ctx.lineWidth = 2;
 ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 48);
 
 //外枠描画
@@ -171,13 +172,10 @@ ctx.font = "55px 'Noto Sans JP'";
 ctx.fillText(" HN ", 15 , 205 );
 
 //横線四本
-ctx.fillStyle = "rgb(0,0,0)";
+ctx.fillStyle = defaultColor;
 ctx.fillRect(15,123,870,1);
-ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,230,870,3);
-ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,400,870,3);
-ctx.fillStyle = "rgb(0,0,0)";
 ctx.fillRect(15,860,870,3);
 
 //デキレ、ランク、アイコン所持数
