@@ -130,6 +130,7 @@ var profilePic = new Image();
 var profilePicSize = document.forms.design.profilePicSize.value;
 var bgTheme = new Image();
 var bgColor = document.forms.design.bgColor.value;
+var defaultColor = document.forms.design.defaultColor.value;
 var fontColor = document.forms.design.fontColor.value;
 var selectedFont = document.forms.design.font.value;
 
@@ -146,20 +147,23 @@ ctx.beginPath();
 //背景描画
 ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
+
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
 ctx.lineWidth = 7;
 ctx.fillStyle = "#ffa500";
 ctx.font = "36px 'Noto Sans JP'";
-ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15 , 48 );
+ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 48 );
+ctx.strokeStyle = defaultColor;
+ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 48);
 
 //外枠描画
-ctx.strokeStyle = "#000000";
+ctx.strokeStyle = defaultColor;
 ctx.strokeRect(15,60,870,1170);
 
 //名前とよみがなを描画
 ctx.lineWidth = 3;
-ctx.fillStyle = "#000000";
+ctx.fillStyle = defaultColor;
 //左側のHN、よみを描く
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("よみ", 40 , 110 );
@@ -220,9 +224,8 @@ ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, 82, 82);
 
 //縦線二本
-ctx.fillStyle = "#000000";
+ctx.fillStyle = defaultColor;
 ctx.fillRect(268,230,2,170);
-ctx.fillStyle = "#000000";
 ctx.fillRect(430,230,2,170);
 
 //使用ヒーロー
@@ -253,12 +256,11 @@ fkImg.src = img[8].src;
 guImg.src = img[10].src;
 
 //連絡先とアイコン
-ctx.fillStyle = "#000000";
+ctx.fillStyle = defaultColor;
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("連絡先など", 30 , 900 );
 //連絡先アイコンは内容に応じて省略をするため後から描画
 
-ctx.fillStyle = "#000000";
 //一番下に注意書きなど
 ctx.globalAlpha = 0.5 ;
 ctx.font = "20px 'Noto Sans JP'";
@@ -280,7 +282,9 @@ switch (profilePicSize) {
 	case "none": profilePicScale = 0; break;
 }
 
-ctx.drawImage( img[9], 714, 63, profilePicScale, profilePicScale);
+const profilePicY = (63 + 167) - profilePicScale;
+
+ctx.drawImage( img[9], 714, profilePicY, profilePicScale, profilePicScale);
 
 //■指定色
 ctx.fillStyle = fontColor;
