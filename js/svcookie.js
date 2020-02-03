@@ -192,7 +192,7 @@ function onChangeForms(){
 		
 		comp[16] = Boolean( bgColor == document.forms.design.bgColor.value );
 		comp[17] = Boolean( fontColor == document.forms.design.fontColor.value );
-		comp[18] = Boolean( selectedFont == document.forms.design.selectedFont.value );
+		comp[18] = Boolean( selectedFont == document.forms.design.font.value );
 		
 		//比較判定
 		var result = true;
@@ -267,7 +267,7 @@ window.addEventListener('load', function loadFromCookie(){
 				//デザイン
 				document.getElementById( "bgColor" ).value = bgColor;
 				document.getElementById( "fontColor" ).value = fontColor;
-				document.getElementById( "selectedFont" ).value = selectedFont;
+				document.getElementById( "font" ).value = selectedFont;
 				
 				
 				//選択肢もロード
