@@ -1,6 +1,8 @@
 //記入した内容をCookieに記録する                                                                                                                                                                                                                  
 function saveToCookie(){
 
+console.log(document.getElementById( 'profilePic' ).value);
+
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
 
@@ -45,6 +47,7 @@ if(navigator.cookieEnabled){
 	//デザイン関連
 	var bgColor = document.forms.design.bgColor.value;
 	var fontColor = document.forms.design.fontColor.value;
+	var defaultColor = document.forms.design.defaultColor.value;
 	var selectedFont = document.forms.design.font.value;
 	
 	//選択肢の内容をロード
@@ -86,6 +89,7 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'cm' , cm );
 	Cookies.set( 'bgColor' , bgColor );
 	Cookies.set( 'fontColor' , fontColor );
+	Cookies.set( 'defaultColor' , defaultColor )
 	Cookies.set( 'selectedFont' , selectedFont );
 	Cookies.set( 'savedAt' , savedAt );
 
@@ -123,6 +127,7 @@ function onChangeForms(){
 	var cm = Cookies.get( 'cm' );
 	var bgColor = Cookies.get( 'bgColor' );
 	var fontColor = Cookies.get( 'fontColor' );
+	var defaultColor = Cookies.get( 'defaultColor' )
 	var selectedFont = Cookies.get( 'selectedFont' );
 	var savedAt = Cookies.get( 'savedAt' );
 	
@@ -193,6 +198,7 @@ function onChangeForms(){
 		comp[16] = Boolean( bgColor == document.forms.design.bgColor.value );
 		comp[17] = Boolean( fontColor == document.forms.design.fontColor.value );
 		comp[18] = Boolean( selectedFont == document.forms.design.font.value );
+		comp[19] = Boolean( defaultColor == document.forms.design.defaultColor.value );
 		
 		//比較判定
 		var result = true;
@@ -242,6 +248,7 @@ window.addEventListener('load', function loadFromCookie(){
 		var cm = Cookies.get( 'cm' );
 		var bgColor = Cookies.get( 'bgColor' );
 		var fontColor = Cookies.get( 'fontColor' );
+		var defaultColor = Cookies.get( 'defaultColor' );
 		var selectedFont = Cookies.get( 'selectedFont' );
 		var savedAt = Cookies.get( 'savedAt' );
 
@@ -267,6 +274,7 @@ window.addEventListener('load', function loadFromCookie(){
 				//デザイン
 				document.getElementById( "bgColor" ).value = bgColor;
 				document.getElementById( "fontColor" ).value = fontColor;
+				document.getElementById( "defaultColor" ).value = defaultColor;
 				document.getElementById( "font" ).value = selectedFont;
 				
 				
