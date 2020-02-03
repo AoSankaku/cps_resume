@@ -1,7 +1,7 @@
 //記入した内容をCookieに記録する                                                                                                                                                                                                                  
 function saveToCookie(){
 
-console.log(document.getElementById( 'profilePic' ).value);
+console.log(document.getElementById( 'profilePic' ));
 
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
