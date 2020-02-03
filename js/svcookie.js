@@ -39,8 +39,15 @@ if(navigator.cookieEnabled){
 	var dc = document.forms.info.dc.value;
 	var sp = document.forms.info.sp.value;
 	var fc = document.forms.info.fc.value;
+	var guild = document.forms.info.guild.value;
 	var cm = document.getElementById('comment').value;
-	//選択肢の内容もあらかじめロード
+	
+	//デザイン関連
+	var bgColor = document.forms.design.bgColor.value;
+	var fontColor = document.forms.design.fontColor.value;
+	var selectedFont = document.forms.design.font.value;
+	
+	//選択肢の内容をロード
 	var heroB = document.getElementById("heroB");
 	var heroF = document.getElementById("heroF");
 	var heroBe = heroB.options;
@@ -75,7 +82,11 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'dc' , dc );
 	Cookies.set( 'sp' , sp );
 	Cookies.set( 'fc' , fc );
+	Cookies.set( 'guild' , guild );
 	Cookies.set( 'cm' , cm );
+	Cookies.set( 'bgColor' , bgColor );
+	Cookies.set( 'fontColor' , fontColor );
+	Cookies.set( 'selectedFont' , selectedFont );
 	Cookies.set( 'savedAt' , savedAt );
 
 	//最後にアラート
@@ -108,7 +119,11 @@ function onChangeForms(){
 	var dc = Cookies.get( 'dc' );
 	var sp = Cookies.get( 'sp' );
 	var fc = Cookies.get( 'fc' );
+	var guild = Cookies.get( 'guild' );
 	var cm = Cookies.get( 'cm' );
+	var bgColor = Cookies.get( 'bgColor' );
+	var fontColor = Cookies.get( 'fontColor' );
+	var selectedFont = Cookies.get( 'selectedFont' );
 	var savedAt = Cookies.get( 'savedAt' );
 	
 	//本当に中身が変わったのか比較する（ A => B => A の場合は「変更なし」判定する）
@@ -117,6 +132,7 @@ function onChangeForms(){
 	if( navigator.cookieEnabled && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
 		//フォームの内容を比較する
 		var comp = [];
+		
 		comp[0] = Boolean( read == document.forms.info.read.value );
 		comp[1] = Boolean( name == document.forms.info.name.value );
 		comp[2] = Boolean( dl == document.forms.info.dl.value );
@@ -172,6 +188,12 @@ function onChangeForms(){
 		comp[13] = Boolean( heroBSel == heroBStrC );
 		comp[14] = Boolean( heroFSel == heroFStrC );
 		
+		comp[15] = Boolean( guild == document.forms.info.guild.value );
+		
+		comp[16] = Boolean( bgColor == document.forms.design.bgColor.value );
+		comp[17] = Boolean( fontColor == document.forms.design.fontColor.value );
+		comp[18] = Boolean( selectedFont == document.forms.design.selectedFont.value );
+		
 		//比較判定
 		var result = true;
 		
@@ -216,7 +238,11 @@ window.addEventListener('load', function loadFromCookie(){
 		var dc = Cookies.get( 'dc' );
 		var sp = Cookies.get( 'sp' );
 		var fc = Cookies.get( 'fc' );
+		var guild = Cookies.get( 'guild' );
 		var cm = Cookies.get( 'cm' );
+		var bgColor = Cookies.get( 'bgColor' );
+		var fontColor = Cookies.get( 'fontColor' );
+		var selectedFont = Cookies.get( 'selectedFont' );
 		var savedAt = Cookies.get( 'savedAt' );
 
 		//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
@@ -235,7 +261,15 @@ window.addEventListener('load', function loadFromCookie(){
 				document.getElementById( "dc" ).value = dc;
 				document.getElementById( "sp" ).value = sp;
 				document.getElementById( "fc" ).value = fc;
+				document.getElementById( "guild" ).value = guild;
 				document.getElementById( "comment" ).value = cm;
+				
+				//デザイン
+				document.getElementById( "bgColor" ).value = bgColor;
+				document.getElementById( "fontColor" ).value = fontColor;
+				document.getElementById( "selectedFont" ).value = selectedFont;
+				
+				
 				//選択肢もロード
 				document.getElementById("dl").value = dl;
 				document.getElementById("rank").value = rank;
