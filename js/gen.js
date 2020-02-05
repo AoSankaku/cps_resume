@@ -151,10 +151,10 @@ ctx.fillRect(0,0,900,1300);
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
 ctx.strokeStyle = defaultColor;
+ctx.font = "36px 'Noto Sans JP'";
 ctx.lineWidth = 2;
 ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 48);
 ctx.fillStyle = "#ffa500";
-ctx.font = "36px 'Noto Sans JP'";
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 48 );
 
 //外枠描画
