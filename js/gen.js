@@ -27,6 +27,7 @@ img[9] = new Image();
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
 
+//フォントをプリロード（描いてすぐ消す）
 
 
 
@@ -151,11 +152,11 @@ ctx.fillRect(0,0,900,1300);
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
 ctx.strokeStyle = defaultColor;
-ctx.font = "36px 'Noto Sans JP'";
-ctx.lineWidth = 2;
-ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 48);
+ctx.font = "32px 'Noto Sans JP'";
+ctx.lineWidth = 3;
+ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 46 );
 ctx.fillStyle = "#ffa500";
-ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 48 );
+ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 46 );
 
 //外枠描画
 ctx.lineWidth = 7;
