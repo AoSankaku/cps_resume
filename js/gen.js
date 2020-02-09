@@ -319,15 +319,15 @@ ctx.fillText(name, 130 , 205 );
 ctx.font = "95px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
-	ctx.strokeStyle = "#ff8888";
+	ctx.strokeStyle = "#ff0000";
 } else if (dl >= 170){
-	ctx.strokeStyle = "#ffaaaa";
+	ctx.strokeStyle = "#ff6666";
 } else if (dl >= 130){
-	ctx.strokeStyle = "#ffdddd";
+	ctx.strokeStyle = "#ffbbbb";
 } else if (dl >= 90){
-	ctx.strokeStyle = "#eedddd";
+	ctx.strokeStyle = "#880000";
 } else {
-	ctx.strokeStyle = "#dddddd";
+	ctx.strokeStyle = "#666666";
 }
 ctx.lineWidth = 9;
 ctx.globalAlpha = 0.3 ;
@@ -377,7 +377,7 @@ ctx.fillStyle = grad;
 ctx.fillText( rank, 350, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
-ctx.strokeStyle = defaultColor;
+ctx.strokeStyle = fontColor;
 ctx.strokeText( rank, 350, 380 );
 ctx.strokeStyle = "#000000";
 
