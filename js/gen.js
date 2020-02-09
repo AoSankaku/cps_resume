@@ -319,9 +319,9 @@ ctx.fillText(name, 130 , 205 );
 ctx.font = "95px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
-	ctx.strokeStyle = "#ffbbbb";
+	ctx.strokeStyle = "#ff8888";
 } else if (dl >= 170){
-	ctx.strokeStyle = "#ffcccc";
+	ctx.strokeStyle = "#ffaaaa";
 } else if (dl >= 130){
 	ctx.strokeStyle = "#ffdddd";
 } else if (dl >= 90){
@@ -330,8 +330,10 @@ if (dl >= 210){
 	ctx.strokeStyle = "#dddddd";
 }
 ctx.lineWidth = 9;
+ctx.globalAlpha = 0.3 ;
 ctx.strokeText(dl, 147 , 380 );
 ctx.lineWidth = 8;
+ctx.globalAlpha = 1.0 ;
 ctx.fillText(dl, 147 , 380 );
 
 //ランクを描画
