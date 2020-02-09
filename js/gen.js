@@ -375,8 +375,9 @@ ctx.fillStyle = grad;
 ctx.fillText( rank, 350, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
-ctx.strokeStyle = "#000000";
+ctx.strokeStyle = defaultColor;
 ctx.strokeText( rank, 350, 380 );
+ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
