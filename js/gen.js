@@ -86,7 +86,7 @@ function drawImage(url) {
 			result = fileName;
 		}
 
-		document.getElementById('fileName1').innerText = result;
+		document.getElementById('fileName1').innerHTML = result;
 	}
 }
 
