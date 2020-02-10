@@ -35,15 +35,18 @@ h3{
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
+
 p{
 	color:#000000;
 	font-size:2.8vw;
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
+
 span.notify{
 	font-size:3.2vw;
 }
+
 
 .errorbox{
 	margin: 2em auto 2em;
@@ -97,6 +100,7 @@ span.notify{
 	max-width:1000px;
 }
 
+
 .file_button {
 	display: inline-block;
 	position: relative;
@@ -128,6 +132,56 @@ span.notify{
 	opacity: 0;
 	cursor: pointer;
 }
+
+
+.container {
+	font-family: 'M PLUS 1p', sans-serif;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.btn-open {
+	display: inline-block;
+	width: 180px;
+	height:50px;
+	text-align: center;
+	background-color: #9ec34b;
+	font-size: 16px;
+	line-height: 52px;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	border: 2px solid #9ec34b;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.btn-open:after{
+  width: 100%;
+  height: 0;
+  content:"";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background : #FFF;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: .2s;
+  z-index: -1;
+}
+.btn-open:hover{
+  color: #9ec34b;
+}
+.btn-open:hover:after{
+  height: 240%;
+  opacity: 1;
+}
+.btn-open:active:after{
+  height: 340%;
+  opacity: 1;
+}
+
 
 div.sys{
 	font-size:16px;
