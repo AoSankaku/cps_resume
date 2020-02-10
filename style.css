@@ -109,7 +109,7 @@ span.notify{
 	font-size:20px;
 	color: #fff;
 	border-radius: 4px;
-	background-color: #2772DB;
+	background-color: #1b435d;
 	overflow: hidden;
 	width:430px;
 	height:30px;
@@ -120,7 +120,7 @@ span.notify{
 }
 
 .file_button:hover {
-	background-color: #2062bf;
+	background-color: #20629f;
 }
 
 .file_input {
@@ -145,13 +145,13 @@ span.notify{
 	width: 810px;
 	height:85px;
 	text-align: center;
-	background-color: #9ec34b;
+	background-color: #f99f48;
 	font-size: 48px;
 	line-height: 52px;
 	color: #FFF;
 	text-decoration: none;
 	font-weight: bold;
-	border: 2px solid #9ec34b;
+	border: 4px solid #d5eeff;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
@@ -171,7 +171,7 @@ span.notify{
   z-index: -1;
 }
 .btn-open:hover{
-  color: #9ec34b;
+  color: #f99f48;
 }
 .btn-open:hover:after{
   height: 240%;
