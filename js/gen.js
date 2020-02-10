@@ -58,8 +58,10 @@ function drawImage(url) {
 		let files = document.getElementById('profilePic').files;
 		let fileName = files[0].name;
 		let extention = fileName.slice( fileName.lastIndexOf( '.' ) );
+		let fileNameWoEx = fileName.slice( 0, fileName.lastIndexOf( '.' ) );
 		
 		let result = fileName;
+		console.log( fileNameWoEx );
 		console.log( extention );
 		document.getElementById('fileName1').innerText = result;
 	}
