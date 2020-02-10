@@ -1,4 +1,4 @@
-//画像をプリロード
+//画像をプリロード                                                                                                                                                                                     
 var img = [];
 img[0] = new Image();
 img[0].src = "img/attacker.png";
@@ -27,6 +27,23 @@ img[9] = new Image();
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
 
+//文字数カウント用
+function getLen(str){
+	var result = 0;
+	for(var i=0;i<str.length;i++){
+		var chr = str.charCodeAt(i);
+		if((chr >= 0x00 && chr < 0x81) ||　(chr === 0xf8f0) ||　(chr >= 0xff61 && chr < 0xffa0) ||　(chr >= 0xf8f1 && chr < 0xf8f4)){
+			//半角文字の場合は1を加算
+			result += 1;
+		}else{
+			//それ以外の文字の場合は2を加算
+			result += 2;
+		}
+	}
+	//結果を返す
+	return result;
+}
+
 //フォントをプリロード（描いてすぐ消す）
 
 
@@ -53,16 +70,18 @@ function drawImage(url) {
 		ctx.clearRect( 0, 0, can.width, can.height )	
 		
 		//次にボタンの名前をファイル名にする
-		let maxNameLength = 30;
+		let maxNameLength = 34;
 		
 		let files = document.getElementById('profilePic').files;
 		let fileName = files[0].name;
 		let extention = fileName.slice( fileName.lastIndexOf( '.' ) );
 		let fileNameWoEx = fileName.slice( 0, fileName.lastIndexOf( '.' ) );
+		let fileNameLength = getLen( fileNameWoEx );
 		
-		let result = fileName;
 		console.log( fileNameWoEx );
 		console.log( extention );
+		console.log( fileNameLength );
+		let result = fileName;
 		document.getElementById('fileName1').innerText = result;
 	}
 }
