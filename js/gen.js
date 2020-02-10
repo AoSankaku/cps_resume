@@ -81,6 +81,7 @@ function drawImage(url) {
 		
 		if ( fileNameLength > maxNameLength ){
 			result = fileNameWoEx.slice( 0, 20 ) + "…" + fileNameWoEx.slice( -12 ) + extention;
+			console.log( result );
 		} else {
 			result = fileName;
 		}
