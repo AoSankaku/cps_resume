@@ -100,14 +100,14 @@ span.notify{
 .file_button {
 	display: inline-block;
 	position: relative;
-	padding: 1em 2.2em;
+	padding: 5px 15px;
 	text-align: center;
 	color: #fff;
 	border-radius: 4px;
 	background-color: #2772DB;
 	overflow: hidden;
-	width:460px;
-	height:40px;
+	width:430px;
+	height:30px;
 	-webkit-transition: .3s ease;
 	-moz-transition: .3s ease;
 	-o-transition: .3s ease;
