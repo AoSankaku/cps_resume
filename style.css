@@ -23,19 +23,20 @@ h1{
 }
 
 h2{
-	font-color:#1b435d;
+	color:#1b435d;
 	font-size:3.5vw;
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
 h3{
-	font-color:#1b435d;
+	color:#1b435d;
 	color:#1b435d;
 	font-size: 3.5vw;
 	font-family: 'M PLUS 1p', sans-serif;
 }
 
 p{
+	color:#1b435d;
 	font-size:2.8vw;
 	font-family: 'M PLUS 1p', sans-serif;
 }
