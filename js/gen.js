@@ -53,7 +53,8 @@ function drawImage(url) {
 		ctx.clearRect( 0, 0, can.width, can.height )	
 		
 		//次にボタンの名前をファイル名にする
-		document.getElementById('fileName1').innerText = img[9].name;
+		let files = document.getElementById('profilePic').files;
+		document.getElementById('fileName1').innerText = files[0].name;
 	}
 }
 
