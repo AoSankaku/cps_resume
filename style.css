@@ -147,7 +147,7 @@ span.notify{
 	text-align: center;
 	background-color: #f99f48;
 	font-size: 48px;
-	line-height: 52px;
+	line-height: 82px;
 	color: #FFF;
 	text-decoration: none;
 	font-weight: bold;
@@ -174,11 +174,11 @@ span.notify{
   color: #f99f48;
 }
 .btn-open:hover:after{
-  height: 240%;
+  height: 600%;
   opacity: 1;
 }
 .btn-open:active:after{
-  height: 340%;
+  height: 680%;
   opacity: 1;
 }
 
