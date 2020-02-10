@@ -77,11 +77,14 @@ function drawImage(url) {
 		let extention = fileName.slice( fileName.lastIndexOf( '.' ) );
 		let fileNameWoEx = fileName.slice( 0, fileName.lastIndexOf( '.' ) );
 		let fileNameLength = getLen( fileNameWoEx );
+		let result = "";
 		
-		console.log( fileNameWoEx );
-		console.log( extention );
-		console.log( fileNameLength );
-		let result = fileName;
+		if ( fileNameLength > maxNameLength ){
+			result = fileNameWoEx.slice( 0, 20 ) + "…" + fileNameWoEx.slice( -12 ) + extention;
+		} else {
+			result = fileName;
+		}
+
 		document.getElementById('fileName1').innerText = result;
 	}
 }
