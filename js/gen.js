@@ -53,8 +53,15 @@ function drawImage(url) {
 		ctx.clearRect( 0, 0, can.width, can.height )	
 		
 		//次にボタンの名前をファイル名にする
+		let maxNameLength = 30;
+		
 		let files = document.getElementById('profilePic').files;
-		document.getElementById('fileName1').innerText = files[0].name;
+		let fileName = files[0].name;
+		let extention = fileName.slice( fileName.lastIndexOf( '.' ) );
+		
+		let result = fileName;
+		console.log( extention );
+		document.getElementById('fileName1').innerText = result;
 	}
 }
 
