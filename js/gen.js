@@ -51,6 +51,9 @@ function drawImage(url) {
 		//一瞬描いてすぐ消す
 		ctx.drawImage(img[9], 620, 100);
 		ctx.clearRect( 0, 0, can.width, can.height )	
+		
+		//次にボタンの名前をファイル名にする
+		document.getElementById('fileName1').innerText = img[9].name;
 	}
 }
 
