@@ -188,13 +188,13 @@ ctx.beginPath();
 ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
 //背景は繰り返しがあるので回数を判定してがんばる
-if ( bgtheme !== "custom" && bgtheme !== "monotone" ){
+if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
 	let canX = can.width;
 	let canY = can.height;
-	let timesX = 0;
-	let timesY = 0;
 	let bgthemeX = img[11].naturalWidth;
 	let bgthemeY = img[11].naturalHeight;
+	let timesX = 0;
+	let timesY = 0;
 	ctx.globalAlpha = bgTrans;
 	
 	//繰り返して描画する
@@ -204,8 +204,10 @@ if ( bgtheme !== "custom" && bgtheme !== "monotone" ){
 			timesX += 1;
 		}
 		timesY += 1;
+		console.log(canY,timesY,bgthemeY,timesY*bgthemeY);
 	}
 }
+ctx.globalAlpha = 1.0;
 
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
