@@ -116,7 +116,7 @@ function changeSaveAlert(){
 function onChangeForms(){
 	
 	//ついでに選択された画像を選択しておく
-	var img[11].src = "img/bc/" + document.forms.design.bgtheme.value + ".png";
+	img[11].src = "img/bc/" + document.forms.design.bgtheme.value + ".png";
 	
 	//とりあえずキャッシュの内容をロード
 	var read = Cookies.get( 'read' );
