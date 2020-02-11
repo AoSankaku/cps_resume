@@ -71,27 +71,27 @@ if(navigator.cookieEnabled){
 	}
 
 	//■Cookieに書き込み
-	Cookies.set( 'read' , read );
-	Cookies.set( 'name' , name );
-	Cookies.set( 'dl' , dl );
-	Cookies.set( 'rank' , rank );
-	Cookies.set( 'heroBSel' , heroBSel );
-	Cookies.set( 'heroFSel' , heroFSel );
-	Cookies.set( 'bronze' , bronze );
-	Cookies.set( 'silver' , silver );
-	Cookies.set( 'gold' , gold );
-	Cookies.set( 'tournament' , tournament );
-	Cookies.set( 'tw' , tw );
-	Cookies.set( 'dc' , dc );
-	Cookies.set( 'sp' , sp );
-	Cookies.set( 'fc' , fc );
-	Cookies.set( 'guild' , guild );
-	Cookies.set( 'cm' , cm );
-	Cookies.set( 'bgColor' , bgColor );
-	Cookies.set( 'fontColor' , fontColor );
-	Cookies.set( 'defaultColor' , defaultColor );
-	Cookies.set( 'selectedFont' , selectedFont );
-	Cookies.set( 'savedAt' , savedAt );
+	Cookies.set( 'read' , read , { samesite: 'lax' } );
+	Cookies.set( 'name' , name , { samesite: 'lax' } );
+	Cookies.set( 'dl' , dl , { samesite: 'lax' } );
+	Cookies.set( 'rank' , rank , { samesite: 'lax' } );
+	Cookies.set( 'heroBSel' , heroBSel , { samesite: 'lax' } );
+	Cookies.set( 'heroFSel' , heroFSel , { samesite: 'lax' } );
+	Cookies.set( 'bronze' , bronze , { samesite: 'lax' } );
+	Cookies.set( 'silver' , silver , { samesite: 'lax' } );
+	Cookies.set( 'gold' , gold , { samesite: 'lax' } );
+	Cookies.set( 'tournament' , tournament , { samesite: 'lax' } );
+	Cookies.set( 'tw' , tw , { samesite: 'lax' } );
+	Cookies.set( 'dc' , dc , { samesite: 'lax' } );
+	Cookies.set( 'sp' , sp , { samesite: 'lax' } );
+	Cookies.set( 'fc' , fc , { samesite: 'lax' } );
+	Cookies.set( 'guild' , guild , { samesite: 'lax' } );
+	Cookies.set( 'cm' , cm , { samesite: 'lax' } );
+	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' } );
+	Cookies.set( 'fontColor' , fontColor , { samesite: 'lax' } );
+	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' } );
+	Cookies.set( 'selectedFont' , selectedFont , { samesite: 'lax' } );
+	Cookies.set( 'savedAt' , savedAt , { samesite: 'lax' } );
 
 	//最後にアラート
 	alert("記入内容をCookieに保存しました！");
@@ -187,16 +187,12 @@ function onChangeForms(){
 		
 		var heroBStr = heroBSel.join(',');
 		var heroFStr = heroFSel.join(',');
-		console.log( heroBStr );
-		console.log( heroFStr );
 		var heroBStrC = Cookies.get( 'heroBSel' );
 		var heroFStrC = Cookies.get( 'heroFSel' );
 		heroBStrC = heroBStrC.slice( 1 );
 		heroBStrC = heroBStrC.slice( 0 , -1 );
 		heroFStrC = heroFStrC.slice( 1 );
 		heroFStrC = heroFStrC.slice( 0 , -1 );
-		console.log( heroBStrC );
-		console.log( heroFStrC );
 		
 		comp[13] = Boolean( heroBSel == heroBStrC );
 		comp[14] = Boolean( heroFSel == heroFStrC );
