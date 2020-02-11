@@ -202,9 +202,16 @@ if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
 		for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
 			ctx.drawImage( img[11] , timesX * bgthemeX , timesY * bgthemeY );
 			timesX += 1;
+			
+			if ( i > 10000 ){
+				errorMsg += "背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n";
+				break;
+			}
 		}
 		timesY += 1;
 		timesX = 0;
+		//ループ数が異常に多かったら抜ける
+		
 	}
 }
 ctx.globalAlpha = 1.0;
