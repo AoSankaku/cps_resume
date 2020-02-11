@@ -45,6 +45,9 @@ if(navigator.cookieEnabled){
 	var cm = document.getElementById('comment').value;
 	
 	//デザイン関連
+	var profilePicSize = document.forms.design.profilePicSize.value;
+	var bgTheme = document.forms.design.bgtheme.value;
+	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
 	var fontColor = document.forms.design.fontColor.value;
 	var defaultColor = document.forms.design.defaultColor.value;
@@ -87,6 +90,9 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'fc' , fc , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'guild' , guild , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'cm' , cm , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'profilePicSize' , profilePicSize , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'bgTheme' , bgTheme , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'bgTrans' , bgTrans , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'fontColor' , fontColor , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' , secure: true , expires: 365 } );
@@ -133,6 +139,9 @@ function onChangeForms(){
 	var fc = Cookies.get( 'fc' );
 	var guild = Cookies.get( 'guild' );
 	var cm = Cookies.get( 'cm' );
+	var profilePicSize = Cookies.get( 'profilePicSize' );
+	var bgTheme = Cookies.get( 'bgTheme' );
+	var bgTrans = Cookies.get( 'bgTrans' );
 	var bgColor = Cookies.get( 'bgColor' );
 	var fontColor = Cookies.get( 'fontColor' );
 	var defaultColor = Cookies.get( 'defaultColor' );
@@ -203,6 +212,9 @@ function onChangeForms(){
 		comp[17] = Boolean( fontColor == document.forms.design.fontColor.value );
 		comp[18] = Boolean( selectedFont == document.forms.design.font.value );
 		comp[19] = Boolean( defaultColor == document.forms.design.defaultColor.value );
+		comp[20] = Boolean( profilePicSize == document.forms.design.profilePicSize.value );
+		comp[21] = Boolean( bgTheme == document.forms.design.bgtheme.value );
+		comp[22] = Boolean( bgTrans == document.forms.design.bgTrahs.value );
 		
 		//比較判定
 		var result = true;
@@ -250,6 +262,9 @@ window.addEventListener('load', function loadFromCookie(){
 		var fc = Cookies.get( 'fc' );
 		var guild = Cookies.get( 'guild' );
 		var cm = Cookies.get( 'cm' );
+		var profilePicSize = Cookies.get( 'profilePicSize' );
+		var bgTheme = Cookies.get( 'bgTheme' );
+		var bgTrans = Cookies.get( 'bgTrans' );
 		var bgColor = Cookies.get( 'bgColor' );
 		var fontColor = Cookies.get( 'fontColor' );
 		var defaultColor = Cookies.get( 'defaultColor' );
@@ -276,6 +291,9 @@ window.addEventListener('load', function loadFromCookie(){
 				document.getElementById( "comment" ).value = cm;
 				
 				//デザイン
+				document.getElementById( "profilePicSize" ).value = profilePicSize;
+				document.getElementById( "bgtheme" ).value = bgTheme;
+				document.getElementById( "bgTrans" ).value = bgTrans;
 				document.getElementById( "bgColor" ).value = bgColor;
 				document.getElementById( "fontColor" ).value = fontColor;
 				document.getElementById( "defaultColor" ).value = defaultColor;
@@ -283,8 +301,8 @@ window.addEventListener('load', function loadFromCookie(){
 				
 				
 				//選択肢もロード
-				document.getElementById("dl").value = dl;
-				document.getElementById("rank").value = rank;
+				document.getElementById( "dl" ).value = dl;
+				document.getElementById( "rank" ).value = rank;
 	
 	
 				//ヒーロー選択試験的実装
