@@ -167,7 +167,7 @@ var cm = document.getElementById('comment').value;
 //以下デザイン用
 var profilePic = new Image();
 var profilePicSize = document.forms.design.profilePicSize.value;
-var bgTheme = new Image();
+var bgTheme = document.forms.design.bgtheme.value;
 var bgColor = document.forms.design.bgColor.value;
 var defaultColor = document.forms.design.defaultColor.value;
 var fontColor = document.forms.design.fontColor.value;
@@ -186,6 +186,14 @@ ctx.beginPath();
 //背景描画
 ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
+//背景は繰り返しがあるので回数を判定してがんばる
+if ( bgtheme !== "custom" && bgtheme !== "monotone" ){
+	let canX = can.width;
+	let canY = can.height;
+	let bgthemeX = img[11].naturalWidth;
+	let bgthemeY = img[11].naturalHeight;
+	console.log(bgthemeX);
+}
 
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
 //基本的にはNoto Sans JPを使用する
