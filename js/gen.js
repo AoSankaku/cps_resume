@@ -168,6 +168,7 @@ var cm = document.getElementById('comment').value;
 var profilePic = new Image();
 var profilePicSize = document.forms.design.profilePicSize.value;
 var bgTheme = document.forms.design.bgtheme.value;
+var bgTrans = document.forms.design.bgTrans.value;
 var bgColor = document.forms.design.bgColor.value;
 var defaultColor = document.forms.design.defaultColor.value;
 var fontColor = document.forms.design.fontColor.value;
@@ -190,9 +191,20 @@ ctx.fillRect(0,0,900,1300);
 if ( bgtheme !== "custom" && bgtheme !== "monotone" ){
 	let canX = can.width;
 	let canY = can.height;
+	let timesX = 0;
+	let timesY = 0;
 	let bgthemeX = img[11].naturalWidth;
 	let bgthemeY = img[11].naturalHeight;
-	console.log(bgthemeX);
+	ctx.globalAlpha = bgTrans;
+	
+	//繰り返して描画する
+	while ( timesY * bgthemeY > canY ){
+		for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
+			ctx.drawImage( img[11] , timesX * bgthemeX , timesY * bgthemeY );
+			timesX += 1;
+		}
+		timesY += 1;
+	}
 }
 
 //表題(フォントはWebフォントの「M PLUS 1p」、「Noto Sans JP」を試用)
