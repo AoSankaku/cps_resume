@@ -267,7 +267,7 @@
 <dt>プロフィール画像</dt>
 <dd>
 	<div class="file_button">
-	<span id="fileName1">ファイルを選択</span>
+	<span id="fileName1">（ファイルを選択）</span>
 	<input type="file" accept="image/png,image/jpeg,image/gif" id="profilePic" class="file_input" onChange="onChangeForms();">
 	</div>
 </dd>
@@ -281,22 +281,56 @@
 	<option value="none">表示しない</option>	
 	</select>
 </dd>
-<dt>履歴書背景テーマ</dt>
+<dt>背景模様</dt>
 <dd>
-	<select id="bgtheme" disabled="disabled" onChange="onChangeForms();">
-	<option value="custom">自分でアップロード</option>
-	<option value="nonotone" selected>単色</option>
-	<option value="bg1">模様1</option>
-	<option value="bg2">模様2</option>
-	<option value="bg3">模様3</option>
-	<option value="bg4">模様4</option>
-	<option value="bg5">模様5</option>
+	<select id="bgtheme" onChange="onChangeForms();">
+	<option value="custom" disabled>自分でアップロード</option>
+	<option value="nonotone" selected>単色（模様なし）</option>
+	<option value="3px-tile">3px Tile</option>
+	<option value="always-grey">Always Grey</option>
+	<option value="argyle">Argyle</option>
+	<option value="az-subtle">Az Subtle</option>
+	<option value="checkered-pattern">Checkered Pattern</option>
+	<option value="crissxcross">Crissxcross</option>
+	<option value="cross-stripes">Cross Stripes</option>
+	<option value="diagmonds">Diagmonds</option>
+	<option value="diagmonds-light">Diagmonds Light</option>
+	<option value="diagonal-striped-brick">Diagonal Striped Brick</option>
+	<option value="diamond-upholstery">Diamond Upholstery</option>
+	<option value="graphy-dark">Graphy-Dark</option>
+	<option value="grid-me">Grid Me</option>
+	<option value="inflicted">Inflicted</option>
+	<option value="my-little-plaid-dark">My Little Plaid Dark</option>
+	<option value="paven">Paven</option>
+	<option value="random-grey-variations">Random Grey Variations</option>
+	<option value="white-diamond-dark">White Diamond Dark</option>
+	<option value="white-paperboard">White Paperboard</option>
+	<option value="white-tiles">White Tiles</option>
+	<option value="wild-flowres">Wild Flowers</option>
+	<option value="wood">wood</option>
+	<option value="zig-zag">Zig Zag</option>
+	</select>
+</dd>
+<dt>背景画像透過度</dt>
+<dd>
+	<select id="bgTrans" onChange="onChangeForms();">
+	<option value="0" selected>0%（透過しない）</option>
+	<option value="10">10%</option>
+	<option value="20">20%</option>
+	<option value="30">30%</option>
+	<option value="40">40%</option>
+	<option value="50">50%</option>
+	<option value="60">60%</option>
+	<option value="70">70%</option>
+	<option value="80">80%</option>
+	<option value="90">90%</option>
+	<option value="100">100%（非表示）</option>
 	</select>
 </dd>
 <dt>履歴書背景画像</dt>
 <dd>
 	<div class="file_button">
-	<span id="fileName2">ファイルを選択</span>
+	<span id="fileName2">ロックされています</span>
 	<input type="file" accept="image/png,image/jpeg,image/gif" id="bg" disabled="disabled" class="file_input" onChange="onChangeForms();">
 	</div>	
 </dd>
