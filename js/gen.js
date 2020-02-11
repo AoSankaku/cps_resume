@@ -204,7 +204,7 @@ if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
 			timesX += 1;
 		}
 		timesY += 1;
-		console.log(canY,timesY,bgthemeY,timesY*bgthemeY);
+		timesX = 0;
 	}
 }
 ctx.globalAlpha = 1.0;
