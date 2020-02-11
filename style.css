@@ -8,8 +8,7 @@ body{
 	background-image:url("img/bg1.png");
 	*/
 	background-color: #d5eeff;
-	background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	background-image: url("img/bg/batthern.png");
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -192,8 +191,7 @@ div.form{
 	background-color: #eaeaea;
 	*/
 	background-color: #78bbe6;
-	background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	background-image: url("img/bg/white-paperboard.png");
 	font-size:32px;
 	padding:35px 30px;
 	width:870px;
