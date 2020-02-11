@@ -198,7 +198,7 @@ if ( bgtheme !== "custom" && bgtheme !== "monotone" ){
 	ctx.globalAlpha = bgTrans;
 	
 	//繰り返して描画する
-	while ( timesY * bgthemeY > canY ){
+	while ( canY > timesY * bgthemeY ){
 		for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
 			ctx.drawImage( img[11] , timesX * bgthemeX , timesY * bgthemeY );
 			timesX += 1;
