@@ -71,27 +71,27 @@ if(navigator.cookieEnabled){
 	}
 
 	//■Cookieに書き込み
-	Cookies.set( 'read' , read , { samesite: 'lax' } );
-	Cookies.set( 'name' , name , { samesite: 'lax' } );
-	Cookies.set( 'dl' , dl , { samesite: 'lax' } );
-	Cookies.set( 'rank' , rank , { samesite: 'lax' } );
-	Cookies.set( 'heroBSel' , heroBSel , { samesite: 'lax' } );
-	Cookies.set( 'heroFSel' , heroFSel , { samesite: 'lax' } );
-	Cookies.set( 'bronze' , bronze , { samesite: 'lax' } );
-	Cookies.set( 'silver' , silver , { samesite: 'lax' } );
-	Cookies.set( 'gold' , gold , { samesite: 'lax' } );
-	Cookies.set( 'tournament' , tournament , { samesite: 'lax' } );
-	Cookies.set( 'tw' , tw , { samesite: 'lax' } );
-	Cookies.set( 'dc' , dc , { samesite: 'lax' } );
-	Cookies.set( 'sp' , sp , { samesite: 'lax' } );
-	Cookies.set( 'fc' , fc , { samesite: 'lax' } );
-	Cookies.set( 'guild' , guild , { samesite: 'lax' } );
-	Cookies.set( 'cm' , cm , { samesite: 'lax' } );
-	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' } );
-	Cookies.set( 'fontColor' , fontColor , { samesite: 'lax' } );
-	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' } );
-	Cookies.set( 'selectedFont' , selectedFont , { samesite: 'lax' } );
-	Cookies.set( 'savedAt' , savedAt , { samesite: 'lax' } );
+	Cookies.set( 'read' , read , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'name' , name , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'dl' , dl , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'rank' , rank , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'heroBSel' , heroBSel , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'heroFSel' , heroFSel , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'bronze' , bronze , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'silver' , silver , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'gold' , gold , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'tournament' , tournament , { samesite: 'lax', secure: true , expires: 365 } );
+	Cookies.set( 'tw' , tw , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'dc' , dc , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'sp' , sp , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'fc' , fc , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'guild' , guild , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'cm' , cm , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'fontColor' , fontColor , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'selectedFont' , selectedFont , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'savedAt' , savedAt , { samesite: 'lax' , secure: true , expires: 365 } );
 
 	//最後にアラート
 	alert("記入内容をCookieに保存しました！");
