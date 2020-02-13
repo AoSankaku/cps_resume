@@ -221,7 +221,9 @@ function onChangeForms(){
 		comp[22] = Boolean( bgTrans == document.forms.design.bgTrans.value );
 		comp[23] = Boolean( profilePicNameC == queryProfilePicName() );
 		comp[24] = Boolean( profilePicData == queryProfilePicData() );
+		console.log(profilePicNameC);
 		console.log(queryProfilePicName());
+		console.log(profilePicData);
 		console.log(queryProfilePicData());
 		
 		//比較判定
