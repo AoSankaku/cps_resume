@@ -95,10 +95,9 @@ function drawImage(url) {
 		result = '<i class="fas fa-image"></i> ' + result;
 		
 		document.getElementById('fileName1').innerHTML = result;
+		console.log(profilePicName);
 	}
 }
-
-console.log(profilePicName);
 
 
 
