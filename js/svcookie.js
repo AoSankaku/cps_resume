@@ -361,8 +361,10 @@ window.addEventListener('load', function loadFromCookie(){
 				}
 
 				//背景画像を読み込まないとエラーが出るので再代入
-				img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
-
+				if ( document.forms.design.bgtheme.value !== "monotone" && document.forms.design.bgtheme.value !== "custom" ){
+					img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
+				}
+				
 				//最後にアラート
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
 				document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
