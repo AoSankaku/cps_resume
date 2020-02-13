@@ -300,7 +300,8 @@ window.addEventListener('load', function loadFromCookie(){
 				
 				//デザイン
 				document.getElementById( "profilePicSize" ).value = profilePicSize;
-				document.getElementById('fileName1').innerHTML = profilePicNameC;
+				document.getElementById( 'fileName1' ).innerHTML = profilePicNameC;
+				profilePicName = profilePicNameC;
 				img[9].src = profilePicData;
 				document.getElementById( "bgtheme" ).value = bgTheme;
 				document.getElementById( "bgTrans" ).value = bgTrans;
