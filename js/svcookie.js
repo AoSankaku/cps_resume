@@ -309,8 +309,13 @@ window.addEventListener('load', function loadFromCookie(){
 				//デザイン
 				document.getElementById( "profilePicSize" ).value = profilePicSize;
 				document.getElementById( 'fileName1' ).innerHTML = profilePicNameC;
-				profilePicName = profilePicNameC;
-				img[9].src = profilePicData;
+				
+				if ( profilePicData == "undefined" ){
+					profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
+				} else {
+					img[9].src = profilePicData;
+					profilePicName = profilePicNameC;
+				}
 				//テスト用
 				document.getElementById( "test001" ).src = profilePicData;
 				document.getElementById( "test002" ).innerText = profilePicData;
