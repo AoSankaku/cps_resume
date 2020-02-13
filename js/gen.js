@@ -55,9 +55,9 @@ function getLen(str){
 //プロフィール画像のアップロード
 document.querySelector('input[type="file"]').onchange = function loadImg(){
 	let profileImg = this.files[0];
-	if ( profileImg.name == undefined ){
+	if ( profileImg == undefined ){
 		console.log("DETECTED!");
-		console.log(profileImg.name)
+		console.log(profileImg)
 		return;
 	}
 	let reader = new FileReader();
