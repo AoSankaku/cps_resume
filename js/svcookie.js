@@ -44,8 +44,10 @@ if(navigator.cookieEnabled){
 	
 	//デザイン関連
 	var profilePicSize = document.forms.design.profilePicSize.value;
-	var profilePicNameC = queryProfilePicName();
-	var profilePicData = queryProfilePicData();
+	//var profilePicNameC = queryProfilePicName();
+	var profilePicNameC = profilePicName;
+	//var profilePicData = queryProfilePicData();
+	var profilePicData = img[9].src;
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
