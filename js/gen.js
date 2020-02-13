@@ -92,7 +92,7 @@ function drawImage(url) {
 		//Cookie保存用
 		profilePicName = result;
 		console.log(result);
-		console.log(img[9]);
+		console.log(img[9].src);
 		
 		
 		//アイコン追加してファイル名を表示
