@@ -92,8 +92,7 @@ function drawImage(url) {
 		//Cookie保存用
 		profilePicName = result;
 		console.log(result);
-		profilePicData = img[9].toDataURL();
-		console.log(profilePicData);
+		console.log(img[9]);
 		
 		
 		//アイコン追加してファイル名を表示
@@ -109,6 +108,11 @@ function drawImage(url) {
 //プロフィール画像の名前を返すだけの関数
 function queryProfilePicName(){
 	return profilePicName;
+}
+
+
+function queryProfilePicData(){
+	return img[9];
 }
 
 
