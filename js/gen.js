@@ -69,10 +69,10 @@ function drawImage(url) {
 		ctx.beginPath();
 		//一瞬描いてすぐ消す
 		ctx.drawImage(img[9], 620, 100);
-		ctx.clearRect( 0, 0, can.width, can.height )	
+		ctx.clearRect( 0, 0, can.width, can.height );
 		
 		//次にボタンの名前をファイル名にする
-		let maxNameLength = 29;
+		let maxNameLength = 25;
 		
 		let files = document.getElementById('profilePic').files;
 		let fileName = files[0].name;
@@ -82,15 +82,19 @@ function drawImage(url) {
 		let result = "";
 		
 		if ( fileNameLength > maxNameLength ){
-			result = fileNameWoEx.slice( 0, 15 ) + "…" + fileNameWoEx.slice( -12 ) + extention;
-			console.log( result );
+			result = fileNameWoEx.slice( 0, 15 ) + "…" + fileNameWoEx.slice( -8 ) + extention;
 		} else {
 			result = fileName;
 		}
-
+		
+		//アイコン追加
+		result = "<i class="fas fa-image"></i> " + result;
+		
 		document.getElementById('fileName1').innerHTML = result;
 	}
 }
+
+console.log(img[9].name);
 
 
 
