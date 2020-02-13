@@ -378,7 +378,7 @@ switch (profilePicSize) {
 const profilePicY = (63 + 167) - profilePicScale;
 
 //なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
-if ( img[9].src == undefined ){
+if ( img[9].src == "undefined" ){
 	errorMsg += "プロフィール画像の値が未定義です。画像を選択しなおしてください。";
 } else {
 	ctx.drawImage( img[9], 714, profilePicY, profilePicScale, profilePicScale);
