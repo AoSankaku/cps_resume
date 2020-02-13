@@ -87,6 +87,9 @@ function drawImage(url) {
 			result = fileName;
 		}
 		
+		//テスト用
+		img[9].name = fileName;
+		
 		//アイコン追加
 		result = '<i class="fas fa-image"></i> ' + result;
 		
