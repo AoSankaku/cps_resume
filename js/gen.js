@@ -88,7 +88,7 @@ function drawImage(url) {
 		}
 		
 		//アイコン追加
-		result = "<i class="fas fa-image"></i> " + result;
+		result = '<i class="fas fa-image"></i> ' + result;
 		
 		document.getElementById('fileName1').innerHTML = result;
 	}
