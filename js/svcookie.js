@@ -46,8 +46,11 @@ if(navigator.cookieEnabled){
 	var profilePicSize = document.forms.design.profilePicSize.value;
 	//var profilePicNameC = queryProfilePicName();
 	var profilePicNameC = profilePicName;
-	//var profilePicData = queryProfilePicData();
-	var profilePicData = img[9].src;
+	var profilePicData = queryProfilePicData();
+	//var profilePicData = img[9].src;
+	//chrome用
+	console.log(queryProfilePicData());
+	console.log(img[9].src);
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
