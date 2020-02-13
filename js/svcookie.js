@@ -218,9 +218,11 @@ function onChangeForms(){
 		comp[19] = Boolean( defaultColor == document.forms.design.defaultColor.value );
 		comp[20] = Boolean( profilePicSize == document.forms.design.profilePicSize.value );
 		comp[21] = Boolean( bgTheme == document.forms.design.bgtheme.value );
-		comp[22] = Boolean( bgTrans == document.forms.design.bgTrahs.value );
+		comp[22] = Boolean( bgTrans == document.forms.design.bgTrans.value );
 		comp[23] = Boolean( profilePicNameC == queryProfilePicName() );
 		comp[24] = Boolean( profilePicData == queryProfilePicData() );
+		console.log(queryProfilePicName());
+		console.log(queryProfilePicData());
 		
 		//比較判定
 		var result = true;
