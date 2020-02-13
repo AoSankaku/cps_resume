@@ -126,7 +126,9 @@ function changeSaveAlert(){
 function onChangeForms(){
 	
 	//ついでに選択された画像を選択しておく
-	img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
+	if ( document.forms.design.bgtheme.value !== "monotone" && document.forms.design.bgtheme.value !== "custom" ){
+		img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
+	}
 	
 	//とりあえずキャッシュの内容をロード
 	var read = Cookies.get( 'read' );
