@@ -69,8 +69,8 @@ document.querySelector('input[type="file"]').onchange = function loadImg(){
 
 
 
-function drawImage(url) {
-	img[9].src = url;
+function drawImage(dataurl) {
+	img[9].src = dataurl;
 	img[9].onload = () => {
 		ctx.beginPath();
 		//一瞬描いてすぐ消す
