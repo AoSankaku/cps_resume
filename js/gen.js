@@ -99,6 +99,9 @@ function drawImage(url) {
 		
 		//Cookie保存用
 		profilePicName = result;
+		
+		//onChangeが動かないのでここから関数を実行
+		onChangeForms();
 	}
 }
 
