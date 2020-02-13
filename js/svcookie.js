@@ -1,8 +1,6 @@
 //記入した内容をCookieに記録する                                                                                                                                                                                                                  
 function saveToCookie(){
 
-console.log(document.getElementById( 'profilePic' ));
-
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
 
@@ -48,7 +46,8 @@ if(navigator.cookieEnabled){
 	var profilePicSize = document.forms.design.profilePicSize.value;
 	var profilePicName = queryProfilePicName();
 	console.log(profilePicName);
-	var profilePic = new Image();
+	var profilePicData = queryProfilePicData();
+	console.log(profilePicData);
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
