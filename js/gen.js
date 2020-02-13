@@ -22,6 +22,7 @@ img[10] = new Image();
 img[10].src = "img/cps_guild.png";
 //プロ画用
 img[9] = new Image();
+var profilePicName = "";
 //背景用
 img[11] = new Image();
 
@@ -88,7 +89,7 @@ function drawImage(url) {
 		}
 		
 		//テスト用
-		img[9].name = fileName;
+		profilePicName = fileName;
 		
 		//アイコン追加
 		result = '<i class="fas fa-image"></i> ' + result;
@@ -97,7 +98,7 @@ function drawImage(url) {
 	}
 }
 
-console.log(img[9].name);
+console.log(profilePicName);
 
 
 
