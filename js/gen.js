@@ -56,8 +56,8 @@ function getLen(str){
 document.querySelector('input[type="file"]').onchange = function loadImg(){
 	let profileImg = this.files[0];
 	if ( profileImg == undefined ){
-		console.log("DETECTED!");
-		console.log(profileImg)
+		//選択がキャンセルされたならボタンの名前をProfilePicNameに変更
+		document.getElementById('fileName1').innerHTML = profilePicName;
 		return;
 	}
 	let reader = new FileReader();
