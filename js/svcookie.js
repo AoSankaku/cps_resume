@@ -309,7 +309,7 @@ window.addEventListener('load', function loadFromCookie(){
 				img[9].src = profilePicData;
 				//テスト用
 				document.getElementById( "test001" ).src = profilePicData;
-				document.getElemenyById( "test002" ).innerText = profilePicData;
+				document.getElementById( "test002" ).innerText = profilePicData;
 				
 				document.getElementById( "bgtheme" ).value = bgTheme;
 				document.getElementById( "bgTrans" ).value = bgTrans;
