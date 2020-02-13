@@ -102,6 +102,15 @@ function drawImage(url) {
 
 
 
+//プロフィール画像の名前を返すだけの関数
+function queryProfilePicName(){
+	return profilePicName;
+}
+
+
+
+
+
 //描画処理本体
 function preview(){
 
