@@ -88,14 +88,13 @@ function drawImage(url) {
 			result = fileName;
 		}
 		
-		//テスト用
-		profilePicName = fileName;
+		//Cookie保存用
+		profilePicName = result;
+		console.log(result);
 		
-		//アイコン追加
+		//アイコン追加してファイル名を表示
 		result = '<i class="fas fa-image"></i> ' + result;
-		
 		document.getElementById('fileName1').innerHTML = result;
-		console.log(profilePicName);
 	}
 }
 
