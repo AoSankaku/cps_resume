@@ -310,7 +310,9 @@ window.addEventListener('load', function loadFromCookie(){
 				document.getElementById( "profilePicSize" ).value = profilePicSize;
 				document.getElementById( 'fileName1' ).innerHTML = profilePicNameC;
 				
-				if ( profilePicData == "undefined" ){
+				console.log(profilePicData);
+				
+				if ( profilePicData == "undefined" || profilePicData == undefined ){
 					profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 				} else {
 					img[9].src = profilePicData;
