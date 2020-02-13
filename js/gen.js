@@ -112,7 +112,7 @@ function queryProfilePicName(){
 
 
 function queryProfilePicData(){
-	return img[9];
+	return img[9].src;
 }
 
 
