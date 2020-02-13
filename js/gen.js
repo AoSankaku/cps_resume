@@ -23,7 +23,6 @@ img[10].src = "img/cps_guild.png";
 //プロ画用
 img[9] = new Image();
 var profilePicName = "";
-var profilePicData = null;
 //背景用
 img[11] = new Image();
 
@@ -90,15 +89,12 @@ function drawImage(url) {
 			result = fileName;
 		}
 		
-		//Cookie保存用
-		profilePicName = result;
-		console.log(result);
-		console.log(img[9].src);
-		
-		
 		//アイコン追加してファイル名を表示
 		result = '<i class="fas fa-image"></i> ' + result;
 		document.getElementById('fileName1').innerHTML = result;
+		
+		//Cookie保存用
+		profilePicName = result;
 	}
 }
 
