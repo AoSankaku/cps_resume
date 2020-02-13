@@ -44,10 +44,8 @@ if(navigator.cookieEnabled){
 	
 	//デザイン関連
 	var profilePicSize = document.forms.design.profilePicSize.value;
-	var profilePicName = queryProfilePicName();
-	console.log(profilePicName);
+	var profilePicNameC = queryProfilePicName();
 	var profilePicData = queryProfilePicData();
-	console.log(profilePicData);
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
@@ -93,6 +91,8 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'guild' , guild , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'cm' , cm , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'profilePicSize' , profilePicSize , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'profilePicNameC' , profilePicNameC , { samesite: 'lax' , secure: true , expires: 365 } );
+	Cookies.set( 'profilePicData' , profilePicData , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'bgTheme' , bgTheme , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'bgTrans' , bgTrans , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' , secure: true , expires: 365 } );
@@ -142,6 +142,8 @@ function onChangeForms(){
 	var guild = Cookies.get( 'guild' );
 	var cm = Cookies.get( 'cm' );
 	var profilePicSize = Cookies.get( 'profilePicSize' );
+	var profilePicNameC = Cookies.get( 'profilePicNameC' );
+	var profilePicData = Cookies.get( 'profilePicData' );
 	var bgTheme = Cookies.get( 'bgTheme' );
 	var bgTrans = Cookies.get( 'bgTrans' );
 	var bgColor = Cookies.get( 'bgColor' );
@@ -217,6 +219,8 @@ function onChangeForms(){
 		comp[20] = Boolean( profilePicSize == document.forms.design.profilePicSize.value );
 		comp[21] = Boolean( bgTheme == document.forms.design.bgtheme.value );
 		comp[22] = Boolean( bgTrans == document.forms.design.bgTrahs.value );
+		comp[23] = Boolean( profilePicNameC == queryProfilePicName() );
+		comp[24] = Boolean( profilePicData == queryProfilePicData() );
 		
 		//比較判定
 		var result = true;
@@ -265,6 +269,8 @@ window.addEventListener('load', function loadFromCookie(){
 		var guild = Cookies.get( 'guild' );
 		var cm = Cookies.get( 'cm' );
 		var profilePicSize = Cookies.get( 'profilePicSize' );
+		var profilePicNameC = Cookies.get( 'profilePicNameC' );
+		var profilePicData = Cookies.get( 'profilePicData' );
 		var bgTheme = Cookies.get( 'bgTheme' );
 		var bgTrans = Cookies.get( 'bgTrans' );
 		var bgColor = Cookies.get( 'bgColor' );
@@ -294,6 +300,8 @@ window.addEventListener('load', function loadFromCookie(){
 				
 				//デザイン
 				document.getElementById( "profilePicSize" ).value = profilePicSize;
+				document.getElementById('fileName1').innerHTML = profilePicNameC;
+				img[9].src = profilePicData;
 				document.getElementById( "bgtheme" ).value = bgTheme;
 				document.getElementById( "bgTrans" ).value = bgTrans;
 				document.getElementById( "bgColor" ).value = bgColor;
