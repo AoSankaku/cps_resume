@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap&subset=japanese');
 @import url('https://fonts.googleapis.com/css?family=Heebo:800&display=swap');
 
+@media screen { #filename { display: none; } }
+
 body{
 	/*
 	background-image:url("img/bg1.png");
