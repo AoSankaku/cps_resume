@@ -103,9 +103,6 @@ function drawImage(dataurl) {
 		//onChangeが動かないのでここから関数を実行
 		onChangeForms();
 		
-		//Android版chromeの挙動がおかしいのでテスト用
-		document.getElementById( "test001" ).src = img[9].src;
-		document.getElementById( "test002" ).innerText = img[9].src;
 	}
 }
 
