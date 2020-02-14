@@ -880,7 +880,7 @@ alert("【入力エラー】\n" + errorMsg);
 //web上なら正常に動作するので画像変換ここに復活
 can.hidden = true;
 base64Result = can.toDataURL('image/jpeg');
-document.getElementById("cps_resume_result").src = base64;
+document.getElementById("cps_resume_result").src = base64Result;
 
 
 }
