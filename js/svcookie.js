@@ -74,7 +74,7 @@ if(navigator.cookieEnabled){
 	}
 	
 	//プロフィール画像はリサイズする
-	ctx2.drawImage( img[9], 0, 0, can.width, can.height );
+	ctx2.drawImage( img[9], 0, 0, can2.width, can2.height );
 	profilePicData = can2.toDataURL( 'image/png' );
 
 	//■Cookieに書き込み
