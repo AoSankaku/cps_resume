@@ -880,11 +880,25 @@ alert("【入力エラー】\n" + errorMsg);
 //web上なら正常に動作するので画像変換ここに復活
 can.hidden = true;
 var base64 = can.toDataURL('image/jpeg');
-document.getElementById("newImg").src = base64;
+document.getElementById("cps_resume_result").src = base64;
 
 
 }
 
+
+
+
+
+function downloadResultImg(){
+
+
+	let link = document.getElementById('downloadResult');
+	link.href = can.toDataURL('image/jpeg');
+	link.download = "compass_rireki.jpeg";
+	//link.click();
+
+
+}
 
 
 
