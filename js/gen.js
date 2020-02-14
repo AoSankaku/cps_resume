@@ -30,6 +30,9 @@ img[11] = new Image();
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
 
+//ダウンロード用
+var base64Result = "";
+
 //文字数カウント用
 function getLen(str){
 	var result = 0;
@@ -876,7 +879,7 @@ alert("【入力エラー】\n" + errorMsg);
 
 //web上なら正常に動作するので画像変換ここに復活
 can.hidden = true;
-var base64 = can.toDataURL('image/jpeg');
+base64Result = can.toDataURL('image/jpeg');
 document.getElementById("cps_resume_result").src = base64;
 
 
@@ -890,7 +893,7 @@ function downloadResultImg(){
 
 
 	let link = document.getElementById('downloadResult');
-	link.href = can.toDataURL('image/jpeg');
+	link.href = base64Result;
 	link.download = "compass_rireki.jpeg";
 	//link.click();
 
