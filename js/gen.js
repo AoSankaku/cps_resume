@@ -29,6 +29,9 @@ img[11] = new Image();
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
+//リサイズ用
+const can2 = document.getElementById( 'profilePicResize' );
+const ctx2 = can2.getContext( '2d' );
 
 //ダウンロード用
 var base64Result = "";
