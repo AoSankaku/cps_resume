@@ -881,6 +881,10 @@ alert("【入力エラー】\n" + errorMsg);
 can.hidden = true;
 base64Result = can.toDataURL('image/jpeg');
 document.getElementById("cps_resume_result").src = base64Result;
+var dlLink = document.getElementById('downloadResult');
+dlLink.href = base64Result;
+dlLink.download = "compass_rireki.jpeg";
+
 
 
 }
@@ -891,12 +895,7 @@ document.getElementById("cps_resume_result").src = base64Result;
 
 function downloadResultImg(){
 
-
-	let link = document.getElementById('downloadResult');
-	link.href = base64Result;
-	link.download = "compass_rireki.jpeg";
-	//link.click();
-
+	alert('ダウンロードする前に一度生成する必要があります。');
 
 }
 
