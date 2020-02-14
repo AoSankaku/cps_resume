@@ -44,13 +44,8 @@ if(navigator.cookieEnabled){
 	
 	//デザイン関連
 	var profilePicSize = document.forms.design.profilePicSize.value;
-	//var profilePicNameC = queryProfilePicName();
-	var profilePicNameC = profilePicName;
+	var profilePicNameC = queryProfilePicName();
 	var profilePicData = queryProfilePicData();
-	//var profilePicData = img[9].src;
-	//chrome用
-	console.log(queryProfilePicData());
-	console.log(img[9].src);
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
@@ -77,6 +72,12 @@ if(navigator.cookieEnabled){
 			heroFSel[i] = true;
 		}
 	}
+	
+	//プロフィール画像はリサイズする
+	const can2 = document.getElementById( 'profilePicResize' );
+	const ctx2 = can2.getContext( '2d' );
+	ctx2.drawImage( img[9], 0, 0, 167, 167 );
+	profilePicData = can2.toDataURL( 'image/png' );
 
 	//■Cookieに書き込み
 	Cookies.set( 'read' , read , { samesite: 'lax' , secure: true , expires: 365 } );
