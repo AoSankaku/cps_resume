@@ -1,11 +1,16 @@
-//記入した内容をCookieに記録する                                                                                                                                                                                                                  
+//webstrage(localStorage)設定
+var storage = localStorage;
+
+
+
+
+
+//記入した内容をlocalStorage（元Cookie）に記録する                                                                                                                                                                                                                  
 function saveToCookie(){
 
-//そもそもcookieが有効かどうかを判定する
-if(navigator.cookieEnabled){
+//そもそもlocalStorageが有効かどうかを判定する
+if( typeof localStorage !== 'undefined' ){
 	
-	//webstrage(localStorage)設定
-	var storage = localStorage;
 
 	//保存した日時を記憶しておく（年、月、日、時、分）
 	var date = new Date();
@@ -84,45 +89,45 @@ if(navigator.cookieEnabled){
 	ctx2.drawImage( img[9], 0, 0, can2.width, can2.height );
 	profilePicData = can2.toDataURL( 'image/png' );
 
-	//■Cookieに書き込み
-	Cookies.set( 'read' , read , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'name' , name , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'dl' , dl , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'rank' , rank , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'heroBSel' , heroBSel , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'heroFSel' , heroFSel , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'bronze' , bronze , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'silver' , silver , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'gold' , gold , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'tournament' , tournament , { samesite: 'lax', secure: true , expires: 365 } );
-	Cookies.set( 'tw' , tw , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'dc' , dc , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'sp' , sp , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'fc' , fc , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'guild' , guild , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'cm' , cm , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'profilePicSize' , profilePicSize , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'profilePicNameC' , profilePicNameC , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'profilePicData' , profilePicData , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'bgTheme' , bgTheme , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'bgTrans' , bgTrans , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'bgColor' , bgColor , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'fontColor' , fontColor , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'selectedFont' , selectedFont , { samesite: 'lax' , secure: true , expires: 365 } );
-	Cookies.set( 'savedAt' , savedAt , { samesite: 'lax' , secure: true , expires: 365 } );
+	//■LocalStorageに書き込み
+	storage.setItem( 'read' , read );
+	storage.setItem( 'name' , name );
+	storage.setItem( 'dl' , dl );
+	storage.setItem( 'rank' , rank );
+	storage.setItem( 'heroBSel' , heroBSel );
+	storage.setItem( 'heroFSel' , heroFSel );
+	storage.setItem( 'bronze' , bronze );
+	storage.setItem( 'silver' , silver );
+	storage.setItem( 'gold' , gold );
+	storage.setItem( 'tournament' , tournament );
+	storage.setItem( 'tw' , tw );
+	storage.setItem( 'dc' , dc );
+	storage.setItem( 'sp' , sp );
+	storage.setItem( 'fc' , fc );
+	storage.setItem( 'guild' , guild );
+	storage.setItem( 'cm' , cm );
+	storage.setItem( 'profilePicSize' , profilePicSize );
+	storage.setItem( 'profilePicNameC' , profilePicNameC );
+	storage.setItem( 'profilePicData' , profilePicData );
+	storage.setItem( 'bgTheme' , bgTheme );
+	storage.setItem( 'bgTrans' , bgTrans );
+	storage.setItem( 'bgColor' , bgColor );
+	storage.setItem( 'fontColor' , fontColor );
+	storage.setItem( 'defaultColor' , defaultColor );
+	storage.setItem( 'selectedFont' , selectedFont );
+	storage.setItem( 'savedAt' , savedAt );
 	
 	//ストレージテスト
 	storage.setItem( 'profilePicData', profilePicData );	
 
 	//最後にアラート
-	alert("記入内容をCookieに保存しました！");
+	alert("記入内容を端末に保存しました！");
 	//htmlを書き換え（保存しましたにする）
-	document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
+	document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
 	
 } else {
 
-	alert("【エラー】\n保存するにはCookieを有効にして下さい。")
+	alert("【エラー】\n保存するにはLocalStorageを有効にして下さい。")
 }
 }
 
@@ -142,36 +147,36 @@ function onChangeForms(){
 		img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
 	}
 	
-	//とりあえずキャッシュの内容をロード
-	var read = Cookies.get( 'read' );
-	var name = Cookies.get( 'name' );
-	var dl = Cookies.get( 'dl' );
-	var rank = Cookies.get( 'rank' );
-	var bronze = Cookies.get( 'bronze' );
-	var silver = Cookies.get( 'silver' );
-	var gold = Cookies.get( 'gold' );
-	var tournament = Cookies.get( 'tournament' );
-	var tw = Cookies.get( 'tw' );
-	var dc = Cookies.get( 'dc' );
-	var sp = Cookies.get( 'sp' );
-	var fc = Cookies.get( 'fc' );
-	var guild = Cookies.get( 'guild' );
-	var cm = Cookies.get( 'cm' );
-	var profilePicSize = Cookies.get( 'profilePicSize' );
-	var profilePicNameC = Cookies.get( 'profilePicNameC' );
-	var profilePicData = Cookies.get( 'profilePicData' );
-	var bgTheme = Cookies.get( 'bgTheme' );
-	var bgTrans = Cookies.get( 'bgTrans' );
-	var bgColor = Cookies.get( 'bgColor' );
-	var fontColor = Cookies.get( 'fontColor' );
-	var defaultColor = Cookies.get( 'defaultColor' );
-	var selectedFont = Cookies.get( 'selectedFont' );
-	var savedAt = Cookies.get( 'savedAt' );
+	//とりあえずLocalStorageの内容をロード
+	var read = storage.getItem( 'read' );
+	var name = storage.getItem( 'name' );
+	var dl = storage.getItem( 'dl' );
+	var rank = storage.getItem( 'rank' );
+	var bronze = storage.getItem( 'bronze' );
+	var silver = storage.getItem( 'silver' );
+	var gold = storage.getItem( 'gold' );
+	var tournament = storage.getItem( 'tournament' );
+	var tw = storage.getItem( 'tw' );
+	var dc = storage.getItem( 'dc' );
+	var sp = storage.getItem( 'sp' );
+	var fc = storage.getItem( 'fc' );
+	var guild = storage.getItem( 'guild' );
+	var cm = storage.getItem( 'cm' );
+	var profilePicSize = storage.getItem( 'profilePicSize' );
+	var profilePicNameC = storage.getItem( 'profilePicNameC' );
+	var profilePicData = storage.getItem( 'profilePicData' );
+	var bgTheme = storage.getItem( 'bgTheme' );
+	var bgTrans = storage.getItem( 'bgTrans' );
+	var bgColor = storage.getItem( 'bgColor' );
+	var fontColor = storage.getItem( 'fontColor' );
+	var defaultColor = storage.getItem( 'defaultColor' );
+	var selectedFont = storage.getItem( 'selectedFont' );
+	var savedAt = storage.getItem( 'savedAt' );
 	
 	//本当に中身が変わったのか比較する（ A => B => A の場合は「変更なし」判定する）
-	//Cookieが無効orCookie消滅済なら何もしない
+	//LocalStorageが無効orデータ消滅済なら何もしない
 	
-	if( navigator.cookieEnabled && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
+	if( typeof localStorage !== 'undefined' && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
 		//フォームの内容を比較する
 		var comp = [];
 		
@@ -216,12 +221,14 @@ function onChangeForms(){
 		
 		var heroBStr = heroBSel.join(',');
 		var heroFStr = heroFSel.join(',');
-		var heroBStrC = Cookies.get( 'heroBSel' );
-		var heroFStrC = Cookies.get( 'heroFSel' );
+		var heroBStrC = storage.getItem( 'heroBSel' );
+		var heroFStrC = storage.getItem( 'heroFSel' );
+		/*
 		heroBStrC = heroBStrC.slice( 1 );
 		heroBStrC = heroBStrC.slice( 0 , -1 );
 		heroFStrC = heroFStrC.slice( 1 );
 		heroFStrC = heroFStrC.slice( 0 , -1 );
+		*/
 		
 		comp[13] = Boolean( heroBSel == heroBStrC );
 		comp[14] = Boolean( heroFSel == heroFStrC );
@@ -255,9 +262,9 @@ function onChangeForms(){
 		
 		//結果反映
 		if ( result ){
-			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
+			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
 		} else {
-			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> Cookieにデータがあります<br>（この状態で保存すると上書きされます）</span>';
+			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> 端末にデータがあります<br>（この状態で保存すると上書きされます）</span>';
 		}
 	}
 }
@@ -266,44 +273,50 @@ function onChangeForms(){
 
 
 
-//読み込み時にキャッシュがあればフォームの内容を変更
+//読み込み時にLocalStorageがあればフォームの内容を変更する関数
 window.addEventListener('load', function loadFromCookie(){
-//そもそもcookieが有効かどうかを判定する
-	if(navigator.cookieEnabled){
 
-		//キャッシュの内容をロード
-		var read = Cookies.get( 'read' );
-		var name = Cookies.get( 'name' );
-		var dl = Cookies.get( 'dl' );
-		var rank = Cookies.get( 'rank' );
-		var heroBSel = Cookies.get( 'heroBSel' );
-		var heroFSel = Cookies.get( 'heroFSel' );
-		var bronze = Cookies.get( 'bronze' );
-		var silver = Cookies.get( 'silver' );
-		var gold = Cookies.get( 'gold' );
-		var tournament = Cookies.get( 'tournament' );
-		var tw = Cookies.get( 'tw' );
-		var dc = Cookies.get( 'dc' );
-		var sp = Cookies.get( 'sp' );
-		var fc = Cookies.get( 'fc' );
-		var guild = Cookies.get( 'guild' );
-		var cm = Cookies.get( 'cm' );
-		var profilePicSize = Cookies.get( 'profilePicSize' );
-		var profilePicNameC = Cookies.get( 'profilePicNameC' );
-		var profilePicData = Cookies.get( 'profilePicData' );
-		var bgTheme = Cookies.get( 'bgTheme' );
-		var bgTrans = Cookies.get( 'bgTrans' );
-		var bgColor = Cookies.get( 'bgColor' );
-		var fontColor = Cookies.get( 'fontColor' );
-		var defaultColor = Cookies.get( 'defaultColor' );
-		var selectedFont = Cookies.get( 'selectedFont' );
-		var savedAt = Cookies.get( 'savedAt' );
+//そもそもLocalStorageが有効かどうかを判定する
+	if(typeof localStorage !== 'undefined'){
+		
+		
+		//読み込み時にwebstrage(localStorage)設定
+		var storage = localStorage;
+		
+		
+		//LocalStorageの内容をロード
+		var read = storage.getItem( 'read' );
+		var name = storage.getItem( 'name' );
+		var dl = storage.getItem( 'dl' );
+		var rank = storage.getItem( 'rank' );
+		var heroBSel = storage.getItem( 'heroBSel' );
+		var heroFSel = storage.getItem( 'heroFSel' );
+		var bronze = storage.getItem( 'bronze' );
+		var silver = storage.getItem( 'silver' );
+		var gold = storage.getItem( 'gold' );
+		var tournament = storage.getItem( 'tournament' );
+		var tw = storage.getItem( 'tw' );
+		var dc = storage.getItem( 'dc' );
+		var sp = storage.getItem( 'sp' );
+		var fc = storage.getItem( 'fc' );
+		var guild = storage.getItem( 'guild' );
+		var cm = storage.getItem( 'cm' );
+		var profilePicSize = storage.getItem( 'profilePicSize' );
+		var profilePicNameC = storage.getItem( 'profilePicNameC' );
+		var profilePicData = storage.getItem( 'profilePicData' );
+		var bgTheme = storage.getItem( 'bgTheme' );
+		var bgTrans = storage.getItem( 'bgTrans' );
+		var bgColor = storage.getItem( 'bgColor' );
+		var fontColor = storage.getItem( 'fontColor' );
+		var defaultColor = storage.getItem( 'defaultColor' );
+		var selectedFont = storage.getItem( 'selectedFont' );
+		var savedAt = storage.getItem( 'savedAt' );
 
-		//キャッシュの日付が空文字列またはundefinedならキャッシュをロード
+		//LocalStorageの日付が空文字列またはundefinedならLocalStorageをロード
 		if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
-			var load = confirm( "前回Cookieに保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
+			var load = confirm( "前回端末に保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
 			if ( load == true ){
-				//ここからキャッシュロード
+				//ここからLocalStorageロード
 				//文字列のみ
 				document.getElementById( "read" ).value = read;
 				document.getElementById( "name" ).value = name;
@@ -355,11 +368,15 @@ window.addEventListener('load', function loadFromCookie(){
 				console.log( heroFSel );
 				*/
 				//配列が文字列に置き換わっているのでこれを配列に変換しなおす
+				/*
 				heroBSel = heroBSel.slice( 1 );
 				heroBSel = heroBSel.slice( 0 , -1 );
+				*/
 				heroBSel = heroBSel.split( ',' );
+				/*
 				heroFSel = heroFSel.slice( 1 );
 				heroFSel = heroFSel.slice( 0 , -1 );
+				*/
 				heroFSel = heroFSel.split( ',' );
 				/*
 				console.log( heroBSel );
@@ -370,8 +387,8 @@ window.addEventListener('load', function loadFromCookie(){
 	
 				for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
 					if ( heroBSel[i] == "true" ) {
-					document.getElementById( "heroB" ).options[i].selected = true ;
-					//console.log( "selectedB" + i );
+						document.getElementById( "heroB" ).options[i].selected = true ;
+						//console.log( "selectedB" + i );
 					}
 				}
 				for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
@@ -388,23 +405,23 @@ window.addEventListener('load', function loadFromCookie(){
 				
 				//最後にアラート
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
-				document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> Cookieに保存されています</span>';
+				document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
 			} else if ( load == false ){
-				//falseだった場合キャッシュを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
-				var del = confirm( "このサイトのCookieを削除しますか？\n（この操作は取り消せません）" );
+				//falseだった場合LocalStorageを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
+				var del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
 				if ( del == true ){
-					Cookies.remove( 'savedAt' );
-					alert( "このサイトのキャッシュを消去しました。" );
-					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません</span>';
+					storage.clear();
+					alert( "このサイトのデータを端末から消去しました。" );
+					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません<br>（保存可能です）</span>';
 				} else {
-					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> Cookieにデータがあります<br>（この状態で保存すると上書きされます）</span>';
+					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> 端末にデータがあります<br>（この状態で保存すると上書きされます）</span>';
 				}
 			}
 		} else {
-			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません</span>';
+			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません<br>（保存可能です）</span>';
 		}
 	} else {
-		alert('Cookieが無効になっています。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
-		document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> Cookieが無効です</span>';
+		alert('お使いの環境ではLocalStorageが使用できません。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
+		document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> LocalStorageが使用できません<br>（履歴書の作成、保存はできます）</span>';
 	}
 });
