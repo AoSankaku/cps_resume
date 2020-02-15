@@ -4,8 +4,8 @@ function saveToCookie(){
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
 	
-	//webstrage(localStrage)設定
-	var storage = localStrage;
+	//webstrage(localStorage)設定
+	var storage = localStorage;
 
 	//保存した日時を記憶しておく（年、月、日、時、分）
 	var date = new Date();
