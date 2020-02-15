@@ -176,7 +176,7 @@ function onChangeForms(){
 	//本当に中身が変わったのか比較する（ A => B => A の場合は「変更なし」判定する）
 	//LocalStorageが無効orデータ消滅済なら何もしない
 	
-	if( typeof localStorage !== 'undefined' && savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
+	if( typeof localStorage !== 'undefined' && savedAt !== null ){
 		//フォームの内容を比較する
 		var comp = [];
 		
@@ -312,8 +312,8 @@ window.addEventListener('load', function loadFromCookie(){
 		var selectedFont = storage.getItem( 'selectedFont' );
 		var savedAt = storage.getItem( 'savedAt' );
 
-		//LocalStorageの日付が空文字列またはundefinedならLocalStorageをロード
-		if ( savedAt !== undefined && savedAt !== "" && savedAt !== "undefined" ){
+		//LocalStorageの日付が空文字列またはnullならLocalStorageをロード
+		if ( savedAt !== null ){
 			var load = confirm( "前回端末に保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
 			if ( load == true ){
 				//ここからLocalStorageロード
@@ -337,7 +337,7 @@ window.addEventListener('load', function loadFromCookie(){
 				
 				console.log(profilePicData);
 				
-				if ( profilePicData == "undefined" || profilePicData == undefined ){
+				if ( profilePicData == null ){
 					profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 				} else {
 					img[9].src = profilePicData;
