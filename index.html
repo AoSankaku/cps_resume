@@ -94,7 +94,7 @@
 <dt>最高ランク</dt>
 <dd>
 	<select id="rank" onChange="onChangeForms();">
-	<optgroup label="F〜Aランク">
+	<optgroup label="F?Aランク">
 	<option value="F">Fランク</option>
 	<option value="E">Eランク</option>
 	<option value="D">Dランク</option>
@@ -102,7 +102,7 @@
 	<option value="B">Bランク</option>
 	<option value="A">Aランク</option>
 	</optgroup>
-	<optgroup label="S1〜S9ランク">
+	<optgroup label="S1?S9ランク">
 	<option value="S1">S1ランク</option>
 	<option value="S2">S2ランク</option>
 	<option value="S3">S3ランク</option>
@@ -359,13 +359,8 @@
 <a href="javascript:preview();" class="btn-open">コンパス履歴書を生成する！</a>
 </div>
 <div class="container">
-<a href="javascript:saveToCookie();" class="btn-open">入力した内容をCookieに保存</a>
+<a href="javascript:saveToCookie();" class="btn-open">入力した内容を端末に保存</a>
 </div>
-<!--
-<div class="container">
-<a href="javascript:loadFromCookie();" class="btn-open">Cookieからデータを呼び出す</a>
-</div>
--->
 <p id="saveAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> JavaScriptが無効です<br>（履歴書の作成・保存は出来ません）</span></p>
 </div>
 
@@ -389,6 +384,17 @@
 <p><br></p>
 
 
+
+<!--以下詳細設定ボタン-->
+<div class="form" align="center">
+<h2 align="left"><i class="fas fa-cog"></i> その他の設定</h2>
+<div class="container">
+<a href="javascript:loadFromCookie();" class="btn-open">保存したデータを呼び出す</a>
+</div>
+<div class="container">
+<a href="javascript:deleteCookie();" class="btn-open">端末のデータを消去する</a>
+</div>
+</div>
 
 <!--以下隠し要素-->
 <canvas id="profilePicResize" width="167" height="167"></canvas><br>
