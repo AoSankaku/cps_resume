@@ -3,6 +3,9 @@ function saveToCookie(){
 
 //そもそもcookieが有効かどうかを判定する
 if(navigator.cookieEnabled){
+	
+	//webstrage(localStrage)設定
+	var storage = localStrage;
 
 	//保存した日時を記憶しておく（年、月、日、時、分）
 	var date = new Date();
@@ -24,16 +27,19 @@ if(navigator.cookieEnabled){
 		minutes = "0" + minutes;
 	}
 	var savedAt = year + "年" + month + "月"+ today +　"日 " + hours + "時" + minutes + "分" ;
+	
 	//フォームの内容を取得する
 	var read = document.forms.info.read.value;
 	var name = document.forms.info.name.value;
 	var dl = document.forms.info.dl.value;
 	var rank = document.forms.info.rank.value;
+	
 	//小数点対策済
 	var bronze = parseInt(document.forms.info.bronze.value);
 	var silver = parseInt(document.forms.info.silver.value);
 	var gold = parseInt(document.forms.info.gold.value);
 	var tournament = parseInt(document.forms.info.tournament.value);
+	
 	//連絡先とコメント
 	var tw = document.forms.info.tw.value;
 	var dc = document.forms.info.dc.value;
@@ -46,6 +52,7 @@ if(navigator.cookieEnabled){
 	var profilePicSize = document.forms.design.profilePicSize.value;
 	var profilePicNameC = queryProfilePicName();
 	var profilePicData = queryProfilePicData();
+	
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
 	var bgColor = document.forms.design.bgColor.value;
@@ -104,6 +111,9 @@ if(navigator.cookieEnabled){
 	Cookies.set( 'defaultColor' , defaultColor , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'selectedFont' , selectedFont , { samesite: 'lax' , secure: true , expires: 365 } );
 	Cookies.set( 'savedAt' , savedAt , { samesite: 'lax' , secure: true , expires: 365 } );
+	
+	//ストレージテスト
+	storage.setItem( 'profilePicData', profilePicData );	
 
 	//最後にアラート
 	alert("記入内容をCookieに保存しました！");
