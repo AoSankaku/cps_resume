@@ -886,7 +886,27 @@ base64Result = can.toDataURL('image/jpeg');
 document.getElementById("cps_resume_result").src = base64Result;
 var dlLink = document.getElementById('downloadResult');
 dlLink.href = base64Result;
-dlLink.download = "compass_rireki.jpeg";
+//作成年月日を取得する
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+if ( month < 10 ){
+	month = "0" + month;
+}
+var today = date.getDate();
+if ( today < 10 ){
+	today = "0" + today;
+}
+var hours = date.getHours();
+if ( hours < 10 ){
+	hours = "0" + hours;
+}
+var minutes = date.getMinutes();
+if ( minutes < 10 ){
+	minutes = "0" + minutes;
+}
+
+dlLink.download = "compass_rireki_"+ year + month + today + hours + minutes + ".jpeg";
 
 
 
