@@ -314,7 +314,7 @@ ctx.fillRect(0,0,900,1300);
 //背景は繰り返しがあるので回数を判定してがんばる
 if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
 	let imgNum = 11;
-	if ( bgTheme == custom ){
+	if ( bgTheme == "custom" ){
 		imgNum = 12;
 	}
 	let canX = can.width;
