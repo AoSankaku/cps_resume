@@ -57,6 +57,8 @@ if( typeof localStorage !== 'undefined' ){
 	var profilePicSize = document.forms.design.profilePicSize.value;
 	var profilePicNameC = queryProfilePicName();
 	var profilePicData = queryProfilePicData();
+	var bgPicNameC = bgPicName;
+	var bgPicData = img[12].src;
 	
 	var bgTheme = document.forms.design.bgtheme.value;
 	var bgTrans = document.forms.design.bgTrans.value;
@@ -109,6 +111,8 @@ if( typeof localStorage !== 'undefined' ){
 	storage.setItem( 'profilePicSize' , profilePicSize );
 	storage.setItem( 'profilePicNameC' , profilePicNameC );
 	storage.setItem( 'profilePicData' , profilePicData );
+	storage.setItem( 'bgPicNameC' , bgPicNameC );
+	storage.setItem( 'bgPicData' , bgPicData );
 	storage.setItem( 'bgTheme' , bgTheme );
 	storage.setItem( 'bgTrans' , bgTrans );
 	storage.setItem( 'bgColor' , bgColor );
@@ -116,12 +120,9 @@ if( typeof localStorage !== 'undefined' ){
 	storage.setItem( 'defaultColor' , defaultColor );
 	storage.setItem( 'selectedFont' , selectedFont );
 	storage.setItem( 'savedAt' , savedAt );
-	
-	//ストレージテスト
-	storage.setItem( 'profilePicData', profilePicData );	
 
 	//最後にアラート
-	alert("記入内容を端末に保存しました！");
+	alert("入力内容を端末に保存しました！");
 	//htmlを書き換え（保存しましたにする）
 	document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
 	
@@ -165,6 +166,8 @@ function onChangeForms(){
 	var profilePicSize = storage.getItem( 'profilePicSize' );
 	var profilePicNameC = storage.getItem( 'profilePicNameC' );
 	var profilePicData = storage.getItem( 'profilePicData' );
+	var bgPicNameC = storage.getItem( 'bgPicNameC' );
+	var bgPicData = storage.getItem( 'bgPicData' );
 	var bgTheme = storage.getItem( 'bgTheme' );
 	var bgTrans = storage.getItem( 'bgTrans' );
 	var bgColor = storage.getItem( 'bgColor' );
@@ -244,6 +247,8 @@ function onChangeForms(){
 		comp[22] = Boolean( bgTrans == document.forms.design.bgTrans.value );
 		comp[23] = Boolean( profilePicNameC == queryProfilePicName() );
 		comp[24] = Boolean( profilePicData == queryProfilePicData() );
+		comp[25] = Boolean( bgPicNameC == bgPicName );
+		comp[26] = Boolean( bgPicData == img[12].src );
 		console.log(profilePicNameC);
 		console.log(queryProfilePicName());
 		//console.log(profilePicData);
@@ -304,6 +309,10 @@ window.addEventListener('load', function loadFromCookie(){
 		var profilePicSize = storage.getItem( 'profilePicSize' );
 		var profilePicNameC = storage.getItem( 'profilePicNameC' );
 		var profilePicData = storage.getItem( 'profilePicData' );
+		var bgPicNameC = storage.getItem( 'bgPicNameC' );
+		var bgPicData = storage.getItem( 'bgPicData' );
+		var bgPicNameC = storage.getItem( 'bgPicNameC' );
+		var bgPicData = storage.getItem( 'bgPicData' );
 		var bgTheme = storage.getItem( 'bgTheme' );
 		var bgTrans = storage.getItem( 'bgTrans' );
 		var bgColor = storage.getItem( 'bgColor' );
@@ -334,8 +343,9 @@ window.addEventListener('load', function loadFromCookie(){
 				//デザイン
 				document.getElementById( "profilePicSize" ).value = profilePicSize;
 				document.getElementById( 'fileName1' ).innerHTML = profilePicNameC;
+				document.getElementById( 'fileName2' ).innerHTML = bgPicNameC;
 				
-				console.log(profilePicData);
+				//console.log(profilePicData);
 				
 				if ( profilePicData == null ){
 					profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
@@ -343,11 +353,13 @@ window.addEventListener('load', function loadFromCookie(){
 					img[9].src = profilePicData;
 					profilePicName = profilePicNameC;
 				}
-				//テスト用
-				/*
-				document.getElementById( "test001" ).src = profilePicData;
-				document.getElementById( "test002" ).innerText = profilePicData;
-				*/
+				
+				if ( bgPicData == null ){
+					bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
+				} else {
+					img[12].src = bgPicData;
+					bgPicName = bgPicNameC;
+				}
 				
 				document.getElementById( "bgtheme" ).value = bgTheme;
 				document.getElementById( "bgTrans" ).value = bgTrans;
