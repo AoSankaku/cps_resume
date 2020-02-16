@@ -246,8 +246,8 @@ function onChangeForms(){
 		comp[24] = Boolean( profilePicData == queryProfilePicData() );
 		console.log(profilePicNameC);
 		console.log(queryProfilePicName());
-		console.log(profilePicData);
-		console.log(queryProfilePicData());
+		//console.log(profilePicData);
+		//console.log(queryProfilePicData());
 		
 		//比較判定
 		var result = true;
