@@ -22,19 +22,25 @@ img[10] = new Image();
 img[10].src = "img/cps_guild.png";
 //プロ画用
 img[9] = new Image();
-var profilePicName = "";
+var profilePicName = "<i class="fas fa-folder-open"></i> （ファイルを選択）";
 //背景用
 img[11] = new Image();
+var bgPicName = "<i class="fas fa-folder-open"></i> （ファイルを選択）";
 
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
-//リサイズ用
+
+//プロフィール画像リサイズ用Canvas（HTML非表示）
 const can2 = document.getElementById( 'profilePicResize' );
 const ctx2 = can2.getContext( '2d' );
 
 //ダウンロード用
 var base64Result = "";
+
+
+
+
 
 //文字数カウント用
 function getLen(str){
@@ -59,6 +65,8 @@ function getLen(str){
 
 
 //プロフィール画像のアップロード
+//旧処理
+/*
 document.querySelector('input[type="file"]').onchange = function loadImg(){
 	let profileImg = this.files[0];
 	if ( profileImg == undefined ){
@@ -72,19 +80,38 @@ document.querySelector('input[type="file"]').onchange = function loadImg(){
 		drawImage(reader.result);
 	}
 }
+*/
+
+
+
+
+//プロ画用
+document.getElementById( "profilePic" ).addEventListener( "change", function(){
+	let profileImg = this.files[0];
+	if ( profileImg == undefined ){
+		//選択がキャンセルされたならボタンの名前をProfilePicNameに変更
+		document.getElementById('fileName1').innerHTML = profilePicName;
+		return;
+	}
+	let reader = new FileReader();
+	reader.readAsDataURL(profileImg);
+	reader.onload = function() {
+		drawImage(reader.result);
+	}
+});
 
 
 
 function drawImage(dataurl) {
 	img[9].src = dataurl;
 	img[9].onload = () => {
-		ctx.beginPath();
+		ctx2.beginPath();
 		//一瞬描いてすぐ消す
-		ctx.drawImage(img[9], 620, 100);
-		ctx.clearRect( 0, 0, can.width, can.height );
+		ctx2.drawImage(img[9], 620, 100);
+		ctx2.clearRect( 0, 0, can2.width, can2.height );
 		
 		//次にボタンの名前をファイル名にする
-		let maxNameLength = 25;
+		let maxNameLength = 24;
 		
 		let files = document.getElementById('profilePic').files;
 		let fileName = files[0].name;
@@ -94,7 +121,7 @@ function drawImage(dataurl) {
 		let result = "";
 		
 		if ( fileNameLength > maxNameLength ){
-			result = fileNameWoEx.slice( 0, 15 ) + "…" + fileNameWoEx.slice( -8 ) + extention;
+			result = fileNameWoEx.slice( 0, 15 ) + "…" + fileNameWoEx.slice( -7 ) + extention;
 		} else {
 			result = fileName;
 		}
@@ -111,6 +138,68 @@ function drawImage(dataurl) {
 		
 	}
 }
+
+
+
+
+
+//背景用
+document.getElementById( "bg" ).addEventListener( "change", function(){
+	let bgImg = this.files[0];
+	if ( bgImg == undefined ){
+		//選択がキャンセルされたならボタンの名前をProfilePicNameに変更
+		document.getElementById('fileName2').innerHTML = bgPicName;
+		return;
+	}
+	let reader = new FileReader();
+	reader.readAsDataURL(bgImg);
+	reader.onload = function() {
+		drawImage2(reader.result);
+	}
+});
+
+
+
+function drawImage2(dataurl) {
+	img[11].src = dataurl;
+	img[11].onload = () => {
+		ctx2.beginPath();
+		//一瞬描いてすぐ消す
+		ctx2.drawImage(img[11], 620, 100);
+		ctx2.clearRect( 0, 0, img[11].width, img[11].height );
+		
+		//次にボタンの名前をファイル名にする
+		let maxNameLength = 24;
+		
+		let files = document.getElementById('bg').files;
+		let fileName = files[0].name;
+		let extention = fileName.slice( fileName.lastIndexOf( '.' ) );
+		let fileNameWoEx = fileName.slice( 0, fileName.lastIndexOf( '.' ) );
+		let fileNameLength = getLen( fileNameWoEx );
+		let result = "";
+		
+		if ( fileNameLength > maxNameLength ){
+			result = fileNameWoEx.slice( 0, 15 ) + "…" + fileNameWoEx.slice( -7 ) + extention;
+		} else {
+			result = fileName;
+		}
+		
+		//アイコン追加してファイル名を表示
+		result = '<i class="fas fa-image"></i> ' + result;
+		document.getElementById('fileName2').innerHTML = result;
+		
+		//Cookie保存用
+		bgPicName = result;
+		
+		//onChangeが動かないのでここから関数を実行
+		onChangeForms();
+		
+	}
+}
+
+
+
+
 
 
 
