@@ -118,6 +118,7 @@ span.notify{
 	-moz-transition: .3s ease;
 	-o-transition: .3s ease;
 	transition: .3s ease;
+	cursor: pointer;
 }
 
 .file_button:hover {
