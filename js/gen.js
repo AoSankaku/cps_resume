@@ -22,10 +22,10 @@ img[10] = new Image();
 img[10].src = "img/cps_guild.png";
 //プロ画用
 img[9] = new Image();
-var profilePicName = "<i class="fas fa-folder-open"></i> （ファイルを選択）";
+var profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 //背景用
 img[11] = new Image();
-var bgPicName = "<i class="fas fa-folder-open"></i> （ファイルを選択）";
+var bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
