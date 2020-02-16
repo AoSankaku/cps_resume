@@ -154,6 +154,7 @@ document.getElementById( "bg" ).addEventListener( "change", function(){
 	}
 	let reader = new FileReader();
 	reader.readAsDataURL(bgImg);
+	document.getElementById('bgtheme').value = "custom";
 	reader.onload = function() {
 		drawImage2(reader.result);
 	}
