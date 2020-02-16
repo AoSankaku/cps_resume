@@ -459,7 +459,7 @@ ctx.fillText("連絡先など", 30 , 900 );
 ctx.globalAlpha = 0.5 ;
 ctx.font = "20px 'Noto Sans JP'";
 ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター」で作成されました。　　製作者:@Ao_Sankaku", 10 , 1260 );
-ctx.fillText("コンパス履歴書ジェネレーター:https://www.リンクがここに来る.github.io", 10 , 1285 );
+ctx.fillText("コンパス履歴書ジェネレーター|https://www.aosankaku.github.io", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
 
 
