@@ -313,10 +313,14 @@ ctx.fillStyle = bgColor;
 ctx.fillRect(0,0,900,1300);
 //背景は繰り返しがあるので回数を判定してがんばる
 if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
+	let imgNum = 11;
+	if ( bgTheme == custom ){
+		imgNum = 12;
+	}
 	let canX = can.width;
 	let canY = can.height;
-	let bgthemeX = img[11].naturalWidth;
-	let bgthemeY = img[11].naturalHeight;
+	let bgthemeX = img[imgNum].naturalWidth;
+	let bgthemeY = img[imgNum].naturalHeight;
 	let timesX = 0;
 	let timesY = 0;
 	ctx.globalAlpha = bgTrans;
@@ -324,7 +328,7 @@ if ( bgTheme !== "custom" && bgTheme !== "monotone" ){
 	//繰り返して描画する
 	while ( canY > timesY * bgthemeY ){
 		for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
-			ctx.drawImage( img[11] , timesX * bgthemeX , timesY * bgthemeY );
+			ctx.drawImage( img[imgNum] , timesX * bgthemeX , timesY * bgthemeY );
 			timesX += 1;
 			
 			if ( i > 10000 ){
