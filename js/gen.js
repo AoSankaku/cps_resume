@@ -479,10 +479,10 @@ switch (profilePicSize) {
 const profilePicY = (63 + 167) - profilePicScale;
 
 //なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
-if ( img[9].src == "undefined" ){
+if ( img[9].src == null ){
 	errorMsg += "プロフィール画像の値が未定義です。画像を選択しなおしてください。";
 } else {
-	ctx.drawImage( img[9], 714, profilePicY, profilePicScale, profilePicScale);
+	ctx.drawImage( img[9], 715, profilePicY, profilePicScale, profilePicScale);
 }
 
 //■指定色
@@ -491,7 +491,7 @@ ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
 ctx.font = "40px 'monospace'";
 var readWidth = ctx.measureText(read).width;
-if ( readWidth >= 584 ){
+if ( readWidth >= 585 ){
 	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
 }
 if ( read == "" ){
@@ -508,7 +508,7 @@ var nameWidth = ctx.measureText(name).width;
 if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px 'monospace'";
 	nameWidth = ctx.measureText(name).width;
-	if ( nameWidth >= 584 ){
+	if ( nameWidth >= 585 ){
 		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
 	}
 }
