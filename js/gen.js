@@ -25,6 +25,7 @@ img[9] = new Image();
 var profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 //背景用
 img[11] = new Image();
+img[12] = new Image();
 var bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 
 //キャンバス用に変数宣言
@@ -161,12 +162,12 @@ document.getElementById( "bg" ).addEventListener( "change", function(){
 
 
 function drawImage2(dataurl) {
-	img[11].src = dataurl;
-	img[11].onload = () => {
+	img[12].src = dataurl;
+	img[12].onload = () => {
 		ctx2.beginPath();
 		//一瞬描いてすぐ消す
-		ctx2.drawImage(img[11], 620, 100);
-		ctx2.clearRect( 0, 0, img[11].width, img[11].height );
+		ctx2.drawImage(img[12], 620, 100);
+		ctx2.clearRect( 0, 0, img[12].width, img[12].height );
 		
 		//次にボタンの名前をファイル名にする
 		let maxNameLength = 24;
