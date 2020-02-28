@@ -60,12 +60,21 @@ function getLen(str){
 	return result;
 }
 
+
+
+
+
 //フォントをプリロード（描いてすぐ消す）
 function preloadFonts(targetFont){
 	ctx2.font = "5px '" + targetFont + "'";
 	ctx2.fillText("S1234567890", 0 , 5 );
 }
 
+
+
+
+
+//ロード本体
 preloadFonts('Noto Sans JP');
 preloadFonts('Heebo');
 
@@ -190,10 +199,6 @@ function drawImage2(dataurl) {
 
 
 
-
-
-
-
 //プロフィール画像の名前を返すだけの関数
 function queryProfilePicName(){
 	return profilePicName;
@@ -202,15 +207,6 @@ function queryProfilePicName(){
 
 function queryProfilePicData(){
 	return img[9].src;
-}
-
-
-
-
-
-//フォントをプリロードする
-function preloadFonts(){
-	void(0);
 }
 
 
