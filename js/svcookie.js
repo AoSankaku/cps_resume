@@ -446,8 +446,8 @@ window.addEventListener('load', function loadFromCookie(){
 if ( navigator.share ) {
 	function shareLink(){
 		navigator.share({
-			title: document.querySelector('title').textContent,
-			text: document.querySelector('meta[name="description"]').getAttribute('content'),
+			title: '#コンパス履歴書ジェネレーター',
+			text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス',
 			url: location.href
 		});
 	}
