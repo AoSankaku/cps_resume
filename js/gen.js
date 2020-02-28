@@ -221,6 +221,15 @@ function queryProfilePicData(){
 
 
 
+//フォントをプリロードする
+function preloadFonts(){
+	void(0);
+}
+
+
+
+
+
 //描画処理本体
 function preview(){
 
