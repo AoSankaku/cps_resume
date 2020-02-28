@@ -32,7 +32,7 @@ var bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）'
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
 
-//プロフィール画像リサイズ用Canvas（HTML非表示）
+//プロフィール画像リサイズ・フォント読み込み用Canvas（HTML非表示）
 const can2 = document.getElementById( 'profilePicResize' );
 const ctx2 = can2.getContext( '2d' );
 
@@ -61,27 +61,14 @@ function getLen(str){
 }
 
 //フォントをプリロード（描いてすぐ消す）
-
-
-
-
-//プロフィール画像のアップロード
-//旧処理
-/*
-document.querySelector('input[type="file"]').onchange = function loadImg(){
-	let profileImg = this.files[0];
-	if ( profileImg == undefined ){
-		//選択がキャンセルされたならボタンの名前をProfilePicNameに変更
-		document.getElementById('fileName1').innerHTML = profilePicName;
-		return;
-	}
-	let reader = new FileReader();
-	reader.readAsDataURL(profileImg);
-	reader.onload = function() {
-		drawImage(reader.result);
-	}
+function preloadFonts(targetFont){
+	ctx2.font = "5px '" + targetFont + "'";
+	ctx2.fillText("S1234567890", 0 , 5 );
 }
-*/
+
+preloadFonts('Noto Sans JP');
+preloadFonts('Heebo');
+
 
 
 
