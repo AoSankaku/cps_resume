@@ -437,3 +437,18 @@ window.addEventListener('load', function loadFromCookie(){
 		document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> LocalStorageが使用できません<br>（履歴書の作成、保存はできます）</span>';
 	}
 });
+
+
+
+
+
+//共有ボタン
+if ( navigator.share ) {
+	navigator.share({
+		title: document.querySelector('title').textContent,
+		text: document.querySelector('meta[name="description"]').getAttribute('content'),
+		url: location.href
+	});
+} else {
+	document.getElementById('shareLink').hidden = true;
+}
