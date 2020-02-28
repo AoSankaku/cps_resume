@@ -8,14 +8,12 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "doing";
+var doingMaintainance = "planned";
 
-var maintainanceStart = "2月28日 17:30";
+var maintainanceStart = "2月29日 13:30";
 var maintainanceEnd = "未定";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
-			+ "・クリップボードにコピーするボタンの実装<br>"
-			+ "・フォントが確実にプレビューに描画されるように修正<br>"
 			+ "・フォントを選択可能にする機能の実装<br>"
 			+ "・alert()で表示している警告ウィンドウをモーダルウィンドウに差し替え<br>"
 			+ "・問い合わせ先の掲載<br>"
