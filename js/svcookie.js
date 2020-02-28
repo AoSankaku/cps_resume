@@ -443,7 +443,7 @@ function loadFromCookie(){
 
 
 //読み込み時にLocalStorageがあればフォームの内容を変更する関数を実行
-window.addEventListener('load', loadFromCookie(); );
+window.addEventListener('load', loadFromCookie );
 
 
 
