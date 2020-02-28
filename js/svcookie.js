@@ -278,8 +278,8 @@ function onChangeForms(){
 
 
 
-//読み込み時にLocalStorageがあればフォームの内容を変更する関数
-window.addEventListener('load', function loadFromCookie(){
+//読み込み時にLocalStorageがあればフォームの内容を変更する関数を定義
+function loadFromCookie(){
 
 //そもそもLocalStorageが有効かどうかを判定する
 	if(typeof localStorage !== 'undefined'){
@@ -436,7 +436,14 @@ window.addEventListener('load', function loadFromCookie(){
 		alert('お使いの環境ではLocalStorageが使用できません。\nこのまま履歴書を作成することもできますが、入力内容はページを離れると全て失われ、保存することはできません。');
 		document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> LocalStorageが使用できません<br>（履歴書の作成、保存はできます）</span>';
 	}
-});
+}
+
+
+
+
+
+//読み込み時にLocalStorageがあればフォームの内容を変更する関数を実行
+window.addEventListener('load', loadFromCookie(); );
 
 
 
