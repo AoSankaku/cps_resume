@@ -444,11 +444,13 @@ window.addEventListener('load', function loadFromCookie(){
 
 //共有ボタン
 if ( navigator.share ) {
-	navigator.share({
-		title: document.querySelector('title').textContent,
-		text: document.querySelector('meta[name="description"]').getAttribute('content'),
-		url: location.href
-	});
+	function shareLink(){
+		navigator.share({
+			title: document.querySelector('title').textContent,
+			text: document.querySelector('meta[name="description"]').getAttribute('content'),
+			url: location.href
+		});
+	}
 } else {
 	document.getElementById('shareLink').hidden = true;
 }
