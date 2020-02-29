@@ -131,10 +131,11 @@ if( typeof localStorage !== 'undefined' ){
 	alert("入力内容を端末に保存しました！");
 	//htmlを書き換え（保存しましたにする）
 	document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
+	window.removeEventListener( 'beforeunload', nonSaved );
 	
 } else {
 
-	alert("【エラー】\n保存するにはLocalStorageを有効にして下さい。")
+	alert("【エラー】\n保存するにはLocalStorageを有効にして下さい。");
 }
 }
 
