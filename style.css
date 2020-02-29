@@ -259,13 +259,13 @@ button{
 .description1 {
     display: none;
     position: absolute;
-    padding: 10px;
-    font-size: 12px;
+    padding: 15px;
+    font-size: 25px;
     line-height: 1.6em;
     color: #fff;
     border-radius: 5px;
-    background: #000;
-    width: 100px;
+    background: #222;
+    width: 300px;
 }
 .description1:before {
     content: "";
@@ -273,17 +273,17 @@ button{
     top: 100%;
     left: 50%;
     border: 15px solid transparent;
-    border-top: 15px solid #000;
+    border-top: 15px solid #222;
     margin-left: -15px;
 }
 .tooltip1:hover .description1{
     display: inline-block;
-    top: -70px;
-    left: -30px;
+    top: -130px;
+    left: -152px;
 }
 p.help{
 	font-size:26px;
-	color:#00ff00;
+	color:#30bb30;
 }
 
 footer{
