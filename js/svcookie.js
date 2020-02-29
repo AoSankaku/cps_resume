@@ -2,6 +2,12 @@
 var storage = localStorage;
 
 
+//ページを離れるときに警告を出すための関数
+var nonSaved = function(e){
+	e.returnValue = '保存せずにこのページを離れてもよろしいですか？';
+}
+window.removeEventListener( 'beforeunload', nonSaved );
+
 
 
 
@@ -268,8 +274,10 @@ function onChangeForms(){
 		//結果反映
 		if ( result ){
 			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
+			window.removeEventListener( 'beforeunload', nonSaved );
 		} else {
 			document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> 端末にデータがあります<br>（この状態で保存すると上書きされます）</span>';
+			window.addEventListener( 'beforeunload' , nonSaved );
 		}
 	}
 }
@@ -418,6 +426,7 @@ function loadFromCookie(){
 				//最後にアラート
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
 				document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
+				window.removeEventListener( 'beforeunload', nonSaved );
 			} else if ( load == false ){
 				//falseだった場合LocalStorageを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
 				var del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
