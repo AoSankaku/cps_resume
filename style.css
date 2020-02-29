@@ -281,6 +281,10 @@ button{
     top: -70px;
     left: -30px;
 }
+p.help{
+	font-size:32px;
+	color:#00ff00;
+}
 
 footer{
 	height:120px;
