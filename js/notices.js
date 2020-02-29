@@ -10,13 +10,12 @@ window.addEventListener('load', function maintainance(){
 
 var doingMaintainance = "doing";
 
-var maintainanceStart = "2月29日 13:30";
+var maintainanceStart = "3月1日 13:30";
 var maintainanceEnd = "未定";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			+ "・フォントを選択可能にする機能の実装<br>"
 			+ "・alert()で表示している警告ウィンドウをモーダルウィンドウに差し替え<br>"
-			+ "・問い合わせ先の掲載<br>"
 			+ "・favicon.icoの差し替え<br>"
 			+ "・一部履歴書に使用されている画像の差し替え<br>";
 
