@@ -135,7 +135,6 @@ span.notify{
 	cursor: pointer;
 }
 
-
 .container {
 	font-family: 'M PLUS 1p', sans-serif;
 	text-align: center;
@@ -245,45 +244,6 @@ button{
 	height:85px;
 	width:810px;
 	margin:15px 15px;
-}
-
-.tooltip1{
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-.tooltip1 p{
-    margin:0;
-    padding:0;
-}
-.description1 {
-    display: none;
-    position: absolute;
-    padding: 15px;
-    font-size: 24px;
-    line-height: 1.6em;
-    color: #fff;
-    border-radius: 5px;
-    background: #222;
-    width: 350px;
-}
-.description1:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    border: 15px solid transparent;
-    border-top: 15px solid #222;
-    margin-left: -120px;
-}
-.tooltip1:hover .description1{
-    display: inline-block;
-    top: -130px;
-    left: -72px;
-}
-p.help{
-	font-size:26px;
-	color:#30bb30;
 }
 
 footer{
