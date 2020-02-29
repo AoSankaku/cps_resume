@@ -260,12 +260,12 @@ button{
     display: none;
     position: absolute;
     padding: 15px;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 1.6em;
     color: #fff;
     border-radius: 5px;
     background: #222;
-    width: 300px;
+    width: 350px;
 }
 .description1:before {
     content: "";
@@ -274,12 +274,12 @@ button{
     left: 50%;
     border: 15px solid transparent;
     border-top: 15px solid #222;
-    margin-left: -15px;
+    margin-left: -120px;
 }
 .tooltip1:hover .description1{
     display: inline-block;
     top: -130px;
-    left: -152px;
+    left: -72px;
 }
 p.help{
 	font-size:26px;
