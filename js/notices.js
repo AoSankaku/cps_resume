@@ -8,7 +8,7 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "planned";
+var doingMaintainance = "doing";
 
 var maintainanceStart = "2月29日 13:30";
 var maintainanceEnd = "未定";
@@ -56,7 +56,7 @@ switch ( doingMaintainance ){
 var titleColor = document.getElementById('titleColor');
 
 
-if ( doingMaintainance != "none" ){
+if ( doingMaintainance !== "none" ){
 	console.log('メンテナンス中');
 	var maintainanceNotice 	= '<div class="box-title" id="maintainanceNotice">'
 				+ str[1]
