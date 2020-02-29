@@ -332,7 +332,7 @@ function loadFromCookie(){
 
 		//LocalStorageの日付が空文字列またはnullならLocalStorageをロード
 		if ( savedAt !== null ){
-			var load = confirm( "前回端末に保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
+			let load = confirm( "前回端末に保存した内容を読み込みますか？\n（保存日時：" + savedAt + "）" );
 			if ( load == true ){
 				//ここからLocalStorageロード
 				//文字列のみ
@@ -430,11 +430,12 @@ function loadFromCookie(){
 				window.removeEventListener( 'beforeunload', nonSaved );
 			} else if ( load == false ){
 				//falseだった場合LocalStorageを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
-				var del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
+				let del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
 				if ( del == true ){
 					storage.clear();
 					alert( "このサイトのデータを端末から消去しました。" );
 					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません<br>（保存可能です）</span>';
+					window.removeEventListener( 'beforeunload', nonSaved );
 				} else {
 					document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-exclamation-triangle"></i> 端末にデータがあります<br>（この状態で保存すると上書きされます）</span>';
 				}
@@ -454,6 +455,21 @@ function loadFromCookie(){
 
 //読み込み時にLocalStorageがあればフォームの内容を変更する関数を実行
 window.addEventListener('load', loadFromCookie );
+
+
+
+
+
+//ローカルストレージを消す
+function clearStorage(){
+	let del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
+	if ( del == true ){
+		storage.clear();
+		alert( "このサイトのデータを端末から消去しました。" );
+		document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 保存されていません<br>（保存可能です）</span>';
+		window.removeEventListener( 'beforeunload', nonSaved );
+	}
+}
 
 
 
