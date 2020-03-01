@@ -82,9 +82,27 @@ function getLen(str){
 
 
 //フォントをプリロード（描いてすぐ消す）
-function preloadFonts(targetFont){
-	ctx2.font = "5px '" + targetFont + "'";
-	ctx2.fillText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタ」で作成されました。|htps:/w.aosnkugithbcpsreum", 0 , 5 );
+function preloadFonts( targetFont, mode ){
+	if ( mode == 'default' ){
+		ctx2.font = "5px '" + targetFont + "'";
+		ctx2.fillText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。htps:/wosnkugihbcprm", 0 , 5 );
+	} else if ( typeof read !== 'undefined' ) {
+		ctx2.font = "5px '" + targetFont + "'";
+		ctx2.fillText( document.forms.info.read.value
+		+document.forms.info.name.value
+		+document.forms.info.dl.value
+		+document.forms.info.rank.value
+		+document.forms.info.tw.value
+		+document.forms.info.dc.value
+		+document.forms.info.sp.value
+		+document.forms.info.fc.value
+		+document.forms.info.guild.value
+		+document.getElementById('comment').value ,0 ,5 );
+		
+		for (let i = 0, ele = document.getElementById('heroB') ; i < ele.length; i++ ){
+			ctx2.fillText( ele[i].text , 0, 5 );
+		}
+	}
 }
 
 
@@ -92,8 +110,8 @@ function preloadFonts(targetFont){
 
 
 //先に必ず使用するフォントをロード
-preloadFonts('Noto Sans JP');
-preloadFonts('Heebo');
+preloadFonts( 'Noto Sans JP', 'default' );
+preloadFonts( 'Heebo', 'default' );
 
 
 
@@ -452,8 +470,8 @@ ctx.fillText("連絡先など", 30 , 900 );
 //一番下に注意書きなど
 ctx.globalAlpha = 0.5 ;
 ctx.font = "20px 'Noto Sans JP'";
-ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター」で作成されました。　　製作者:@Ao_Sankaku", 10 , 1260 );
-ctx.fillText("コンパス履歴書ジェネレーター|https://www.aosankaku.github.io", 10 , 1285 );
+ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター" + version + "」で作成されました。　　製作者:@Ao_Sankaku", 10 , 1260 );
+ctx.fillText("https://www.aosankaku.github.io/", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
 
 
