@@ -485,9 +485,9 @@ ctx.fillStyle = fontColor;
 
 //■指定フォント（depはデフォルト（monospace））
 switch (selectedFont){
-	case nos	: userFont = " 'Noto Sans JP'";	break;
-	case nof	: userFont = " 'Noto Serif JP'";	break;
-	case mpl	: usefFont = " 'M Plus 1p'";	break;
+	case "nos"	: userFont = " 'Noto Sans JP'";	break;
+	case "nof"	: userFont = " 'Noto Serif JP'";	break;
+	case "mpl"	: usefFont = " 'M Plus 1p'";	break;
 	default 	: userFont = " 'monospace'";	break;
 }
 
