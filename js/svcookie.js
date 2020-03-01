@@ -438,6 +438,8 @@ function loadFromCookie( calledBy ){
 				alert( "前回の入力内容を読み込みました。\n変更があるなら適用して「コンパス履歴書を生成する！」を押してください。" );
 				document.getElementById("saveAlert").innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 端末に保存されています<br>（ページを離れても内容は保持されます）</span>';
 				window.removeEventListener( 'beforeunload', nonSaved );
+				//フォントをロード
+				onChangeForms();
 			}/* else if ( load == false ){
 				//falseだった場合LocalStorageを消去するかどうか聞く（elseifにしたのはundefinedに対応するため）
 				let del = confirm( "端末に保存されたこのサイトのデータを削除しますか？\n（この操作は取り消せません）" );
