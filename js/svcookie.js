@@ -184,9 +184,14 @@ function onChangeForms(){
 	var defaultColor = storage.getItem( 'defaultColor' );
 	var selectedFont = storage.getItem( 'selectedFont' );
 	var savedAt = storage.getItem( 'savedAt' );
-
+	
+	
 	//中身の変更の有無にかかわらず今選択されてるフォントを読み込む
-	preloadFonts( document.forms.design.font.value , undefined );
+	let ele = document.forms.design.font;
+	if ( ele[ele.selectedIndex].text !== "端末依存" ){
+		preloadFonts( ele[ele.selectedIndex].text , undefined );
+	}
+	
 	
 	//本当に中身が変わったのか比較する（ A => B => A の場合は「変更なし」判定する）
 	//LocalStorageが無効orデータ消滅済なら何もしない
