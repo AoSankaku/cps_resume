@@ -1,3 +1,8 @@
+//履歴書本体バージョンを定義
+var version = "v1.0.0 Beta";
+//ページタイトル(h1を書き換える)
+document.getElementById('title').innerText = version;
+
 //画像をプリロード                                                                                                                                                                                     
 var img = [];
 img[0] = new Image();
@@ -28,6 +33,18 @@ img[11] = new Image();
 img[12] = new Image();
 var bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 
+//変数だけ宣言
+var atkImg = new Image();
+var gunImg = new Image();
+var sprImg = new Image();
+var tanImg = new Image();
+var twImg = new Image();
+var dcImg = new Image();
+var spImg = new Image();
+var cpImg = new Image();
+var fkImg = new Image();
+var guImg = new Image();
+
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
 const ctx = can.getContext('2d');
@@ -45,10 +62,10 @@ var base64Result = "";
 
 //文字数カウント用
 function getLen(str){
-	var result = 0;
-	for(var i=0;i<str.length;i++){
-		var chr = str.charCodeAt(i);
-		if((chr >= 0x00 && chr < 0x81) ||　(chr === 0xf8f0) ||　(chr >= 0xff61 && chr < 0xffa0) ||　(chr >= 0xf8f1 && chr < 0xf8f4)){
+	let result = 0;
+	for( let i = 0; i < str.length; i++ ){
+		let chr = str.charCodeAt(i);
+		if((chr >= 0x00 && chr < 0x81) || (chr === 0xf8f0) || (chr >= 0xff61 && chr < 0xffa0) || (chr >= 0xf8f1 && chr < 0xf8f4)){
 			//半角文字の場合は1を加算
 			result += 1;
 		}else{
@@ -74,7 +91,7 @@ function preloadFonts(targetFont){
 
 
 
-//ロード本体
+//先に必ず使用するフォントをロード
 preloadFonts('Noto Sans JP');
 preloadFonts('Heebo');
 
@@ -216,12 +233,6 @@ function queryProfilePicData(){
 //描画処理本体
 function preview(){
 
-//バージョン
-var version = "v1.0.0 Beta";
-
-//デバッグ用
-var debugCan = 0 ;
-
 //作成年月日を取得する
 var date = new Date();
 var year = date.getFullYear();
@@ -290,6 +301,7 @@ var bgColor = document.forms.design.bgColor.value;
 var defaultColor = document.forms.design.defaultColor.value;
 var fontColor = document.forms.design.fontColor.value;
 var selectedFont = document.forms.design.font.value;
+var userFont = " 'monospace'";
 
 //フォームに不備があったときのエラーメッセージ用
 var errorMsg = "";
@@ -420,17 +432,6 @@ ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 440 );
 //ロールアイコンは条件でうすくなるので描画は下で
 //同時に画像アイコンも読み込む
-var atkImg = new Image();
-var gunImg = new Image();
-var sprImg = new Image();
-var tanImg = new Image();
-var twImg = new Image();
-var dcImg = new Image();
-var spImg = new Image();
-var cpImg = new Image();
-var fkImg = new Image();
-var guImg = new Image();
-
 atkImg.src = img[0].src;
 gunImg.src = img[1].src;
 sprImg.src = img[2].src;
@@ -459,7 +460,7 @@ ctx.globalAlpha = 1.0 ;
 
 
 //■最終処理■内容をフォームの内容で埋める
-//プロフィール画像を指描画
+//プロフィール画像を描画
 var profilePicScale;
 switch (profilePicSize) {
 	case "10x" : profilePicScale = 167; break;
@@ -481,8 +482,18 @@ if ( img[9].src == null ){
 //■指定色
 ctx.fillStyle = fontColor;
 
+
+//■指定フォント（depはデフォルト（monospace））
+switch (selectedFont){
+	case nos	: userFont = " 'Noto Sans JP'";	break;
+	case nof	: userFont = " 'Noto Serif JP'";	break;
+	case mpl	: usefFont = " 'M Plus 1p'";	break;
+	default 	: userFont = " 'monospace'";	break;
+}
+
+
 ctx.lineWidth = 4;
-ctx.font = "40px 'monospace'";
+ctx.font = "40px" + userFont;
 var readWidth = ctx.measureText(read).width;
 if ( readWidth >= 585 ){
 	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
@@ -496,10 +507,10 @@ if ( name == "" ){
 	errorMsg += "HNが入力されていません。\n";
 }
 ctx.lineWidth = 6;
-ctx.font = "bold 72px 'monospace'";
+ctx.font = "bold 72px" + userFont;
 var nameWidth = ctx.measureText(name).width;
 if ( nameWidth >= 575 ){
-	ctx.font = "bold 50px 'monospace'";
+	ctx.font = "bold 50px" + userFont;
 	nameWidth = ctx.measureText(name).width;
 	if ( nameWidth >= 585 ){
 		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
@@ -508,7 +519,7 @@ if ( nameWidth >= 575 ){
 ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
-//デキレによって分岐
+//デキレによって分岐(フォントは今の所固定)
 ctx.font = "95px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
@@ -654,7 +665,7 @@ ctx.fillStyle = fontColor;
 ctx.globalAlpha = 1.0;
 //先に使用ヒーローを取得して描画
 //バトアリ検索
-for ( var temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
+for ( let temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
 if ( heroBe[i].selected ){
 temp1 = heroBe[i].value;
 //エラーチェック用
@@ -713,7 +724,7 @@ case "thomas"	:tanUseB += "トマス ";	break;
 }
 }
 //フリバ・練習中検索
-for ( var temp2 , i = 0 , l = heroFe.length ; l > i ; i++ ){
+for ( let temp2 , i = 0 , l = heroFe.length ; l > i ; i++ ){
 if ( heroFe[i].selected ){
 temp2 = heroFe[i].value;
 //先に重複エラーチェック(各ロールごとにやる)
@@ -779,7 +790,7 @@ errorMsg += "「バトアリ使用キャラ」と「フリバト&練習キャラ
 }
 
 //キャラ描画
-ctx.font = "34px 'monospace'";
+ctx.font = "34px" + userFont;
 ctx.globalAlpha = 1.0 ;
 ctx.fillText( atkUseB , 120 , 490 );
 if ( atkUseF != "" ){
@@ -904,7 +915,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 
 
 
-ctx.font = "26px 'monospace'";
+ctx.font = "26px" + userFont;
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
 var contactY = 918;
@@ -963,7 +974,7 @@ ctx.fillText( createdAt , 680 , 1216 );
 
 //入力に何かしら不備があった場合アラート
 if ( errorMsg != "" ){
-alert("【入力エラー】\n" + errorMsg);
+	alert("【入力エラー】\n" + errorMsg);
 }
 
 
