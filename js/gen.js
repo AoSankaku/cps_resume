@@ -84,11 +84,11 @@ function getLen(str){
 //フォントをプリロード（描いてすぐ消す）
 function preloadFonts( targetFont, mode ){
 	if ( mode == 'default' ){
-		ctx2.font = "5px '" + targetFont + "'";
-		ctx2.fillText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。htps:/wosnkugihbcprm", 0 , 5 );
+		ctx.font = "5px '" + targetFont + "'";
+		ctx.fillText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。htps:/wosnkugihbcprm", 0 , 5 );
 	} else if ( typeof read !== 'undefined' ) {
-		ctx2.font = "5px '" + targetFont + "'";
-		ctx2.fillText( document.forms.info.read.value
+		ctx.font = "5px '" + targetFont + "'";
+		ctx.fillText( document.forms.info.read.value
 		+document.forms.info.name.value
 		+document.forms.info.dl.value
 		+document.forms.info.rank.value
@@ -100,9 +100,10 @@ function preloadFonts( targetFont, mode ){
 		+document.getElementById('comment').value ,0 ,5 );
 		
 		for (let i = 0, ele = document.getElementById('heroB') ; i < ele.length; i++ ){
-			ctx2.fillText( ele[i].text , 0, 5 );
+			ctx.fillText( ele[i].text , 0, 5 );
 		}
 	}
+	ctx.clearRect( 0, 0, 900, 1300 )
 }
 
 
