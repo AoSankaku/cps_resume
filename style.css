@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap&subset=japanese');
 @import url('https://fonts.googleapis.com/css?family=Heebo:800&display=swap');
 
+@font-face{
+	font-family: 'JF Dot Kaname';
+	src: url('fonts/JF-Dot-Kaname12.woff') format('woff'),
+		url('fonts/JF-Dot-Kaname12.ttf') format('truetype');
+}
+
 @media screen { #filename { display: none; } }
 
 body{
