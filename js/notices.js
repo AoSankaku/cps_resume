@@ -8,16 +8,16 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "planned";
+var doingMaintainance = "doing";
 
 var maintainanceStart = "3月3日 15:00";
 var maintainanceEnd = "未定";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			+ "・選択可能な日本語フォントの追加<br>"
-			+ "・容量の大きい画像を含んだ背景データを保存しようとした場合自動でリサイズするよう修正<br>"
-			+ "・「ホーム画面に追加」する機能を実装<br>"
+			+ "・5MBを超える画像をストレージに保存しようとした場合警告するよう修正<br>"
 			+ "・alert()で表示している警告ウィンドウをモーダルウィンドウに差し替え<br>"
+			+ "・各項目ごとにヘルプボタンを追加<br>"
 			+ "・favicon.icoの差し替え<br>";
 
 
