@@ -5,8 +5,8 @@
 
 @font-face{
 	font-family: 'JF Dot Kaname';
-	src: url('fonts/JF-Dot-Kaname12.woff') format('woff'),
-		url('fonts/JF-Dot-Kaname12.ttf') format('truetype');
+	src: url('https://aosankaku.github.io/cps_resume/fonts/JF-Dot-Kaname12.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/JF-Dot-Kaname12.ttf') format('truetype');
 }
 
 @media screen { #filename { display: none; } }
