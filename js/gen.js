@@ -503,12 +503,23 @@ ctx.fillStyle = fontColor;
 
 
 //■指定フォント（depはデフォルト（monospace））
+//新処理(フォントの選択肢名を読み込んでそのフォントを描画する)
+let fontEle = document.forms.design.font;
+if ( fontEle[fontEle.selectedIndex].text !== "端末依存" ){
+	userFont = " '" + fontEle[fontEle.selectedIndex].text + "'";
+} else {
+	userFont = " 'monospace'"
+}
+
+
+/*旧処理
 switch (selectedFont){
 	case "nos"	: userFont = " 'Noto Sans JP'";	break;
 	case "nof"	: userFont = " 'Noto Serif JP'";	break;
 	case "mpl"	: userFont = " 'M PLUS 1p'";	break;
 	default 	: userFont = " 'monospace'";	break;
 }
+*/
 
 
 ctx.lineWidth = 4;
