@@ -8,14 +8,17 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "doing";
+var doingMaintainance = "planned";
 
-var maintainanceStart = "3月3日 15:00";
+var maintainanceStart = "3月7日 15:00";
 var maintainanceEnd = "未定";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			+ "・5MBを超える画像をストレージに保存しようとした場合警告するよう修正<br>"
-			+ "・選択可能な日本語フォントの追加<br>"
+			+ "・最高デッキレベル、最高ランク、特殊アイコンのフォントを「Heebo」か「選択したフォントと同じ」か選択可能にする機能を実装<br>"
+			+ "・「ホーム画面に追加」する機能を一部端末向けに実装<br>"
+			+ "・入力内容に不備があった場合ストレージの保存状況の下にその内容を表示するよう機能を実装<br>"
+			+ "・使用ヒーローが右端まで到達した場合に文字の横幅を圧縮して描画するように修正<br>"
 			+ "・alert()で表示している警告ウィンドウをモーダルウィンドウに差し替え<br>"
 			+ "・各項目ごとにヘルプボタンを追加<br>";
 
