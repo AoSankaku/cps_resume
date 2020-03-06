@@ -6,9 +6,45 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo:800&display=swap');
 
 @font-face{
+	font-family: '851マカポップ';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/851MkPOP_002.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/851MkPOP_002.ttf') format('truetype');
+}
+
+@font-face{
 	font-family: 'JF Dot Kaname';
 	src: url('https://aosankaku.github.io/cps_resume/fonts/JF-Dot-Kaname12.woff') format('woff'),
 		url('https://aosankaku.github.io/cps_resume/fonts/JF-Dot-Kaname12.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'じゆうちょうフォント';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/Jiyucho.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/Jiyucho.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'にゃしいフォント改2';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/Nyashi.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/Nyashi.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'せのびゴシック';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/Senobi-Gothic-Regular.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/Senobi-Gothic-Regular.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'チェックポイント．（ピリオド）';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/cp_period.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/cp_period.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: '無心フォント';
+	src: url('https://aosankaku.github.io/cps_resume/fonts/mushin.woff') format('woff'),
+		url('https://aosankaku.github.io/cps_resume/fonts/mushin.otf') format('truetype');
 }
 
 @media screen { #filename { display: none; } }
