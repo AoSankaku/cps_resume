@@ -3,7 +3,7 @@ var version = "v1.0.0 Beta";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 
-//画像をプリロード                                                                                                                                                                                     
+//画像をプリロード     　　                                                                                                                                                                              
 var img = [];
 img[0] = new Image();
 img[0].src = "img/attacker.png";
@@ -44,6 +44,38 @@ var spImg = new Image();
 var cpImg = new Image();
 var fkImg = new Image();
 var guImg = new Image();
+
+//画像ソースが読み込まれたら代入
+img[0].onload = function(){
+	atkImg.src = img[0].src;
+}
+img[1].onload = function(){
+	gunImg.src = img[1].src;
+}
+img[2].onload = function(){
+	sprImg.src = img[2].src;
+}
+img[3].onload = function(){
+	tanImg.src = img[3].src;
+}
+img[4].onload = function(){
+	twImg.src = img[4].src;
+}
+img[5].onload = function(){
+	dcImg.src = img[5].src;
+}
+img[6].onload = function(){
+	spImg.src = img[6].src;
+}
+img[7].onload = function(){
+	cpImg.src = img[7].src;
+}
+img[8].onload = function(){
+	fkImg.src = img[8].src;
+}
+img[10].onload = function(){
+	guImg.src = img[10].src;
+}
 
 //キャンバス用に変数宣言
 const can = document.getElementById('result');
@@ -253,77 +285,77 @@ function queryProfilePicData(){
 function preview(){
 
 //作成年月日を取得する
-var date = new Date();
-var year = date.getFullYear();
+let date = new Date();
+let year = date.getFullYear();
 //このツールの公開は2020年なのでそれより時刻が前ならエラーを吐く
 if ( year < 2020 ){
-	errorMsg += "お使いの端末の時間設定が不正です。\n";
+	errorMsg += "・お使いの端末の時間設定が不正です。\n";
 }
-var month = date.getMonth() + 1;
+let month = date.getMonth() + 1;
 if ( month < 10 ){
 	month = "0" + month;
 }
-var today = date.getDate();
+let today = date.getDate();
 if ( today < 10 ){
 	today = "0" + today;
 }
 
-var createdAt = year + "年" + month + "月"+ today +"日 作成";
+let createdAt = year + "年" + month + "月"+ today +"日 作成";
 
 
 //フォームの内容を取得する
-var read = document.forms.info.read.value;
-var name = document.forms.info.name.value;
-var dl = document.forms.info.dl.value;
-var rank = document.forms.info.rank.value;
-var heroB = document.getElementById("heroB");
-var heroF = document.getElementById("heroF");
-var heroBe = heroB.options;
-var heroFe = heroF.options;
+let read = document.forms.info.read.value;
+let name = document.forms.info.name.value;
+let dl = document.forms.info.dl.value;
+let rank = document.forms.info.rank.value;
+let heroB = document.getElementById("heroB");
+let heroF = document.getElementById("heroF");
+let heroBe = heroB.options;
+let heroFe = heroF.options;
 //使用ヒーロー用
-var atkUseB = "";
-var gunUseB = "";
-var sprUseB = "";
-var tanUseB = "";
-var atkUseF = "";
-var gunUseF = "";
-var sprUseF = "";
-var tanUseF = "";
+let atkUseB = "";
+let gunUseB = "";
+let sprUseB = "";
+let tanUseB = "";
+let atkUseF = "";
+let gunUseF = "";
+let sprUseF = "";
+let tanUseF = "";
 //エラー用
 /*現在不使用
-var atkDuplicate = 0;
-var gunDuplicate = 0;
-var sprDuplicate = 0;
-var tanDuplicate = 0;
+let atkDuplicate = 0;
+let gunDuplicate = 0;
+let sprDuplicate = 0;
+let tanDuplicate = 0;
 */
-var duplicate = 0;
-var duplicateId = "";
+let duplicate = 0;
+let duplicateId = "";
 //小数点対策済
-var bronze = parseInt(document.forms.info.bronze.value);
-var silver = parseInt(document.forms.info.silver.value);
-var gold = parseInt(document.forms.info.gold.value);
-var tournament = parseInt(document.forms.info.tournament.value);
+let bronze = parseInt(document.forms.info.bronze.value);
+let silver = parseInt(document.forms.info.silver.value);
+let gold = parseInt(document.forms.info.gold.value);
+let tournament = parseInt(document.forms.info.tournament.value);
 //連絡先とギルドと一言
-var tw = document.forms.info.tw.value;
-var dc = document.forms.info.dc.value;
-var sp = document.forms.info.sp.value;
-var fc = document.forms.info.fc.value;
-var guild = document.forms.info.guild.value;
-var cm = document.getElementById('comment').value;
+let tw = document.forms.info.tw.value;
+let dc = document.forms.info.dc.value;
+let sp = document.forms.info.sp.value;
+let fc = document.forms.info.fc.value;
+let guild = document.forms.info.guild.value;
+let cm = document.getElementById('comment').value;
 
 //以下デザイン用
-var profilePic = new Image();
-var profilePicSize = document.forms.design.profilePicSize.value;
-var bgTheme = document.forms.design.bgtheme.value;
-var bgTrans = document.forms.design.bgTrans.value;
-var bgColor = document.forms.design.bgColor.value;
-var defaultColor = document.forms.design.defaultColor.value;
-var fontColor = document.forms.design.fontColor.value;
-var selectedFont = document.forms.design.font.value;
-var userFont = " 'monospace'";
+let profilePic = new Image();
+let profilePicSize = document.forms.design.profilePicSize.value;
+let bgTheme = document.forms.design.bgtheme.value;
+let bgTrans = document.forms.design.bgTrans.value;
+let bgColor = document.forms.design.bgColor.value;
+let defaultColor = document.forms.design.defaultColor.value;
+let fontColor = document.forms.design.fontColor.value;
+let selectedFont = document.forms.design.font.value;
+let userFont = " 'monospace'";
 
 //フォームに不備があったときのエラーメッセージ用
-var errorMsg = "";
+let errorMsg = "";
 
 //■履歴書枠組み、項目の描画■
 //注意:変数canとctxの宣言はHTMLに記述
@@ -356,7 +388,7 @@ if ( bgTheme !== "monotone" ){
 			timesX += 1;
 			
 			if ( i > 10000 ){
-				errorMsg += "背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n";
+				errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n";
 				break;
 			}
 		}
@@ -406,9 +438,9 @@ ctx.fillText("最高ランク", 283 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 
-var boxX = 450;
-var boxXAdd = 110;
-var boxY = 300;
+let boxX = 450;
+let boxXAdd = 110;
+let boxY = 300;
 
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
@@ -450,17 +482,6 @@ ctx.fillRect(430,230,2,170);
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("使用ヒーロー　※()内は練習中orフリバのみ", 30 , 440 );
 //ロールアイコンは条件でうすくなるので描画は下で
-//同時に画像アイコンも読み込む
-atkImg.src = img[0].src;
-gunImg.src = img[1].src;
-sprImg.src = img[2].src;
-tanImg.src = img[3].src;
-twImg.src = img[4].src;
-dcImg.src = img[5].src;
-spImg.src = img[6].src;
-cpImg.src = img[7].src;
-fkImg.src = img[8].src;
-guImg.src = img[10].src;
 
 //連絡先とアイコン
 ctx.fillStyle = defaultColor;
@@ -480,7 +501,7 @@ ctx.globalAlpha = 1.0 ;
 
 //■最終処理■内容をフォームの内容で埋める
 //プロフィール画像を描画
-var profilePicScale;
+let profilePicScale;
 switch (profilePicSize) {
 	case "10x" : profilePicScale = 167; break;
 	case "09x" : profilePicScale = 150; break;
@@ -493,7 +514,7 @@ const profilePicY = (63 + 167) - profilePicScale;
 
 //なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
 if ( img[9].src == null ){
-	errorMsg += "プロフィール画像の値が未定義です。画像を選択しなおしてください。";
+	errorMsg += "・プロフィール画像の値が未定義です。画像を選択しなおしてください。";
 } else {
 	ctx.drawImage( img[9], 715, profilePicY, profilePicScale, profilePicScale);
 }
@@ -524,26 +545,26 @@ switch (selectedFont){
 
 ctx.lineWidth = 4;
 ctx.font = "40px" + userFont;
-var readWidth = ctx.measureText(read).width;
+let readWidth = ctx.measureText(read).width;
 if ( readWidth >= 585 ){
-	errorMsg += "よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
+	errorMsg += "・よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
 }
 if ( read == "" ){
-	errorMsg += "よみがなが入力されていません。\n";
+	errorMsg += "・よみがなが入力されていません。\n";
 }
 ctx.fillText(read, 130 , 110 );
 //名前を描画したときの幅を判定してある程度自動調整
 if ( name == "" ){
-	errorMsg += "HNが入力されていません。\n";
+	errorMsg += "・HNが入力されていません。\n";
 }
 ctx.lineWidth = 6;
 ctx.font = "bold 72px" + userFont;
-var nameWidth = ctx.measureText(name).width;
+let nameWidth = ctx.measureText(name).width;
 if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px" + userFont;
 	nameWidth = ctx.measureText(name).width;
 	if ( nameWidth >= 585 ){
-		errorMsg += "HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
+		errorMsg += "・HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
 	}
 }
 ctx.fillText(name, 130 , 205 );
@@ -574,38 +595,38 @@ ctx.fillText(dl, 147 , 380 );
 ctx.lineWidth = 9;
 ctx.font = "bold 95px 'Heebo'";
 //ランクによってグラデーションを変化
-var grad = ctx.createLinearGradient(0,335,0,380);
+let grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
-case "F":
-case "E":
-case "D":
-case "C":
-case "B":
-case "A":
-grad.addColorStop(0,'#f7c717');
-grad.addColorStop(1,'#f7c717');
-break;
-
-case "S1":
-case "S2":
-case "S3":
-grad.addColorStop(0,'#f7c717');
-grad.addColorStop(1,'#fcea98');
-break;
-
-case "S4":
-case "S5":
-case "S6":
-grad.addColorStop(0,'#f7c717');
-grad.addColorStop(1,'#ed9300');
-break;
-
-case "S7":
-case "S8":
-case "S9":
-grad.addColorStop(0,'#f7c717');
-grad.addColorStop(1,'#ee82ee');
-break;
+	case "F":
+	case "E":
+	case "D":
+	case "C":
+	case "B":
+	case "A":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#f7c717');
+	break;
+	
+	case "S1":
+	case "S2":
+	case "S3":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#fcea98');
+	break;
+	
+	case "S4":
+	case "S5":
+	case "S6":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#ed9300');
+	break;
+	
+	case "S7":
+	case "S8":
+	case "S9":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#ee82ee');
+	break;
 }
 ctx.fillStyle = grad;
 ctx.fillText( rank, 350, 380 );
@@ -619,37 +640,54 @@ ctx.strokeStyle = "#000000";
 //先にエラーチェック
 //エラーチェック(99超えてないか)
 if ( bronze > 99 ){
-	errorMsg += "銅アイコンの個数の値が不正です。\n";
+	errorMsg += "・銅アイコンの個数の値が不正です。\n";
 }
 if ( silver > 99 ){
-	errorMsg += "銀アイコンの個数の値が不正です。\n";
+	errorMsg += "・銀アイコンの個数の値が不正です。\n";
 }
 if ( gold > 99 ){
-	errorMsg += "金アイコンの個数の値が不正です。\n";
+	errorMsg += "・金アイコンの個数の値が不正です。\n";
 }
 if ( tournament > 99 ){
-	errorMsg += "大会優勝アイコンの個数の値が不正です。\n";
+	errorMsg += "・大会優勝アイコンの個数の値が不正です。\n";
 }
 //エラーチェック(0未満でないか)
 if ( bronze < 0 ){
-	errorMsg += "銅アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "・銅アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( silver < 0 ){
-	errorMsg += "銀アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "・銀アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( gold < 0 ){
-	errorMsg += "金アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "・金アイコンの個数の値が0未満です。値は0として扱われます。\n";
 }
 if ( tournament < 0 ){
-	errorMsg += "大会優勝アイコンの個数の値が0未満です。値は0として扱われます。\n";
+	errorMsg += "・大会優勝アイコンの個数の値が0未満です。値は0として扱われます。\n";
+}
+//エラーチェック(数値でないか)
+if ( isNaN( bronze ) ){
+	errorMsg += "・銅アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
+	bronze = 0;
+}
+if ( isNaN( silver ) ){
+	errorMsg += "・銀アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
+	silver = 0;
+}
+if ( isNaN( gold ) ){
+	errorMsg += "・金アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
+	gold = 0;
+}
+if ( isNaN( tournament ) ){
+	errorMsg += "・大会優勝アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
+	torunament = 0;
 }
 //金銀銅アイコンの数を描画
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
-var iconX = 492;
-var iconXAdd = 110;
-var iconY = 360;
+let iconX = 492;
+let iconXAdd = 110;
+let iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
 	ctx.font = "56px 'Noto Sans JP'";
@@ -816,7 +854,7 @@ case "thomas"	:tanUseF += "トマス ";	break;
 }
 //重複があったらエラー
 if ( duplicate != 0 ){
-errorMsg += "「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが" + duplicate + "体います。\n" ;
+errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが" + duplicate + "体います。\n" ;
 }
 
 //キャラ描画
@@ -885,7 +923,7 @@ ctx.drawImage( tanImg , 30 , 760 , 80 , 80 );
 ctx.globalAlpha = 1.0 ;
 //使用ヒーローが0体の場合アラート
 if ( atkUseB + atkUseF + gunUseB + gunUseF + sprUseB + sprUseF + tanUseB + tanUseF == "" ){
-	errorMsg += "使用ヒーローが一体も選択されていません。\n";
+	errorMsg += "・使用ヒーローが一体も選択されていません。\n";
 }
 //連絡先エラーチェック
 //Twitter…16文字を超えたらエラー
@@ -898,48 +936,48 @@ if ( atkUseB + atkUseF + gunUseB + gunUseF + sprUseB + sprUseF + tanUseB + tanUs
 
 //Twitter
 tw.replace(/＠/g,"@");
-var twAt = tw.startsWith("@");
+let twAt = tw.startsWith("@");
 if ( twAt == false ){
 tw = "@" + tw;
 }
-var twLength = tw.length;
+let twLength = tw.length;
 if ( twLength > 17 ){
-errorMsg += "Twitter IDが長すぎます。\n";
+errorMsg += "・Twitter IDが長すぎます。\n";
 }
 //先頭の@を切り取り半角英数と_以外が含まれていた場合エラーを吐く
-var twSlice = tw.slice(1);
+let twSlice = tw.slice(1);
 twSlice = ( twSlice == null )?"":twSlice;
 if ( !twSlice.match(/^[A-Za-z0-9_]*$/) ){
-errorMsg += "Twitter IDは半角英数と_(アンダースコア)のみ使用できます。\n";
+errorMsg += "・Twitter IDは半角英数と_(アンダースコア)のみ使用できます。\n";
 }
 
 //Discord
-var dcTag = dc.slice(-5);
+let dcTag = dc.slice(-5);
 if ( dc != "" ){
 if ( !dcTag.match(/^#\d{4}/) ){
-errorMsg += "Discord名は名前の最後に「#」と4桁の数字からなるタグが必要です(例:ユーザー名#1234)。\n";
+errorMsg += "・Discord名は名前の最後に「#」と4桁の数字からなるタグが必要です(例:ユーザー名#1234)。\n";
 }
 }
 
 //Skype
-var spLength = sp.length;
+let spLength = sp.length;
 if ( spLength != 0 ){
 if ( spLength > 32 ){
-errorMsg += "Skype IDが長すぎます。\n";
+errorMsg += "・Skype IDが長すぎます。\n";
 }
 if ( spLength < 6 ){
-errorMsg += "Skype IDが短すぎます。\n";
+errorMsg += "・Skype IDが短すぎます。\n";
 }
 }
 sp = ( sp == null )?"":sp;
 if ( !sp.match(/^[A-Za-z0-9_,.-]*$/) ){
-errorMsg += "Skype IDは半角英数と一部記号( - , . _ )のみ使用できます。\n";
+errorMsg += "・Skype IDは半角英数と一部記号( - , . _ )のみ使用できます。\n";
 }
 
 //フレンドコード
 if ( fc != "" ){
 if ( !fc.match(/^\d{10}$/) ){
-errorMsg += "フレンドコードには10桁の数字のみ入力できます(フレンドコードはコンパスアプリから確認できます)。\n";
+errorMsg += "・フレンドコードには10桁の数字のみ入力できます(フレンドコードはコンパスアプリから確認できます)。\n";
 }
 }
 
@@ -948,7 +986,7 @@ errorMsg += "フレンドコードには10桁の数字のみ入力できます(�
 ctx.font = "26px" + userFont;
 //連絡先描画
 //入力がない項目は省略するので関数を組み上に詰める
-var contactY = 918;
+let contactY = 918;
 const plus1 = 30;
 const plus2 = 20;
 const cmFontSize = 26 + 2;
@@ -1008,10 +1046,9 @@ if ( errorMsg != "" ){
 	alert("【入力エラー】\n" + errorMsg);
 	
 	let errorMsgArray = errorMsg.split('\n');
-	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります<br>' + errorMsgArray.join('<br>');
-
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><span style="font-size:2.4vw; color:black; align=left;">' + errorMsgArray.join('<br>') + '</span>';
 } else {
-	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 入力エラーはありません';
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 入力エラーはありません></span>';
 }
 
 
@@ -1020,24 +1057,24 @@ if ( errorMsg != "" ){
 can.hidden = true;
 base64Result = can.toDataURL('image/jpeg');
 document.getElementById("cps_resume_result").src = base64Result;
-var dlLink = document.getElementById('downloadResult');
+let dlLink = document.getElementById('downloadResult');
 dlLink.href = base64Result;
 //作成年月日を取得する
-var date = new Date();
-var year = date.getFullYear();
-var month = date.getMonth() + 1;
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
 if ( month < 10 ){
 	month = "0" + month;
 }
-var today = date.getDate();
+let today = date.getDate();
 if ( today < 10 ){
 	today = "0" + today;
 }
-var hours = date.getHours();
+let hours = date.getHours();
 if ( hours < 10 ){
 	hours = "0" + hours;
 }
-var minutes = date.getMinutes();
+let minutes = date.getMinutes();
 if ( minutes < 10 ){
 	minutes = "0" + minutes;
 }
