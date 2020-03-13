@@ -274,6 +274,40 @@
 	<option value="none">表示しない</option>	
 	</select>
 </dd>
+<dt>フォント</dt>
+<dd>
+	<select id="font" onChange="onChangeForms();">
+	<optgroup label="端末依存">
+		<option value="dep">端末依存</option>
+	</optgroup>
+	<optgroup label="ゴシック体">
+		<option value="nos">Noto Sans JP</option>
+		<option value="mpl">M PLUS 1p</option>
+		<option value="mpr">M PLUS Rounded 1c</option>
+		<option value="srg">Sawarabi Gothic</option>
+		<option value="ksg">Kosugi</option>
+		<option value="ksm">Kosugi Maru</option>
+		<option value="sen">せのびゴシック</option>
+	</optgroup>
+	<optgroup label="明朝体">
+		<option value="nof">Noto Serif JP</option>
+	</optgroup>
+	<optgroup label="手書き">
+		<option value="mkp">851マカポップ</option>
+		<option value="jyc">じゆうちょうフォント</option>
+		<option value="msn">無心フォント</option>
+		<option value="nya">にゃしいフォント改2</option>
+	</optgroup>
+	<optgroup label="その他">
+		<option value="jfd">JF Dot Kaname</option>
+		<option value="cpp">チェックポイント．（ピリオド）</option>
+	</optgroup>
+	</select>
+</dd>
+<dt>文字色</dt>
+<dd><input type="color" id="fontColor" value="#000000" onChange="onChangeForms();"></dd>
+<dt>枠線・項目色</dt>
+<dd><input type="color" id="defaultColor" value="#000000" onChange="onChangeForms();"></dd>
 <dt>背景模様</dt>
 <dd>
 	<select id="bgtheme" onChange="onChangeForms();">
@@ -329,40 +363,6 @@
 </dd>
 <dt>履歴書背景色</dt>
 <dd><input type="color" id="bgColor" value="#ffffff" onChange="onChangeForms();"></dd>
-<dt>枠線・項目色</dt>
-<dd><input type="color" id="defaultColor" value="#000000" onChange="onChangeForms();"></dd>
-<dt>文字色</dt>
-<dd><input type="color" id="fontColor" value="#000000" onChange="onChangeForms();"></dd>
-<dt>フォント</dt>
-<dd>
-	<select id="font" onChange="onChangeForms();">
-	<optgroup label="端末依存">
-		<option value="dep">端末依存</option>
-	</optgroup>
-	<optgroup label="ゴシック体">
-		<option value="nos">Noto Sans JP</option>
-		<option value="mpl">M PLUS 1p</option>
-		<option value="mpr">M PLUS Rounded 1c</option>
-		<option value="srg">Sawarabi Gothic</option>
-		<option value="ksg">Kosugi</option>
-		<option value="ksm">Kosugi Maru</option>
-		<option value="sen">せのびゴシック</option>
-	</optgroup>
-	<optgroup label="明朝体">
-		<option value="nof">Noto Serif JP</option>
-	</optgroup>
-	<optgroup label="手書き">
-		<option value="mkp">851マカポップ</option>
-		<option value="jyc">じゆうちょうフォント</option>
-		<option value="msn">無心フォント</option>
-		<option value="nya">にゃしいフォント改2</option>
-	</optgroup>
-	<optgroup label="その他">
-		<option value="jfd">JF Dot Kaname</option>
-		<option value="cpp">チェックポイント．（ピリオド）</option>
-	</optgroup>
-	</select>
-</dd>
 </dl>
 </form>
 </div><br><br><br>
@@ -376,6 +376,7 @@
 <a href="javascript:saveToCookie();" class="btn-open">入力した内容を端末に保存</a>
 </div>
 <p id="saveAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> <a href="https://www.google.com/search?q=javascript+%E6%9C%89%E5%8A%B9%E5%8C%96">JavaScriptが無効</a>です<br>（履歴書の作成・保存は出来ません）</span></p>
+<p id="inputAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> エラー数の測定ができませんでした</span></p>
 </div>
 
 
