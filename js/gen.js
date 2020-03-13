@@ -496,6 +496,15 @@ ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター" +
 ctx.fillText("https://www.aosankaku.github.io/　　製作者:@Ao_Sankaku", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
 
+//背景色と文字色か枠線・項目色が一致するならエラー（非常に近くてもエラー）
+if ( bgColor == defaultColor ){
+	errorMsg += "・「背景色」と「枠線・項目色」が同じです。";
+}
+if ( bgColor == fontColor ){
+	errorMsg += "・「背景色」と「フォントの色」が同じです。";
+}
+
+
 
 
 
@@ -514,7 +523,7 @@ const profilePicY = (63 + 167) - profilePicScale;
 
 //なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
 if ( img[9].src == null ){
-	errorMsg += "・プロフィール画像の値が未定義です。画像を選択しなおしてください。";
+	errorMsg += "・プロフィール画像の値が未定義です。前回入力内容を保存した場合はその画像の容量が大きすぎる可能性があります。選択しなおしてください。";
 } else {
 	ctx.drawImage( img[9], 715, profilePicY, profilePicScale, profilePicScale);
 }
@@ -547,7 +556,7 @@ ctx.lineWidth = 4;
 ctx.font = "40px" + userFont;
 let readWidth = ctx.measureText(read).width;
 if ( readWidth >= 585 ){
-	errorMsg += "・よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なります。\n";
+	errorMsg += "・よみがなが長すぎます。このまま出力するとよみがながプロフィール画像に重なる可能性があります。\n";
 }
 if ( read == "" ){
 	errorMsg += "・よみがなが入力されていません。\n";
@@ -564,7 +573,7 @@ if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px" + userFont;
 	nameWidth = ctx.measureText(name).width;
 	if ( nameWidth >= 585 ){
-		errorMsg += "・HNが長すぎます。このまま出力するとHNがプロフィール画像に重なります。\n";
+		errorMsg += "・HNが長すぎます。このまま出力するとHNがプロフィール画像に重なる可能性があります。\n";
 	}
 }
 ctx.fillText(name, 130 , 205 );
@@ -963,10 +972,10 @@ errorMsg += "・Discord名は名前の最後に「#」と4桁の数字からな�
 let spLength = sp.length;
 if ( spLength != 0 ){
 if ( spLength > 32 ){
-errorMsg += "・Skype IDが長すぎます。\n";
+errorMsg += "・Skype IDが長すぎます（32文字以下にしてください）。\n";
 }
 if ( spLength < 6 ){
-errorMsg += "・Skype IDが短すぎます。\n";
+errorMsg += "・Skype IDが短すぎます（6文字以上にしてください）。\n";
 }
 }
 sp = ( sp == null )?"":sp;
@@ -977,7 +986,7 @@ errorMsg += "・Skype IDは半角英数と一部記号( - , . _ )のみ使用で
 //フレンドコード
 if ( fc != "" ){
 if ( !fc.match(/^\d{10}$/) ){
-errorMsg += "・フレンドコードには10桁の数字のみ入力できます(フレンドコードはコンパスアプリから確認できます)。\n";
+errorMsg += "・フレンドコードには10桁の数字のみ入力できます(フレンドコードは「コンパスアプリホーム→コミュニティ→友達を招待する」から確認できます)。\n";
 }
 }
 
@@ -1043,10 +1052,10 @@ ctx.fillText( createdAt , 680 , 1216 );
 //入力に何かしら不備があった場合アラート+文字として表示
 if ( errorMsg != "" ){
 	
-	alert("【入力エラー】\n" + errorMsg);
+	//alert("【入力エラー】\n" + errorMsg);
 	
 	let errorMsgArray = errorMsg.split('\n');
-	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><div align="left" class="inputAlert">' + errorMsgArray.join('<br>');
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><div align="left" class="inputAlert">【入力エラーの内容】<br>' + errorMsgArray.join('<br>') + '</div>';
 } else {
 	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 入力エラーはありません</span>';
 }
@@ -1081,7 +1090,7 @@ if ( minutes < 10 ){
 	minutes = "0" + minutes;
 }
 
-dlLink.download = "compass_rireki_"+ year + month + today + hours + minutes + ".jpeg";
+dlLink.download = "cps_rireki_"+ year + month + today + hours + minutes + ".jpeg";
 
 
 
