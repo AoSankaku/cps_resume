@@ -1002,10 +1002,18 @@ ctx.fillText( createdAt , 680 , 1216 );
 
 
 
-//入力に何かしら不備があった場合アラート
+//入力に何かしら不備があった場合アラート+文字として表示
 if ( errorMsg != "" ){
+	
 	alert("【入力エラー】\n" + errorMsg);
+	
+	let errorMsgArray = errorMsg.split('\n');
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります<br>' + errorMsgArray.join('<br>');
+
+} else {
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 入力エラーはありません';
 }
+
 
 
 //web上なら正常に動作するので画像変換ここに復活
