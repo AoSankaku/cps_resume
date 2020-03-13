@@ -284,7 +284,7 @@ function queryProfilePicData(){
 //描画処理本体
 function preview(){
 
-//作成年月日を取得する
+//生成した年月日を取得する
 let date = new Date();
 let year = date.getFullYear();
 //このツールの公開は2020年なのでそれより時刻が前ならエラーを吐く
@@ -1060,6 +1060,7 @@ document.getElementById("cps_resume_result").src = base64Result;
 let dlLink = document.getElementById('downloadResult');
 dlLink.href = base64Result;
 //作成年月日を取得する
+/*
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
@@ -1070,6 +1071,7 @@ let today = date.getDate();
 if ( today < 10 ){
 	today = "0" + today;
 }
+*/
 let hours = date.getHours();
 if ( hours < 10 ){
 	hours = "0" + hours;
