@@ -1046,7 +1046,7 @@ if ( errorMsg != "" ){
 	alert("【入力エラー】\n" + errorMsg);
 	
 	let errorMsgArray = errorMsg.split('\n');
-	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><span style="font-size:2.4vw; color:black; align=left;">' + errorMsgArray.join('<br>') + '</span>';
+	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><div align="left"><span style="font-size:2.4vw; color:black;">' + errorMsgArray.join('<br>') + '</span>';
 } else {
 	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:green;"><i class="fas fa-check"></i> 入力エラーはありません</span>';
 }
