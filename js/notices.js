@@ -8,9 +8,9 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "planned";
+var doingMaintainance = "doing";
 
-var maintainanceStart = "3月7日 15:00";
+var maintainanceStart = "3月13日 19:30";
 var maintainanceEnd = "未定";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
