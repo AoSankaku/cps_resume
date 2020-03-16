@@ -281,6 +281,71 @@ function queryProfilePicData(){
 
 
 
+//ヒーローロール特定用関数
+function detectRole(name){
+	switch(name){
+		
+		case "ノホ":
+		case "忠臣":
+		case "マルコス":
+		case "ソル":
+		case "リュウ":
+		case "マリア":
+		case "アダム":
+		case "レム":
+		case "カイ":
+		case "ポロロッチョ":
+		case "リヴァイ":
+		case "デルミン":
+		case "セイバーオルタ":
+		case "ルルカ":
+		return "attacker";	break;
+		
+		//ガンナー
+		case "リリカ":
+		case "ルチアーノ":
+		case "まとい":
+		case "ディズィー":
+		case "サーティーン":
+		case "エミリア":
+		case "メグメグ":
+		case "リン":
+		case "イスタカ":
+		case "ソーン":
+		case "猫宮":
+		case "オカリン":
+		case "ギルガメッシュ":
+		return "gunner";	break;
+
+		//スプリンター
+		case "アタリ":
+		case "Voidoll":
+		case "テスラ":
+		case "ミク":
+		case "コクリコ":
+		case "春麗":
+		case "勇者":
+		case "ザクレイ":
+		case "きらら":
+		case "アクア":
+		case "零夜":
+		return "sprinter";	break;
+
+		//タンク
+		case "ジャスティス":
+		case "ジャンヌ":
+		case "グスタフ":
+		case "ヴィオレッタ":
+		case "レン":
+		case "モノクマ":
+		case "めぐみん":
+		case "トマス":
+		return "tank";	break;
+
+	}
+}
+
+
 //描画処理本体
 function preview(){
 
@@ -322,14 +387,14 @@ let gunUseF = "";
 let sprUseF = "";
 let tanUseF = "";
 //エラー用
-/*現在不使用
-let atkDuplicate = 0;
-let gunDuplicate = 0;
-let sprDuplicate = 0;
-let tanDuplicate = 0;
-*/
+let atkDuplicate = "";
+let gunDuplicate = "";
+let sprDuplicate = "";
+let tanDuplicate = "";
+
 let duplicate = 0;
 let duplicateId = "";
+
 //小数点対策済
 let bronze = parseInt(document.forms.info.bronze.value);
 let silver = parseInt(document.forms.info.silver.value);
@@ -523,7 +588,7 @@ const profilePicY = (63 + 167) - profilePicScale;
 
 //なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
 if ( img[9].src == null ){
-	errorMsg += "・プロフィール画像の値が未定義です。前回入力内容を保存した場合はその画像の容量が大きすぎる可能性があります。選択しなおしてください。";
+	errorMsg += "・プロフィール画像が設定されていません。";
 } else {
 	ctx.drawImage( img[9], 715, profilePicY, profilePicScale, profilePicScale);
 }
@@ -741,7 +806,30 @@ ctx.textAlign = "left";
 ctx.fillStyle = fontColor;
 ctx.globalAlpha = 1.0;
 //先に使用ヒーローを取得して描画
-//バトアリ検索
+for ( let i = 0, l = heroBe.length; l > i ; i++ ){
+	if ( heroBe[i].selected ){
+		switch ( detectRole( heroBe[i].value ) ){
+			case "attacker":	atkUseB += heroBe[i].value + " ";	break;
+			case "gunner":		gunUseB += heroBe[i].value + " ";	break;
+			case "sprinter":	sprUseB += heroBe[i].value + " ";	break;
+			case "tank":		tanUseB += heroBe[i].value + " ";	break;
+		}
+	}
+}
+
+for ( let i = 0, l = heroFe.length; l > i ; i++ ){
+	if ( heroFe[i].selected ){
+		atkUseF += heroFe[i].value + " ";
+	}
+}
+
+//重複があったらエラー
+if ( duplicate != 0 ){
+	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが計" + duplicate + "体います。\n" ;
+}
+
+//旧バトアリ検索
+/*
 for ( let temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
 if ( heroBe[i].selected ){
 temp1 = heroBe[i].value;
@@ -762,6 +850,7 @@ case "poro"	:atkUseB += "ポロロッチョ ";	break;
 case "rivai"	:atkUseB += "リヴァイ ";	break;
 case "deru"	:atkUseB += "デルミン ";	break;
 case "alter"	:atkUseB += "セイバーオルタ ";	break;
+case "ruruka"	:atkUseB += "ルルカ";	break;
 //ガンナー
 case "ririka"	:gunUseB += "リリカ ";	break;
 case "ruchi"	:gunUseB += "ルチアーノ ";	break;
@@ -800,6 +889,7 @@ case "thomas"	:tanUseB += "トマス ";	break;
 }
 }
 }
+
 //フリバ・練習中検索
 for ( let temp2 , i = 0 , l = heroFe.length ; l > i ; i++ ){
 if ( heroFe[i].selected ){
@@ -823,6 +913,7 @@ case "poro"	:atkUseF += "ポロロッチョ ";	break;
 case "rivai"	:atkUseF += "リヴァイ ";	break;
 case "deru"	:atkUseF += "デルミン ";	break;
 case "alter"	:atkUseF += "セイバーオルタ ";	break;
+case "ruruka"	:atkUseB += "ルルカ";	break;
 //ガンナー
 case "ririka"	:gunUseF += "リリカ ";	break;
 case "ruchi"	:gunUseF += "ルチアーノ ";	break;
@@ -861,10 +952,7 @@ case "thomas"	:tanUseF += "トマス ";	break;
 }
 }
 }
-//重複があったらエラー
-if ( duplicate != 0 ){
-errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが" + duplicate + "体います。\n" ;
-}
+*/
 
 //キャラ描画
 ctx.font = "34px" + userFont;
