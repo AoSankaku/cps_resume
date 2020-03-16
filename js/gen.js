@@ -839,7 +839,8 @@ for ( let i = 0, l = heroBe.length; i < l; i++ ){
 	}
 }
 if ( duplicate !== "" ){
-	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが体います。\n　（" + duplicate.slice(0,-1) + "）\n" ;
+	let duplicateHero = duplicate.slice(0,-1);
+	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローがいます。\n　（" + duplicateHero + "）\n" ;
 }
 
 /*
