@@ -833,9 +833,20 @@ for ( let i = 0, l = heroFe.length; l > i ; i++ ){
 }
 
 //重複があったらエラー
+for ( let i = 0, l = heroBe.length; i < l; i++ ){
+	if ( heroBe[i].selected && heroFe[i].selected ){
+		duplicate += heroBe[i].value + "、";
+	}
+}
+if ( duplicate !== "" ){
+	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが体います。\n　（" + duplicate.slice(0,-1) + "）\n" ;
+}
+
+/*
 if ( duplicate != 0 ){
 	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが計" + duplicate + "体います。\n" ;
 }
+*/
 
 //旧バトアリ検索
 /*
@@ -1083,7 +1094,7 @@ errorMsg += "・Skype IDは半角英数と一部記号( - , . _ )のみ使用で
 //フレンドコード
 if ( fc != "" ){
 if ( !fc.match(/^\d{10}$/) ){
-errorMsg += "・フレンドコードには10桁の数字のみ入力できます(フレンドコードは「コンパスアプリホーム→コミュニティ→友達を招待する」から確認できます)。\n";
+errorMsg += "・フレンドコードには10桁の数字のみ入力できます\n　(フレンドコードは「コンパスアプリホーム→コミュニティ→友達を招待する」から確認できます)。\n";
 }
 }
 
