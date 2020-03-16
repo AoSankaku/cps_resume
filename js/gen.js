@@ -391,13 +391,7 @@ let gunUseF = "";
 let sprUseF = "";
 let tanUseF = "";
 //エラー用
-let atkDuplicate = "";
-let gunDuplicate = "";
-let sprDuplicate = "";
-let tanDuplicate = "";
-
-let duplicate = 0;
-let duplicateId = "";
+let duplicate = "";
 
 //小数点対策済
 let bronze = parseInt(document.forms.info.bronze.value);
@@ -839,8 +833,7 @@ for ( let i = 0, l = heroBe.length; i < l; i++ ){
 	}
 }
 if ( duplicate !== "" ){
-	let duplicateHero = duplicate.slice(0,-1);
-	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローがいます。\n　（" + duplicateHero + "）\n" ;
+	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローがいます。\n　（" + duplicate.slice(0,-1) + "）\n" ;
 }
 
 /*
