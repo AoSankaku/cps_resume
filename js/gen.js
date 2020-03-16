@@ -3,6 +3,78 @@ var version = "v1.0.0 Beta";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 
+
+
+
+
+//ヒーローロール特定用関数
+function detectRole(name){
+	switch(name){
+		
+		case "ノホ":
+		case "忠臣":
+		case "マルコス":
+		case "ソル":
+		case "リュウ":
+		case "マリア":
+		case "アダム":
+		case "レム":
+		case "カイ":
+		case "ポロロッチョ":
+		case "リヴァイ":
+		case "デルミン":
+		case "セイバーオルタ":
+		case "ルルカ":
+		return "attacker";	break;
+		
+		//ガンナー
+		case "リリカ":
+		case "ルチアーノ":
+		case "まとい":
+		case "ディズィー":
+		case "サーティーン":
+		case "エミリア":
+		case "メグメグ":
+		case "リン":
+		case "イスタカ":
+		case "ソーン":
+		case "猫宮":
+		case "オカリン":
+		case "ギルガメッシュ":
+		return "gunner";	break;
+
+		//スプリンター
+		case "アタリ":
+		case "Voidoll":
+		case "テスラ":
+		case "ミク":
+		case "コクリコ":
+		case "春麗":
+		case "勇者":
+		case "ザクレイ":
+		case "きらら":
+		case "アクア":
+		case "零夜":
+		return "sprinter";	break;
+
+		//タンク
+		case "ジャスティス":
+		case "ジャンヌ":
+		case "グスタフ":
+		case "ヴィオレッタ":
+		case "レン":
+		case "モノクマ":
+		case "めぐみん":
+		case "トマス":
+		return "tank";	break;
+
+	}
+}
+
+
+
+
+
 //画像をプリロード     　　                                                                                                                                                                              
 var img = [];
 img[0] = new Image();
@@ -275,74 +347,6 @@ function queryProfilePicName(){
 
 function queryProfilePicData(){
 	return img[9].src;
-}
-
-
-
-
-
-//ヒーローロール特定用関数
-function detectRole(name){
-	switch(name){
-		
-		case "ノホ":
-		case "忠臣":
-		case "マルコス":
-		case "ソル":
-		case "リュウ":
-		case "マリア":
-		case "アダム":
-		case "レム":
-		case "カイ":
-		case "ポロロッチョ":
-		case "リヴァイ":
-		case "デルミン":
-		case "セイバーオルタ":
-		case "ルルカ":
-		return "attacker";	break;
-		
-		//ガンナー
-		case "リリカ":
-		case "ルチアーノ":
-		case "まとい":
-		case "ディズィー":
-		case "サーティーン":
-		case "エミリア":
-		case "メグメグ":
-		case "リン":
-		case "イスタカ":
-		case "ソーン":
-		case "猫宮":
-		case "オカリン":
-		case "ギルガメッシュ":
-		return "gunner";	break;
-
-		//スプリンター
-		case "アタリ":
-		case "Voidoll":
-		case "テスラ":
-		case "ミク":
-		case "コクリコ":
-		case "春麗":
-		case "勇者":
-		case "ザクレイ":
-		case "きらら":
-		case "アクア":
-		case "零夜":
-		return "sprinter";	break;
-
-		//タンク
-		case "ジャスティス":
-		case "ジャンヌ":
-		case "グスタフ":
-		case "ヴィオレッタ":
-		case "レン":
-		case "モノクマ":
-		case "めぐみん":
-		case "トマス":
-		return "tank";	break;
-
-	}
 }
 
 
@@ -819,7 +823,12 @@ for ( let i = 0, l = heroBe.length; l > i ; i++ ){
 
 for ( let i = 0, l = heroFe.length; l > i ; i++ ){
 	if ( heroFe[i].selected ){
-		atkUseF += heroFe[i].value + " ";
+		switch ( detectRole( heroFe[i].value ) ){
+			case "attacker":	atkUseF += heroFe[i].value + " ";	break;
+			case "gunner":		gunUseF += heroFe[i].value + " ";	break;
+			case "sprinter":	sprUseF += heroFe[i].value + " ";	break;
+			case "tank":		tanUseF += heroFe[i].value + " ";	break;
+		}
 	}
 }
 
