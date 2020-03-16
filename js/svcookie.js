@@ -427,7 +427,7 @@ function loadFromCookie( calledBy ){
 				}
 				for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
 					if ( heroFSel[i] !== "" ) {
-						heroFe.options[i].selected = true ;
+						heroFe[i].selected = true ;
 					}
 				}
 
