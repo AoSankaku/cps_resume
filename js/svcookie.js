@@ -81,15 +81,15 @@ if( typeof localStorage !== 'undefined' ){
 	var heroBSel = new Array( heroBe.length );
 	var heroFSel = new Array( heroBe.length );
 
-	//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録
+	//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録(選択されていたらその名前、そうでなければfalseを代入)
 	for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 		if ( heroBe[i].selected ){
-			heroBSel[i] = true;
+			heroBSel[i] = heroBe[i].value;
 		}
 	}
 	for ( let i = 0 , l = heroFe.length ; l > i ; i++ ){
 		if ( heroFe[i].selected ){
-			heroFSel[i] = true;
+			heroFSel[i] = heroFe[i].value;
 		}
 	}
 	
@@ -136,13 +136,14 @@ if( typeof localStorage !== 'undefined' ){
 } else {
 
 	alert("【エラー】\n保存するにはLocalStorageを有効にして下さい。");
+
 }
 }
 
 
 
 function changeSaveAlert(){
-	let a=0;
+	return;
 }
 
 
@@ -226,14 +227,14 @@ function onChangeForms(){
 		
 		for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 			if ( heroBe[i].selected ){
-				heroBSel[i] = "true";
+				heroBSel[i] = heroBe[i].value;
 			} else {
 				heroBSel[i] = "";
 			}
 		}
 		for ( let i = 0 , l = heroFe.length ; l > i ; i++ ){
 			if ( heroFe[i].selected ){
-				heroFSel[i] = "true";
+				heroFSel[i] = heroFe[i].value;
 			} else {
 				heroFSel[i] = "";
 			}
@@ -415,17 +416,18 @@ function loadFromCookie( calledBy ){
 				console.log( heroBSel.length );
 				console.log( heroFSel.length );
 				*/
+				
+				var heroBe = document.getElementById('heroB').options;
+				var heroFe = document.getElementById('heroF').options;
 	
 				for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
-					if ( heroBSel[i] == "true" ) {
-						document.getElementById( "heroB" ).options[i].selected = true ;
-						//console.log( "selectedB" + i );
+					if ( heroBSel[i] !== "" ) {
+						heroBe[i].selected = true ;
 					}
 				}
 				for ( let i = 0, l = heroFSel.length ; l > i ; i++ ) {
-					if ( heroFSel[i] == "true" ) {
-						document.getElementById( "heroF" ).options[i].selected = true ;
-						//console.log( "selectedF" + i );
+					if ( heroFSel[i] !== "" ) {
+						heroFe.options[i].selected = true ;
 					}
 				}
 
