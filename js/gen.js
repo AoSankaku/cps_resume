@@ -1153,10 +1153,10 @@ ctx.fillText( createdAt , 680 , 1216 );
 //背景画像サイズが大きすぎる場合の処理
 if ( typeof localStorage !== "undefined" ){
 	let storage2 = localStorage;
-	if ( img[12] !== "" ){
-		storage2.setItem( 'testBg' , '114514' );
-		storage2.setItem( 'testBg' , img[12] );
-		if ( storage2.getItem( 'testBg' ) == '114514' ){
+	if ( img[12].src !== "" ){
+		try{
+			storage2.setItem( 'testBg' , img[12].src );
+		} catch (error) {
 			errorMsg += "・背景画像のサイズが大きすぎる可能性があります。\n　このままだとLocalStorageに保存できない可能性があります。\n　トリミング、リサイズ等で容量を小さくして再度お試し下さい。\n";
 		}
 	}
