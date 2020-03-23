@@ -55,6 +55,7 @@ function detectRole(name){
 		case "きらら":
 		case "アクア":
 		case "零夜":
+		case "ピエール":
 		return "sprinter";	break;
 
 		//タンク
@@ -836,137 +837,6 @@ if ( duplicate !== "" ){
 	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローがいます。\n　（" + duplicate.slice(0,-1) + "）\n" ;
 }
 
-/*
-if ( duplicate != 0 ){
-	errorMsg += "・「バトアリ使用キャラ」と「フリバト&練習キャラ」から重複して選択しているヒーローが計" + duplicate + "体います。\n" ;
-}
-*/
-
-//旧バトアリ検索
-/*
-for ( let temp1 , i = 0 , l = heroBe.length ; l > i ; i++ ){
-if ( heroBe[i].selected ){
-temp1 = heroBe[i].value;
-//エラーチェック用
-duplicateId += temp1 + ",";
-switch (temp1){
-//アタッカー
-case "noho"	:atkUseB += "ノホ ";	break;
-case "omi"	:atkUseB += "忠臣 ";	break;
-case "maru"	:atkUseB += "マルコス ";	break;
-case "soru"	:atkUseB += "ソル ";	break;
-case "ryu"	:atkUseB += "リュウ ";	break;
-case "maria"	:atkUseB += "マリア ";	break;
-case "adam"	:atkUseB += "アダム ";	break;
-case "rem"	:atkUseB += "レム ";	break;
-case "kai"	:atkUseB += "カイ ";	break;
-case "poro"	:atkUseB += "ポロロッチョ ";	break;
-case "rivai"	:atkUseB += "リヴァイ ";	break;
-case "deru"	:atkUseB += "デルミン ";	break;
-case "alter"	:atkUseB += "セイバーオルタ ";	break;
-case "ruruka"	:atkUseB += "ルルカ";	break;
-//ガンナー
-case "ririka"	:gunUseB += "リリカ ";	break;
-case "ruchi"	:gunUseB += "ルチアーノ ";	break;
-case "matoi"	:gunUseB += "まとい ";	break;
-case "dizzy"	:gunUseB += "ディズィー ";	break;
-case "thir"	:gunUseB += "サーティーン ";	break;
-case "emi"	:gunUseB += "エミリア ";	break;
-case "megu"	:gunUseB += "メグメグ ";	break;
-case "rin"	:gunUseB += "リン ";	break;
-case "isu"	:gunUseB += "イスタカ ";	break;
-case "sone"	:gunUseB += "ソーン ";	break;
-case "neko"	:gunUseB += "猫宮ひなた ";	break;
-case "okarin"	:gunUseB += "岡部倫太郎 ";	break;
-case "giru"	:gunUseB += "ギルガメ ";	break;
-//スプリンター
-case "atari"	:sprUseB += "アタリ ";	break;
-case "void"	:sprUseB += "Voidoll ";	break;
-case "tesla"	:sprUseB += "テスラ ";	break;
-case "miku"	:sprUseB += "ミク ";	break;
-case "koku"	:sprUseB += "コクリコ ";	break;
-case "chun"	:sprUseB += "春麗 ";	break;
-case "yuusha"	:sprUseB += "かけだし勇者 ";	break;
-case "zakurei"	:sprUseB += "ザクレイ ";	break;
-case "kirara"	:sprUseB += "きらら ";	break;
-case "aqua"	:sprUseB += "アクア ";	break;
-case "layer"	:sprUseB += "零夜 ";	break;
-//タンク
-case "jus"	:tanUseB += "ジャスティス ";	break;
-case "jan"	:tanUseB += "ジャンヌ ";	break;
-case "gust"	:tanUseB += "グスタフ ";	break;
-case "vio"	:tanUseB += "ヴィオレッタ ";	break;
-case "ren"	:tanUseB += "レン ";	break;
-case "mono"	:tanUseB += "モノクマ ";	break;
-case "min"	:tanUseB += "めぐみん ";	break;
-case "thomas"	:tanUseB += "トマス ";	break;
-}
-}
-}
-
-//フリバ・練習中検索
-for ( let temp2 , i = 0 , l = heroFe.length ; l > i ; i++ ){
-if ( heroFe[i].selected ){
-temp2 = heroFe[i].value;
-//先に重複エラーチェック(各ロールごとにやる)
-if ( duplicateId.indexOf( temp2 ) != -1 ){
-duplicate += 1;
-}
-switch (temp2){
-//アタッカー
-case "noho"	:atkUseF += "ノホ ";	break;
-case "omi"	:atkUseF += "忠臣 ";	break;
-case "maru"	:atkUseF += "マルコス ";	break;
-case "soru"	:atkUseF += "ソル ";	break;
-case "ryu"	:atkUseF += "リュウ ";	break;
-case "maria"	:atkUseF += "マリア ";	break;
-case "adam"	:atkUseF += "アダム ";	break;
-case "rem"	:atkUseF += "レム ";	break;
-case "kai"	:atkUseF += "カイ ";	break;
-case "poro"	:atkUseF += "ポロロッチョ ";	break;
-case "rivai"	:atkUseF += "リヴァイ ";	break;
-case "deru"	:atkUseF += "デルミン ";	break;
-case "alter"	:atkUseF += "セイバーオルタ ";	break;
-case "ruruka"	:atkUseB += "ルルカ";	break;
-//ガンナー
-case "ririka"	:gunUseF += "リリカ ";	break;
-case "ruchi"	:gunUseF += "ルチアーノ ";	break;
-case "matoi"	:gunUseF += "まとい ";	break;
-case "dizzy"	:gunUseF += "ディズィー ";	break;
-case "thir"	:gunUseF += "サーティーン ";	break;
-case "emi"	:gunUseF += "エミリア ";	break;
-case "megu"	:gunUseF += "メグメグ ";	break;
-case "rin"	:gunUseF += "リン ";	break;
-case "isu"	:gunUseF += "イスタカ ";	break;
-case "sone"	:gunUseF += "ソーン ";	break;
-case "neko"	:gunUseF += "猫宮ひなた ";	break;
-case "okarin"	:gunUseF += "岡部倫太郎 ";	break;
-case "giru"	:gunUseF += "ギルガメ ";	break;
-//スプリンター
-case "atari"	:sprUseF += "アタリ ";	break;
-case "void"	:sprUseF += "Voidoll ";	break;
-case "tesla"	:sprUseF += "テスラ ";	break;
-case "miku"	:sprUseF += "ミク ";	break;
-case "koku"	:sprUseF += "コクリコ ";	break;
-case "chun"	:sprUseF += "春麗 ";	break;
-case "yuusha"	:sprUseF += "かけだし勇者 ";	break;
-case "zakurei"	:sprUseF += "ザクレイ ";	break;
-case "kirara"	:sprUseF += "きらら ";	break;
-case "aqua"	:sprUseF += "アクア ";	break;
-case "layer"	:sprUseF += "零夜 ";	break;
-//タンク
-case "jus"	:tanUseF += "ジャスティス ";	break;
-case "jan"	:tanUseF += "ジャンヌ ";	break;
-case "gust"	:tanUseF += "グスタフ ";	break;
-case "vio"	:tanUseF += "ヴィオレッタ ";	break;
-case "ren"	:tanUseF += "レン ";	break;
-case "mono"	:tanUseF += "モノクマ ";	break;
-case "min"	:tanUseF += "めぐみん ";	break;
-case "thomas"	:tanUseF += "トマス ";	break;
-}
-}
-}
-*/
 
 //キャラ描画
 ctx.font = "34px" + userFont;
