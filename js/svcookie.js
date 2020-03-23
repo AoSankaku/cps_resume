@@ -406,6 +406,15 @@ function loadFromCookie( calledBy ){
 						}
 					}
 				}
+				for ( let i = 0, l = heroFSel.length ; l > i ; i++ ){
+					if( heroFSel[i] !== "" ){
+						for ( let i2 = 0, l2 = heroFe.length ; l2 > i2 ; i2++ ){
+							if ( heroFSel[i] == heroFe[i2].value ){
+								heroFe[i2].selected = true;
+							}
+						}
+					}
+				}
 				
 				/*旧処理（キャラ追加するとバグる）
 				
