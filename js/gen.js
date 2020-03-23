@@ -751,7 +751,7 @@ if ( isNaN( gold ) ){
 }
 if ( isNaN( tournament ) ){
 	errorMsg += "・大会優勝アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
-	torunament = 0;
+	tournament = 0;
 }
 //金銀銅アイコンの数を描画
 //ただし各項目0の場合ハイフンを表示
@@ -1148,13 +1148,23 @@ if ( cm != "" ){
 //日付
 ctx.font = "20px 'Noto Sans JP'";
 ctx.fillText( createdAt , 680 , 1216 );
-
+	
+	
+//背景画像サイズが大きすぎる場合の処理
+if ( typeof localStorage !== "undefined" ){
+	let storage2 = localStorage;
+	if ( img[12] !== "" ){
+		storage2.setItem( 'testBg' , '114514' );
+		storage2.setItem( 'testBg' , img[12] );
+		if ( storage2.getItem( 'testBg' ) == '114514' ){
+			errorMsg += "・背景画像のサイズが大きすぎる可能性があります。\n　このままだとLocalStorageに保存できない可能性があります。\n　トリミング、リサイズ等で容量を小さくして再度お試し下さい。\n";
+		}
+	}
+}
 
 
 //入力に何かしら不備があった場合アラート+文字として表示
 if ( errorMsg != "" ){
-	
-	//alert("【入力エラー】\n" + errorMsg);
 	
 	let errorMsgArray = errorMsg.split('\n');
 	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><div align="left" class="inputAlert">【入力エラーの内容】<br>' + errorMsgArray.join('<br>') + '</div>';
