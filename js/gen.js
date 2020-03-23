@@ -971,28 +971,28 @@ case "thomas"	:tanUseF += "トマス ";	break;
 //キャラ描画
 ctx.font = "34px" + userFont;
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( atkUseB , 120 , 490 );
+ctx.fillText( atkUseB , 120, 490, 760 );
 if ( atkUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120 , 525 );
+	ctx.fillText( "(" + atkUseF.slice(0,-1) + ")" , 120, 525, 760 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( gunUseB , 120 , 590 );
+ctx.fillText( gunUseB , 120, 590, 760 );
 if ( gunUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120 , 625 );
+	ctx.fillText( "(" + gunUseF.slice(0,-1) + ")" , 120, 625, 760 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( sprUseB , 120 , 690 );
+ctx.fillText( sprUseB , 120, 690, 760 );
 if ( sprUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120 , 725 );
+	ctx.fillText( "(" + sprUseF.slice(0,-1) + ")" , 120, 725, 760 );
 }
 ctx.globalAlpha = 1.0 ;
-ctx.fillText( tanUseB , 120 , 790 );
+ctx.fillText( tanUseB , 120, 790, 760 );
 if ( tanUseF != "" ){
 	ctx.globalAlpha = 0.7 ;
-	ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120 , 825 );
+	ctx.fillText( "(" + tanUseF.slice(0,-1) + ")" , 120, 825, 760 );
 }
 //各ロールごとにロールアイコンの薄さを調整
 //バトアリにいる→1.0
