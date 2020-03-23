@@ -118,7 +118,11 @@ if( typeof localStorage !== 'undefined' ){
 	storage.setItem( 'profilePicNameC' , profilePicNameC );
 	storage.setItem( 'profilePicData' , profilePicData );
 	storage.setItem( 'bgPicNameC' , bgPicNameC );
-	storage.setItem( 'bgPicData' , bgPicData );
+	try{
+		storage.setItem( 'bgPicData' , bgPicData );
+	} catch(error){
+		aleat('画像の保存に失敗しました。');
+	}
 	storage.setItem( 'bgTheme' , bgTheme );
 	storage.setItem( 'bgTrans' , bgTrans );
 	storage.setItem( 'bgColor' , bgColor );
