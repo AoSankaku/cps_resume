@@ -81,7 +81,7 @@ if( typeof localStorage !== 'undefined' ){
 	var heroBSel = new Array( heroBe.length );
 	var heroFSel = new Array( heroBe.length );
 
-	//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録(選択されていたらその名前、そうでなければfalseを代入)
+	//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録(選択されていたらその名前、そうでなければ[]を代入)
 	for ( let i = 0 , l = heroBe.length ; l > i ; i++ ){
 		if ( heroBe[i].selected ){
 			heroBSel[i] = heroBe[i].value;
@@ -242,14 +242,9 @@ function onChangeForms(){
 		
 		var heroBStr = heroBSel.join(',');
 		var heroFStr = heroFSel.join(',');
+		
 		var heroBStrC = storage.getItem( 'heroBSel' );
 		var heroFStrC = storage.getItem( 'heroFSel' );
-		/*
-		heroBStrC = heroBStrC.slice( 1 );
-		heroBStrC = heroBStrC.slice( 0 , -1 );
-		heroFStrC = heroFStrC.slice( 1 );
-		heroFStrC = heroFStrC.slice( 0 , -1 );
-		*/
 		
 		comp[13] = Boolean( heroBSel == heroBStrC );
 		comp[14] = Boolean( heroFSel == heroFStrC );
@@ -394,32 +389,26 @@ function loadFromCookie( calledBy ){
 				document.getElementById( "rank" ).value = rank;
 	
 	
-				//ヒーロー選択試験的実装
-				/*
-				console.log( heroBSel );
-				console.log( heroFSel );
-				*/
-				//配列が文字列に置き換わっているのでこれを配列に変換しなおす
-				/*
-				heroBSel = heroBSel.slice( 1 );
-				heroBSel = heroBSel.slice( 0 , -1 );
-				*/
+				//ヒーロー選択内容の配列が文字列に置き換わっているのでこれを配列に変換しなおす
 				heroBSel = heroBSel.split( ',' );
-				/*
-				heroFSel = heroFSel.slice( 1 );
-				heroFSel = heroFSel.slice( 0 , -1 );
-				*/
 				heroFSel = heroFSel.split( ',' );
-				/*
-				console.log( heroBSel );
-				console.log( heroFSel );
-				console.log( heroBSel.length );
-				console.log( heroFSel.length );
-				*/
 				
 				var heroBe = document.getElementById('heroB').options;
 				var heroFe = document.getElementById('heroF').options;
-	
+				
+				//新処理
+				for ( let i = 0, l = heroBSel.length ; l > i ; i++ ){
+					if( heroBSel[i] !== "" ){
+						for ( let i2 = 0, l2 = heroBe.length ; l2 > i2 ; i2++ ){
+							if ( heroBSel[i] == heroBe[i2].value ){
+								heroBe[i2].selected = true;
+							}
+						}
+					}
+				}
+				
+				/*旧処理（キャラ追加するとバグる）
+				
 				for ( let i = 0, l = heroBSel.length ; l > i ; i++ ) {
 					if ( heroBSel[i] !== "" ) {
 						heroBe[i].selected = true ;
@@ -430,6 +419,8 @@ function loadFromCookie( calledBy ){
 						heroFe[i].selected = true ;
 					}
 				}
+				
+				*/
 
 				//背景画像を読み込まないとエラーが出るので再代入
 				if ( document.forms.design.bgtheme.value !== "monotone" && document.forms.design.bgtheme.value !== "custom" ){
