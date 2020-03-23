@@ -1179,7 +1179,9 @@ can.hidden = true;
 base64Result = can.toDataURL('image/jpeg');
 document.getElementById("cps_resume_result").src = base64Result;
 let dlLink = document.getElementById('downloadResult');
+let dlLink2 = document.getElementById('downloadResult2');
 dlLink.href = base64Result;
+dlLink2.href = base64Result;
 //作成年月日を取得する
 /*
 let date = new Date();
@@ -1203,6 +1205,7 @@ if ( minutes < 10 ){
 }
 
 dlLink.download = "cps_rireki_"+ year + month + today + hours + minutes + ".jpeg";
+dlLink2.download = "cps_rireki_"+ year + month + today + hours + minutes + ".jpeg";
 
 
 
