@@ -1157,7 +1157,7 @@ if ( typeof localStorage !== "undefined" ){
 		try{
 			storage2.setItem( 'testBg' , img[12].src );
 		} catch (error) {
-			errorMsg += "・背景画像のサイズが大きすぎる可能性があります。\n　このままだとLocalStorageに保存できない可能性があります。\n　トリミング、リサイズ等で容量を小さくして再度お試し下さい。\n";
+			errorMsg += "・背景画像のサイズが大きすぎます。\n　このままだと端末に保存できません。\n";
 		}
 	}
 }
