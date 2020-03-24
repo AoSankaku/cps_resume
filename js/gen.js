@@ -1,5 +1,5 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.0";
+var version = "v1.0.1";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 
@@ -557,7 +557,7 @@ ctx.fillText("連絡先など", 30 , 900 );
 ctx.globalAlpha = 0.5 ;
 ctx.font = "20px 'Noto Sans JP'";
 ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター" + version + "」で作成されました。", 10 , 1260 );
-ctx.fillText("https://www.aosankaku.github.io/cps_resume　　製作者:@Ao_Sankaku", 10 , 1285 );
+ctx.fillText("https://aosankaku.github.io/cps_resume　　ツール製作者:@Ao_Sankaku", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
 
 //背景色と文字色か枠線・項目色が一致するならエラー（非常に近くてもエラー）
