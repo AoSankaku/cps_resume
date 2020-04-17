@@ -500,7 +500,7 @@ if ( navigator.share ) {
 	function shareLink(){
 		navigator.share({
 			title: '#コンパス履歴書ジェネレーター',
-			text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴テンプレ',
+			text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ',
 			url: location.href
 		});
 	}
