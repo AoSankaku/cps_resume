@@ -1,4 +1,4 @@
-//メンテナンス表示
+//メンテナンス表示                                                                                                                                                          
 window.addEventListener('load', function maintainance(){
 
 
@@ -8,15 +8,15 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "none";
+var doingMaintainance = "planned";
 
-var maintainanceStart = "3月23日 15:00";
-var maintainanceEnd = "未定";
+var maintainanceStart = "5月1日 17:00";
+var maintainanceEnd = "5月2日 17:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
-			+ "・最高デッキレベル、最高ランク、特殊アイコンのフォントを「Heebo」か「選択したフォントと同じ」か選択可能にする機能を実装<br>"
-			+ "・「ホーム画面に追加」する機能を一部端末向けに実装<br>"
-			+ "・各項目ごとにヘルプボタンを追加<br>";
+			+ "・新ヒーロー「佐藤四郎兵衛忠信（忠信）」追加<br>"
+			+ "・シーズン最高到達ランク記入欄の追加<br>"
+			+ "・コメントなどが外部にはみ出す可能性がある場合は警告するように修正<br>";
 
 
 
