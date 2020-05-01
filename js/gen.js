@@ -67,6 +67,7 @@ function detectRole(name){
 		case "モノクマ":
 		case "めぐみん":
 		case "トマス":
+		case "忠信":
 		return "tank";	break;
 
 	}
