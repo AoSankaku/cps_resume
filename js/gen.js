@@ -1022,14 +1022,14 @@ if ( cm != "" ){
 		} else if ( contactY > 1196 ){
 			
 			//日付と重なっていたら判定
-			if ( ctx.measureText( line ).width > 680 ){
+			if ( ctx.measureText( line ).width > 591.5 ){
 				errorMsg += "・コメント" + ( i + 1 ) + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
 			}
 			
 		} else {
 			
 			//枠外に出ていたら判定
-			if ( ctx.measureText( line ).width > 799 ){
+			if ( ctx.measureText( line ).width > 798.5 ){
 				errorMsg += "・コメント" + ( i + 1 ) + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
 			}
 			
