@@ -44,6 +44,7 @@ if( typeof localStorage !== 'undefined' ){
 	var name = document.forms.info.name.value;
 	var dl = document.forms.info.dl.value;
 	var rank = document.forms.info.rank.value;
+	var seasonRank = document.forms.info.seasonRank.value;
 	
 	//小数点対策済
 	var bronze = parseInt(document.forms.info.bronze.value);
@@ -102,6 +103,7 @@ if( typeof localStorage !== 'undefined' ){
 	storage.setItem( 'name' , name );
 	storage.setItem( 'dl' , dl );
 	storage.setItem( 'rank' , rank );
+	storage.setItem( 'seasonRank' , seasonRank );
 	storage.setItem( 'heroBSel' , heroBSel );
 	storage.setItem( 'heroFSel' , heroFSel );
 	storage.setItem( 'bronze' , bronze );
@@ -167,6 +169,7 @@ function onChangeForms(){
 	var name = storage.getItem( 'name' );
 	var dl = storage.getItem( 'dl' );
 	var rank = storage.getItem( 'rank' );
+	var seasonRank = storage.getItem( 'seasonRank' );
 	var bronze = storage.getItem( 'bronze' );
 	var silver = storage.getItem( 'silver' );
 	var gold = storage.getItem( 'gold' );
@@ -266,6 +269,7 @@ function onChangeForms(){
 		comp[24] = Boolean( profilePicData == queryProfilePicData() );
 		comp[25] = Boolean( bgPicNameC == bgPicName );
 		comp[26] = Boolean( bgPicData == img[12].src );
+		comp[27] = Boolean( seasonRank == document.forms.info.seasonRank.value );
 		console.log(profilePicNameC);
 		console.log(queryProfilePicName());
 		//console.log(profilePicData);
@@ -313,6 +317,7 @@ function loadFromCookie( calledBy ){
 		var name = storage.getItem( 'name' );
 		var dl = storage.getItem( 'dl' );
 		var rank = storage.getItem( 'rank' );
+		var seasonRank = storage.getItem( 'seasonRank' );
 		var heroBSel = storage.getItem( 'heroBSel' );
 		var heroFSel = storage.getItem( 'heroFSel' );
 		var bronze = storage.getItem( 'bronze' );
@@ -391,6 +396,11 @@ function loadFromCookie( calledBy ){
 				//選択肢もロード
 				document.getElementById( "dl" ).value = dl;
 				document.getElementById( "rank" ).value = rank;
+				if ( !seasonRank ){
+					document.getElementById( "seasonRank" ).value = seasonRank;
+				} else {
+					document.getElementById("seasonRank").value = "F";
+				}
 	
 	
 				//ヒーロー選択内容の配列が文字列に置き換わっているのでこれを配列に変換しなおす
