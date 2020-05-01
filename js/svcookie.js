@@ -396,7 +396,7 @@ function loadFromCookie( calledBy ){
 				//選択肢もロード
 				document.getElementById( "dl" ).value = dl;
 				document.getElementById( "rank" ).value = rank;
-				if ( !seasonRank ){
+				if ( seasonRank ){
 					document.getElementById( "seasonRank" ).value = seasonRank;
 				} else {
 					document.getElementById("seasonRank").value = "F";
