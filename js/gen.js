@@ -924,20 +924,20 @@ tw = "@" + tw;
 }
 let twLength = tw.length;
 if ( twLength > 17 ){
-errorMsg += "・Twitter IDが長すぎます。\n";
+errorMsg += "・Twitter IDが長すぎます。\n　Twitterを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 //先頭の@を切り取り半角英数と_以外が含まれていた場合エラーを吐く
 let twSlice = tw.slice(1);
 twSlice = ( twSlice == null )?"":twSlice;
 if ( !twSlice.match(/^[A-Za-z0-9_]*$/) ){
-errorMsg += "・Twitter IDは半角英数と_(アンダースコア)のみ使用できます。\n";
+errorMsg += "・Twitter IDは半角英数と_(アンダースコア)のみ使用できます。\n　Twitterを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 
 //Discord
 let dcTag = dc.slice(-5);
 if ( dc != "" ){
 if ( !dcTag.match(/^#\d{4}/) ){
-errorMsg += "・Discord名は名前の最後に「#」と4桁の数字からなるタグが必要です(例:ユーザー名#1234)。\n";
+errorMsg += "・Discord名は名前の最後に「#」と4桁の数字からなるタグが必要です(例:ユーザー名#1234)。\n　Discordを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 }
 
@@ -945,21 +945,21 @@ errorMsg += "・Discord名は名前の最後に「#」と4桁の数字からな�
 let spLength = sp.length;
 if ( spLength != 0 ){
 if ( spLength > 32 ){
-errorMsg += "・Skype IDが長すぎます（32文字以下にしてください）。\n";
+errorMsg += "・Skype IDが長すぎます（32文字以下にしてください）。\n　Skypeを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 if ( spLength < 6 ){
-errorMsg += "・Skype IDが短すぎます（6文字以上にしてください）。\n";
+errorMsg += "・Skype IDが短すぎます（6文字以上にしてください）。\n　Skypeを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 }
 sp = ( sp == null )?"":sp;
 if ( !sp.match(/^[A-Za-z0-9_,.-]*$/) ){
-errorMsg += "・Skype IDは半角英数と一部記号( - , . _ )のみ使用できます。\n";
+errorMsg += "・Skype IDは半角英数と一部記号( - , . _ )のみ使用できます。\n　Skypeを利用していない場合は空欄にすると自動で省略されます。\n";
 }
 
 //フレンドコード
 if ( fc != "" ){
 if ( !fc.match(/^\d{10}$/) ){
-errorMsg += "・フレンドコードには10桁の数字のみ入力できます\n　(フレンドコードは「コンパスアプリホーム→コミュニティ→友達を招待する」から確認できます)。\n";
+errorMsg += "・フレンドコードには10桁の数字のみ入力できます\n　(フレンドコードは「コンパスアプリホーム→コミュニティ→友達を招待する」から確認できます)。\n　空欄にすると自動で省略されます。\n";
 }
 }
 
@@ -1011,6 +1011,12 @@ if ( cm != "" ){
 	contactY += plus1;
 	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
 		line = lines[i];
+		if ( ctx.measuretext( line ) > 783 ){
+			errorMsg += "・コメント" + i + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
+		}
+		if ( contactY + 26 > 1216 ){
+			errorMsg += "・コメントの行数が多すぎます。\n";
+		}
 		ctx.fillText( line , 87 , contactY );
 		contactY += cmFontSize;
 	}
