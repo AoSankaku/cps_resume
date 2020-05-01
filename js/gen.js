@@ -1011,7 +1011,7 @@ if ( cm != "" ){
 	contactY += plus1;
 	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
 		line = lines[i];
-		if ( ctx.measureText( line ) > 783 ){
+		if ( ctx.measureText( line ).width > 783 ){
 			errorMsg += "・コメント" + i + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
 		}
 		if ( contactY + 26 > 1216 ){
