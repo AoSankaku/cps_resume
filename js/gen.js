@@ -1029,7 +1029,7 @@ if ( cm != "" ){
 		} else {
 			
 			//枠外に出ていたら判定
-			if ( ctx.measureText( line ).width > 798.4 ){
+			if ( ctx.measureText( line ).width > 796.6 ){
 				errorMsg += "・コメント" + ( i + 1 ) + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
 			}
 			
