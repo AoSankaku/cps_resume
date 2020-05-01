@@ -1038,7 +1038,10 @@ if ( cm != "" ){
 		ctx.fillText( line , 87 , contactY );
 		contactY += cmFontSize;
 	}
-	errorMsg += "・コメントの行数が多すぎます。\n　" + overLines + "行削減してください。";
+	
+	if ( overLines !== 0 ){
+		errorMsg += "・コメントの行数が多すぎます。\n　" + overLines + "行削減してください。";
+	}
 }
 
 //日付
