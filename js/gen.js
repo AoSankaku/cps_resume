@@ -973,6 +973,7 @@ const plus1 = 30;
 const plus2 = 20;
 const cmFontSize = 26 + 2;
 const contactIconSize = 42;
+let overLines = 0;
 
 //連絡先アイコン描画
 if ( tw != "@" ){
@@ -1011,15 +1012,33 @@ if ( cm != "" ){
 	contactY += plus1;
 	for ( let line = "", lines = cm.split( '\n' ), i = 0, l = lines.length; l > i ; i++ ){
 		line = lines[i];
-		if ( ctx.measureText( line ).width > 783 ){
-			errorMsg += "・コメント" + i + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
+		
+		//はみ出したら警告するために分岐
+		if ( contactY > 1216 ){
+			
+			//枠外はみだしなので強制判定
+			overLines += 1;
+			
+		} else if ( contactY > 1196 ){
+			
+			//日付と重なっていたら判定
+			if ( ctx.measureText( line ).width > 680 ){
+				errorMsg += "・コメント" + ( i + 1 ) + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
+			}
+			
+		} else {
+			
+			//枠外に出ていたら判定
+			if ( ctx.measureText( line ).width > 799 ){
+				errorMsg += "・コメント" + ( i + 1 ) + "列目の文章が長すぎます。\n　改行または短縮してください。\n";
+			}
+			
 		}
-		if ( contactY + 26 > 1216 ){
-			errorMsg += "・コメントの行数が多すぎます。\n";
-		}
+		//描画本体
 		ctx.fillText( line , 87 , contactY );
 		contactY += cmFontSize;
 	}
+	errorMsg += "・コメントの行数が多すぎます。\n　" + overLines + "行削減してください。";
 }
 
 //日付
