@@ -1005,6 +1005,11 @@ if ( guild != "" ){
 	contactY += plus1;
 	ctx.fillText( guild , 87 , contactY );
 	contactY += plus2;
+	
+	//長く書きすぎて枠外に出ていたらエラー判定
+	if ( ctx.measureText( guild ).width > 793.3 ){
+		errorMsg += "・所属ギルドの文章が長すぎます。\n";
+	}
 }
 //コメントは複数行にわたる場合があるのでfor文で処理
 if ( cm != "" ){
