@@ -489,17 +489,22 @@ ctx.fillText("よみ", 40 , 110 );
 ctx.font = "55px 'Noto Sans JP'";
 ctx.fillText(" HN ", 15 , 205 );
 
-//横線四本
+//横線五本
 ctx.fillStyle = defaultColor;
 ctx.fillRect(15,123,870,1);
 ctx.fillRect(15,230,870,3);
 ctx.fillRect(15,400,870,3);
 ctx.fillRect(15,860,870,3);
+ctx.fillRect(212,271,258,2);
 
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("デッキレベル", 30 , 270 );
-//ctx.fillText("ランク", 227 , 270 );
+ctx.fillText("ランク", 302 , 262 );
+ctx.font = "25px 'Noto Sans JP'"
+ctx.fillText("最高", 252 , 302 );
+ctx.fillText("シーズン", 357 , 302 );
+ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
 let boxX = 498;
@@ -538,10 +543,11 @@ ctx.lineWidth = 4;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
-//縦線二本
+//縦線三本
 ctx.fillStyle = defaultColor;
 ctx.fillRect(212,230,2,170);
 ctx.fillRect(470,230,2,170);
+ctx.fillRect(341,271,1,129);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
@@ -667,7 +673,7 @@ ctx.fillText(dl, 119, 380 );
 
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 85px 'Heebo'";
+ctx.font = "bold 83px 'Heebo'";
 //ランクによってグラデーションを変化
 let grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
@@ -703,16 +709,16 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 284, 380 );
+ctx.fillText( rank, 282, 376 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 284, 380 );
+ctx.strokeText( rank, 282, 376 );
 ctx.strokeStyle = "#000000";
 
 //続けてシーズンランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 85px 'Heebo'";
+ctx.font = "bold 83px 'Heebo'";
 //ランクによってグラデーションを変化
 switch (seasonRank) {
 	case "F":
@@ -747,11 +753,11 @@ switch (seasonRank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( seasonRank, 404, 380 );
+ctx.fillText( seasonRank, 405, 376 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( seasonRank, 404, 380 );
+ctx.strokeText( seasonRank, 405, 376 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
