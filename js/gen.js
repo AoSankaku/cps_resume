@@ -503,7 +503,7 @@ ctx.fillText("デッキレベル", 30 , 270 );
 ctx.fillText("ランク", 302 , 262 );
 ctx.font = "25px 'Noto Sans JP'"
 ctx.fillText("最高", 252 , 302 );
-ctx.fillText("シーズン", 357 , 302 );
+ctx.fillText("シーズン", 356 , 302 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
@@ -709,11 +709,11 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 282, 384);
+ctx.fillText( rank, 278, 384);
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 282, 384 );
+ctx.strokeText( rank, 278, 384 );
 ctx.strokeStyle = "#000000";
 
 //続けてシーズンランクを描画
@@ -736,6 +736,8 @@ function doNotDrawSeasonRank(){
 	ctx.fillStyle = fontColor;
 	ctx.fillText( "-", 405, 384 );
 }
+
+grad = ctx.createLinearGradient(0,335,0,380);
 
 //ランクによってグラデーションを変化
 switch (seasonRank) {
