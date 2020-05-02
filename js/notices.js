@@ -11,7 +11,7 @@ window.addEventListener('load', function maintainance(){
 var doingMaintainance = "doing";
 
 var maintainanceStart = "5月1日 17:00";
-var maintainanceEnd = "5月2日 17:00";
+var maintainanceEnd = "5月2日 22:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			+ "・新ヒーロー「佐藤四郎兵衛忠信（忠信）」追加<br>"
