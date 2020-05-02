@@ -541,7 +541,7 @@ ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 //縦線二本
 ctx.fillStyle = defaultColor;
 ctx.fillRect(212,230,2,170);
-ctx.fillRect(460,230,2,170);
+ctx.fillRect(470,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
@@ -747,7 +747,7 @@ switch (seasonRank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( seasonRank, 374, 380 );
+ctx.fillText( seasonRank, 404, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
