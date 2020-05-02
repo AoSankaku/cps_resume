@@ -1069,7 +1069,7 @@ if ( typeof localStorage !== "undefined" ){
 
 
 //入力に何かしら不備があった場合アラート+文字として表示
-if ( !errorMsg ){
+if ( !errorMsg == "" ){
 	let errorMsgArray = errorMsg.split('\n');
 	document.getElementById('inputAlert').innerHTML = '<span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> 入力エラーがあります</span><br><div align="left" class="inputAlert">【入力エラーの内容】<br>' + errorMsgArray.join('<br>') + '</div>';
 } else {
