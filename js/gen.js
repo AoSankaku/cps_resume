@@ -502,8 +502,8 @@ ctx.fillText("デッキレベル", 30 , 270 );
 ctx.fillText("ランク", 227 , 270 );
 ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
-let boxX = 466;
-let boxXAdd = 98;
+let boxX = 474;
+let boxXAdd = 96;
 let boxY = 300;
 let boxSize = 74;
 
@@ -760,7 +760,7 @@ if ( isNaN( tournament ) ){
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
 let iconX = 508;
-let iconXAdd = 106;
+let iconXAdd = 102;
 let iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
