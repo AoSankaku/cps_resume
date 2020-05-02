@@ -709,26 +709,40 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 282, 376 );
+ctx.fillText( rank, 282, 384);
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 282, 376 );
+ctx.strokeText( rank, 282, 384 );
 ctx.strokeStyle = "#000000";
 
 //続けてシーズンランクを描画
 ctx.lineWidth = 9;
 ctx.font = "bold 83px 'Heebo'";
+
+//先に関数として宣言
+function drawSeasonRank(){
+	ctx.fillStyle = grad;
+	ctx.fillText( seasonRank, 405, 384 );
+	ctx.fillStyle = "#000000";
+	ctx.lineWidth = 4;
+	ctx.strokeStyle = fontColor;
+	ctx.strokeText( seasonRank, 405, 384 );
+	ctx.strokeStyle = "#000000";
+}
+
+function doNotDrawSeasonRank(){
+	ctx.globalAlpha = 0.4;
+	ctx.fillStyle = fontColor;
+	ctx.fillText( "-", 405, 384 );
+}
+
 //ランクによってグラデーションを変化
 switch (seasonRank) {
 	case "F":
-	case "E":
-	case "D":
-	case "C":
-	case "B":
-	case "A":
-	grad.addColorStop(0,'#f7c717');
-	grad.addColorStop(1,'#f7c717');
+	grad.addColorStop(0,'#000000');
+	grad.addColorStop(1,'#000000');
+	doNotDrawSeasonRank();
 	break;
 	
 	case "S1":
@@ -736,6 +750,7 @@ switch (seasonRank) {
 	case "S3":
 	grad.addColorStop(0,'#f7c717');
 	grad.addColorStop(1,'#fcea98');
+	drawSeasonRank();
 	break;
 	
 	case "S4":
@@ -743,6 +758,7 @@ switch (seasonRank) {
 	case "S6":
 	grad.addColorStop(0,'#f7c717');
 	grad.addColorStop(1,'#ed9300');
+	drawSeasonRank();
 	break;
 	
 	case "S7":
@@ -750,15 +766,10 @@ switch (seasonRank) {
 	case "S9":
 	grad.addColorStop(0,'#f7c717');
 	grad.addColorStop(1,'#ee82ee');
+	drawSeasonRank();
 	break;
 }
-ctx.fillStyle = grad;
-ctx.fillText( seasonRank, 405, 376 );
-ctx.fillStyle = "#000000";
-ctx.lineWidth = 4;
-ctx.strokeStyle = fontColor;
-ctx.strokeText( seasonRank, 405, 376 );
-ctx.strokeStyle = "#000000";
+
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
