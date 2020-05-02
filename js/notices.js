@@ -8,16 +8,12 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "doing";
+var doingMaintainance = "none";
 
 var maintainanceStart = "5月1日 17:00";
 var maintainanceEnd = "5月3日 01:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
-			+ "・新ヒーロー「佐藤四郎兵衛忠信（忠信）」追加<br>"
-			+ "・シーズン最高到達ランク記入欄の追加<br>"
-			+ "・コメントなどが外部にはみ出す可能性がある場合は警告するように修正<br>"
-			+ "・背景パターンの追加<br>"
 			+ "・背景を分類してわかりやすく<br>"
 			+ "・背景や色合いをわかりやすくするために簡易デザインプレビューを追加<br>";
 
