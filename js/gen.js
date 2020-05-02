@@ -499,7 +499,7 @@ ctx.fillRect(15,860,870,3);
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("デッキレベル", 30 , 270 );
-ctx.fillText("ランク", 227 , 270 );
+//ctx.fillText("ランク", 227 , 270 );
 ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
 let boxX = 498;
@@ -751,7 +751,7 @@ ctx.fillText( seasonRank, 404, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 404, 380 );
+ctx.strokeText( seasonRank, 404, 380 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
