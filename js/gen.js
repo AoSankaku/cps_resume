@@ -751,7 +751,7 @@ ctx.fillText( seasonRank, 404, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 374, 380 );
+ctx.strokeText( rank, 404, 380 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
