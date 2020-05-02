@@ -645,7 +645,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐(フォントは今の所固定)
-ctx.font = "88px 'Heebo'";
+ctx.font = "84px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
 	ctx.strokeStyle = "#ff0000";
