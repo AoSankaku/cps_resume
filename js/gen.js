@@ -541,7 +541,7 @@ ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 //縦線二本
 ctx.fillStyle = defaultColor;
 ctx.fillRect(212,230,2,170);
-ctx.fillRect(374,230,2,170);
+ctx.fillRect(420,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
@@ -703,11 +703,56 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 294, 380 );
+ctx.fillText( rank, 284, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 294, 380 );
+ctx.strokeText( rank, 284, 380 );
+ctx.strokeStyle = "#000000";
+
+//続けてシーズンランクを描画
+ctx.lineWidth = 9;
+ctx.font = "bold 85px 'Heebo'";
+//ランクによってグラデーションを変化
+let grad = ctx.createLinearGradient(0,335,0,380);
+switch (seasonRank) {
+	case "F":
+	case "E":
+	case "D":
+	case "C":
+	case "B":
+	case "A":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#f7c717');
+	break;
+	
+	case "S1":
+	case "S2":
+	case "S3":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#fcea98');
+	break;
+	
+	case "S4":
+	case "S5":
+	case "S6":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#ed9300');
+	break;
+	
+	case "S7":
+	case "S8":
+	case "S9":
+	grad.addColorStop(0,'#f7c717');
+	grad.addColorStop(1,'#ee82ee');
+	break;
+}
+ctx.fillStyle = grad;
+ctx.fillText( seasonRank, 334, 380 );
+ctx.fillStyle = "#000000";
+ctx.lineWidth = 4;
+ctx.strokeStyle = fontColor;
+ctx.strokeText( rank, 334, 380 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
@@ -759,8 +804,8 @@ if ( isNaN( tournament ) ){
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
-let iconX = 530;
-let iconXAdd = 98;
+let iconX = 535;
+let iconXAdd = 96;
 let iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
