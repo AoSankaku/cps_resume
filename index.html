@@ -336,8 +336,13 @@
 <dt>背景模様</dt>
 <dd>
 	<select id="bgtheme" onChange="onChangeForms();">
-	<option value="monotone" selected>単色（模様なし）</option>
-	<option value="custom">自分でアップロード</option>
+	<optgroup label="背景なし">
+		<option value="monotone" selected>単色（模様なし）</option>
+	</optgroup>
+	<optgroup label="カスタム">
+		<option value="custom">自分でアップロード</option>
+	</optgroup>
+	<optgroup label="模様">
 	<option value="3px-tile">3px Tile</option>
 	<option value="always-grey">Always Grey</option>
 	<option value="arabesque">Arabesque</option>
@@ -372,6 +377,7 @@
 	<option value="wood">Wood</option>
 	<option value="wood-pattern">Wood Pattern</option>
 	<option value="zig-zag">Zig Zag</option>
+	</optgroup>
 	</select>
 </dd>
 <dt>背景画像透過度</dt>
