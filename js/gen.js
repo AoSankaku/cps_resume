@@ -714,7 +714,6 @@ ctx.strokeStyle = "#000000";
 ctx.lineWidth = 9;
 ctx.font = "bold 85px 'Heebo'";
 //ランクによってグラデーションを変化
-let grad = ctx.createLinearGradient(0,335,0,380);
 switch (seasonRank) {
 	case "F":
 	case "E":
