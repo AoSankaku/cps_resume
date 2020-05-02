@@ -443,28 +443,30 @@ if ( bgTheme !== "monotone" ){
 	let canY = can.height;
 	let bgthemeX = img[imgNum].naturalWidth;
 	let bgthemeY = img[imgNum].naturalHeight;
-	if (bgthemeX == 700 ){
-		errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n　もう一度生成してください。\n　（）内の数字が（700-700）以外の場合はお手数ですが\n　サイト下部よりお問い合わせください。\n";
-		break;
-	}
 	let timesX = 0;
 	let timesY = 0;
 	ctx.globalAlpha = bgTrans;
 	
+	let i2;
 	//繰り返して描画する
 	while ( canY > timesY * bgthemeY ){
 		for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
 			ctx.drawImage( img[imgNum] , timesX * bgthemeX , timesY * bgthemeY );
 			timesX += 1;
-			
-			if ( i > 10000 ){
-				errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n";
-				break;
-			}
 		}
 		timesY += 1;
 		timesX = 0;
-		//ループ数が異常に多かったら抜ける
+		
+		//imgNumが11でかつ画像サイズが700*700になっている時、ループ数が異常に多いときは抜ける
+		if ( bgthemeX == 700 && bgthemeY == 700 && imgNum == 11 ){
+			errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n　もう一度生成してください。\n";
+			break;
+		}
+		i2++;
+		if ( i2 > 910000 ){
+			errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "-" + imgNum + " ）\n　お手数ですが（）内の数字を添えてサイト下部よりお問い合わせください。\n";
+			break;
+		}
 		
 	}
 }
