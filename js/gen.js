@@ -503,38 +503,38 @@ ctx.fillText("ランク", 227 , 270 );
 ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
 let boxX = 466;
-let boxXAdd = 106;
+let boxXAdd = 98;
 let boxY = 300;
-let boxSize = 78;
+let boxSize = 74;
 
-ctx.lineWidth = 14;
+ctx.lineWidth = 13;
 ctx.strokeStyle = "#ac6b25";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
-ctx.lineWidth = 5;
+ctx.lineWidth = 4;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
-ctx.lineWidth = 14;
+ctx.lineWidth = 13;
 ctx.strokeStyle = "#c0c0c0";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
-ctx.lineWidth = 5;
+ctx.lineWidth = 4;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
-ctx.lineWidth = 14;
+ctx.lineWidth = 13;
 ctx.strokeStyle = "#ffd700";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
-ctx.lineWidth = 5;
+ctx.lineWidth = 4;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
-ctx.lineWidth = 14;
+ctx.lineWidth = 13;
 ctx.strokeStyle = "#553592";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
-ctx.lineWidth = 5;
+ctx.lineWidth = 4;
 ctx.strokeStyle = "#ffffff";
 ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
@@ -764,41 +764,41 @@ let iconXAdd = 106;
 let iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "56px 'Noto Sans JP'";
+	ctx.font = "52px 'Noto Sans JP'";
 	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.font = "bold 52px 'Noto Sans JP'";
 	ctx.fillText( bronze , iconX , iconY );
 }
 iconX += iconXAdd;
 if ( silver < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "56px 'Noto Sans JP'";
+	ctx.font = "52px 'Noto Sans JP'";
 	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.font = "bold 52px 'Noto Sans JP'";
 	ctx.fillText( silver , iconX , iconY );
 }
 iconX += iconXAdd;
 if ( gold < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "56px 'Noto Sans JP'";
+	ctx.font = "52px 'Noto Sans JP'";
 	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.font = "bold 52px 'Noto Sans JP'";
 	ctx.fillText( gold , iconX , iconY );
 }
 iconX += iconXAdd;
 if ( tournament < 1 ){
 	ctx.globalAlpha = 0.4;
-	ctx.font = "56px 'Noto Sans JP'";
+	ctx.font = "52px 'Noto Sans JP'";
 	ctx.fillText("-", iconX , iconY );
 } else {
 	ctx.globalAlpha = 1.0;
-	ctx.font = "bold 56px 'Noto Sans JP'";
+	ctx.font = "bold 52px 'Noto Sans JP'";
 	ctx.fillText( tournament , iconX , iconY );
 }
 //中央揃えを左揃えに、色をユーザー指定にリセット
