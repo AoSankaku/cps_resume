@@ -661,10 +661,10 @@ if (dl >= 210){
 }
 ctx.lineWidth = 9;
 ctx.globalAlpha = 0.3 ;
-ctx.strokeText(dl, 147 , 380 );
+ctx.strokeText(dl, 121, 380 );
 ctx.lineWidth = 8;
 ctx.globalAlpha = 1.0 ;
-ctx.fillText(dl, 147 , 380 );
+ctx.fillText(dl, 121, 380 );
 
 //ランクを描画
 ctx.lineWidth = 9;
@@ -704,11 +704,11 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 324, 380 );
+ctx.fillText( rank, 298, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 324, 380 );
+ctx.strokeText( rank, 298, 380 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
