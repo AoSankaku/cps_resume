@@ -498,9 +498,9 @@ ctx.fillRect(15,860,870,3);
 
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("最高デッキレベル", 30 , 270 );
+ctx.fillText("デッキレベル", 30 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("最高ランク", 283 , 270 );
+ctx.fillText("最高ランク", 227 , 270 );
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
 
@@ -541,8 +541,8 @@ ctx.strokeRect( boxX, boxY, 82, 82);
 
 //縦線二本
 ctx.fillStyle = defaultColor;
-ctx.fillRect(268,230,2,170);
-ctx.fillRect(430,230,2,170);
+ctx.fillRect(212,230,2,170);
+ctx.fillRect(374,230,2,170);
 
 //使用ヒーロー
 ctx.font = "28px 'Noto Sans JP'";
