@@ -444,7 +444,7 @@ if ( bgTheme !== "monotone" ){
 	let bgthemeX = img[imgNum].naturalWidth;
 	let bgthemeY = img[imgNum].naturalHeight;
 	if (bgthemeX == 700 ){
-		errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n　もう一度生成してください。\n　（）内の数字が（700-700）以外の場合はお手数ですが\n　サイト下部よりお問い合わせください。\n"
+		errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n　もう一度生成してください。\n　（）内の数字が（700-700）以外の場合はお手数ですが\n　サイト下部よりお問い合わせください。\n";
 		break;
 	}
 	let timesX = 0;
