@@ -499,45 +499,44 @@ ctx.fillRect(15,860,870,3);
 //デキレ、ランク、アイコン所持数
 ctx.font = "28px 'Noto Sans JP'";
 ctx.fillText("デッキレベル", 30 , 270 );
-ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("最高ランク", 227 , 270 );
-ctx.font = "28px 'Noto Sans JP'";
-ctx.fillText("銅・銀・金・大会アイコン", 490 , 270 );
+ctx.fillText("ランク", 227 , 270 );
+ctx.fillText("銅・銀・金・大会アイコン", 510 , 270 );
 
-let boxX = 450;
-let boxXAdd = 110;
+let boxX = 466;
+let boxXAdd = 106;
 let boxY = 300;
+let boxSize = 78;
 
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ac6b25";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#c0c0c0";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#ffd700";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 boxX += boxXAdd;
 ctx.lineWidth = 14;
 ctx.strokeStyle = "#553592";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 ctx.lineWidth = 5;
 ctx.strokeStyle = "#ffffff";
-ctx.strokeRect( boxX, boxY, 82, 82);
+ctx.strokeRect( boxX, boxY, boxSize, boxSize);
 
 //縦線二本
 ctx.fillStyle = defaultColor;
@@ -646,7 +645,7 @@ ctx.fillText(name, 130 , 205 );
 
 //デキレを描画
 //デキレによって分岐(フォントは今の所固定)
-ctx.font = "95px 'Heebo'";
+ctx.font = "88px 'Heebo'";
 ctx.textAlign = "center";
 if (dl >= 210){
 	ctx.strokeStyle = "#ff0000";
@@ -661,14 +660,14 @@ if (dl >= 210){
 }
 ctx.lineWidth = 9;
 ctx.globalAlpha = 0.3 ;
-ctx.strokeText(dl, 121, 380 );
+ctx.strokeText(dl, 119, 380 );
 ctx.lineWidth = 8;
 ctx.globalAlpha = 1.0 ;
-ctx.fillText(dl, 121, 380 );
+ctx.fillText(dl, 119, 380 );
 
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 95px 'Heebo'";
+ctx.font = "bold 85px 'Heebo'";
 //ランクによってグラデーションを変化
 let grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
@@ -704,11 +703,11 @@ switch (rank) {
 	break;
 }
 ctx.fillStyle = grad;
-ctx.fillText( rank, 298, 380 );
+ctx.fillText( rank, 294, 380 );
 ctx.fillStyle = "#000000";
 ctx.lineWidth = 4;
 ctx.strokeStyle = fontColor;
-ctx.strokeText( rank, 298, 380 );
+ctx.strokeText( rank, 294, 380 );
 ctx.strokeStyle = "#000000";
 
 //金銀銅大会アイコンの所持数を表示
@@ -756,12 +755,12 @@ if ( isNaN( tournament ) ){
 	errorMsg += "・大会優勝アイコンの個数の値が数字ではありません。値は0として扱われます。\n";
 	tournament = 0;
 }
-//金銀銅アイコンの数を描画
+//金銀銅大会アイコンの数を描画
 //ただし各項目0の場合ハイフンを表示
 ctx.fillStyle = fontColor;
 ctx.lineWidth = 4;
-let iconX = 492;
-let iconXAdd = 110;
+let iconX = 508;
+let iconXAdd = 106;
 let iconY = 360;
 if ( bronze < 1 ){
 	ctx.globalAlpha = 0.4;
