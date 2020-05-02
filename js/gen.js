@@ -457,8 +457,8 @@ if ( bgTheme !== "monotone" ){
 		timesY += 1;
 		timesX = 0;
 		
-		//imgNumが11でかつ画像サイズが700*700になっている時、ループ数が異常に多いときは抜ける
-		if ( img[imgNum].naturalWidth == 700 && img[imgNum].naturalHeight == 700 && imgNum == 11 ){
+		//画像サイズが0*0になっている時、ループ数が異常に多いときは抜ける
+		if ( img[imgNum].naturalWidth == 0 && img[imgNum].naturalHeight == 700 ){
 			errorMsg += "・背景の描画が正常に行われませんでした。（" + bgthemeX + "-" + bgthemeY + "）\n　もう一度生成してください。\n";
 			break;
 		}
