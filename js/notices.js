@@ -10,8 +10,8 @@ window.addEventListener('load', function maintainance(){
 
 var doingMaintainance = "planned";
 
-var maintainanceStart = "5月18日 13:00";
-var maintainanceEnd = "5月18日 23:00";
+var maintainanceStart = "5月20日 15:00";
+var maintainanceEnd = "5月21日 23:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			//+ "・ローディング画面の実装<br>"
