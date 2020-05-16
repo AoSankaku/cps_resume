@@ -8,22 +8,24 @@ window.addEventListener('load', function maintainance(){
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "none";
+var doingMaintainance = "planned";
 
-var maintainanceStart = "5月1日 17:00";
-var maintainanceEnd = "5月3日 01:00";
+var maintainanceStart = "5月18日 13:00";
+var maintainanceEnd = "5月18日 23:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
-			+ "・ローディング画面の実装<br>"
+			//+ "・ローディング画面の実装<br>"
 			+ "・ページ読み込み速度の改善<br>"
-			+ "・フォントの読み込み状況の確認昨日の実装<br>"
+			+ "・フォントの読み込み状況の確認機能の実装<br>"
 			+ "・シーズンランクが最高ランクより高い場合にエラーを出すように<br>"
+			+ "・シーズンランクがS1以上にもかかわらず最高ランクが未設定の場合エラーを出すように<br>"
+			+ "・最高ランクがA以下の場合はシーズンランクを選択不能に<br>"
 			+ "・項目ごとにヘルプを追加<br>"
 			+ "・ミニキャラ表示機能追加<br>"
 			+ "・履歴書に掲載されるURLを短縮<br>"
 			+ "・シェアボタンの改良・変更<br>"
 			+ "・デザインプレビューウィンドウの追加<br>"
-			+ "・背景を分類してわかりやすく<br>"
+			+ "・背景を分類してわかりやすく設定できるように<br>"
 			+ "・背景や色合いをわかりやすくするために簡易デザインプレビューを追加<br>";
 
 
