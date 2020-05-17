@@ -20,5 +20,5 @@
 
 ## 連絡先
 Twitter:<a href="https://twitter.com/Ao_Sankaku">@Ao_Sankaku</a><br>
-※バグ報告・要望などは「 https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform 」まで<br>
+※バグ報告・要望などは<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform">こちら</a>からお願いします<br>
 
