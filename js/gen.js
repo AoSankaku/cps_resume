@@ -79,7 +79,7 @@ function detectRole(name){
 
 
 
-//画像をプリロード     　　                                                                                                                                                                              
+//画像をプリロード　                                                                                                                                                                              
 var img = [];
 img[0] = new Image();
 img[0].src = "img/attacker.png";
@@ -193,7 +193,7 @@ function getLen(str){
 function preloadFonts( targetFont, mode ){
 	if ( mode == 'default' ){
 		ctx.font = "5px '" + targetFont + "'";
-		ctx.fillText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。htps:/wosnkugihbcprm", 0 , 5 );
+		ctx.fillText( "S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm", 0, 5 );
 	} else if ( typeof read !== 'undefined' ) {
 		ctx.font = "5px '" + targetFont + "'";
 		ctx.fillText( document.forms.info.read.value
@@ -211,7 +211,7 @@ function preloadFonts( targetFont, mode ){
 			ctx.fillText( ele[i].text , 0, 5 );
 		}
 	}
-	ctx.clearRect( 0, 0, 900, 1300 )
+	ctx.clearRect( 0, 0, 900, 1300 );
 }
 
 
@@ -625,6 +625,16 @@ switch (selectedFont){
 */
 
 
+//フォントがちゃんと読み込まれているのか最終確認
+ctx.font= "40px monospace";
+var defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+ctx.font = "40px" + userFont;
+var userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+if ( defaultWidth == userWidth ){
+	errorMsg += "・フォントが正常に読み込まれなかった可能性があります。\n　もう一度生成してください。\n";
+}
+
+
 ctx.lineWidth = 4;
 ctx.font = "40px" + userFont;
 let readWidth = ctx.measureText(read).width;
@@ -642,6 +652,7 @@ if ( name == "" ){
 ctx.lineWidth = 6;
 ctx.font = "bold 72px" + userFont;
 let nameWidth = ctx.measureText(name).width;
+console.log(nameWidth);
 if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px" + userFont;
 	nameWidth = ctx.measureText(name).width;
