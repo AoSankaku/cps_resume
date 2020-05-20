@@ -1,14 +1,9 @@
-//メンテナンス表示                                                                                                                                                          
-window.addEventListener('load', function maintainance(){
-
-
-
 //===============ここを変更する===============
 //何もなし…"none"		=>何も表示しない
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "planned";
+var doingMaintainance = "doing";
 
 var maintainanceStart = "5月20日 15:00";
 var maintainanceEnd = "5月21日 23:00";
@@ -33,6 +28,9 @@ var updateContents 	= "【アップデート内容（予定）】<br>"
 
 
 
+
+//メンテナンス表示                                                                                                                                                          
+window.addEventListener('load', function maintainance(){
 
 //メンテ中なら警告表示+タイトルを赤に
 //
