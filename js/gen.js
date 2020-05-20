@@ -644,7 +644,7 @@ switch (selectedFont){
 
 
 //フォントがちゃんと読み込まれているのか最終確認
-ctx.font= "20px monospace";
+ctx.font= "20px 'monospace'";
 var defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
 ctx.font = "20px" + userFont;
 var userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
