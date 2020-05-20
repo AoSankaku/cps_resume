@@ -166,6 +166,23 @@ function onChangeForms(){
 	}
 	
 	
+	//最高ランクがA以下の場合はシーズンランクを無効にする処理
+	switch ( document.forms.info.rank.value ){
+		case "F":
+		case "E":
+		case "D":
+		case "C":
+		case "B":
+		case "A":
+			document.getElementById('seasonRank').value = "F";
+			document.getElementById('seasonRank').disabled = true;
+			break;
+		
+		default: document.getElementById('seasonRank').disabled = false;
+		break;
+	}
+	
+	
 	//とりあえずLocalStorageの内容をロード
 	var read = storage.getItem( 'read' );
 	var name = storage.getItem( 'name' );
