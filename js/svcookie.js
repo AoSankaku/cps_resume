@@ -159,10 +159,12 @@ function onChangeForms(){
 	
 	console.log("Running onChangeForms...");
 	
+	
 	//ついでに選択された画像を選択しておく
 	if ( document.forms.design.bgtheme.value !== "monotone" && document.forms.design.bgtheme.value !== "custom" ){
 		img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
 	}
+	
 	
 	//とりあえずLocalStorageの内容をロード
 	var read = storage.getItem( 'read' );
