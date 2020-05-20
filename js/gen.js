@@ -1140,6 +1140,15 @@ if ( !errorMsg == "" ){
 
 
 
+
+//メンテナンス中はここにbreakpointを作って変数を操作しないと生成できないようにする
+var dnum = 0;
+if ( doingMaintainance == "doing" && dnum == 0 ){
+	alert( 'メンテナンス中は履歴書を生成することができません。\nしばらく待ってから再度アクセスしてください。' );
+	return;
+}
+
+
 //web上なら正常に動作するので画像変換ここに復活
 can.hidden = true;
 base64Result = can.toDataURL('image/jpeg');
