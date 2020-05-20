@@ -808,6 +808,12 @@ if ( convRank( rank ) < convRank( seasonRank ) ){
 	errorMsg += "・シーズンランクが最高ランクを上回っています。\n";
 }
 
+if ( convRank( seasonRank ) <= 3 ){
+	if ( ( bronze + silver + gold ) != 0 ){
+		errorMsg += "・シーズンランクの値かシーズンアイコンの値が不正です。\n";
+	}
+}
+
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
