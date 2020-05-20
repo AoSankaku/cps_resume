@@ -210,7 +210,7 @@ function getLen(str){
 function preloadFonts( targetFont, mode ){
 	if ( mode == 'default' ){
 		ctx.font = "5px '" + targetFont + "'";
-		ctx.fillText( "S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm", 0, 5 );
+		ctx.fillText( "S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。https://bit.ly/cps_rireki", 0, 5 );
 	} else if ( typeof read !== 'undefined' ) {
 		ctx.font = "5px '" + targetFont + "'";
 		ctx.fillText( document.forms.info.read.value
@@ -584,7 +584,7 @@ ctx.fillText("連絡先など", 30 , 900 );
 ctx.globalAlpha = 0.5 ;
 ctx.font = "20px 'Noto Sans JP'";
 ctx.fillText("この履歴書は「コンパス履歴書ジェネレーター" + version + "」で作成されました。", 10 , 1260 );
-ctx.fillText("https://aosankaku.github.io/cps_resume　　ツール製作者:@Ao_Sankaku", 10 , 1285 );
+ctx.fillText("https://bit.ly/cps_rireki　　ツール製作者:@Ao_Sankaku", 10 , 1285 );
 ctx.globalAlpha = 1.0 ;
 
 //背景色と文字色か枠線・項目色が一致するならエラー（非常に近くてもエラー）
@@ -1177,14 +1177,14 @@ if ( !errorMsg == "" ){
 
 
 
-//メンテナンス中はここにbreakpointを作って変数を操作しないと生成できないようにする
+//メンテナンス中はここにbreakpointを作って変数(dnum)を操作しないと生成できないようにする
 if ( doingMaintainance == "doing" && dnum == 0 ){
 	alert( 'メンテナンス中は履歴書を生成することができません。\nしばらく待ってから再度アクセスしてください。' );
-	ctx.fillStyle = "#cccccc";
+	ctx.fillStyle = "#bbbbbb";
 	ctx.fillRect( 0, 0, 900, 1300 );
 	ctx.font = "80px 'Noto Sans JP'";
 	ctx.textAlign = "center";
-	ctx.fillStyle = "#888888";
+	ctx.fillStyle = "#777777";
 	ctx.fillText("メンテナンス中です",450,600);
 	ctx.font = "50px 'Noto Sans JP'";
 	ctx.fillText("メンテナンスが終わってから来てね",450,700);
