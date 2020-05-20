@@ -2,6 +2,8 @@
 var version = "v1.0.2";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
+//デバッグ用
+var dnum = 0;
 
 
 
@@ -1142,7 +1144,6 @@ if ( !errorMsg == "" ){
 
 
 //メンテナンス中はここにbreakpointを作って変数を操作しないと生成できないようにする
-var dnum = 0;
 if ( doingMaintainance == "doing" && dnum == 0 ){
 	alert( 'メンテナンス中は履歴書を生成することができません。\nしばらく待ってから再度アクセスしてください。' );
 	ctx.fillStyle = "#000000";
