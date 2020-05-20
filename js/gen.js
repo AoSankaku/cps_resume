@@ -1157,8 +1157,16 @@ if ( !errorMsg == "" ){
 //メンテナンス中はここにbreakpointを作って変数を操作しないと生成できないようにする
 if ( doingMaintainance == "doing" && dnum == 0 ){
 	alert( 'メンテナンス中は履歴書を生成することができません。\nしばらく待ってから再度アクセスしてください。' );
-	ctx.fillStyle = "#000000";
+	ctx.fillStyle = "#cccccc";
 	ctx.fillRect( 0, 0, 900, 1300 );
+	ctx.font = "80px 'Noto Sans JP'";
+	ctx.textAlign = "center";
+	ctx.fillStyle = "#999999";
+	ctx.fillText("メンテナンス中です",450,550);
+	ctx.font = "50px 'Noto Sans JP'";
+	ctx.fillText("メンテナンスが終わってから来てね",450,650);
+	ctx.font="150px 'Noto Sans JP'";
+	ctx.fillText("¯\\_(ツ)_/¯",450,330);
 	return;
 }
 
