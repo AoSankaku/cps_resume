@@ -631,7 +631,7 @@ ctx.font= "40px monospace";
 var defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
 ctx.font = "40px" + userFont;
 var userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
-if ( defaultWidth == userWidth ){
+if ( defaultWidth == userWidth || userFont !== "monospace" ){
 	errorMsg += "・フォントが正常に読み込まれなかった可能性があります。\n　もう一度生成してください。\n";
 }
 
@@ -786,6 +786,27 @@ switch (seasonRank) {
 	break;
 }
 
+//エラーチェック
+/*
+switch (seasonRank){
+	
+	case "F":
+	switch (rank){
+		case "S1":
+		case "S2":
+		case "S3":
+		case "S4":
+		case "S5":
+		case "S6":
+		case "S7":
+		case "S8":
+		case "S9":
+		errorMsg += "・\n";
+	}
+	
+	default: 
+}
+*/
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
