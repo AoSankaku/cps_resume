@@ -431,6 +431,7 @@ let errorMsg = "";
 
 //リセット
 ctx.beginPath();
+ctx.textAlign = "left";
 
 //背景描画
 ctx.fillStyle = bgColor;
@@ -1166,6 +1167,7 @@ if ( doingMaintainance == "doing" && dnum == 0 ){
 	ctx.font = "50px 'Noto Sans JP'";
 	ctx.fillText("メンテナンスが終わってから来てね",450,650);
 	ctx.font="150px 'Noto Sans JP'";
+	ctx.fillStyle = "#666666";
 	ctx.fillText("¯\\_(ツ)_/¯",450,330);
 	return;
 }
