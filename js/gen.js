@@ -79,6 +79,23 @@ function detectRole(name){
 
 
 
+function convRank( rankName ){
+	switch( rankName ){
+		case "F":	return -5;
+		case "E":	return -4;
+		case "D":	return -3;
+		case "C":	return -2;
+		case "B":	return -1;
+		case "A":	return 0;
+		default:	return rankName.slice( 1, 2 );
+	}
+}
+
+
+
+
+
+
 //画像をプリロード　                                                                                                                                                                              
 var img = [];
 img[0] = new Image();
@@ -787,26 +804,10 @@ switch (seasonRank) {
 }
 
 //エラーチェック
-/*
-switch (seasonRank){
-	
-	case "F":
-	switch (rank){
-		case "S1":
-		case "S2":
-		case "S3":
-		case "S4":
-		case "S5":
-		case "S6":
-		case "S7":
-		case "S8":
-		case "S9":
-		errorMsg += "・\n";
-	}
-	
-	default: 
+if ( convRank( rank ) < convRank( seasonRank ) ){
+	errorMsg += "・シーズンランクが最高ランクを上回っています。\n";
 }
-*/
+
 
 //金銀銅大会アイコンの所持数を表示
 //先にエラーチェック
