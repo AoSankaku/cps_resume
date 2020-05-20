@@ -1145,6 +1145,8 @@ if ( !errorMsg == "" ){
 var dnum = 0;
 if ( doingMaintainance == "doing" && dnum == 0 ){
 	alert( 'メンテナンス中は履歴書を生成することができません。\nしばらく待ってから再度アクセスしてください。' );
+	ctx.fillStyle = "#000000";
+	ctx.fillRect( 0, 0, 900, 1300 );
 	return;
 }
 
