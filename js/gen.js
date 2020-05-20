@@ -627,9 +627,9 @@ switch (selectedFont){
 
 
 //フォントがちゃんと読み込まれているのか最終確認
-ctx.font= "40px monospace";
+ctx.font= "20px monospace";
 var defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
-ctx.font = "40px" + userFont;
+ctx.font = "20px" + userFont;
 var userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
 if ( defaultWidth == userWidth || userFont !== "monospace" ){
 	errorMsg += "・フォントが正常に読み込まれなかった可能性があります。\n　もう一度生成してください。\n";
@@ -1183,13 +1183,13 @@ if ( doingMaintainance == "doing" && dnum == 0 ){
 	ctx.fillRect( 0, 0, 900, 1300 );
 	ctx.font = "80px 'Noto Sans JP'";
 	ctx.textAlign = "center";
-	ctx.fillStyle = "#999999";
-	ctx.fillText("メンテナンス中です",450,550);
+	ctx.fillStyle = "#888888";
+	ctx.fillText("メンテナンス中です",450,600);
 	ctx.font = "50px 'Noto Sans JP'";
-	ctx.fillText("メンテナンスが終わってから来てね",450,650);
+	ctx.fillText("メンテナンスが終わってから来てね",450,700);
 	ctx.font="150px 'Noto Sans JP'";
 	ctx.fillStyle = "#666666";
-	ctx.fillText("¯\\_(ツ)_/¯",450,330);
+	ctx.fillText("¯\\_(ツ)_/¯",450,380);
 	return;
 }
 
