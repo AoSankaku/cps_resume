@@ -545,7 +545,43 @@ if ( navigator.share ) {
 function reloadDesignPreview(){
 	ctx3.fillStyle = document.forms.design.bgColor.value;
 	ctx3.fillRect( 0, 0, can3.width, can3.height );
-	ctx3.lineWidth = "8px";
+	
+	let bgTheme = document.forms.design.bgtheme.value;
+	let bgTrans = document.forms.design.bgTrans.value;
+	
+	//背景描画
+	if ( bgTheme !== "monotone" ){
+		let imgNum = 11;
+		if ( bgTheme == "custom" ){
+			imgNum = 12;
+		}
+		let canX = can3.width;
+		let canY = can3.height;
+		let bgthemeX = img[imgNum].naturalWidth;
+		let bgthemeY = img[imgNum].naturalHeight;
+		let timesX = 0;
+		let timesY = 0;
+		ctx.globalAlpha = bgTrans;
+		
+		//繰り返して描画する
+		while ( canY > timesY * bgthemeY ){
+			
+			//xとyが0の時は抜ける
+			if ( img[imgNum].naturalWidth == 0 || img[imgNum].naturalHeight == 0 ){
+				alert("デザインプレビューウィンドウの背景の描画に失敗しました。");
+				break;
+			}
+			
+			for ( let i = 0, l = canX / bgthemeX; l > i; i++ ){
+				ctx3.drawImage( img[imgNum] , timesX * bgthemeX , timesY * bgthemeY );
+				timesX += 1;
+			}
+			timesY += 1;
+			timesX = 0;
+		}
+	}
+	
+	ctx3.lineWidth = "9px";
 	ctx3.strokeStyle = document.forms.design.defaultColor.value;
 	ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 	ctx3.fillStyle = document.forms.design.fontColor.value;
