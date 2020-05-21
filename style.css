@@ -88,6 +88,25 @@ p{
 }
 
 
+.helpTitle{
+	color:#111111;
+	font-size:4vw;
+	width:100%;
+	max-width:1000px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: bold;
+}
+
+
+.helpText{
+	color:#222222;
+	font-size:3vw;
+	width:100%;
+	max-width:1000px;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+
 span.notify{
 	font-size:3.2vw;
 }
