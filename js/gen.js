@@ -686,7 +686,6 @@ if ( name == "" ){
 ctx.lineWidth = 6;
 ctx.font = "bold 72px" + userFont;
 let nameWidth = ctx.measureText(name).width;
-console.log(nameWidth);
 if ( nameWidth >= 575 ){
 	ctx.font = "bold 50px" + userFont;
 	nameWidth = ctx.measureText(name).width;
