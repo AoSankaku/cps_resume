@@ -581,12 +581,12 @@ function reloadDesignPreview(){
 		}
 	}
 	
-	ctx3.lineWidth = "9px";
+	ctx3.lineWidth = 7;
 	ctx3.strokeStyle = document.forms.design.defaultColor.value;
 	ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 	ctx3.fillStyle = document.forms.design.fontColor.value;
 	ctx3.textAlign = "center";
-	ctx3.font = "36px 'Noto Sans JP'";
+	ctx3.font = "38px 'Noto Sans JP'";
 	ctx3.fillText( "タップして更新", can3.width / 2, 115 );
 }
 
