@@ -171,12 +171,16 @@ img[10].onload = function(){
 }
 
 //キャンバス用に変数宣言
-const can = document.getElementById('result');
-const ctx = can.getContext('2d');
+const can = document.getElementById( 'result' );
+const ctx = can.getContext( '2d' );
 
 //プロフィール画像リサイズ・フォント読み込み用Canvas（HTML非表示）
 const can2 = document.getElementById( 'profilePicResize' );
 const ctx2 = can2.getContext( '2d' );
+
+//デザインプレビューウィンドウ用
+const can3 = document.getElementById( 'designPreview' );
+const ctx3 = can3.getContext( '2d' );
 
 //ダウンロード用
 var base64Result = "";
