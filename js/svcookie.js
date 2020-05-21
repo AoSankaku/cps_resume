@@ -548,6 +548,8 @@ function reloadDesignPreview(){
 	
 	let bgTheme = document.forms.design.bgtheme.value;
 	let bgTrans = document.forms.design.bgTrans.value;
+	let userFont = " 'monospace'";
+	let vError = false;
 	
 	//背景描画
 	if ( bgTheme !== "monotone" ){
@@ -569,6 +571,7 @@ function reloadDesignPreview(){
 			//xとyが0の時は抜ける
 			if ( img[imgNum].naturalWidth == 0 || img[imgNum].naturalHeight == 0 ){
 				alert("デザインプレビューウィンドウの背景の描画に失敗しました。");
+				vError = true;
 				break;
 			}
 			
@@ -586,8 +589,30 @@ function reloadDesignPreview(){
 	ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 	ctx3.fillStyle = document.forms.design.fontColor.value;
 	ctx3.textAlign = "center";
+	
+	//新処理(フォントの選択肢名を読み込んでそのフォントを描画する)
+	let fontEle = document.forms.design.font;
+	if ( fontEle[fontEle.selectedIndex].text !== "端末依存" ){
+		userFont = " '" + fontEle[fontEle.selectedIndex].text + "'";
+	} else {
+		userFont = " 'monospace'"
+	}
+	
+	ctx3.font= "20px 'monospace'";
+	let defaultWidth = ctx3.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+	ctx3.font = "20px" + userFont;
+	let userWidth = ctx3.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+	if ( defaultWidth == userWidth && userFont !== " 'monospace'" ){
+		alert("デザインプレビューウィンドウのフォントが正常に読み込まれなかった可能性があります。");
+		vError = true;
+	}
+	
 	ctx3.font = "38px 'Noto Sans JP'";
-	ctx3.fillText( "タップして更新", can3.width / 2, 115 );
+	if ( !vError ){
+		ctx3.fillText( "タップして更新", can3.width / 2, 115 );
+	} else {
+		ctx3.fillText( "(Error)タップして更新", can3.width / 2, 115 );
+	}
 }
 
 
