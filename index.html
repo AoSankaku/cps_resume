@@ -524,13 +524,15 @@
   var modalBoolean = true;
   var openModal = [];
   let i = 0;
-  /*while ( modalBoolean ){
-    if ( !openModal.push( document.getElementById( 'openModal' + i ) ) ) {
+  while ( modalBoolean ){
+    if ( document.getElementById( 'openModal' + i ) ) {
+      openModal.push( document.getElementById( 'openModal' + i ) )
+    } else {
       modalBoolean = false;
     }
     i++;
   }
-  */
+  
 
 //ここまで
 
