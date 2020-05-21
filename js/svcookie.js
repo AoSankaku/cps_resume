@@ -607,7 +607,7 @@ function reloadDesignPreview(){
 		vError = true;
 	}
 	
-	ctx3.font = "38px 'Noto Sans JP'";
+	ctx3.font = "38px" + userFont;
 	if ( !vError ){
 		ctx3.fillText( "タップして更新", can3.width / 2, 115 );
 	} else {
