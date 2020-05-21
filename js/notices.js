@@ -6,7 +6,7 @@
 var doingMaintainance = "doing";
 
 var maintainanceStart = "5月20日 15:00";
-var maintainanceEnd = "5月21日 23:00";
+var maintainanceEnd = "5月21日 23:30";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			//+ "・ローディング画面の実装<br>"
