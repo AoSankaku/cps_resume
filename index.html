@@ -540,7 +540,14 @@
 
   const closeModal = document.getElementById('closeModal');
   const modalBg = document.getElementById('modalBg');
-  const toggle = [openModal,closeModal,modalBg];
+  const toggle = [/*openModal,*/closeModal,modalBg];
+  
+  //複数テキスト((ry
+  for( let i = 0, l = openModal.length; l > i; i++ ){
+    toggle.push(openModal[i])
+  }
+  
+  //ここまで
   
   for(let i=0, len=toggle.length ; i<len ; i++){
     toggle[i].addEventListener('click',function(){
