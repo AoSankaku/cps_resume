@@ -190,7 +190,7 @@ ctx3.strokeStyle = "#222222";
 ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 ctx3.fillStyle = "#000000";
 ctx3.textAlign = "center";
-ctx3.font = "40px 'Noto Sans JP'";
+ctx3.font = "36px 'Noto Sans JP'";
 ctx3.fillText( "タップしてデザインをプレビュー", can3.width / 2, 115 );
 
 
