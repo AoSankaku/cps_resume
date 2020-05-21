@@ -185,7 +185,7 @@ const ctx3 = can3.getContext( '2d' );
 
 ctx3.fillStyle = "#cdcdcd";
 ctx3.fillRect( 0, 0, can3.width, can3.height );
-ctx3.lineWidth = "8px";
+ctx3.lineWidth = "12px";
 ctx3.strokeStyle = "#222222";
 ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 ctx3.fillStyle = "#000000";
