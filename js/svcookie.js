@@ -166,7 +166,7 @@ function onChangeForms(){
 	}
 	
 	
-	//最高ランクがA以下の場合はシーズンランクを無効にする処理
+	//ついでに最高ランクがA以下の場合はシーズンランクを無効にする処理
 	switch ( document.forms.info.rank.value ){
 		case "F":
 		case "E":
@@ -536,5 +536,24 @@ if ( navigator.share ) {
 } else {
 	document.getElementById('shareLink').hidden = true;
 }
+
+
+
+
+
+//デザインプレビュー更新
+function reloadDesignPreview(){
+	ctx3.fillStyle = document.forms.design.bgColor.value;
+	ctx3.fillRect( 0, 0, can3.width, can3.height );
+	ctx3.lineWidth = "8px";
+	ctx3.strokeStyle = document.forms.design.defaultColor.value;
+	ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
+	ctx3.fillStyle = document.forms.design.fontColor.value;
+	ctx3.textAlign = "center";
+	ctx3.font = "36px 'Noto Sans JP'";
+	ctx3.fillText( "タップして更新", can3.width / 2, 115 );
+}
+
+
 
 
