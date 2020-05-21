@@ -56,7 +56,7 @@
 <dd><input type="text" id="read" onChange="onChangeForms();"></dd>
 <dt>HN <a href="javascript:changeModal('HN','ハンドルネームを入力してください。ある程度の文字数を超えると自動で文字が小さくなります。');" id="openModal2"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="name" onChange="onChangeForms();"></dd>
-<dt>最高デッキレベル <a href="javascript:changeModal('最高デッキレベル','あなたが出すことができる最高のデッキのカードレベルの合計値を入力してください。<br>例：Lv20フルーク、Lv30カノーネ、Lv20イェーガー、Lv30ギアメーカーの場合は20+30+20+30=100<br><br>最高デッキレベルが135などになる場合は130と記入することをお勧めします。');" id="openModal3"><i class="fas fa-question-circle"></i></a></dt>
+<dt>最高デッキレベル <a href="javascript:changeModal('最高デッキレベル','あなたが出すことができる最高のデッキのカードレベルの合計値を入力してください。\n例：Lv20フルーク、Lv30カノーネ、Lv20イェーガー、Lv30ギアメーカーの場合は20+30+20+30=100\n\n最高デッキレベルが135などになる場合は130と記入することをお勧めします。');" id="openModal3"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="dl" onChange="onChangeForms();">
 	<option value="10">10</option>
@@ -136,7 +136,7 @@
 <dd><input type="number" id="gold" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
 <dt>大会優勝アイコン</dt>
 <dd><input type="number" id="tournament" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>バトアリ使用キャラ <a href="javascript:changeModal('バトアリ使用キャラ','バトルアリーナで使用できるキャラを選択してください。<br>※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal6"><i class="fas fa-question-circle"></i></a></dt>
+<dt>バト使用キャラ <a href="javascript:changeModal('バト使用キャラ','バトルアリーナ等デッキレベルが反映されるルールで使用できるキャラを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal6"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="heroB" multiple onChange="onChangeForms();" height="200">
 	<optgroup id="attacker" label="アタッカー">
@@ -197,7 +197,7 @@
 	</optgroup>
 	</select>
 </dd>
-<dt>フリバ&練習キャラ <a href="javascript:changeModal('フリバ＆練習キャラ','バトルアリーナで使用しておらず、フリーバトルや2on2、大合戦などデッキレベルが関係ないルールでのみ使用しているキャラクターを選択してください。<br>※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal7"><i class="fas fa-question-circle"></i></a></dt>
+<dt>フリバ&練習キャラ <a href="javascript:changeModal('フリバ＆練習キャラ','バトルアリーナで使用しておらず、フリーバトルや2on2、大合戦などデッキレベルが関係ないルールでのみ使用しているキャラクターを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal7"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="heroF" multiple onChange="onChangeForms();" height="200">
 	<optgroup id="attacker" label="アタッカー">
@@ -258,19 +258,19 @@
 	</optgroup>
 	</select>
 </dd>
-<dt>Twitter ID <a href="javascript:changeModal('Twitter ID','TwitterのID(@Twitter等)を入力してください。<br>Twitterを利用していない場合、空欄にすると自動で省略されます。');" id="openModal8"><i class="fas fa-question-circle"></i></a></dt>
+<dt>Twitter ID <a href="javascript:changeModal('Twitter ID','TwitterのID(@Twitter 等)を入力してください。\nTwitterを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal8"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="tw" value="@" onChange="onChangeForms();"></dd>
-<dt>Discord ID</dt>
+<dt>Discord ID <a href="javascript:changeModal('Twitter ID','Discordの名前とID(ユーザー#1234 等)を入力してください。\nDiscordを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal9"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="dc" placeholder="Example#7777" onChange="onChangeForms();"></dd>
-<dt>Skype ID</dt>
+<dt>Skype ID <a href="javascript:changeModal('Skype ID','SkypeのID(user1234 等)を入力してください。\nSkypeを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal10"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="sp" placeholder="6文字以上で入力" onChange="onChangeForms();"></dd>
-<dt>フレンドコード</dt>
+<dt>フレンドコード <a href="javascript:changeModal('フレンドコード','#コンパスアプリ→ホーム→コミュニティ→友達を招待する のところに書かれている10桁のフレンドコードを入力してください。\nこのコードを入力した人とは、フォロー上限を超えて相互フォローになることができます。\n公開したくない場合、空欄にすると自動で省略されます。');" id="openModal11"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="number" id="fc" placeholder="1234567890" onChange="onChangeForms();"></dd>
-<dt>所属ギルド</dt>
+<dt>所属ギルド <a href="javascript:changeModal('所属ギルド','所属しているギルドを入力してください。\nギルド募集などのステータス（1枠募集 等）も記入できます。\n公開したくない場合、空欄にすると自動で省略されます。');" id="openModal12"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="guild" placeholder="所属ギルドを自由に入力" onChange="onChangeForms();"></dd>
 <!--一言コメントの行数は連絡先の入力状況により変化させる-->
 <div id="rows">
-<dt>一言コメント</dt>
+<dt>一言コメント <a href="javascript:changeModal('一言コメント','自由にコメントを記入することができます。HTML記法などを使用した装飾をすることはできません。\n空欄にすると自動で省略されます。');" id="openModal13"><i class="fas fa-question-circle"></i></a></dt>
 </div>
 <dd><textarea id="comment" placeholder="推しキャラ、好きなカード、立ち回り、プレイ歴などご自由にお書きください" onChange="onChangeForms();"></textarea></dd>
 </dl>
