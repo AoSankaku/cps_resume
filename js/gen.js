@@ -185,12 +185,12 @@ const ctx3 = can3.getContext( '2d' );
 
 ctx3.fillStyle = "#cdcdcd";
 ctx3.fillRect( 0, 0, can3.width, can3.height );
-ctx3.lineWidth = "12px";
+ctx3.lineWidth = 7;
 ctx3.strokeStyle = "#222222";
 ctx3.strokeRect( 15, 15, can3.width - 30, can3.height - 30 );
 ctx3.fillStyle = "#000000";
 ctx3.textAlign = "center";
-ctx3.font = "36px 'Noto Sans JP'";
+ctx3.font = "38px 'Noto Sans JP'";
 ctx3.fillText( "タップしてデザインをプレビュー", can3.width / 2, 115 );
 
 
