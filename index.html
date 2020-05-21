@@ -52,11 +52,11 @@
 <h2><i class="fas fa-user-edit"></i> 情報記入欄</h2>
 <form id="info">
 <dl>
-<dt>よみがな <a href="javascript:changeModal('よみがな','ハンドルネームのよみを入力してください。');" id="openModal1"><i class="fas fa-question-circle"></i></a></dt>
+<dt>よみがな <a href="javascript:changeModal('よみがな','ハンドルネームのよみを入力してください。ひらがな、カタカナのみにするのをお勧めします。');" id="openModal1"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="read" onChange="onChangeForms();"></dd>
 <dt>HN <a href="javascript:changeModal('HN','ハンドルネームを入力してください。ある程度の文字数を超えると自動で文字が小さくなります。');" id="openModal2"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="name" onChange="onChangeForms();"></dd>
-<dt>最高デッキレベル</dt>
+<dt>最高デッキレベル <a href="javascript:changeModal('最高デッキレベル','あなたが出すことができる最高のデッキのカードレベルの合計値を入力してください。<br>例：Lv20フルーク、Lv30カノーネ、Lv20イェーガー、Lv30ギアメーカーの場合は20+30+20+30=100<br><br>最高デッキレベルが135などになる場合は130と記入することをお勧めします。');" id="openModal3"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="dl" onChange="onChangeForms();">
 	<option value="10">10</option>
@@ -85,7 +85,7 @@
 	<option value="240">240</option>
 	</select >
 </dd>
-<dt>最高ランク</dt>
+<dt>最高ランク <a href="javascript:changeModal('最高ランク','これまでに到達した最高のランクを記入してください。（エンジョイ期間含む）');" id="openModal4"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="rank" onChange="onChangeForms();">
 	<optgroup label="F-Aランク">
@@ -109,7 +109,7 @@
 	</optgroup>
 	</select>
 </dd>
-<dt>シーズンランク</dt>
+<dt>シーズンランク <a href="javascript:changeModal('シーズンランク','これまでに到達した最高のシーズンランクを記入してください。');" id="openModal5"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="seasonRank" disabled="disabled" onChange="onChangeForms();">
 	<optgroup label="Aランク以下">
@@ -136,7 +136,7 @@
 <dd><input type="number" id="gold" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
 <dt>大会優勝アイコン</dt>
 <dd><input type="number" id="tournament" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>バトアリ使用キャラ</dt>
+<dt>バトアリ使用キャラ <a href="javascript:changeModal('バトアリ使用キャラ','バトルアリーナで使用できるキャラを選択してください。<br>※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal6"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="heroB" multiple onChange="onChangeForms();" height="200">
 	<optgroup id="attacker" label="アタッカー">
@@ -197,7 +197,7 @@
 	</optgroup>
 	</select>
 </dd>
-<dt>フリバト&練習キャラ</dt>
+<dt>フリバ&練習キャラ <a href="javascript:changeModal('フリバ＆練習キャラ','バトルアリーナで使用しておらず、フリーバトルや2on2、大合戦などデッキレベルが関係ないルールでのみ使用しているキャラクターを選択してください。<br>※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal7"><i class="fas fa-question-circle"></i></a></dt>
 <dd>
 	<select id="heroF" multiple onChange="onChangeForms();" height="200">
 	<optgroup id="attacker" label="アタッカー">
@@ -258,7 +258,7 @@
 	</optgroup>
 	</select>
 </dd>
-<dt>Twitter ID</dt>
+<dt>Twitter ID <a href="javascript:changeModal('Twitter ID','TwitterのID(@Twitter等)を入力してください。<br>Twitterを利用していない場合、空欄にすると自動で省略されます。');" id="openModal8"><i class="fas fa-question-circle"></i></a></dt>
 <dd><input type="text" id="tw" value="@" onChange="onChangeForms();"></dd>
 <dt>Discord ID</dt>
 <dd><input type="text" id="dc" placeholder="Example#7777" onChange="onChangeForms();"></dd>
