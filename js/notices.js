@@ -3,17 +3,17 @@
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "none";
+var doingMaintainance = "planned";
 
-var maintainanceStart = "5月20日 15:00";
-var maintainanceEnd = "5月21日 23:30";
+var maintainanceStart = "6月28日 22:00";
+var maintainanceEnd = "6月29日 01:00";
 
 var updateContents 	= "【アップデート内容（予定）】<br>"
 			//+ "・ローディング画面の実装<br>"
-			//+ "・ランクの数字の外枠が文字より先に描画されてしまう問題を修正<br>"
+			+ "・ランクの数字の外枠が文字より先に描画されてしまう問題を修正<br>"
 			//+ "・ページ読み込み速度の改善<br>"
 			//+ "・ミニキャラ表示機能追加（ベータ）<br>"
-			//+ "・デザインコードを実装<br>"
+			+ "・デザインコード機能の実装<br>"
 			+ "";
 
 
