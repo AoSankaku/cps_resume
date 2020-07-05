@@ -719,7 +719,7 @@ ctx.fillText(dl, 119, 380 );
 
 //ランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 83px 'Heebo'";
+ctx.font = "77px 'Heebo'";
 //ランクによってグラデーションを変化
 let grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
@@ -754,7 +754,7 @@ switch (rank) {
 	grad.addColorStop(1,'#ee82ee');
 	break;
 }
-ctx.lineWidth = 4;
+ctx.lineWidth = 7;
 ctx.strokeStyle = fontColor;
 ctx.strokeText( rank, 278, 384 );
 ctx.strokeStyle = "#000000";
@@ -764,11 +764,11 @@ ctx.fillStyle = "#000000";
 
 //続けてシーズンランクを描画
 ctx.lineWidth = 9;
-ctx.font = "bold 83px 'Heebo'";
+ctx.font = "77px 'Heebo'";
 
 //先に関数として宣言
 function drawSeasonRank(){
-	ctx.lineWidth = 4;
+	ctx.lineWidth = 7;
 	ctx.strokeStyle = fontColor;
 	ctx.strokeText( seasonRank, 405, 384 );
 	ctx.strokeStyle = "#000000";
