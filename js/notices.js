@@ -3,7 +3,7 @@
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "doing";
+var doingMaintainance = "none";
 
 var maintainanceStart = "7月5日 22:00";
 var maintainanceEnd = "7月6日 01:00";
