@@ -1300,9 +1300,15 @@ function readDC(){
 		document.forms.design.defaultColor.value = "#" + dCode[3];
 		document.forms.design.fontColor.value = "#" + dCode[4];
 		document.forms.design.font.value = dCode[5];
+		if ( document.forms.design.bgtheme.value !== "monotone" && document.forms.design.bgtheme.value !== "custom" ){
+			img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
+		}
 		alert( 'デザインコードの内容を正常に反映しました。' );
+		
 	} catch( e ){
+		
 		alert( '不明なエラーが発生しました。デザインコードが破損している可能性があります。' );
+		
 	}
 }
 
