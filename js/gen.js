@@ -1,5 +1,5 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.3";
+var version = "v1.0.4";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 //デバッグ用
@@ -1211,7 +1211,16 @@ if ( doingMaintainance == "doing" && dnum == 0 ){
 	ctx.fillText("メンテナンスが終わってから来てね",450,700);
 	ctx.font="150px 'Noto Sans JP'";
 	ctx.fillStyle = "#666666";
-	ctx.fillText("¯\\_(ツ)_/¯",450,380);
+	//履歴書生成エラーの顔文字をランダムで決定する
+	function kaomoji4Error(){
+		switch( Math.floor(Math.random() * Math.floor(4)) ){
+			case 0:	return "￣\\_(ツ)_/￣"; break;
+			case 1:	return "(ﾟｰﾟ*?)"; break;
+			case 2:	return "（　´_ゝ`）"; break;
+			default:	return "（´-`）"; break;
+		}
+	}
+	ctx.fillText( kaomoji4Error() ,450,380);
 	return;
 }
 
