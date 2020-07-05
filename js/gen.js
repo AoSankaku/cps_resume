@@ -1276,3 +1276,36 @@ function downloadResultImg(){
 
 
 
+//デザインコードの処理は独立しているのでここに記載
+function cnvD2B(){
+	alert('デザインの設定をデザインコードとして出力しました。');
+	document.forms.designCodeForm.designCode.value = btoa( document.forms.design.bgtheme.value + ","
+	+ document.forms.design.bgTrans.value + ","
+	+ document.forms.design.bgColor.value.slice( 1 ) + ","
+	+ document.forms.design.defaultColor.value.slice( 1 ) + ","
+	+ document.forms.design.fontColor.value.slice( 1 ) + ","
+	+ document.forms.design.font.value );
+}
+
+function readDC(){
+	try{
+		var dCode = document.forms.designCodeForm.designCode.value;
+		dCode = atob( dCode ).split( "," );
+		if ( dCode == "" ){ return; }
+		if ( dCode.length !== 6 ){ alert( '配列数エラーです。デザインコードが破損している可能性があります。' ); return; }
+		document.forms.design.bgtheme.value = dCode[0];
+		document.forms.design.bgTrans.value = dCode[1];
+		if ( dCode[2].length !== 6 || dCode[3].length !== 6 || dCode[4].length !== 6 ){ alert('カラーコードエラーです。デザインコードが破損している可能性があります。'); return; }
+		document.forms.design.bgColor.value = "#" + dCode[2];
+		document.forms.design.defaultColor.value = "#" + dCode[3];
+		document.forms.design.fontColor.value = "#" + dCode[4];
+		document.forms.design.font.value = dCode[5];
+		alert( 'デザインコードの内容を正常に反映しました。' );
+	} catch( e ){
+		alert( '不明なエラーが発生しました。デザインコードが破損している可能性があります。' );
+	}
+}
+
+
+
+
