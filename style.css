@@ -378,3 +378,63 @@ p.footer{
   opacity : 1;
 }
 /* モーダルCSSここまで */
+
+
+a.btn-flat {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat span {
+  position: relative;
+  z-index: 1;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: calc(-100% + 10px);
+
+  width: 100%;
+  height: 100%;
+
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+
+  background: #094;
+}
+
+a.btn-flat:after {
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 10px);
+
+  width: 100%;
+  height: 100%;
+
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+
+  background: #094;
+}
+
+a.btn-flat:hover:before {
+  -webkit-transform: translateX(50%) translateY(0);
+  transform: translateX(50%) translateY(0);
+}
+
+a.btn-flat:hover:after {
+  -webkit-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
+}
