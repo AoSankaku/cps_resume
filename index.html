@@ -411,6 +411,12 @@
 </form>
 <div align="center">
 	<a href="javascript:reloadDesignPreview();"><canvas id="designPreview" width="750" height="200"></canvas></a><br>
+	<form id="designCodeForm">
+	<dl>
+	<dt>デザインコード <a href="javascript:changeModal('デザインコード','「デザインコードを出力」を押すとデザインコードがここに出力されます。「デザインコードを反映」を押すとこのテキストエリアに入っているデザインコードが履歴書のデザイン設定に反映されます。デザインコードは例えば【Z3JpZC1tZSwxLjAsODVjZDg3LGZmZmZmZiwwMDAwMDAsbnlh】のようになっていて、プロフィール画像やカスタム背景は含まれていません。他の人のデザインコードを入力することで、デザインをそっくりにすることができます。');" id="openModal23"><i class="fas fa-question-circle"></i></a></dt>
+	<dd><textarea id="designCode" placeholder="デザインコードを入力してください"></textarea></dd>
+	</dl>
+	</form>
 </div>
 </div><br><br><br>
 
@@ -422,7 +428,7 @@
 <div class="container">
 <a href="javascript:saveToCookie();" class="btn-open">入力した内容を端末に保存</a>
 </div>
-<a href="javascript:changeModal('入力した内容を端末に保存','お使いのブラウザのローカルストレージにあなたが記入した内容を保存し、再度このサイトを訪問した時に続きから再開することができます。\n記入した内容はあなたのブラウザに保存され、ほかのブラウザや端末から読みだすことはできません。\nまた、開発者にデータが送信されることはありません。\nこの機能を利用するには、お使いのブラウザのLocal Storageが有効になっている必要があります。');" id="openModal23"><i class="fas fa-question-circle"></i>端末に保存するとは？</a>
+<a href="javascript:changeModal('入力した内容を端末に保存','お使いのブラウザのローカルストレージにあなたが記入した内容を保存し、再度このサイトを訪問した時に続きから再開することができます。\n記入した内容はあなたのブラウザに保存され、ほかのブラウザや端末から読みだすことはできません。\nまた、開発者にデータが送信されることはありません。\nこの機能を利用するには、お使いのブラウザのLocal Storageが有効になっている必要があります。');" id="openModal24"><i class="fas fa-question-circle"></i>端末に保存するとは？</a>
 <p id="saveAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> <a href="https://www.google.com/search?q=javascript+%E6%9C%89%E5%8A%B9%E5%8C%96">JavaScriptが無効</a>です<br>（履歴書の作成・保存は出来ません）</span></p>
 <p id="inputAlert"><span style="font-size:3.2vw; color:black;"><i class="fas fa-question-circle"></i> 生成ボタンを押してください</span></p>
 </div>
