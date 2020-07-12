@@ -541,6 +541,38 @@ if ( navigator.share ) {
 
 
 
+//デザイン共有用
+//初期化
+document.getElementById('tweetDC').hidden = true;
+document.getElementById('shareDC').hidden = true;
+var forShareDC = "";
+
+
+//共有用関数
+function tweetDC(){
+	window.open('https://twitter.com/intent/tweet?text=%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%92+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC+%E3%81%A7%E4%BD%9C%E3%82%8D%E3%81%86%EF%BC%81%0D%0A%28++%E3%83%BB%CF%89%E3%83%BB%29%CF%83+https%3A%2F%2Fbit.ly%2Fcps_rireki%0D%0A%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E6%B0%91%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84%0D%0A%0D%0A%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E3%80%8E' + encodeURI( cnvD2B() ) + '%E3%80%8F', '_blank');
+}
+
+
+function shareDC(){
+	navigator.share({
+		title: '#コンパス履歴書ジェネレーター',
+		text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ デザインコード『' + encodeURI( dnvD2B() ) + '』',
+		url: location.href
+	});
+}
+
+
+//表示の命令があれば表示
+function showDCShare(){
+	document.getElementById('tweetDC').hidden = false;
+	if ( navigator.share ){
+		document.getElementById('shareDC').hidden = false;
+	}
+}
+
+
+
 //デザインプレビュー更新
 function reloadDesignPreview(){
 	ctx3.fillStyle = document.forms.design.bgColor.value;
