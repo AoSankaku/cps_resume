@@ -545,7 +545,6 @@ if ( navigator.share ) {
 //初期化
 document.getElementById('tweetDC').hidden = true;
 document.getElementById('shareDCode').hidden = true;
-var forShareDC = "";
 
 
 //共有用関数
@@ -555,9 +554,10 @@ function tweetDC(){
 
 
 function shareDC(){
+	let forShareDC = '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ デザインコード『' + encodeURI( dnvD2B() ) + '』';
 	navigator.share({
 		title: '#コンパス履歴書ジェネレーター',
-		text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ デザインコード『' + encodeURI( dnvD2B() ) + '』',
+		text: forShareDC,
 		url: location.href
 	});
 }
