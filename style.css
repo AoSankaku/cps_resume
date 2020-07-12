@@ -256,6 +256,40 @@ span.notify{
 }
 
 
+.cbtn{
+    width:250px;
+    height:60px;
+    line-height:60px;
+}
+.cbtn a{
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+    background:#F7DD33;
+    text-align:center;
+    border:4px solid #F7DD33;
+    color:#444444;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    box-shadow:1px 1px 6px 0px #FFFFFF inset;
+    text-shadow:0px 1px 1px #ADADAD ;
+    transition: all 0.5s ease;
+}
+.cbtn a:hover{
+    background:#FFD864;
+    color:#FFFFFF;
+    margin-left:0px;
+    margin-top:0px;
+    border:4px solid #DDDDDD;
+    box-shadow:none;
+}
+
+
+
 div.sys{
 	font-size:16px;
 }
