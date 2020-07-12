@@ -1294,7 +1294,7 @@ function cnvD2B(){
 
 
 
-function readDC( dCode ){
+function readDC( dCode, outer ){
 	
 	try{
 		dCode = atob( dCode ).split( "," );
@@ -1316,7 +1316,7 @@ function readDC( dCode ){
 		
 		//ここまででエラーが一回でも出ればfalseが返される（はず）
 		//出なければtrueが返される
-		alert( 'デザインコードの内容を正常に反映しました。' );
+		if ( outer ){ alert( 'デザインコードの内容を正常に反映しました。' ); }
 		return true;
 		
 	} catch( e ){
@@ -1336,8 +1336,8 @@ document.getElementById( 'cnvD2B' ).onclick = () => document.forms.designCodeFor
 
 document.getElementById( 'readDC' ).onclick = () => {
 	let beforeDC = cnvD2B();
-	if ( !readDC( document.forms.designCodeForm.designCode.value ) ){
-		readDC( beforeDC );
+	if ( !readDC( document.forms.designCodeForm.designCode.value, true ) ){
+		readDC( beforeDC, false );
 	}
 }
 
