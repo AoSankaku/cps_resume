@@ -1,5 +1,5 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.4";
+var version = "v1.0.5";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 //デバッグ用
@@ -1317,6 +1317,10 @@ function readDC(){
 		alert( '不明なエラーが発生しました。デザインコードが破損している可能性があります。' );
 		
 	}
+}
+
+function shareDC(){
+	alert( 'デザインコード共有用のボタンを表示しました。' );
 }
 
 
