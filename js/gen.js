@@ -1297,6 +1297,10 @@ function cnvD2B(){
 function readDC( dCode, outer ){
 	
 	try{
+		if( dCode.indexOf( '『' ) + 1 && dCode.indexOf( '』' ) + 1 ){
+			dCode = dCode.slice( dCode.indexOf( '『' ) + 1, dCode.indexOf( '』' ) );
+			document.forms.designCodeForm.designCode.value = dCode;
+		}
 		dCode = atob( dCode ).split( "," );
 		if ( dCode == "" ){ alert( '正しいデザインコードを入力してください。' ); return false; }
 		if ( dCode.length !== 6 ){ alert( '配列数エラーです。デザインコードが破損している可能性があります。' ); return false; }
