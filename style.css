@@ -260,6 +260,8 @@ span.notify{
     width:250px;
     height:60px;
     line-height:60px;
+    display: inline-block;
+    _display: inline;
 }
 .cbtn a{
     display:block;
