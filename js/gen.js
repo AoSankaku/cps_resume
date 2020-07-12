@@ -1283,7 +1283,7 @@ function downloadResultImg(){
 
 
 //デザインコードの処理は独立しているのでここに記載
-document.getElementById( 'cnvD2B' ).onclick = () => {
+function cnvD2B(){
 	alert('デザインの設定をデザインコードとして出力しました。');
 	let cnvResult = btoa( document.forms.design.bgtheme.value + ","
 			+ document.forms.design.bgTrans.value + ","
@@ -1294,6 +1294,8 @@ document.getElementById( 'cnvD2B' ).onclick = () => {
 	document.forms.designCodeForm.designCode.value = cnvResult;
 	return cnvResult;
 }
+
+document.getElementById( 'cnvD2B' ).onclick = cnvD2B();
 
 document.getElementById( 'readDC' ).onclick = () => {
 	//デザインコードが破損していた時の保険用
