@@ -1342,10 +1342,12 @@ document.getElementById( 'readDC' ).onclick = () => {
 }
 
 document.getElementById( 'shareDC' ).onclick = () => {
+	document.forms.designCodeForm.designCode.value = cnvD2B();
+	//ボタン表示
 	if ( confirm( 'デザインコード共有用のボタンを表示しました。\nクリップボードにコピーしますか？' ) ){
 		document.forms.designCodeForm.designCode.select();
 		document.execCommand( "copy" );
-		alert( 'コピーしました！' )
+		alert( 'コピーしました！' );
 	}
 }
 
