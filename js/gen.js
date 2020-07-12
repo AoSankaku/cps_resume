@@ -511,7 +511,10 @@ ctx.strokeStyle = defaultColor;
 ctx.font = "32px 'Noto Sans JP'";
 ctx.lineWidth = 3;
 ctx.strokeText("#コンパス履歴書ジェネレーター " + version , 15, 46 );
-ctx.fillStyle = "#ffa500";
+grad = ctx.createLinearGradient(0,14,0,46);
+grad.addColorStop(0,'#fcea98');
+grad.addColorStop(1,'#f7c717');
+ctx.fillStyle = grad;
 ctx.fillText("#コンパス履歴書ジェネレーター " + version , 15, 46 );
 
 //外枠描画
