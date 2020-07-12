@@ -455,6 +455,9 @@ let fontColor = document.forms.design.fontColor.value;
 let selectedFont = document.forms.design.font.value;
 let userFont = " 'monospace'";
 
+//グラデーション用
+let grad = ctx.createLinearGradient(0,335,0,380);
+
 //フォームに不備があったときのエラーメッセージ用
 let errorMsg = "";
 
@@ -721,7 +724,7 @@ ctx.fillText(dl, 119, 380 );
 ctx.lineWidth = 9;
 ctx.font = "77px 'Heebo'";
 //ランクによってグラデーションを変化
-let grad = ctx.createLinearGradient(0,335,0,380);
+grad = ctx.createLinearGradient(0,335,0,380);
 switch (rank) {
 	case "F":
 	case "E":
@@ -1304,6 +1307,7 @@ function readDC(){
 			img[11].src = "img/bg/" + document.forms.design.bgtheme.value + ".png";
 		}
 		alert( 'デザインコードの内容を正常に反映しました。' );
+		onChangeForms();
 		
 	} catch( e ){
 		
