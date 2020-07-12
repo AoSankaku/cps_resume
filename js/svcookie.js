@@ -554,10 +554,9 @@ function tweetDC(){
 
 
 function shareDC(){
-	let forShareDC = '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ デザインコード『' + encodeURI( dnvD2B() ) + '』';
 	navigator.share({
 		title: '#コンパス履歴書ジェネレーター',
-		text: forShareDC,
+		text: '#コンパス履歴書ジェネレーター で #コンパス履歴書 を3分で作ろう！Σd(・ω・ ) #コンパス #コンパス履歴書テンプレ デザインコード『' + encodeURI( cnvD2B() ) + '』',
 		url: location.href
 	});
 }
