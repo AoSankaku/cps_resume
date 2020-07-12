@@ -262,6 +262,7 @@ span.notify{
     line-height:60px;
     display: inline-block;
     _display: inline;
+    margin:10px;
 }
 .cbtn a{
     display:block;
