@@ -544,7 +544,7 @@ if ( navigator.share ) {
 //デザイン共有用
 //初期化
 document.getElementById('tweetDC').hidden = true;
-document.getElementById('shareDC').hidden = true;
+document.getElementById('shareDCode').hidden = true;
 var forShareDC = "";
 
 
@@ -567,7 +567,7 @@ function shareDC(){
 function showDCShare(){
 	document.getElementById('tweetDC').hidden = false;
 	if ( navigator.share ){
-		document.getElementById('shareDC').hidden = false;
+		document.getElementById('shareDCode').hidden = false;
 	}
 }
 
