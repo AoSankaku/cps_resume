@@ -27,6 +27,7 @@ function detectRole(name){
 		case "デルミン":
 		case "セイバーオルタ":
 		case "ルルカ":
+		case "アイズ":
 		return "attacker";	break;
 		
 		//ガンナー
