@@ -155,6 +155,7 @@
 	<option value="セイバーオルタ">セイバーオルタ</option>
 	<option value="ルルカ">ルルカ</option>
 	<option value="アイズ">アイズ・ヴァレンシュタイン</option>
+	<option value="甘色">狐ヶ咲 甘色</option>
 	</optgroup>
 	<optgroup id="gunner" label="ガンナー">
 	<option value="リリカ">リリカ</option>
@@ -217,6 +218,7 @@
 	<option value="セイバーオルタ">セイバーオルタ</option>
 	<option value="ルルカ">ルルカ</option>
 	<option value="アイズ">アイズ・ヴァレンシュタイン</option>
+	<option value="甘色">狐ヶ咲 甘色</option>
 	</optgroup>
 	<optgroup id="gunner" label="ガンナー">
 	<option value="リリカ">リリカ</option>
@@ -412,7 +414,7 @@
 </dl>
 </form>
 <div align="center">
-	<a href="javascript:reloadDesignPreview();"><canvas id="designPreview" width="750" height="200"></canvas></a><br>
+	<a href="javascript:reloadDesignPreview();"><canvas id="designPreview" width="750" height="200" title="デザインプレビュー"></canvas></a><br>
 </div>
 	<form id="designCodeForm">
 	<dl>
@@ -450,7 +452,7 @@
 <div align="center">
 <h2 class="pv"><i class="far fa-id-card"></i> 履歴書プレビュー</h2>
 <p id="preview"></p>
-<a href="javascript:downloadResultImg();" id="downloadResult"><canvas id="result" width="900" height="1300"></canvas>
+<a href="javascript:downloadResultImg();" id="downloadResult"><canvas id="result" width="900" height="1300" title="クリック、タップでダウンロード"></canvas>
 <img id="cps_resume_result"></a>
 <br>
 <p><a href="javascript:downloadResultImg();" id="downloadResult2"><i class="fas fa-download"></i> 画像を長押しor右クリックで<br>ダウンロードできます</a><br></p>
@@ -593,10 +595,12 @@ function changeModal( title, text ){
 </div>
 <br>
 <!--フッター-->
-<footer align="center">
-	<p class="footer">#コンパス履歴書ジェネレーター　　Created by <a href="https://twitter.com/Ao_Sankaku">@Ao_Sankaku</a><br>
-	<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform">お問い合わせ・不具合報告</a>　　<a href="https://github.com/AoSankaku/cps_resume/blob/master/README.md">変更履歴</a><br>
-	</p>
+<footer>
+	<div align="center">
+		<p class="footer">#コンパス履歴書ジェネレーター　　Created by <a href="https://twitter.com/Ao_Sankaku">@Ao_Sankaku</a><br>
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform">お問い合わせ・不具合報告</a>　　<a href="https://github.com/AoSankaku/cps_resume/blob/master/README.md">変更履歴</a><br>
+		</p>
+	</div>
 </footer>
 
 </body>
