@@ -29,6 +29,7 @@ function detectRole(name){
 		case "ルルカ":
 		case "アイズ":
 		case "甘色":
+		case "ノクト":
 		return "attacker";	break;
 		
 		//ガンナー
