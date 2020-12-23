@@ -1,5 +1,5 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.8";
+var version = "v1.0.9";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 //デバッグ用
@@ -46,6 +46,8 @@ function detectRole(name){
 		case "猫宮":
 		case "オカリン":
 		case "ギルガメッシュ":
+		case "ニーズヘッグ":
+		case "芥川龍之介":
 		return "gunner";	break;
 
 		//スプリンター
@@ -61,6 +63,7 @@ function detectRole(name){
 		case "アクア":
 		case "零夜":
 		case "ピエール":
+		case "中島敦":
 		return "sprinter";	break;
 
 		//タンク
