@@ -48,6 +48,7 @@ function detectRole(name){
 		case "ギルガメッシュ":
 		case "ニーズヘッグ":
 		case "芥川龍之介":
+		case "GBG":
 		return "gunner";	break;
 
 		//スプリンター
@@ -76,6 +77,7 @@ function detectRole(name){
 		case "めぐみん":
 		case "トマス":
 		case "忠信":
+		case "ライザ":
 		return "tank";	break;
 
 	}
