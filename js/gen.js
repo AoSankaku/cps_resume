@@ -1280,11 +1280,24 @@ dlLink2.download = "cps_rireki_"+ year + month + today + hours + minutes + ".jpe
 
 
 
+
+
+
 function downloadResultImg(){
 
 	alert('ダウンロードする前に一度生成する必要があります。');
 
 }
+
+
+
+
+
+//履歴書の右クリック禁止（保存と置き換える）
+document.getElementById("downloadResult").addEventListener('contextmenu', function(e) { 
+  e.preventDefault();
+  downloadResultImg();
+}, false);
 
 
 
