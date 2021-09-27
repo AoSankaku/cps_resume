@@ -30,6 +30,7 @@ function detectRole(name){
 		case "アイズ":
 		case "甘色":
 		case "ノクト":
+		case "イグニス":
 		return "attacker";	break;
 		
 		//ガンナー
@@ -49,6 +50,7 @@ function detectRole(name){
 		case "ニーズヘッグ":
 		case "芥川龍之介":
 		case "GBG":
+		case "アインズ":
 		return "gunner";	break;
 
 		//スプリンター
@@ -65,6 +67,7 @@ function detectRole(name){
 		case "零夜":
 		case "ピエール":
 		case "中島敦":
+		case "ジョーカー":
 		return "sprinter";	break;
 
 		//タンク
@@ -78,6 +81,7 @@ function detectRole(name){
 		case "トマス":
 		case "忠信":
 		case "ライザ":
+		case "アリス":
 		return "tank";	break;
 
 	}
