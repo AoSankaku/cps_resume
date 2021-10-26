@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-156957607-1"></script>
 	<script defer>
-  	window.dataLayer = window.dataLayer || [];
-  	function gtag(){dataLayer.push(arguments);}
-  	gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  	gtag('config', 'UA-156957607-1');
+		gtag('config', 'UA-156957607-1');
 	</script>
 	<script src="js/loading.js"></script>
 
 	<meta charset="UTF-8">
-	<meta name="keywords" content="コンパス,コンパス履歴書,#コンパス,#コンパス履歴書,ジェネレーター,履歴書,コンパス履歴書メーカー,メーカー,テンプレート,テンプレ,作成,ツール,コンパス履歴書作成,コンパス 履歴書,履歴書メーカー">
+	<meta name="keywords"
+		content="コンパス,コンパス履歴書,#コンパス,#コンパス履歴書,ジェネレーター,履歴書,コンパス履歴書メーカー,メーカー,テンプレート,テンプレ,作成,ツール,コンパス履歴書作成,コンパス 履歴書,履歴書メーカー">
 	<meta name="description" content="コンパス履歴書を3分で作ろう！Σd(・ω・ ) 「簡単に短時間で楽に書き直せるコンパス履歴書を作りたい！」そんな想いで作られたツールです。">
 	<meta name="format-detection" content="email=no,telephone=no,address=no">
 	<meta name="theme-color" content="#82d5ff">
@@ -32,596 +34,663 @@
 
 <body>
 
-<div align="center">
-<h1 id="titleColor">#コンパス履歴書作成<br>(<span id="title">v1.X.X</span>)</h1>
-<p>コンパス履歴書をWebだけで作成できます<br>※スマホ・タブレットからの操作を推奨します<br>※IEとEdgeは非対応です<br></p>
-</div>
-<div class="errorbox" id="maintainanceError"></div>
-<div class="warningbox" id="maintainanceWarning"></div>
-
-<!--スクリプトが読めない時用-->
-<noscript>
-	<div class="warningbox">
-	<div class="box-title"><i class="fas fa-exclamation-triangle"></i> JavaScriptが無効です</div>
-	<p>履歴書ジェネレーターはJavaScriptが有効になっていないと動作しません。<br>お使いのブラウザのJavaScriptを有効にして再度アクセスしてください。</p>
-	</div>
-</noscript>
-
-<!--スクリプトが無効なら入力画面を隠す-->
-<div class="form" id="form1" hidden>
-<h2><i class="fas fa-user-edit"></i> 情報記入欄</h2>
-<form id="info">
-<dl>
-<dt>よみがな <a href="javascript:changeModal('よみがな','ハンドルネームのよみを入力してください。ひらがな、カタカナのみにするのをお勧めします。');" id="openModal1"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="read" onChange="onChangeForms();"></dd>
-<dt>HN <a href="javascript:changeModal('HN','ハンドルネームを入力してください。ある程度の文字数を超えると自動で文字が小さくなります。');" id="openModal2"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="name" onChange="onChangeForms();"></dd>
-<dt>最高デッキレベル <a href="javascript:changeModal('最高デッキレベル','あなたが出すことができる最高のデッキのカードレベルの合計値を入力してください。\n例：Lv20フルーク、Lv30カノーネ、Lv20イェーガー、Lv30ギアメーカーの場合は20+30+20+30=100\n\n最高デッキレベルが135などになる場合は130と記入することをお勧めします。');" id="openModal3"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="dl" onChange="onChangeForms();">
-	<option value="10">10</option>
-	<option value="20">20</option>
-	<option value="30">30</option>
-	<option value="40">40</option>
-	<option value="50">50</option>
-	<option value="60">60</option>
-	<option value="70">70</option>
-	<option value="80" selected>80</option>
-	<option value="90">90</option>
-	<option value="100">100</option>
-	<option value="110">110</option>
-	<option value="120">120</option>
-	<option value="130">130</option>
-	<option value="140">140</option>
-	<option value="150">150</option>
-	<option value="160">160</option>
-	<option value="170">170</option>
-	<option value="180">180</option>
-	<option value="190">190</option>
-	<option value="200">200</option>
-	<option value="210">210</option>
-	<option value="220">220</option>
-	<option value="230">230</option>
-	<option value="240">240</option>
-	</select >
-</dd>
-<dt>最高ランク <a href="javascript:changeModal('最高ランク','これまでに到達した最高のランクを記入してください。（エンジョイ期間含む）');" id="openModal4"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="rank" onChange="onChangeForms();">
-	<optgroup label="F-Aランク">
-	<option value="F">Fランク</option>
-	<option value="E">Eランク</option>
-	<option value="D">Dランク</option>
-	<option value="C">Cランク</option>
-	<option value="B">Bランク</option>
-	<option value="A">Aランク</option>
-	</optgroup>
-	<optgroup label="S1-S9ランク">
-	<option value="S1">S1ランク</option>
-	<option value="S2">S2ランク</option>
-	<option value="S3">S3ランク</option>
-	<option value="S4">S4ランク</option>
-	<option value="S5">S5ランク</option>
-	<option value="S6">S6ランク</option>
-	<option value="S7">S7ランク</option>
-	<option value="S8">S8ランク</option>
-	<option value="S9">S9ランク</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>シーズンランク <a href="javascript:changeModal('シーズンランク','これまでに到達した最高のシーズンランクを記入してください。');" id="openModal5"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="seasonRank" disabled="disabled" onChange="onChangeForms();">
-	<optgroup label="Aランク以下">
-	<option value="F">不参加</option>
-	</optgroup>
-	<optgroup label="S1-S9ランク">
-	<option value="S1">S1ランク</option>
-	<option value="S2">S2ランク</option>
-	<option value="S3">S3ランク</option>
-	<option value="S4">S4ランク</option>
-	<option value="S5">S5ランク</option>
-	<option value="S6">S6ランク</option>
-	<option value="S7">S7ランク</option>
-	<option value="S8">S8ランク</option>
-	<option value="S9">S9ランク</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>銅アイコン所持数</dt>
-<dd><input type="number" id="bronze" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>銀アイコン所持数</dt>
-<dd><input type="number" id="silver" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>金アイコン所持数</dt>
-<dd><input type="number" id="gold" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>大会優勝アイコン</dt>
-<dd><input type="number" id="tournament" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
-<dt>バト使用キャラ <a href="javascript:changeModal('バト使用キャラ','バトルアリーナ等デッキレベルが反映されるルールで使用できるキャラを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal6"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="heroB" multiple onChange="onChangeForms();" height="200">
-	<optgroup id="attacker" label="アタッカー">
-	<option value="ノホ">双挽 乃保</option>
-	<option value="忠臣">桜華 忠臣</option>
-	<option value="マルコス">マルコス'55</option>
-	<option value="ソル">ソル=バッドガイ</option>
-	<option value="リュウ">リュウ</option>
-	<option value="マリア">マリア=S=レオンブルク</option>
-	<option value="アダム">アダム=ユーリエフ</option>
-	<option value="レム">レム</option>
-	<option value="カイ">カイ=キスク</option>
-	<option value="ポロロッチョ">ヴィーナス ポロロッチョ</option>
-	<option value="リヴァイ">リヴァイ</option>
-	<option value="デルミン">デビルミント鬼龍 デルミン</option>
-	<option value="セイバーオルタ">セイバーオルタ</option>
-	<option value="ルルカ">ルルカ</option>
-	<option value="アイズ">アイズ・ヴァレンシュタイン</option>
-	<option value="甘色">狐ヶ咲 甘色</option>
-	<option value="ノクト">ノクティス</option>
-	<option value="イグニス">イグニス=ウィル=ウィスプ</option>
-	</optgroup>
-	<optgroup id="gunner" label="ガンナー">
-	<option value="リリカ">リリカ</option>
-	<option value="ルチアーノ">ルチアーノ</option>
-	<option value="まとい">深川 まとい</option>
-	<option value="ディズィー">ディズィー</option>
-	<option value="サーティーン">13 サーティーン</option>
-	<option value="エミリア">エミリア</option>
-	<option value="メグメグ">メグメグ</option>
-	<option value="リン">鏡音 リン</option>
-	<option value="イスタカ">イスタカ</option>
-	<option value="ソーン">ソーン=ユーリエフ</option>
-	<option value="猫宮">猫宮 ひなた</option>
-	<option value="オカリン">岡部 倫太郎</option>
-	<option value="ギルガメッシュ">ギルガメッシュ</option>
-	<option value="ニーズヘッグ">ニーズヘッグ</option>
-	<option value="芥川龍之介">芥川龍之介</option>
-	<option value="GBG">ゲームバズーカガール</option>
-	<option value="アインズ">アインズ・ウール・ゴウン</option>
-	</optgroup>
-	<optgroup id="sprinter" label="スプリンター">
-	<option value="アタリ">十文字 アタリ</option>
-	<option value="Voidoll">Voidoll</option>
-	<option value="テスラ">ニコラ テスラ</option>
-	<option value="ミク">初音 ミク</option>
-	<option value="コクリコ">コクリコット ブランシュ</option>
-	<option value="春麗">春麗</option>
-	<option value="勇者">かけだし勇者</option>
-	<option value="ザクレイ">ザック & レイチェル</option>
-	<option value="きらら">輝龍院 きらら</option>
-	<option value="アクア">アクア</option>
-	<option value="零夜">零夜</option>
-	<option value="ピエール">ピエール 77世</option>
-	<option value="中島敦">中島敦</option>
-	<option value="ジョーカー">ジョーカー</option>
-	</optgroup>
-	<optgroup id="tank" label="タンク">
-	<option value="ジャスティス">ジャスティス ハンコック</option>
-	<option value="ジャンヌ">ジャンヌ ダルク</option>
-	<option value="グスタフ">グスタフ ハイドリヒ</option>
-	<option value="ヴィオレッタ">ヴィオレッタ ノワール</option>
-	<option value="レン">鏡音 レン</option>
-	<option value="モノクマ">モノクマ</option>
-	<option value="めぐみん">めぐみん</option>
-	<option value="トマス">トマス</option>
-	<option value="忠信">佐藤四郎兵衛忠信</option>
-	<option value="ライザ">ライザリン・シュタウト</option>
-	<option value="アリス">青春アリス</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>フリバ&練習キャラ <a href="javascript:changeModal('フリバ＆練習キャラ','バトルアリーナで使用しておらず、フリーバトルや2on2、大合戦などデッキレベルが関係ないルールでのみ使用しているキャラクターを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');" id="openModal7"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="heroF" multiple onChange="onChangeForms();" height="200">
-	<optgroup id="attacker" label="アタッカー">
-	<option value="ノホ">双挽 乃保</option>
-	<option value="忠臣">桜華 忠臣</option>
-	<option value="マルコス">マルコス'55</option>
-	<option value="ソル">ソル=バッドガイ</option>
-	<option value="リュウ">リュウ</option>
-	<option value="マリア">マリア=S=レオンブルク</option>
-	<option value="アダム">アダム=ユーリエフ</option>
-	<option value="レム">レム</option>
-	<option value="カイ">カイ=キスク</option>
-	<option value="ポロロッチョ">ヴィーナス ポロロッチョ</option>
-	<option value="リヴァイ">リヴァイ</option>
-	<option value="デルミン">デビルミント鬼龍 デルミン</option>
-	<option value="セイバーオルタ">セイバーオルタ</option>
-	<option value="ルルカ">ルルカ</option>
-	<option value="アイズ">アイズ・ヴァレンシュタイン</option>
-	<option value="甘色">狐ヶ咲 甘色</option>
-	<option value="ノクト">ノクティス</option>
-	<option value="イグニス">イグニス=ウィル=ウィスプ</option>
-	</optgroup>
-	<optgroup id="gunner" label="ガンナー">
-	<option value="リリカ">リリカ</option>
-	<option value="ルチアーノ">ルチアーノ</option>
-	<option value="まとい">深川 まとい</option>
-	<option value="ディズィー">ディズィー</option>
-	<option value="サーティーン">13 サーティーン</option>
-	<option value="エミリア">エミリア</option>
-	<option value="メグメグ">メグメグ</option>
-	<option value="リン">鏡音 リン</option>
-	<option value="イスタカ">イスタカ</option>
-	<option value="ソーン">ソーン=ユーリエフ</option>
-	<option value="猫宮">猫宮 ひなた</option>
-	<option value="オカリン">岡部 倫太郎</option>
-	<option value="ギルガメッシュ">ギルガメッシュ</option>
-	<option value="ニーズヘッグ">ニーズヘッグ</option>
-	<option value="芥川龍之介">芥川龍之介</option>
-	<option value="GBG">ゲームバズーカガール</option>
-	<option value="アインズ">アインズ・ウール・ゴウン</option>
-	</optgroup>
-	<optgroup id="sprinter" label="スプリンター">
-	<option value="アタリ">十文字 アタリ</option>
-	<option value="Voidoll">Voidoll</option>
-	<option value="テスラ">ニコラ テスラ</option>
-	<option value="ミク">初音 ミク</option>
-	<option value="コクリコ">コクリコット ブランシュ</option>
-	<option value="春麗">春麗</option>
-	<option value="勇者">かけだし勇者</option>
-	<option value="ザクレイ">ザック & レイチェル</option>
-	<option value="きらら">輝龍院 きらら</option>
-	<option value="アクア">アクア</option>
-	<option value="零夜">零夜</option>
-	<option value="ピエール">ピエール 77世</option>
-	<option value="中島敦">中島敦</option>
-	<option value="ジョーカー">ジョーカー</option>
-	</optgroup>
-	<optgroup id="tank" label="タンク">
-	<option value="ジャスティス">ジャスティス ハンコック</option>
-	<option value="ジャンヌ">ジャンヌ ダルク</option>
-	<option value="グスタフ">グスタフ ハイドリヒ</option>
-	<option value="ヴィオレッタ">ヴィオレッタ ノワール</option>
-	<option value="レン">鏡音 レン</option>
-	<option value="モノクマ">モノクマ</option>
-	<option value="めぐみん">めぐみん</option>
-	<option value="トマス">トマス</option>
-	<option value="忠信">佐藤四郎兵衛忠信</option>
-	<option value="ライザ">ライザリン・シュタウト</option>
-	<option value="アリス">青春アリス</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>Twitter ID <a href="javascript:changeModal('Twitter ID','TwitterのID(@Twitter 等)を入力してください。\nTwitterを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal8"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="tw" value="@" onChange="onChangeForms();"></dd>
-<dt>Discord ID <a href="javascript:changeModal('Twitter ID','Discordの名前とID(ユーザー#1234 等)を入力してください。\nDiscordを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal9"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="dc" placeholder="Example#7777" onChange="onChangeForms();"></dd>
-<dt>Skype ID <a href="javascript:changeModal('Skype ID','SkypeのID(user1234 等)を入力してください。\nSkypeを利用していない、公開していない場合、空欄にすると自動で省略されます。');" id="openModal10"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="sp" placeholder="6文字以上で入力" onChange="onChangeForms();"></dd>
-<dt>フレンドコード <a href="javascript:changeModal('フレンドコード','#コンパスアプリ→ホーム→コミュニティ→友達を招待する のところに書かれている10桁のフレンドコードを入力してください。\nこのコードを入力した人とは、フォロー上限を超えて相互フォローになることができます。\n公開したくない場合、空欄にすると自動で省略されます。');" id="openModal11"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="number" id="fc" placeholder="1234567890" onChange="onChangeForms();"></dd>
-<dt>所属ギルド <a href="javascript:changeModal('所属ギルド','所属しているギルドを入力してください。\nギルド募集などのステータス（1枠募集 等）も記入できます。\n公開したくない場合、空欄にすると自動で省略されます。');" id="openModal12"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="text" id="guild" placeholder="所属ギルドを自由に入力" onChange="onChangeForms();"></dd>
-<!--一言コメントの行数は連絡先の入力状況により変化させる-->
-<div id="rows">
-<dt>一言コメント <a href="javascript:changeModal('一言コメント','自由にコメントを記入することができます。HTML記法などを使用した装飾をすることはできません。\n空欄にすると自動で省略されます。');" id="openModal13"><i class="fas fa-question-circle"></i></a></dt>
-</div>
-<dd><textarea id="comment" placeholder="推しキャラ、好きなカード、立ち回り、プレイ歴などご自由にお書きください" onChange="onChangeForms();"></textarea></dd>
-</dl>
-</form>
-</div>
-
-<br><br><br>
-
-<div class="form" id="form2" hidden>
-<h2><i class="fas fa-pen-nib"></i> デザイン変更</h2>
-<form id="design">
-<dl>
-<dt>プロフィール画像 <a href="javascript:changeModal('プロフィール画像','履歴書右上にプロフィール画像を設定することができます。\nアップロードされた画像は自動で1:1(167×167)にリサイズされます。\nファイルサイズは5MB以下にしてください。');" id="openModal14"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<div class="file_button">
-	<span id="fileName1"><i class="fas fa-folder-open"></i> （ファイルを選択）</span>
-	<input type="file" accept="image/png,image/jpeg,image/gif" id="profilePic" class="file_input">
-	</div>
-</dd>
-<dt>画像サイズ <a href="javascript:changeModal('画像サイズ','プロフィール画像の拡大率を変更します。\n「表示しない」を選択するとプロフィール画像は表示されなくなります。');" id="openModal15"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="profilePicSize" onchange="onChangeForms();">
-	<option value="10x" selected>等倍</option>
-	<option value="09x">0.9倍</option>
-	<option value="08x">0.8倍</option>
-	<option value="07x">0.7倍</option>
-	<option value="none">表示しない</option>	
-	</select>
-</dd>
-<dt>フォント <a href="javascript:changeModal('フォント','文字の見た目を変更することができます。\n「端末依存」を選択するとあなたのブラウザまたは端末の既定のフォントが使用されます。\nその場合、そのフォントの利用規約やライセンスに違反しない範囲でこのツールを使用してください。');" id="openModal16"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="font" onChange="onChangeForms();">
-	<optgroup label="端末依存">
-		<option value="dep">端末依存</option>
-	</optgroup>
-	<optgroup label="ゴシック体">
-		<option value="nos">Noto Sans JP</option>
-		<option value="mpl">M PLUS 1p</option>
-		<option value="mpr">M PLUS Rounded 1c</option>
-		<option value="srg">Sawarabi Gothic</option>
-		<option value="ksg">Kosugi</option>
-		<option value="ksm">Kosugi Maru</option>
-		<option value="sen">せのびゴシック</option>
-	</optgroup>
-	<optgroup label="明朝体">
-		<option value="nof">Noto Serif JP</option>
-	</optgroup>
-	<optgroup label="手書き">
-		<option value="mkp">851マカポップ</option>
-		<option value="jyc">じゆうちょうフォント</option>
-		<option value="msn">無心フォント</option>
-		<option value="nya">にゃしいフォント改2</option>
-	</optgroup>
-	<optgroup label="その他">
-		<option value="jfd">JF Dot Kaname</option>
-		<option value="cpp">チェックポイント．（ピリオド）</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>文字色 <a href="javascript:changeModal('文字色','あなたが記入した内容の文字の色を変更することができます。\n※一部反映されない項目があります');" id="openModal17"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="color" id="fontColor" value="#000000" onChange="onChangeForms();"></dd>
-<dt>枠線・項目色 <a href="javascript:changeModal('枠線・項目色','枠線や項目の文字の色を変更することができます。');" id="openModal18"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="color" id="defaultColor" value="#000000" onChange="onChangeForms();"></dd>
-<dt>背景模様 <a href="javascript:changeModal('背景模様','背景の模様を選択することができます。\n背景色の上に重なって配置されます（色がついているものもあります。）\n自分で画像をアップロードして背景に設定したい場合は「自分でアップロード」を選択してください。\n小さい画像をアップロードした場合自動で履歴書全体に映るように複数回描画されます。');" id="openModal19"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="bgtheme" onChange="onChangeForms();">
-	<optgroup label="背景なし">
-		<option value="monotone" selected>単色（模様なし）</option>
-	</optgroup>
-	<optgroup label="カスタム">
-		<option value="custom">自分でアップロード</option>
-	</optgroup>
-	<optgroup label="模様">
-	<option value="3px-tile">3px Tile</option>
-	<option value="always-grey">Always Grey</option>
-	<option value="arabesque">Arabesque</option>
-	<option value="argyle">Argyle</option>
-	<option value="az-subtle">Az Subtle</option>
-	<option value="batthern">Batthern</option>
-	<option value="black-thread">Black Thread</option>
-	<option value="cartographer">Cartographer</option>
-	<option value="checkered-pattern">Checkered Pattern</option>
-	<option value="crisp-paper-ruffles">Crisp Paper Ruffles</option>
-	<option value="crissxcross">Crissxcross</option>
-	<option value="cross-stripes">Cross Stripes</option>
-	<option value="diagmonds">Diagmonds</option>
-	<option value="diagmonds-light">Diagmonds Light</option>
-	<option value="diagonal-striped-brick">Diagonal Striped Brick</option>
-	<option value="diamond-upholstery">Diamond Upholstery</option>
-	<option value="gradient-squares">Gradient Squares</option>
-	<option value="graphy-dark">Graphy-Dark</option>
-	<option value="grid-me">Grid Me</option>
-	<option value="inflicted">Inflicted</option>
-	<option value="my-little-plaid-dark">My Little Plaid Dark</option>
-	<option value="nami">Nami</option>
-	<option value="natural-paper">Natural Paper</option>
-	<option value="paven">Paven</option>
-	<option value="random-grey-variations">Random Grey Variations</option>
-	<option value="tileable-wood-colored">Tileable Wood Colored</option>
-	<option value="vaio">Vaio</option>
-	<option value="white-brick-wall">White Brick Wall</option>
-	<option value="white-diamond-dark">White Diamond Dark</option>
-	<option value="white-paperboard">White Paperboard</option>
-	<option value="white-tiles">White Tiles</option>
-	<option value="wild-flowers">Wild Flowers</option>
-	<option value="wood">Wood</option>
-	<option value="wood-pattern">Wood Pattern</option>
-	<option value="zig-zag">Zig Zag</option>
-	</optgroup>
-	</select>
-</dd>
-<dt>背景画像透過度 <a href="javascript:changeModal('背景画像透過度','「背景模様」で設定した画像をどれだけ濃く反映するかを決定します。');" id="openModal20"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<select id="bgTrans" onChange="onChangeForms();">
-	<option value="1.0" selected>0%（透過しない）</option>
-	<option value="0.9">10%</option>
-	<option value="0.8">20%</option>
-	<option value="0.7">30%</option>
-	<option value="0.6">40%</option>
-	<option value="0.5">50%</option>
-	<option value="0.4">60%</option>
-	<option value="0.3">70%</option>
-	<option value="0.2">80%</option>
-	<option value="0.1">90%</option>
-	<option value="0">100%（非表示）</option>
-	</select>
-</dd>
-<dt>履歴書背景画像 <a href="javascript:changeModal('履歴書背景画像','履歴書の背景となる画像をアップロードすることができます。\n横900px縦1300pxの画像をアップロードするとぴったり収まります。\nファイルサイズは5MB以下にしてください。');" id="openModal21"><i class="fas fa-question-circle"></i></a></dt>
-<dd>
-	<div class="file_button">
-	<span id="fileName2"><i class="fas fa-folder-open"></i> （ファイルを選択）</span>
-	<input type="file" accept="image/png,image/jpeg,image/gif" id="bg" class="file_input">
-	</div>	
-</dd>
-<dt>履歴書背景色 <a href="javascript:changeModal('履歴書背景色','履歴書の背景の色を選択することができます。');" id="openModal22"><i class="fas fa-question-circle"></i></a></dt>
-<dd><input type="color" id="bgColor" value="#ffffff" onChange="onChangeForms();"></dd>
-</dl>
-</form>
-<div align="center">
-	<a href="javascript:reloadDesignPreview();"><canvas id="designPreview" width="750" height="200" title="デザインプレビュー"></canvas></a><br>
-</div>
-	<form id="designCodeForm">
-	<dl>
-	<dt>デザインコード <a href="javascript:changeModal('デザインコード','「デザインコードを出力」を押すとデザインコードがここに出力されます。「デザインコードを反映」を押すとこのテキストエリアに入っているデザインコードが履歴書のデザイン設定に反映されます。\nデザインコードにプロフィール画像やカスタム背景は含まれていません。他のデザインコードを入力することで、同じデザインにすることができます。\n『』でデザインコードが囲まれているテキストが入っている場合は自動で抜き出します。');" id="openModal23"><i class="fas fa-question-circle"></i></a></dt>
-	<dd><textarea id="designCode" placeholder="デザインコードを入力してください"></textarea></dd>
-	</dl>
-	</form>
 	<div align="center">
-		<div class='cbtn'><a href="javascript:void(0);" id="cnvD2B">デザインコードを出力</a></div>   <div class='cbtn'><a href="javascript:void(0);" id="readDC">デザインコードを反映</a></div>   <div class='cbtn'><a href="javascript:void(0);" id="shareDC">デザインコードを共有</a></div>
-		<br><a href="https://twitter.com/search?q=%23%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89" target="_blank"><i class="fas fa-paint-brush"></i> #履歴書デザインコード</a>
+		<h1 id="titleColor">#コンパス履歴書作成<br>(<span id="title">v1.X.X</span>)</h1>
+		<p>コンパス履歴書をWebだけで作成できます<br>※スマホ・タブレットからの操作を推奨します<br>※IEとEdgeは非対応です<br></p>
 	</div>
-</div>
-</div><br><br><br>
+	<div class="errorbox" id="maintainanceError"></div>
+	<div class="warningbox" id="maintainanceWarning"></div>
 
-<div class="form" align="center">
-<h2 align="left"><i class="fas fa-save"></i> 出力・保存</h2>
-<div class="container">
-<a href="javascript:preview();" class="btn-open">コンパス履歴書を生成する！</a>
-</div>
-<div class="container">
-<a href="javascript:saveToCookie();" class="btn-open"><i class="far fa-save"></i> 入力した内容を端末に保存</a>
-</div>
-<a href="javascript:changeModal('入力した内容を端末に保存','お使いのブラウザのローカルストレージにあなたが記入した内容を保存し、再度このサイトを訪問した時に続きから再開することができます。\n記入した内容はあなたのブラウザに保存され、ほかのブラウザや端末から読みだすことはできません。\nまた、開発者にデータが送信されることはありません。\nこの機能を利用するには、お使いのブラウザのLocal Storageが有効になっている必要があります。');" id="openModal24"><i class="fas fa-question-circle"></i> 端末に保存するとは？</a>
-<p id="saveAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> <a href="https://www.google.com/search?q=javascript+%E6%9C%89%E5%8A%B9%E5%8C%96">JavaScriptが無効</a>です<br>（履歴書の作成・保存は出来ません）</span></p>
-<p id="inputAlert"><span style="font-size:3.2vw; color:black;"><i class="fas fa-question-circle"></i> 生成ボタンを押してください</span></p>
-</div>
+	<!--スクリプトが読めない時用-->
+	<noscript>
+		<div class="warningbox">
+			<div class="box-title"><i class="fas fa-exclamation-triangle"></i> JavaScriptが無効です</div>
+			<p>履歴書ジェネレーターはJavaScriptが有効になっていないと動作しません。<br>お使いのブラウザのJavaScriptを有効にして再度アクセスしてください。</p>
+		</div>
+	</noscript>
 
-
-<br>
-<div align="center" class="preview">
-
-
-<!--ここからプレビュー-->
-
-<div align="center">
-<h2 class="pv"><i class="far fa-id-card"></i> 履歴書プレビュー</h2>
-<p id="preview"></p>
-<a href="javascript:downloadResultImg();" id="downloadResult"><canvas id="result" width="900" height="1300" title="クリック、タップでダウンロード"></canvas>
-<img id="cps_resume_result"></a>
-<br>
-<p><a href="javascript:downloadResultImg();" id="downloadResult2"><i class="fas fa-download"></i> 画像を長押しor右クリックで<br>ダウンロードできます</a><br></p>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<p><br></p>
-
-
-
-<!--以下詳細設定ボタン-->
-<div class="form" align="center">
-<h2 align="left"><i class="fas fa-share-alt"></i> シェアする！</h2>
-	<div class="container">
-		<a class="btn-open" href="https://twitter.com/intent/tweet?text=%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E6%B0%91%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84" target="_blank"><i class="fab fa-twitter"></i> 履歴書をツイートする！</a>
+	<!--スクリプトが無効なら入力画面を隠す-->
+	<div class="form" id="form1" hidden>
+		<h2><i class="fas fa-user-edit"></i> 情報記入欄</h2>
+		<form id="info">
+			<dl>
+				<dt>よみがな <a href="javascript:changeModal('よみがな','ハンドルネームのよみを入力してください。ひらがな、カタカナのみにするのをお勧めします。');"
+						id="openModal1"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="read" onChange="onChangeForms();"></dd>
+				<dt>HN <a href="javascript:changeModal('HN','ハンドルネームを入力してください。ある程度の文字数を超えると自動で文字が小さくなります。');"
+						id="openModal2"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="name" onChange="onChangeForms();"></dd>
+				<dt>最高デッキレベル <a
+						href="javascript:changeModal('最高デッキレベル','あなたが出すことができる最高のデッキのカードレベルの合計値を入力してください。\n例：Lv20フルーク、Lv30カノーネ、Lv20イェーガー、Lv30ギアメーカーの場合は20+30+20+30=100\n\n最高デッキレベルが135などになる場合は130と記入することをお勧めします。');"
+						id="openModal3"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="dl" onChange="onChangeForms();">
+						<option value="10">10</option>
+						<option value="20">20</option>
+						<option value="30">30</option>
+						<option value="40">40</option>
+						<option value="50">50</option>
+						<option value="60">60</option>
+						<option value="70">70</option>
+						<option value="80" selected>80</option>
+						<option value="90">90</option>
+						<option value="100">100</option>
+						<option value="110">110</option>
+						<option value="120">120</option>
+						<option value="130">130</option>
+						<option value="140">140</option>
+						<option value="150">150</option>
+						<option value="160">160</option>
+						<option value="170">170</option>
+						<option value="180">180</option>
+						<option value="190">190</option>
+						<option value="200">200</option>
+						<option value="210">210</option>
+						<option value="220">220</option>
+						<option value="230">230</option>
+						<option value="240">240</option>
+					</select>
+				</dd>
+				<dt>最高ランク <a href="javascript:changeModal('最高ランク','これまでに到達した最高のランクを記入してください。（エンジョイ期間含む）');"
+						id="openModal4"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="rank" onChange="onChangeForms();">
+						<optgroup label="F-Aランク">
+							<option value="F">Fランク</option>
+							<option value="E">Eランク</option>
+							<option value="D">Dランク</option>
+							<option value="C">Cランク</option>
+							<option value="B">Bランク</option>
+							<option value="A">Aランク</option>
+						</optgroup>
+						<optgroup label="S1-S9ランク">
+							<option value="S1">S1ランク</option>
+							<option value="S2">S2ランク</option>
+							<option value="S3">S3ランク</option>
+							<option value="S4">S4ランク</option>
+							<option value="S5">S5ランク</option>
+							<option value="S6">S6ランク</option>
+							<option value="S7">S7ランク</option>
+							<option value="S8">S8ランク</option>
+							<option value="S9">S9ランク</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>シーズンランク <a href="javascript:changeModal('シーズンランク','これまでに到達した最高のシーズンランクを記入してください。');"
+						id="openModal5"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="seasonRank" disabled="disabled" onChange="onChangeForms();">
+						<optgroup label="Aランク以下">
+							<option value="F">不参加</option>
+						</optgroup>
+						<optgroup label="S1-S9ランク">
+							<option value="S1">S1ランク</option>
+							<option value="S2">S2ランク</option>
+							<option value="S3">S3ランク</option>
+							<option value="S4">S4ランク</option>
+							<option value="S5">S5ランク</option>
+							<option value="S6">S6ランク</option>
+							<option value="S7">S7ランク</option>
+							<option value="S8">S8ランク</option>
+							<option value="S9">S9ランク</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>銅アイコン所持数</dt>
+				<dd><input type="number" id="bronze" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
+				<dt>銀アイコン所持数</dt>
+				<dd><input type="number" id="silver" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
+				<dt>金アイコン所持数</dt>
+				<dd><input type="number" id="gold" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
+				<dt>大会優勝アイコン</dt>
+				<dd><input type="number" id="tournament" min="0" max="999" value="0" onChange="onChangeForms();"></dd>
+				<dt>バト使用キャラ <a
+						href="javascript:changeModal('バト使用キャラ','バトルアリーナ等デッキレベルが反映されるルールで使用できるキャラを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');"
+						id="openModal6"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="heroB" multiple onChange="onChangeForms();" height="200">
+						<optgroup id="attacker" label="アタッカー">
+							<option value="ノホ">双挽 乃保</option>
+							<option value="忠臣">桜華 忠臣</option>
+							<option value="マルコス">マルコス'55</option>
+							<option value="ソル">ソル=バッドガイ</option>
+							<option value="リュウ">リュウ</option>
+							<option value="マリア">マリア=S=レオンブルク</option>
+							<option value="アダム">アダム=ユーリエフ</option>
+							<option value="レム">レム</option>
+							<option value="カイ">カイ=キスク</option>
+							<option value="ポロロッチョ">ヴィーナス ポロロッチョ</option>
+							<option value="リヴァイ">リヴァイ</option>
+							<option value="デルミン">デビルミント鬼龍 デルミン</option>
+							<option value="セイバーオルタ">セイバーオルタ</option>
+							<option value="ルルカ">ルルカ</option>
+							<option value="アイズ">アイズ・ヴァレンシュタイン</option>
+							<option value="甘色">狐ヶ咲 甘色</option>
+							<option value="ノクト">ノクティス</option>
+							<option value="イグニス">イグニス=ウィル=ウィスプ</option>
+						</optgroup>
+						<optgroup id="gunner" label="ガンナー">
+							<option value="リリカ">リリカ</option>
+							<option value="ルチアーノ">ルチアーノ</option>
+							<option value="まとい">深川 まとい</option>
+							<option value="ディズィー">ディズィー</option>
+							<option value="サーティーン">13 サーティーン</option>
+							<option value="エミリア">エミリア</option>
+							<option value="メグメグ">メグメグ</option>
+							<option value="リン">鏡音 リン</option>
+							<option value="イスタカ">イスタカ</option>
+							<option value="ソーン">ソーン=ユーリエフ</option>
+							<option value="猫宮">猫宮 ひなた</option>
+							<option value="オカリン">岡部 倫太郎</option>
+							<option value="ギルガメッシュ">ギルガメッシュ</option>
+							<option value="ニーズヘッグ">ニーズヘッグ</option>
+							<option value="芥川龍之介">芥川龍之介</option>
+							<option value="GBG">ゲームバズーカガール</option>
+							<option value="アインズ">アインズ・ウール・ゴウン</option>
+						</optgroup>
+						<optgroup id="sprinter" label="スプリンター">
+							<option value="アタリ">十文字 アタリ</option>
+							<option value="Voidoll">Voidoll</option>
+							<option value="テスラ">ニコラ テスラ</option>
+							<option value="ミク">初音 ミク</option>
+							<option value="コクリコ">コクリコット ブランシュ</option>
+							<option value="春麗">春麗</option>
+							<option value="勇者">かけだし勇者</option>
+							<option value="ザクレイ">ザック & レイチェル</option>
+							<option value="きらら">輝龍院 きらら</option>
+							<option value="アクア">アクア</option>
+							<option value="零夜">零夜</option>
+							<option value="ピエール">ピエール 77世</option>
+							<option value="中島敦">中島敦</option>
+							<option value="ジョーカー">ジョーカー</option>
+						</optgroup>
+						<optgroup id="tank" label="タンク">
+							<option value="ジャスティス">ジャスティス ハンコック</option>
+							<option value="ジャンヌ">ジャンヌ ダルク</option>
+							<option value="グスタフ">グスタフ ハイドリヒ</option>
+							<option value="ヴィオレッタ">ヴィオレッタ ノワール</option>
+							<option value="レン">鏡音 レン</option>
+							<option value="モノクマ">モノクマ</option>
+							<option value="めぐみん">めぐみん</option>
+							<option value="トマス">トマス</option>
+							<option value="忠信">佐藤四郎兵衛忠信</option>
+							<option value="ライザ">ライザリン・シュタウト</option>
+							<option value="アリス">青春アリス</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>フリバ&練習キャラ <a
+						href="javascript:changeModal('フリバ＆練習キャラ','バトルアリーナで使用しておらず、フリーバトルや2on2、大合戦などデッキレベルが関係ないルールでのみ使用しているキャラクターを選択してください。\n※PCの場合Ctrlを押しながら選択することで複数選択できます');"
+						id="openModal7"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="heroF" multiple onChange="onChangeForms();" height="200">
+						<optgroup id="attacker" label="アタッカー">
+							<option value="ノホ">双挽 乃保</option>
+							<option value="忠臣">桜華 忠臣</option>
+							<option value="マルコス">マルコス'55</option>
+							<option value="ソル">ソル=バッドガイ</option>
+							<option value="リュウ">リュウ</option>
+							<option value="マリア">マリア=S=レオンブルク</option>
+							<option value="アダム">アダム=ユーリエフ</option>
+							<option value="レム">レム</option>
+							<option value="カイ">カイ=キスク</option>
+							<option value="ポロロッチョ">ヴィーナス ポロロッチョ</option>
+							<option value="リヴァイ">リヴァイ</option>
+							<option value="デルミン">デビルミント鬼龍 デルミン</option>
+							<option value="セイバーオルタ">セイバーオルタ</option>
+							<option value="ルルカ">ルルカ</option>
+							<option value="アイズ">アイズ・ヴァレンシュタイン</option>
+							<option value="甘色">狐ヶ咲 甘色</option>
+							<option value="ノクト">ノクティス</option>
+							<option value="イグニス">イグニス=ウィル=ウィスプ</option>
+						</optgroup>
+						<optgroup id="gunner" label="ガンナー">
+							<option value="リリカ">リリカ</option>
+							<option value="ルチアーノ">ルチアーノ</option>
+							<option value="まとい">深川 まとい</option>
+							<option value="ディズィー">ディズィー</option>
+							<option value="サーティーン">13 サーティーン</option>
+							<option value="エミリア">エミリア</option>
+							<option value="メグメグ">メグメグ</option>
+							<option value="リン">鏡音 リン</option>
+							<option value="イスタカ">イスタカ</option>
+							<option value="ソーン">ソーン=ユーリエフ</option>
+							<option value="猫宮">猫宮 ひなた</option>
+							<option value="オカリン">岡部 倫太郎</option>
+							<option value="ギルガメッシュ">ギルガメッシュ</option>
+							<option value="ニーズヘッグ">ニーズヘッグ</option>
+							<option value="芥川龍之介">芥川龍之介</option>
+							<option value="GBG">ゲームバズーカガール</option>
+							<option value="アインズ">アインズ・ウール・ゴウン</option>
+						</optgroup>
+						<optgroup id="sprinter" label="スプリンター">
+							<option value="アタリ">十文字 アタリ</option>
+							<option value="Voidoll">Voidoll</option>
+							<option value="テスラ">ニコラ テスラ</option>
+							<option value="ミク">初音 ミク</option>
+							<option value="コクリコ">コクリコット ブランシュ</option>
+							<option value="春麗">春麗</option>
+							<option value="勇者">かけだし勇者</option>
+							<option value="ザクレイ">ザック & レイチェル</option>
+							<option value="きらら">輝龍院 きらら</option>
+							<option value="アクア">アクア</option>
+							<option value="零夜">零夜</option>
+							<option value="ピエール">ピエール 77世</option>
+							<option value="中島敦">中島敦</option>
+							<option value="ジョーカー">ジョーカー</option>
+						</optgroup>
+						<optgroup id="tank" label="タンク">
+							<option value="ジャスティス">ジャスティス ハンコック</option>
+							<option value="ジャンヌ">ジャンヌ ダルク</option>
+							<option value="グスタフ">グスタフ ハイドリヒ</option>
+							<option value="ヴィオレッタ">ヴィオレッタ ノワール</option>
+							<option value="レン">鏡音 レン</option>
+							<option value="モノクマ">モノクマ</option>
+							<option value="めぐみん">めぐみん</option>
+							<option value="トマス">トマス</option>
+							<option value="忠信">佐藤四郎兵衛忠信</option>
+							<option value="ライザ">ライザリン・シュタウト</option>
+							<option value="アリス">青春アリス</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>Twitter ID <a
+						href="javascript:changeModal('Twitter ID','TwitterのID(@Twitter 等)を入力してください。\nTwitterを利用していない、公開していない場合、空欄にすると自動で省略されます。');"
+						id="openModal8"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="tw" value="@" onChange="onChangeForms();"></dd>
+				<dt>Discord ID <a
+						href="javascript:changeModal('Twitter ID','Discordの名前とID(ユーザー#1234 等)を入力してください。\nDiscordを利用していない、公開していない場合、空欄にすると自動で省略されます。');"
+						id="openModal9"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="dc" placeholder="Example#7777" onChange="onChangeForms();"></dd>
+				<dt>Skype ID <a
+						href="javascript:changeModal('Skype ID','SkypeのID(user1234 等)を入力してください。\nSkypeを利用していない、公開していない場合、空欄にすると自動で省略されます。');"
+						id="openModal10"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="sp" placeholder="6文字以上で入力" onChange="onChangeForms();"></dd>
+				<dt>フレンドコード <a
+						href="javascript:changeModal('フレンドコード','#コンパスアプリ→ホーム→コミュニティ→友達を招待する のところに書かれている10桁のフレンドコードを入力してください。\nこのコードを入力した人とは、フォロー上限を超えて相互フォローになることができます。\n公開したくない場合、空欄にすると自動で省略されます。');"
+						id="openModal11"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="number" id="fc" placeholder="1234567890" onChange="onChangeForms();"></dd>
+				<dt>所属ギルド <a
+						href="javascript:changeModal('所属ギルド','所属しているギルドを入力してください。\nギルド募集などのステータス（1枠募集 等）も記入できます。\n公開したくない場合、空欄にすると自動で省略されます。');"
+						id="openModal12"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="text" id="guild" placeholder="所属ギルドを自由に入力" onChange="onChangeForms();"></dd>
+				<!--一言コメントの行数は連絡先の入力状況により変化させる-->
+				<div id="rows">
+					<dt>一言コメント <a
+							href="javascript:changeModal('一言コメント','自由にコメントを記入することができます。HTML記法などを使用した装飾をすることはできません。\n空欄にすると自動で省略されます。');"
+							id="openModal13"><i class="fas fa-question-circle"></i></a></dt>
+				</div>
+				<dd><textarea id="comment" placeholder="推しキャラ、好きなカード、立ち回り、プレイ歴などご自由にお書きください"
+						onChange="onChangeForms();"></textarea></dd>
+			</dl>
+		</form>
 	</div>
-	<div class="container">
-		<a class="btn-open" href="https://twitter.com/intent/tweet?text=%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%92+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC+%E3%81%A7%E4%BD%9C%E3%82%8D%E3%81%86%EF%BC%81%0D%0A%28++%E3%83%BB%CF%89%E3%83%BB%29%CF%83+https%3A%2F%2Fbit.ly%2Fcps_rireki%0D%0A%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E6%B0%91%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84" target="_blank"><i class="fab fa-twitter"></i> Twitterでシェアする！</a>
+
+	<br><br><br>
+
+	<div class="form" id="form2" hidden>
+		<h2><i class="fas fa-pen-nib"></i> デザイン変更</h2>
+		<form id="design">
+			<dl>
+				<dt>プロフィール画像 <a
+						href="javascript:changeModal('プロフィール画像','履歴書右上にプロフィール画像を設定することができます。\nアップロードされた画像は自動で1:1(167×167)にリサイズされます。\nファイルサイズは5MB以下にしてください。');"
+						id="openModal14"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<div class="file_button">
+						<span id="fileName1"><i class="fas fa-folder-open"></i> （ファイルを選択）</span>
+						<input type="file" accept="image/png,image/jpeg,image/gif" id="profilePic" class="file_input">
+					</div>
+				</dd>
+				<dt>画像サイズ <a
+						href="javascript:changeModal('画像サイズ','プロフィール画像の拡大率を変更します。\n「表示しない」を選択するとプロフィール画像は表示されなくなります。');"
+						id="openModal15"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="profilePicSize" onchange="onChangeForms();">
+						<option value="10x" selected>等倍</option>
+						<option value="09x">0.9倍</option>
+						<option value="08x">0.8倍</option>
+						<option value="07x">0.7倍</option>
+						<option value="none">表示しない</option>
+					</select>
+				</dd>
+				<dt>フォント <a
+						href="javascript:changeModal('フォント','文字の見た目を変更することができます。\n「端末依存」を選択するとあなたのブラウザまたは端末の既定のフォントが使用されます。\nその場合、そのフォントの利用規約やライセンスに違反しない範囲でこのツールを使用してください。');"
+						id="openModal16"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="font" onChange="onChangeForms();">
+						<optgroup label="端末依存">
+							<option value="dep">端末依存</option>
+						</optgroup>
+						<optgroup label="ゴシック体">
+							<option value="nos">Noto Sans JP</option>
+							<option value="mpl">M PLUS 1p</option>
+							<option value="mpr">M PLUS Rounded 1c</option>
+							<option value="srg">Sawarabi Gothic</option>
+							<option value="ksg">Kosugi</option>
+							<option value="ksm">Kosugi Maru</option>
+							<option value="sen">せのびゴシック</option>
+						</optgroup>
+						<optgroup label="明朝体">
+							<option value="nof">Noto Serif JP</option>
+						</optgroup>
+						<optgroup label="手書き">
+							<option value="mkp">851マカポップ</option>
+							<option value="jyc">じゆうちょうフォント</option>
+							<option value="msn">無心フォント</option>
+							<option value="nya">にゃしいフォント改2</option>
+						</optgroup>
+						<optgroup label="その他">
+							<option value="jfd">JF Dot Kaname</option>
+							<option value="cpp">チェックポイント．（ピリオド）</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>文字色 <a href="javascript:changeModal('文字色','あなたが記入した内容の文字の色を変更することができます。\n※一部反映されない項目があります');"
+						id="openModal17"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="color" id="fontColor" value="#000000" onChange="onChangeForms();"></dd>
+				<dt>枠線・項目色 <a href="javascript:changeModal('枠線・項目色','枠線や項目の文字の色を変更することができます。');" id="openModal18"><i
+							class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="color" id="defaultColor" value="#000000" onChange="onChangeForms();"></dd>
+				<dt>背景模様 <a
+						href="javascript:changeModal('背景模様','背景の模様を選択することができます。\n背景色の上に重なって配置されます（色がついているものもあります。）\n自分で画像をアップロードして背景に設定したい場合は「自分でアップロード」を選択してください。\n小さい画像をアップロードした場合自動で履歴書全体に映るように複数回描画されます。');"
+						id="openModal19"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="bgtheme" onChange="onChangeForms();">
+						<optgroup label="背景なし">
+							<option value="monotone" selected>単色（模様なし）</option>
+						</optgroup>
+						<optgroup label="カスタム">
+							<option value="custom">自分でアップロード</option>
+						</optgroup>
+						<optgroup label="模様">
+							<option value="3px-tile">3px Tile</option>
+							<option value="always-grey">Always Grey</option>
+							<option value="arabesque">Arabesque</option>
+							<option value="argyle">Argyle</option>
+							<option value="az-subtle">Az Subtle</option>
+							<option value="batthern">Batthern</option>
+							<option value="black-thread">Black Thread</option>
+							<option value="cartographer">Cartographer</option>
+							<option value="checkered-pattern">Checkered Pattern</option>
+							<option value="crisp-paper-ruffles">Crisp Paper Ruffles</option>
+							<option value="crissxcross">Crissxcross</option>
+							<option value="cross-stripes">Cross Stripes</option>
+							<option value="diagmonds">Diagmonds</option>
+							<option value="diagmonds-light">Diagmonds Light</option>
+							<option value="diagonal-striped-brick">Diagonal Striped Brick</option>
+							<option value="diamond-upholstery">Diamond Upholstery</option>
+							<option value="gradient-squares">Gradient Squares</option>
+							<option value="graphy-dark">Graphy-Dark</option>
+							<option value="grid-me">Grid Me</option>
+							<option value="inflicted">Inflicted</option>
+							<option value="my-little-plaid-dark">My Little Plaid Dark</option>
+							<option value="nami">Nami</option>
+							<option value="natural-paper">Natural Paper</option>
+							<option value="paven">Paven</option>
+							<option value="random-grey-variations">Random Grey Variations</option>
+							<option value="tileable-wood-colored">Tileable Wood Colored</option>
+							<option value="vaio">Vaio</option>
+							<option value="white-brick-wall">White Brick Wall</option>
+							<option value="white-diamond-dark">White Diamond Dark</option>
+							<option value="white-paperboard">White Paperboard</option>
+							<option value="white-tiles">White Tiles</option>
+							<option value="wild-flowers">Wild Flowers</option>
+							<option value="wood">Wood</option>
+							<option value="wood-pattern">Wood Pattern</option>
+							<option value="zig-zag">Zig Zag</option>
+						</optgroup>
+					</select>
+				</dd>
+				<dt>背景画像透過度 <a href="javascript:changeModal('背景画像透過度','「背景模様」で設定した画像をどれだけ濃く反映するかを決定します。');"
+						id="openModal20"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<select id="bgTrans" onChange="onChangeForms();">
+						<option value="1.0" selected>0%（透過しない）</option>
+						<option value="0.9">10%</option>
+						<option value="0.8">20%</option>
+						<option value="0.7">30%</option>
+						<option value="0.6">40%</option>
+						<option value="0.5">50%</option>
+						<option value="0.4">60%</option>
+						<option value="0.3">70%</option>
+						<option value="0.2">80%</option>
+						<option value="0.1">90%</option>
+						<option value="0">100%（非表示）</option>
+					</select>
+				</dd>
+				<dt>履歴書背景画像 <a
+						href="javascript:changeModal('履歴書背景画像','履歴書の背景となる画像をアップロードすることができます。\n横900px縦1300pxの画像をアップロードするとぴったり収まります。\nファイルサイズは5MB以下にしてください。');"
+						id="openModal21"><i class="fas fa-question-circle"></i></a></dt>
+				<dd>
+					<div class="file_button">
+						<span id="fileName2"><i class="fas fa-folder-open"></i> （ファイルを選択）</span>
+						<input type="file" accept="image/png,image/jpeg,image/gif" id="bg" class="file_input">
+					</div>
+				</dd>
+				<dt>履歴書背景色 <a href="javascript:changeModal('履歴書背景色','履歴書の背景の色を選択することができます。');" id="openModal22"><i
+							class="fas fa-question-circle"></i></a></dt>
+				<dd><input type="color" id="bgColor" value="#ffffff" onChange="onChangeForms();"></dd>
+			</dl>
+		</form>
+		<div align="center">
+			<a href="javascript:reloadDesignPreview();"><canvas id="designPreview" width="750" height="200"
+					title="デザインプレビュー"></canvas></a><br>
+		</div>
+		<form id="designCodeForm">
+			<dl>
+				<dt>デザインコード <a
+						href="javascript:changeModal('デザインコード','「デザインコードを出力」を押すとデザインコードがここに出力されます。「デザインコードを反映」を押すとこのテキストエリアに入っているデザインコードが履歴書のデザイン設定に反映されます。\nデザインコードにプロフィール画像やカスタム背景は含まれていません。他のデザインコードを入力することで、同じデザインにすることができます。\n『』でデザインコードが囲まれているテキストが入っている場合は自動で抜き出します。');"
+						id="openModal23"><i class="fas fa-question-circle"></i></a></dt>
+				<dd><textarea id="designCode" placeholder="デザインコードを入力してください"></textarea></dd>
+			</dl>
+		</form>
+		<div align="center">
+			<div class='cbtn'><a href="javascript:void(0);" id="cnvD2B">デザインコードを出力</a></div>
+			<div class='cbtn'><a href="javascript:void(0);" id="readDC">デザインコードを反映</a></div>
+			<div class='cbtn'><a href="javascript:void(0);" id="shareDC">デザインコードを共有</a></div>
+			<br><a
+				href="https://twitter.com/search?q=%23%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89"
+				target="_blank"><i class="fas fa-paint-brush"></i> #履歴書デザインコード</a>
+		</div>
 	</div>
-	<div class="container" id="shareLink">
-		<a href="javascript:shareLink();" class="btn-open"><i class="far fa-share-square"></i> このサイトをシェアする！</a>
-	</div>
-	<div class="container">
-		<a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Faosankaku.github.io%2Fcps_resume" target="_blank" class="btn-open"><i class="fab fa-line"></i> LINEでシェアする！</a>
-	</div>
-	<div class="container" id="tweetDC">
-		<a class="btn-open" href="javascript:tweetDC();"><i class="fab fa-twitter"></i> デザインコードをツイート！</a>
-	</div>
-	<div class="container" id="shareDCode">
-		<a href="javascript:shareDC();" class="btn-open"><i class="far fa-share-square"></i> デザインコードをシェア！</a>
-	</div>
-</div>
+	</div><br><br><br>
 
-<br><br><br>
-
-
-<div class="form" align="center"> 
-<h2 align="left"><i class="fas fa-cog"></i> その他の設定</h2>
-<div class="container">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform" target="_blank" class="btn-open"><i class="fas fa-envelope"></i> 質問・お問い合わせ</a>
-</div>
-<div class="container">
-<a href="javascript:loadFromCookie();" class="btn-open"><i class="fas fa-file-import"></i> 保存したデータを呼び出す</a>
-</div>
-<div class="container">
-<a href="javascript:clearStorage();" class="btn-open"><i class="fas fa-trash-alt"></i> 端末のデータを消去する</a>
-</div>
-<div class="container">
-<a href="javascript:changeModal('このサイトについて','このサイトはBlue Triangle(@Ao_Sankaku)が開発した「#コンパス履歴書」を作成することができる、#コンパス 非公式のオープンソースWebアプリケーションです。\nどなたでも無料でお使いいただくことができます。');" id="openModal0" class="btn-open"><i class="fas fa-question-circle"></i> このサイトについて</a>
-</div>
-</div>
-
-<!--以下隠し要素　can2…プロ画用　（can3…背景用のつもりだったがよくわからなかったのでデザインプレビューウィンドウに）-->
-<canvas id="profilePicResize" width="167" height="167" hidden></canvas><br>
-<canvas id="bgPicResize" width="900" height="1300" hidden></canvas><br>
-
-<!--以下Twitter埋め込み-->
-<br>
-<a class="twitter-timeline" data-lang="ja" data-width="800" data-height="1200" href="https://twitter.com/Ao_Sankaku/timelines/1220980919776866311?ref_src=twsrc%5Etfw">#コンパス履歴書ジェネレーター 話題のツイート - Curated tweets by Ao_Sankaku</a> <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<!--以下スクリプト-->
-
-<script src="js/reject.js"></script>
-<script src="js/gen.js" defer></script>
-<script src="js/svcookie.js"></script>
-<script src="js/notices.js"></script>
-
-
-<!--スクリプトここまで-->
-
-</div>
-
-<!--プレビューここまで-->
-
-
-<!--ヘルプここから-->
-
-<section id="modalArea" class="modalArea">
-  <div id="modalBg" class="modalBg"></div>
-  <div class="modalWrapper">
-    <div class="modalContents">
-      <h1 class="helpTitle" id="helpTitle" align="left">ここに質問の表題</h1>
-      <p class="helpText" id="helpText" align="left">ここに説明テキスト</p>
-    </div>
-    <div id="closeModal" class="closeModal">
-      ×
-    </div>
-  </div>
-</section>
-
-<script>
-//モーダルウィンドウ
-(function () {
-  const modalArea = document.getElementById('modalArea');
-
-//以下複数テキストに対応させるための独自処理
-  var modalBoolean = true;
-  var openModal = [];
-  let i = 0;
-  while ( modalBoolean ){
-    if ( document.getElementById( 'openModal' + i ) ) {
-      openModal.push( document.getElementById( 'openModal' + i ) )
-    } else {
-      modalBoolean = false;
-    }
-    i++;
-  }
-  
-
-//ここまで
-
-  //const openModal = document.getElementById('openModal');
-
-  const closeModal = document.getElementById('closeModal');
-  const modalBg = document.getElementById('modalBg');
-  const toggle = [/*openModal,*/closeModal,modalBg];
-  
-  //複数テキスト((ry
-  for( let i = 0, l = openModal.length; l > i; i++ ){
-    toggle.push(openModal[i])
-  }
-  
-  //ここまで
-  
-  for(let i=0, len=toggle.length ; i<len ; i++){
-    toggle[i].addEventListener('click',function(){
-      modalArea.classList.toggle('is-show');
-    },false);
-  }
-}());
-
-function changeModal( title, text ){
-	document.getElementById( 'helpTitle' ).innerText = title;
-	document.getElementById( 'helpText' ).innerText = text;
-}
-</script>
-
-<!--ヘルプここまで-->
-
-
-
-</div>
-<br>
-<!--フッター-->
-<footer>
-	<div align="center">
-		<p class="footer">#コンパス履歴書ジェネレーター　　Created by <a href="https://twitter.com/Ao_Sankaku">@Ao_Sankaku</a><br>
-		<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform">お問い合わせ・不具合報告</a>　　<a href="https://github.com/AoSankaku/cps_resume/blob/master/README.md">利用上の注意・変更履歴</a><br>
+	<div class="form" align="center">
+		<h2 align="left"><i class="fas fa-save"></i> 出力・保存</h2>
+		<div class="container">
+			<a href="javascript:preview();" class="btn-open">コンパス履歴書を生成する！</a>
+		</div>
+		<div class="container">
+			<a href="javascript:saveToCookie();" class="btn-open"><i class="far fa-save"></i> 入力した内容を端末に保存</a>
+		</div>
+		<a href="javascript:changeModal('入力した内容を端末に保存','お使いのブラウザのローカルストレージにあなたが記入した内容を保存し、再度このサイトを訪問した時に続きから再開することができます。\n記入した内容はあなたのブラウザに保存され、ほかのブラウザや端末から読みだすことはできません。\nまた、開発者にデータが送信されることはありません。\nこの機能を利用するには、お使いのブラウザのLocal Storageが有効になっている必要があります。');"
+			id="openModal24"><i class="fas fa-question-circle"></i> 端末に保存するとは？</a>
+		<p id="saveAlert"><span style="font-size:3.2vw; color:red;"><i class="fas fa-times"></i> <a
+					href="https://www.google.com/search?q=javascript+%E6%9C%89%E5%8A%B9%E5%8C%96">JavaScriptが無効</a>です<br>（履歴書の作成・保存は出来ません）</span>
 		</p>
+		<p id="inputAlert"><span style="font-size:3.2vw; color:black;"><i class="fas fa-question-circle"></i>
+				生成ボタンを押してください</span></p>
 	</div>
-</footer>
+
+
+	<br>
+	<div align="center" class="preview">
+
+
+		<!--ここからプレビュー-->
+
+		<div align="center">
+			<h2 class="pv"><i class="far fa-id-card"></i> 履歴書プレビュー</h2>
+			<p id="preview"></p>
+			<a href="javascript:downloadResultImg();" id="downloadResult"><canvas id="result" width="900" height="1300"
+					title="クリック、タップでダウンロード"></canvas>
+				<img id="cps_resume_result"></a>
+			<br>
+			<p><a href="javascript:downloadResultImg();" id="downloadResult2"><i class="fas fa-download"></i>
+					画像を長押しor右クリックで<br>ダウンロードできます</a><br></p>
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<p><br></p>
+
+
+
+			<!--以下詳細設定ボタン-->
+			<div class="form" align="center">
+				<h2 align="left"><i class="fas fa-share-alt"></i> シェアする！</h2>
+				<div class="container">
+					<a class="btn-open"
+						href="https://twitter.com/intent/tweet?text=%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E6%B0%91%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84"
+						target="_blank"><i class="fab fa-twitter"></i> 履歴書をツイートする！</a>
+				</div>
+				<div class="container">
+					<a class="btn-open"
+						href="https://twitter.com/intent/tweet?text=%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%92+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC+%E3%81%A7%E4%BD%9C%E3%82%8D%E3%81%86%EF%BC%81%0D%0A%28++%E3%83%BB%CF%89%E3%83%BB%29%CF%83+https%3A%2F%2Fbit.ly%2Fcps_rireki%0D%0A%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9+%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E5%B1%A5%E6%AD%B4%E6%9B%B8%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%0D%0A%23%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9%E6%B0%91%E3%81%A8%E7%B9%8B%E3%81%8C%E3%82%8A%E3%81%9F%E3%81%84"
+						target="_blank"><i class="fab fa-twitter"></i> Twitterでシェアする！</a>
+				</div>
+				<div class="container" id="shareLink">
+					<a href="javascript:shareLink();" class="btn-open"><i class="far fa-share-square"></i>
+						このサイトをシェアする！</a>
+				</div>
+				<div class="container">
+					<a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Faosankaku.github.io%2Fcps_resume"
+						target="_blank" class="btn-open"><i class="fab fa-line"></i> LINEでシェアする！</a>
+				</div>
+				<div class="container" id="tweetDC">
+					<a class="btn-open" href="javascript:tweetDC();"><i class="fab fa-twitter"></i> デザインコードをツイート！</a>
+				</div>
+				<div class="container" id="shareDCode">
+					<a href="javascript:shareDC();" class="btn-open"><i class="far fa-share-square"></i>
+						デザインコードをシェア！</a>
+				</div>
+			</div>
+
+			<br><br><br>
+
+
+			<div class="form" align="center">
+				<h2 align="left"><i class="fas fa-cog"></i> その他の設定</h2>
+				<div class="container">
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform"
+						target="_blank" class="btn-open"><i class="fas fa-envelope"></i> 質問・お問い合わせ</a>
+				</div>
+				<div class="container">
+					<a href="javascript:loadFromCookie();" class="btn-open"><i class="fas fa-file-import"></i>
+						保存したデータを呼び出す</a>
+				</div>
+				<div class="container">
+					<a href="javascript:clearStorage();" class="btn-open"><i class="fas fa-trash-alt"></i>
+						端末のデータを消去する</a>
+				</div>
+				<div class="container">
+					<a href="javascript:changeModal('このサイトについて','このサイトはBlue Triangle(@Ao_Sankaku)が開発した「#コンパス履歴書」を作成することができる、#コンパス 非公式のオープンソースWebアプリケーションです。\nどなたでも無料でお使いいただくことができます。');"
+						id="openModal0" class="btn-open"><i class="fas fa-question-circle"></i> このサイトについて</a>
+				</div>
+			</div>
+
+			<!--以下隠し要素　can2…プロ画用　（can3…背景用のつもりだったがよくわからなかったのでデザインプレビューウィンドウに）-->
+			<canvas id="profilePicResize" width="167" height="167" hidden></canvas><br>
+			<canvas id="bgPicResize" width="900" height="1300" hidden></canvas><br>
+
+			<!--以下Twitter埋め込み-->
+			<br>
+			<a class="twitter-timeline" data-lang="ja" data-width="800" data-height="1200"
+				href="https://twitter.com/Ao_Sankaku/timelines/1220980919776866311?ref_src=twsrc%5Etfw">#コンパス履歴書ジェネレーター
+				話題のツイート - Curated tweets by Ao_Sankaku</a>
+			<script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+			<!--以下スクリプト-->
+
+			<script src="js/reject.js"></script>
+			<script src="js/gen.js" defer></script>
+			<script src="js/svcookie.js"></script>
+			<script src="js/notices.js"></script>
+
+
+			<!--スクリプトここまで-->
+
+		</div>
+
+		<!--プレビューここまで-->
+
+
+		<!--ヘルプここから-->
+
+		<section id="modalArea" class="modalArea">
+			<div id="modalBg" class="modalBg"></div>
+			<div class="modalWrapper">
+				<div class="modalContents">
+					<h1 class="helpTitle" id="helpTitle" align="left">ここに質問の表題</h1>
+					<p class="helpText" id="helpText" align="left">ここに説明テキスト</p>
+				</div>
+				<div id="closeModal" class="closeModal">
+					×
+				</div>
+			</div>
+		</section>
+
+		<script>
+			//モーダルウィンドウ
+			(function () {
+				const modalArea = document.getElementById('modalArea');
+
+				//以下複数テキストに対応させるための独自処理
+				var modalBoolean = true;
+				var openModal = [];
+				let i = 0;
+				while (modalBoolean) {
+					if (document.getElementById('openModal' + i)) {
+						openModal.push(document.getElementById('openModal' + i))
+					} else {
+						modalBoolean = false;
+					}
+					i++;
+				}
+
+
+				//ここまで
+
+				//const openModal = document.getElementById('openModal');
+
+				const closeModal = document.getElementById('closeModal');
+				const modalBg = document.getElementById('modalBg');
+				const toggle = [/*openModal,*/closeModal, modalBg];
+
+				//複数テキスト((ry
+				for (let i = 0, l = openModal.length; l > i; i++) {
+					toggle.push(openModal[i])
+				}
+
+				//ここまで
+
+				for (let i = 0, len = toggle.length; i < len; i++) {
+					toggle[i].addEventListener('click', function () {
+						modalArea.classList.toggle('is-show');
+					}, false);
+				}
+			}());
+
+			function changeModal(title, text) {
+				document.getElementById('helpTitle').innerText = title;
+				document.getElementById('helpText').innerText = text;
+			}
+		</script>
+
+		<!--ヘルプここまで-->
+
+
+
+	</div>
+	<br>
+	<!--フッター-->
+	<footer>
+		<div align="center">
+			<p class="footer">#コンパス履歴書ジェネレーター　　Created by <a href="https://twitter.com/Ao_Sankaku">@Ao_Sankaku</a><br>
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSeXJZaiPBeYG2raNjZS-NbXX1gWkgYF_R7pdVQNDCVfYWHSjA/viewform">お問い合わせ・不具合報告</a>　　<a
+					href="https://github.com/AoSankaku/cps_resume/blob/master/README.md">利用上の注意・変更履歴</a><br>
+			</p>
+		</div>
+	</footer>
 
 </body>
+
 </html>
