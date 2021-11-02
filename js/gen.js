@@ -354,7 +354,7 @@ const convRank = (rankName) => {
 
 //画像をプリロード
 const img = new Array(13);
-img.fill(new Image());
+img.fill().map(e => (new Image()));
 img[0].src = "img/attacker.png";
 img[1].src = "img/gunner.png";
 img[2].src = "img/sprinter.png";
