@@ -352,37 +352,27 @@ const convRank = (rankName) => {
 
 
 
-//画像をプリロード　                                                                                                                                                                              
-const img = [];
-img[0] = new Image();
+//画像をプリロード
+const img = new Array(13);
+img.fill(new Image());
 img[0].src = "img/attacker.png";
-img[1] = new Image();
 img[1].src = "img/gunner.png";
-img[2] = new Image();
 img[2].src = "img/sprinter.png";
-img[3] = new Image();
 img[3].src = "img/tank.png";
-img[4] = new Image();
 img[4].src = "img/twitter.png";
-img[5] = new Image();
 img[5].src = "img/discord.png";
-img[6] = new Image();
 img[6].src = "img/skype.png";
-img[7] = new Image();
 img[7].src = "img/compass.png";
-img[8] = new Image();
 img[8].src = "img/fukidashi.png";
-img[10] = new Image();
 img[10].src = "img/cps_guild.png";
-//プロ画用
-img[9] = new Image();
-var profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
-//背景用
-img[11] = new Image();
-img[12] = new Image();
-var bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
+//プロ画用…img[9]
+const profilePicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
+//背景用…img[11],img[12]
+const bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択）';
 
 //変数だけ宣言
+const iconImg = new Array(10);
+iconImg.fill(new Image());
 var atkImg = new Image();
 var gunImg = new Image();
 var sprImg = new Image();
@@ -451,7 +441,7 @@ ctx3.fillText("タップしてデザインをプレビュー", can3.width / 2, 1
 
 
 //ダウンロード用
-var base64Result = "";
+let base64Result = "";
 
 
 
