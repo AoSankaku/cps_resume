@@ -1,9 +1,9 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.13β";
+const version = "v1.0.13β";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 //デバッグ用
-var dnum = 0;
+let dnum = 0;
 
 //ヒーロー全員のデータを定義
 const heroes = {
@@ -326,7 +326,6 @@ const getHeroInfo = (nickname) => {
 }
 
 //ロール特定用関数
-/*
 const detectRole = (name) => {
 	if (getHeroInfo(name) != undefined) {
 		return getHeroInfo(name).role;
@@ -335,91 +334,8 @@ const detectRole = (name) => {
 	}
 
 }
-*/
 
-//ヒーローロール特定用関数
-function detectRole(name) {
-	switch (name) {
-
-		case "ノホ":
-		case "忠臣":
-		case "マルコス":
-		case "ソル":
-		case "リュウ":
-		case "マリア":
-		case "アダム":
-		case "レム":
-		case "カイ":
-		case "ポロロッチョ":
-		case "リヴァイ":
-		case "デルミン":
-		case "セイバーオルタ":
-		case "ルルカ":
-		case "アイズ":
-		case "甘色":
-		case "ノクト":
-		case "イグニス":
-			return "attacker"; break;
-
-		//ガンナー
-		case "リリカ":
-		case "ルチアーノ":
-		case "まとい":
-		case "ディズィー":
-		case "サーティーン":
-		case "エミリア":
-		case "メグメグ":
-		case "リン":
-		case "イスタカ":
-		case "ソーン":
-		case "猫宮":
-		case "オカリン":
-		case "ギルガメッシュ":
-		case "ニーズヘッグ":
-		case "芥川龍之介":
-		case "GBG":
-		case "アインズ":
-			return "gunner"; break;
-
-		//スプリンター
-		case "アタリ":
-		case "Voidoll":
-		case "テスラ":
-		case "ミク":
-		case "コクリコ":
-		case "春麗":
-		case "勇者":
-		case "ザクレイ":
-		case "きらら":
-		case "アクア":
-		case "零夜":
-		case "ピエール":
-		case "中島敦":
-		case "ジョーカー":
-			return "sprinter"; break;
-
-		//タンク
-		case "ジャスティス":
-		case "ジャンヌ":
-		case "グスタフ":
-		case "ヴィオレッタ":
-		case "レン":
-		case "モノクマ":
-		case "めぐみん":
-		case "トマス":
-		case "忠信":
-		case "ライザ":
-		case "アリス":
-			return "tank"; break;
-
-	}
-}
-
-
-
-
-
-function convRank(rankName) {
+const convRank = (rankName) => {
 	switch (rankName) {
 		case "F": return -5;
 		case "E": return -4;
@@ -427,7 +343,7 @@ function convRank(rankName) {
 		case "C": return -2;
 		case "B": return -1;
 		case "A": return 0;
-		default: return rankName.slice(1, 2);
+		default: return Number(rankName.slice(1, 2));
 	}
 }
 
@@ -437,7 +353,7 @@ function convRank(rankName) {
 
 
 //画像をプリロード　                                                                                                                                                                              
-var img = [];
+const img = [];
 img[0] = new Image();
 img[0].src = "img/attacker.png";
 img[1] = new Image();
