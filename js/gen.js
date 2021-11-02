@@ -1,5 +1,5 @@
 //履歴書本体バージョンを定義
-var version = "v1.0.12";
+var version = "v1.0.13β";
 //ページタイトル(h1を書き換える)
 document.getElementById('title').innerText = version;
 //デバッグ用
