@@ -1248,7 +1248,7 @@ function preview() {
 			ctx.globalAlpha = 0.1;
 		}
 	}
-	ctx.drawImage(atkImg, 30, 460, 80, 80);
+	ctx.drawImage(img[0], 30, 460, 80, 80);
 	ctx.globalAlpha = 1.0;
 	if (gunUseB == "") {
 		ctx.globalAlpha = 0.5;
@@ -1256,7 +1256,7 @@ function preview() {
 			ctx.globalAlpha = 0.1;
 		}
 	}
-	ctx.drawImage(gunImg, 30, 560, 80, 80);
+	ctx.drawImage(img[1], 30, 560, 80, 80);
 	ctx.globalAlpha = 1.0;
 	if (sprUseB == "") {
 		ctx.globalAlpha = 0.5;
@@ -1264,7 +1264,7 @@ function preview() {
 			ctx.globalAlpha = 0.1;
 		}
 	}
-	ctx.drawImage(sprImg, 30, 660, 80, 80);
+	ctx.drawImage(img[2], 30, 660, 80, 80);
 	ctx.globalAlpha = 1.0;
 	if (tanUseB == "") {
 		ctx.globalAlpha = 0.5;
@@ -1272,7 +1272,7 @@ function preview() {
 			ctx.globalAlpha = 0.1;
 		}
 	}
-	ctx.drawImage(tanImg, 30, 760, 80, 80);
+	ctx.drawImage(img[3], 30, 760, 80, 80);
 	//最後に透明度リセット
 	ctx.globalAlpha = 1.0;
 	//使用ヒーローが0体の場合アラート
