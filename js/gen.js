@@ -881,7 +881,7 @@ function preview() {
 	const profilePicY = (63 + 167) - profilePicScale;
 
 	//なぜかスマホ版ChromeだとUndefinedになるので分岐して処理
-	if (img[9].src == null) {
+	if (img[9].src == "" || img[9].src == null) {
 		errorMsg += "・プロフィール画像が設定されていません。";
 	} else {
 		ctx.drawImage(img[9], 715, profilePicY, profilePicScale, profilePicScale);
