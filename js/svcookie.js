@@ -1,9 +1,9 @@
 //webstrage(localStorage)設定
-var storage = localStorage;
+const storage = localStorage;
 
 
 //ページを離れるときに警告を出すための関数
-var nonSaved = function (e) {
+const nonSaved = (e) => {
 	e.returnValue = '保存せずにこのページを離れてもよろしいですか？';
 }
 window.removeEventListener('beforeunload', nonSaved);
@@ -19,68 +19,68 @@ function saveToCookie() {
 
 
 		//保存した日時を記憶しておく（年、月、日、時、分）
-		var date = new Date();
-		var year = date.getFullYear();
-		var month = date.getMonth() + 1;
+		let date = new Date();
+		let year = date.getFullYear();
+		let month = date.getMonth() + 1;
 		if (month < 10) {
 			month = "0" + month;
 		}
-		var today = date.getDate();
+		let today = date.getDate();
 		if (today < 10) {
 			today = "0" + today;
 		}
-		var hours = date.getHours();
+		let hours = date.getHours();
 		if (hours < 10) {
 			hours = "0" + hours;
 		}
-		var minutes = date.getMinutes();
+		let minutes = date.getMinutes();
 		if (minutes < 10) {
 			minutes = "0" + minutes;
 		}
-		var savedAt = year + "年" + month + "月" + today + "日 " + hours + "時" + minutes + "分";
+		let savedAt = year + "年" + month + "月" + today + "日 " + hours + "時" + minutes + "分";
 
 		//フォームの内容を取得する
-		var read = document.forms.info.read.value;
-		var name = document.forms.info.name.value;
-		var dl = document.forms.info.dl.value;
-		var rank = document.forms.info.rank.value;
-		var seasonRank = document.forms.info.seasonRank.value;
+		let read = document.forms.info.read.value;
+		let name = document.forms.info.name.value;
+		let dl = document.forms.info.dl.value;
+		let rank = document.forms.info.rank.value;
+		let seasonRank = document.forms.info.seasonRank.value;
 
 		//小数点対策済
-		var bronze = parseInt(document.forms.info.bronze.value);
-		var silver = parseInt(document.forms.info.silver.value);
-		var gold = parseInt(document.forms.info.gold.value);
-		var tournament = parseInt(document.forms.info.tournament.value);
+		let bronze = parseInt(document.forms.info.bronze.value);
+		let silver = parseInt(document.forms.info.silver.value);
+		let gold = parseInt(document.forms.info.gold.value);
+		let tournament = parseInt(document.forms.info.tournament.value);
 
 		//連絡先とコメント
-		var tw = document.forms.info.tw.value;
-		var dc = document.forms.info.dc.value;
-		var sp = document.forms.info.sp.value;
-		var fc = document.forms.info.fc.value;
-		var guild = document.forms.info.guild.value;
-		var cm = document.getElementById('comment').value;
+		let tw = document.forms.info.tw.value;
+		let dc = document.forms.info.dc.value;
+		let sp = document.forms.info.sp.value;
+		let fc = document.forms.info.fc.value;
+		let guild = document.forms.info.guild.value;
+		let cm = document.getElementById('comment').value;
 
 		//デザイン関連
-		var profilePicSize = document.forms.design.profilePicSize.value;
-		var profilePicNameC = queryProfilePicName();
-		var profilePicData = queryProfilePicData();
-		var bgPicNameC = bgPicName;
-		var bgPicData = img[12].src;
+		let profilePicSize = document.forms.design.profilePicSize.value;
+		let profilePicNameC = queryProfilePicName();
+		let profilePicData = queryProfilePicData();
+		let bgPicNameC = bgPicName;
+		let bgPicData = img[12].src;
 
-		var bgTheme = document.forms.design.bgtheme.value;
-		var bgTrans = document.forms.design.bgTrans.value;
-		var bgColor = document.forms.design.bgColor.value;
-		var fontColor = document.forms.design.fontColor.value;
-		var defaultColor = document.forms.design.defaultColor.value;
-		var selectedFont = document.forms.design.font.value;
+		let bgTheme = document.forms.design.bgtheme.value;
+		let bgTrans = document.forms.design.bgTrans.value;
+		let bgColor = document.forms.design.bgColor.value;
+		let fontColor = document.forms.design.fontColor.value;
+		let defaultColor = document.forms.design.defaultColor.value;
+		let selectedFont = document.forms.design.font.value;
 
 		//選択肢の内容をロード
-		var heroB = document.getElementById("heroB");
-		var heroF = document.getElementById("heroF");
-		var heroBe = heroB.options;
-		var heroFe = heroF.options;
-		var heroBSel = new Array(heroBe.length);
-		var heroFSel = new Array(heroBe.length);
+		let heroB = document.getElementById("heroB");
+		let heroF = document.getElementById("heroF");
+		let heroBe = heroB.options;
+		let heroFe = heroF.options;
+		let heroBSel = new Array(heroBe.length);
+		let heroFSel = new Array(heroBe.length);
 
 		//配列はそのまま記録できないようなので配列「heroBe,heroFe」に記録(選択されていたらその名前、そうでなければ[]を代入)
 		for (let i = 0, l = heroBe.length; l > i; i++) {
@@ -184,33 +184,33 @@ function onChangeForms() {
 
 
 	//とりあえずLocalStorageの内容をロード
-	var read = storage.getItem('read');
-	var name = storage.getItem('name');
-	var dl = storage.getItem('dl');
-	var rank = storage.getItem('rank');
-	var seasonRank = storage.getItem('seasonRank');
-	var bronze = storage.getItem('bronze');
-	var silver = storage.getItem('silver');
-	var gold = storage.getItem('gold');
-	var tournament = storage.getItem('tournament');
-	var tw = storage.getItem('tw');
-	var dc = storage.getItem('dc');
-	var sp = storage.getItem('sp');
-	var fc = storage.getItem('fc');
-	var guild = storage.getItem('guild');
-	var cm = storage.getItem('cm');
-	var profilePicSize = storage.getItem('profilePicSize');
-	var profilePicNameC = storage.getItem('profilePicNameC');
-	var profilePicData = storage.getItem('profilePicData');
-	var bgPicNameC = storage.getItem('bgPicNameC');
-	var bgPicData = storage.getItem('bgPicData');
-	var bgTheme = storage.getItem('bgTheme');
-	var bgTrans = storage.getItem('bgTrans');
-	var bgColor = storage.getItem('bgColor');
-	var fontColor = storage.getItem('fontColor');
-	var defaultColor = storage.getItem('defaultColor');
-	var selectedFont = storage.getItem('selectedFont');
-	var savedAt = storage.getItem('savedAt');
+	let read = storage.getItem('read');
+	let name = storage.getItem('name');
+	let dl = storage.getItem('dl');
+	let rank = storage.getItem('rank');
+	let seasonRank = storage.getItem('seasonRank');
+	let bronze = storage.getItem('bronze');
+	let silver = storage.getItem('silver');
+	let gold = storage.getItem('gold');
+	let tournament = storage.getItem('tournament');
+	let tw = storage.getItem('tw');
+	let dc = storage.getItem('dc');
+	let sp = storage.getItem('sp');
+	let fc = storage.getItem('fc');
+	let guild = storage.getItem('guild');
+	let cm = storage.getItem('cm');
+	let profilePicSize = storage.getItem('profilePicSize');
+	let profilePicNameC = storage.getItem('profilePicNameC');
+	let profilePicData = storage.getItem('profilePicData');
+	let bgPicNameC = storage.getItem('bgPicNameC');
+	let bgPicData = storage.getItem('bgPicData');
+	let bgTheme = storage.getItem('bgTheme');
+	let bgTrans = storage.getItem('bgTrans');
+	let bgColor = storage.getItem('bgColor');
+	let fontColor = storage.getItem('fontColor');
+	let defaultColor = storage.getItem('defaultColor');
+	let selectedFont = storage.getItem('selectedFont');
+	let savedAt = storage.getItem('savedAt');
 
 
 	//中身の変更の有無にかかわらず今選択されてるフォントを読み込む
@@ -225,7 +225,7 @@ function onChangeForms() {
 
 	if (typeof localStorage !== 'undefined' && savedAt !== null) {
 		//フォームの内容を比較する
-		var comp = [];
+		let comp = [];
 
 		comp[0] = Boolean(read == document.forms.info.read.value);
 		comp[1] = Boolean(name == document.forms.info.name.value);
@@ -244,12 +244,12 @@ function onChangeForms() {
 		comp[12] = Boolean(cm == document.getElementById('comment').value);
 
 		//heroBSelとheroFSelは文字列として記録されているので「現在の選択状況」を文字列に変換して比較
-		var heroB = document.getElementById("heroB");
-		var heroF = document.getElementById("heroF");
-		var heroBe = heroB.options;
-		var heroFe = heroF.options;
-		var heroBSel = new Array(heroBe.length);
-		var heroFSel = new Array(heroBe.length);
+		let heroB = document.getElementById("heroB");
+		let heroF = document.getElementById("heroF");
+		let heroBe = heroB.options;
+		let heroFe = heroF.options;
+		let heroBSel = new Array(heroBe.length);
+		let heroFSel = new Array(heroBe.length);
 
 		for (let i = 0, l = heroBe.length; l > i; i++) {
 			if (heroBe[i].selected) {
@@ -266,11 +266,11 @@ function onChangeForms() {
 			}
 		}
 
-		var heroBStr = heroBSel.join(',');
-		var heroFStr = heroFSel.join(',');
+		let heroBStr = heroBSel.join(',');
+		let heroFStr = heroFSel.join(',');
 
-		var heroBStrC = storage.getItem('heroBSel');
-		var heroFStrC = storage.getItem('heroFSel');
+		let heroBStrC = storage.getItem('heroBSel');
+		let heroFStrC = storage.getItem('heroFSel');
 
 		comp[13] = Boolean(heroBSel == heroBStrC);
 		comp[14] = Boolean(heroFSel == heroFStrC);
@@ -295,7 +295,7 @@ function onChangeForms() {
 		//console.log(queryProfilePicData());
 
 		//比較判定
-		var result = true;
+		let result = true;
 
 		for (let i = 0, l = comp.length; l > i; i++) {
 			if (!comp[i]) {
@@ -328,41 +328,41 @@ function loadFromCookie(calledBy) {
 
 
 		//読み込み時にwebstrage(localStorage)設定
-		var storage = localStorage;
+		let storage = localStorage;
 
 
 		//LocalStorageの内容をロード
-		var read = storage.getItem('read');
-		var name = storage.getItem('name');
-		var dl = storage.getItem('dl');
-		var rank = storage.getItem('rank');
-		var seasonRank = storage.getItem('seasonRank');
-		var heroBSel = storage.getItem('heroBSel');
-		var heroFSel = storage.getItem('heroFSel');
-		var bronze = storage.getItem('bronze');
-		var silver = storage.getItem('silver');
-		var gold = storage.getItem('gold');
-		var tournament = storage.getItem('tournament');
-		var tw = storage.getItem('tw');
-		var dc = storage.getItem('dc');
-		var sp = storage.getItem('sp');
-		var fc = storage.getItem('fc');
-		var guild = storage.getItem('guild');
-		var cm = storage.getItem('cm');
-		var profilePicSize = storage.getItem('profilePicSize');
-		var profilePicNameC = storage.getItem('profilePicNameC');
-		var profilePicData = storage.getItem('profilePicData');
-		var bgPicNameC = storage.getItem('bgPicNameC');
-		var bgPicData = storage.getItem('bgPicData');
-		var bgPicNameC = storage.getItem('bgPicNameC');
-		var bgPicData = storage.getItem('bgPicData');
-		var bgTheme = storage.getItem('bgTheme');
-		var bgTrans = storage.getItem('bgTrans');
-		var bgColor = storage.getItem('bgColor');
-		var fontColor = storage.getItem('fontColor');
-		var defaultColor = storage.getItem('defaultColor');
-		var selectedFont = storage.getItem('selectedFont');
-		var savedAt = storage.getItem('savedAt');
+		let read = storage.getItem('read');
+		let name = storage.getItem('name');
+		let dl = storage.getItem('dl');
+		let rank = storage.getItem('rank');
+		let seasonRank = storage.getItem('seasonRank');
+		let heroBSel = storage.getItem('heroBSel');
+		let heroFSel = storage.getItem('heroFSel');
+		let bronze = storage.getItem('bronze');
+		let silver = storage.getItem('silver');
+		let gold = storage.getItem('gold');
+		let tournament = storage.getItem('tournament');
+		let tw = storage.getItem('tw');
+		let dc = storage.getItem('dc');
+		let sp = storage.getItem('sp');
+		let fc = storage.getItem('fc');
+		let guild = storage.getItem('guild');
+		let cm = storage.getItem('cm');
+		let profilePicSize = storage.getItem('profilePicSize');
+		let profilePicNameC = storage.getItem('profilePicNameC');
+		let profilePicData = storage.getItem('profilePicData');
+		let bgPicNameC = storage.getItem('bgPicNameC');
+		let bgPicData = storage.getItem('bgPicData');
+		let bgPicNameC = storage.getItem('bgPicNameC');
+		let bgPicData = storage.getItem('bgPicData');
+		let bgTheme = storage.getItem('bgTheme');
+		let bgTrans = storage.getItem('bgTrans');
+		let bgColor = storage.getItem('bgColor');
+		let fontColor = storage.getItem('fontColor');
+		let defaultColor = storage.getItem('defaultColor');
+		let selectedFont = storage.getItem('selectedFont');
+		let savedAt = storage.getItem('savedAt');
 
 		//LocalStorageの日付が空文字列またはnullならLocalStorageをロード
 		if (savedAt !== null) {
@@ -426,8 +426,8 @@ function loadFromCookie(calledBy) {
 				heroBSel = heroBSel.split(',');
 				heroFSel = heroFSel.split(',');
 
-				var heroBe = document.getElementById('heroB').options;
-				var heroFe = document.getElementById('heroF').options;
+				let heroBe = document.getElementById('heroB').options;
+				let heroFe = document.getElementById('heroF').options;
 
 				//新処理
 				for (let i = 0, l = heroBSel.length; l > i; i++) {

@@ -3,12 +3,12 @@
 //メンテ予定…"planned"	=>青色で表示（デフォルト）
 //メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-var doingMaintainance = "none";
+const doingMaintainance = "none";
 
-var maintainanceStart = "9月27日 13:45";
-var maintainanceEnd = "9月27日 14:15";
+const maintainanceStart = "9月27日 13:45";
+const maintainanceEnd = "9月27日 14:15";
 
-var updateContents = "【アップデート内容（予定）】<br>"
+const updateContents = "【アップデート内容（予定）】<br>"
 	+ "・青春アリス（アリス）、イグニス=ウィル=ウィスプ（イグニス）、ジョーカー、アインズ・ウール・ゴウン（アインズ）を追加<br>"
 	//+ "・ローディング画面の実装<br>"
 	//+ "・デザインコードを出力→内容を変更→コード読み込み　をするとデザインの中身が変わっていないにもかかわらず変更されたような挙動になる不具合を修正<br>"
@@ -31,7 +31,7 @@ window.addEventListener('load', function maintainance() {
 	//メンテ予定…"planned"	=>青色で表示（デフォルト）
 	//メンテ中…"doing"		=>赤色で表示（CSSいじいじ）
 
-	var str = [];
+	let str = [];
 	switch (doingMaintainance) {
 		case "none": break;
 
@@ -52,12 +52,12 @@ window.addEventListener('load', function maintainance() {
 
 
 
-	var titleColor = document.getElementById('titleColor');
+	const titleColor = document.getElementById('titleColor');
 
 
 	if (doingMaintainance !== "none") {
 		console.log('メンテナンス中');
-		var maintainanceNotice = '<div class="box-title" id="maintainanceNotice">'
+		let maintainanceNotice = '<div class="box-title" id="maintainanceNotice">'
 			+ str[1]
 			+ "</div><p>"
 			+ str[2]
@@ -76,8 +76,8 @@ window.addEventListener('load', function maintainance() {
 	}
 
 	//ついでにスクリプトが有効ならフォームを表示する
-	var form1 = document.getElementById('form1');
-	var form2 = document.getElementById('form2');
+	const form1 = document.getElementById('form1');
+	const form2 = document.getElementById('form2');
 	form1.hidden = false;
 	form2.hidden = false;
 

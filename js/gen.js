@@ -373,6 +373,7 @@ const bgPicName = '<i class="fas fa-folder-open"></i> （ファイルを選択�
 //変数だけ宣言
 const iconImg = new Array(10);
 iconImg.fill(new Image());
+//古いやつ
 var atkImg = new Image();
 var gunImg = new Image();
 var sprImg = new Image();
@@ -913,9 +914,9 @@ function preview() {
 
 	//フォントがちゃんと読み込まれているのか最終確認
 	ctx.font = "20px 'monospace'";
-	var defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+	let defaultWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
 	ctx.font = "20px" + userFont;
-	var userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
+	let userWidth = ctx.measureText("S1234567890よみHN最高デッキレベルランク銅・銀金大会アイコン使用ヒーロ　※( )内は練習中orフリバの連絡先など年月日作成こ履歴書「コンパスジェネレタv.Beta」で作成されました。hps:/wosnkugihbcprm").width;
 	if (defaultWidth == userWidth && userFont !== " 'monospace'") {
 		errorMsg += "・フォントが正常に読み込まれなかった可能性があります。\n　もう一度生成してください。\n";
 	}
