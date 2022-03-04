@@ -312,6 +312,21 @@ const heroes = {
 			"fullname": "系廻輪廻",
 			"nickname": "輪廻",
 			"role": "gunner"
+		},
+		{
+			"fullname": "キリト",
+			"nickname": "キリト",
+			"role": "attacker"
+		},
+		{
+			"fullname": "アスナ",
+			"nickname": "アスナ",
+			"role": "sprinter"
+		},
+		{
+			"fullname": "Bugdoll",
+			"nickname": "Bugdoll",
+			"role": "gunner"
 		}
 	]
 };
