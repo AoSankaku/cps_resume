@@ -327,9 +327,54 @@ const heroes = {
 			"fullname": "Bugdoll",
 			"nickname": "Bugdoll",
 			"role": "gunner"
+		},
+		{
+			"fullname": "ステリア・ララ・シルワ",
+			"nickname": "ステリア",
+			"role": "attacker"
+		},
+		{
+			"fullname": "ラム",
+			"nickname": "ラム",
+			"role": "sprinter"
+		},
+		{
+			"fullname": "2B",
+			"nickname": "2B",
+			"role": "attacker"
+		},
+		{
+			"fullname": "ラヴィ・シュシュマルシュ",
+			"nickname": "ラヴィ",
+			"role": "tank"
+		},
+		{
+			"fullname": "リムル=テンペスト",
+			"nickname": "リムル",
+			"role": "attacker"
+		},
+		{
+			"fullname": "アル・ダハブ=アルカティア",
+			"nickname": "アル",
+			"role": "sprinter"
+		},
+		{
+			"fullname": "御坂 美琴",
+			"nickname": "ミコト",
+			"role": "attacker"
+		},
+		{
+			"fullname": "アクセラレータ",
+			"nickname": "アクセラ",
+			"role": "gunner"
 		}
 	]
 };
+
+//選択肢作るのガチめんどくさいから書き換え
+const generateHeroOptions = () => {
+	atkImg;
+}
 
 //ヒーローのデータを取り出す関数
 const getHeroInfo = (nickname) => {
